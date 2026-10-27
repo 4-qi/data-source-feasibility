@@ -1,0 +1,39 @@
+{
+  "validated_at_utc": "2026-10-20T08:23:02.320993+00:00",
+  "synthetic_tests": {
+    "passed": 33,
+    "failed": 0,
+    "network_calls": 0
+  },
+  "live_negative_test": {
+    "artifact": "results/negative_validation/steam_negative_20261020T082124904884Z.json",
+    "requests": 2,
+    "http_200": 2,
+    "unique_records": 4,
+    "false_flags": 4,
+    "duplicates": 0
+  },
+  "baseline_all_reviews_flags": {
+    "unique_records": 27,
+    "true": 27,
+    "false": 0
+  },
+  "baseline_content_review_unchanged": 47,
+  "api_total_requests": 48,
+  "api_http_200": 47,
+  "api_http_403": 1,
+  "github_publication": "Deferred by explicit user instruction; local commit only",
+  "code_sha256": {
+    "src/feasibility/__init__.py": "5cfb76f6c7b058c99bb34e18b6569ad968e5eafa90e2ef985df62251874d49e2",
+    "src/feasibility/cli.py": "4ac8b8248f771d139da43e7c9fb8e9472478d7ea38f930a7b00204f353e58095",
+    "src/feasibility/collectors/__init__.py": "d8d1ac461387302fe2533e939eb6ca4ef80a2fb36d565e527e3095d7dc972c95",
+    "src/feasibility/collectors/github_issues.py": "0dcc8d3565fa20d40f7be5c81cab33a56eddac0eed6c77cb3a55afd241210f66",
+    "src/feasibility/collectors/hackernews.py": "8dcdafee43602fac061c2e87725fef9faff732f984a5f42fa4ccecb316b80e9f",
+    "src/feasibility/collectors/steam.py": "9eaaaaae54e50fdf9f0dfa2ff2804265db2ff6c04d12ff5fd19ba0db30296a0b",
+    "src/feasibility/http.py": "d14e2b630cb79799fc7f37a545e39a803cc5156fa3be342e63d6e7702b3fb67d",
+    "src/feasibility/model.py": "d3c1391425f057e0db48d0c5dc2c4ecba4d4f337cf00736e98c9caab1b29f08f",
+    "src/feasibility/negative_validation.py": "ef576448bca84a1db7444102804afa116cd4218add0e01ead93c62e3613f10d9",
+    "src/feasibility/quality.py": "9627689c9114540fea140fb5d9909b61f6042b4a380d883c80b0c5a77ffe73d1",
+    "src/feasibility/reporting.py": "8a7e9e995575e7e8632cc51bf52a1cdff806b1c97401ca8e4b20c40cd1e55c56"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "baseline": {
+    "review_type": 0,
+    "unique_records": 27,
+    "voted_up_true": 27,
+    "voted_up_false": 0,
+    "sampling": "Original All Reviews queries; same IDs across three executions, not81 distinct records."
+  },
+  "negative_validation": {
+    "review_type": 2,
+    "artifact": "results/negative_validation/steam_negative_20261020T082124904884Z.json",
+    "http_requests": 2,
+    "records_returned": 4,
+    "unique_records": 4,
+    "duplicate_records": 0,
+    "recommendation_flag_counts": {
+      "true": 0,
+      "false": 4,
+      "missing": 0,
+      "non_boolean": 0
+    },
+    "overlap_with_baseline_ids": 0,
+    "label_validation_passed": true
+  },
+  "combined_unique_steam_ids": 31,
+  "interpretation": "Targeted feature/label coverage only. Filtered negative sample is not a natural sentiment distribution or a balanced training set. Recommendation flags are not sentence-level sentiment ground truth.",
+  "baseline_quality_review_unchanged": {
+    "steam": 27,
+    "github": 11,
+    "hackernews": 9,
+    "total": 47
+  }
+}

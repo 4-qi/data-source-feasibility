@@ -1,0 +1,467 @@
+{
+  "basis": "Codex-assisted qualitative review of the first-round distinct records; full short texts or at most 500 normalized characters of longer texts. Not human-labelled ground truth, a sentiment model, or a representative sample.",
+  "useful_definition": "Visible content describes a concrete product experience, usability problem, preference with context, or experience-linked feeling. Generic reactions, jokes, announcements, support explanations, advice and external references are separated. A bug report is useful software feedback but not automatically a negative sentiment label.",
+  "source_counts": {
+    "steam": {
+      "reviewed_unique_records": 27,
+      "useful_experience_or_opinion": 10,
+      "useful_percentage": 37.0,
+      "categories": {
+        "useful_experience_or_opinion": 10,
+        "low_information_reaction": 16,
+        "unclear_or_offtopic": 1
+      },
+      "prefix_limited_records": 2
+    },
+    "github": {
+      "reviewed_unique_records": 11,
+      "useful_experience_or_opinion": 7,
+      "useful_percentage": 63.6,
+      "categories": {
+        "useful_experience_or_opinion": 7,
+        "project_explanation_not_user_opinion": 2,
+        "support_advice_not_user_opinion": 1,
+        "technical_resolution_not_user_opinion": 1
+      },
+      "prefix_limited_records": 7
+    },
+    "hackernews": {
+      "reviewed_unique_records": 9,
+      "useful_experience_or_opinion": 3,
+      "useful_percentage": 33.3,
+      "categories": {
+        "discussion_question_or_quote": 1,
+        "useful_experience_or_opinion": 3,
+        "missing_or_empty": 1,
+        "external_reference_not_product_experience": 2,
+        "advice_or_speculation": 2
+      },
+      "prefix_limited_records": 5
+    }
+  },
+  "records": [
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "e4fb148877fe433d61f3b7d2121ea93a375f93094aec5dd216211af109e25323",
+      "kind": "review",
+      "label": "useful_experience_or_opinion",
+      "reason": "Enjoyment linked to succeeding in play.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "0d19e9039df9ee70e2a7e0735c79a1d536786fdbd39a847b0f40cded22a4531e",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Brief positive reaction without detail.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "8b3f2582c5f8ed33d30a669cf2aa465d7d075e7a20e3b986997f8cbca005015d",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Brief praise without supporting experience.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "c6ab3f45b167b0b51b2b4bd1fc9272c583af7ab716122d93406fc7dfe9958c8d",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Numeric rating alone.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "f7b1792869075face80711723725f8a0c7cedd5110afaecfd7d143d79dd2a005",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Conditional praise with little explanation.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "bb746d046b80032389b6ee0956212a45a1ba3612bd6ceddc97cb241faf978b97",
+      "kind": "review",
+      "label": "unclear_or_offtopic",
+      "reason": "Joke with little useful product-experience evidence.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "bddeb2900bbf09b9c29dbeae2314fb1f0ffe52dad126a5d86c03ea1fcacf4cc4",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Generic positive reaction.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "b37504795a790058e87ed477f33d35f22c1b0674ee41cd1e861f3101ef4e5874",
+      "kind": "review",
+      "label": "useful_experience_or_opinion",
+      "reason": "Specific value, duration and performance observations.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "e63e4921b9e4b9aca5e15e6d06132ea87313aeb1eccfe9041cb203bad5d72808",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Generic genre praise.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "dca7c4561d536fddc54ebc5e74f67ae2149ca2156471671a8989c7053cccd474",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Generic praise without useful context.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "c1e7df1331d49ab62743c8b731d51a6863ca2a1dc69473b882b8dc48af77139b",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Single affirmative word.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "50c42c2895bacf8a71d9433eeb5ea2a38f8d0b985ec8a9a0ef8c8ae7daefc81d",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Single affirmative word.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "8b96f624ed4f2b37c9bfa92d4e04988093256cf2c37dd9b28534edac85362ed5",
+      "kind": "review",
+      "label": "useful_experience_or_opinion",
+      "reason": "Prefix describes pacing, puzzles and cooperative experience.",
+      "prefix_limited": true
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "0bbd797be5b0b26f3d9339885076edf1e357a0e5d3e2c9f1a985dd160ac14f63",
+      "kind": "review",
+      "label": "useful_experience_or_opinion",
+      "reason": "Gameplay difficulty changes satisfaction and nostalgia.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "93885ee8f575b98a0d0664ee8cb9f0d0bf2c004301f0b6f5273c5bb7857412a4",
+      "kind": "review",
+      "label": "useful_experience_or_opinion",
+      "reason": "Specific cooperative play and relationship experience.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "157fc4399bb03055914cb3a49f5d82f55b02b7b8aa0e3daf3210a891840e529b",
+      "kind": "review",
+      "label": "useful_experience_or_opinion",
+      "reason": "Emotional response tied to atmosphere and setting.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "e51801dabf80423cb6e165bebdc00b2c7868f0cda90280af6c96d78c4229444e",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Generic superlative without context.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "acc3ce36ff3ae80af02ea8d779ac83c24efb994d08c985475eb055b7a3c09061",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Very brief appraisal.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "3e55bbe734db8263e1986107ddff035598d1d95fa4a4a3003f222fd82f32ee37",
+      "kind": "review",
+      "label": "useful_experience_or_opinion",
+      "reason": "Repeated purchase and concrete game activities described.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "744a731e76969c203f019e8cac5729d8792ed0e8d04f2db42c73f9102a3c503d",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Character preferences with little explanation.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "18e02afbb2c0ac4157a46548bbe937f5e4a6da1fa863b13215f9f73eb60d7c6e",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Very brief positive reaction.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "9b87253dd6b9745a40fdd70c4a1ba3b45fc14fafb8a7ee4adb868db21322b70f",
+      "kind": "review",
+      "label": "useful_experience_or_opinion",
+      "reason": "Base-game and mod enjoyment distinguished.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "64c2a57854d0eaac4edd774cdaabaea4e9096127df8522f429f742911615360e",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Short humorous reaction.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "04f2f8d76be3014b3822fa1824262ce850ee7e0f0df87862f8b0025dbb7a48e9",
+      "kind": "review",
+      "label": "useful_experience_or_opinion",
+      "reason": "Low pressure, relaxation and mod support described.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "7638cbec6510df0b6407f784498c0a337fcdfe27628dc74747f87218c5251c84",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Very brief positive reaction.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "bc2a28ecb52088398036b4e6c098dc86a2e72caeaa3f0acb9a9cd70e05aff4a4",
+      "kind": "review",
+      "label": "low_information_reaction",
+      "reason": "Generic appraisal without detail.",
+      "prefix_limited": false
+    },
+    {
+      "source": "steam",
+      "run_id": "steam_20261020T074802516051Z",
+      "record_fingerprint": "9b0d7824f4d8784d7d1755fcf317abcb0b3884dcf82962690ddb0296acbefb7d",
+      "kind": "review",
+      "label": "useful_experience_or_opinion",
+      "reason": "Prefix describes immersion and enduring personal enjoyment.",
+      "prefix_limited": true
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "183e919f8d067eeca397db5567bf8128856ee2d5d3aa087c2b2dca9488e574de",
+      "kind": "issue",
+      "label": "useful_experience_or_opinion",
+      "reason": "Loss of editing controls creates a reported workflow problem.",
+      "prefix_limited": true
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "9f409cc23f2ffd1e34b22bddc11b4aa63fc02197c1ff7446affa2bf9f9d68136",
+      "kind": "issue",
+      "label": "useful_experience_or_opinion",
+      "reason": "Reproducible UI freeze in an ordinary workflow.",
+      "prefix_limited": true
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "6185f06f196050fb81d1792fed0cc41853d7ee0effd97ff3b21fc7b92624a6a4",
+      "kind": "issue",
+      "label": "project_explanation_not_user_opinion",
+      "reason": "Announcement explains a product design change.",
+      "prefix_limited": true
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "fa4c744451f1854e879387ba8463a19ca9c96866f342fd496eefdca6d5d75b34",
+      "kind": "issue",
+      "label": "useful_experience_or_opinion",
+      "reason": "Reproduction of failed chat rename action.",
+      "prefix_limited": false
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "83f17900ebebce7b2e4c86e535ac9a07b408d62c2fd3d7b4af16723322cc7901",
+      "kind": "issue",
+      "label": "project_explanation_not_user_opinion",
+      "reason": "Project interface-change explanation and feedback summary.",
+      "prefix_limited": true
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "06538f7520d80e861f25709f7711253fa2376b99961a46562b1eced9552638e6",
+      "kind": "issue",
+      "label": "useful_experience_or_opinion",
+      "reason": "A user reports losing an archived session after restart.",
+      "prefix_limited": true
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "cc94f12b0684ca8c70d559d092a1e536c3ab5b9dadd947928ba42086ba09a5a8",
+      "kind": "issue",
+      "label": "useful_experience_or_opinion",
+      "reason": "Policy configuration causes a reported product failure.",
+      "prefix_limited": true
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "26d403cf183c9ec6431590819a9e745ed693c712bc845aa6ddf22606e8818365",
+      "kind": "issue",
+      "label": "useful_experience_or_opinion",
+      "reason": "Missing review controls lead a user to stop using the tool.",
+      "prefix_limited": false
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "2a3e4a93dfae136bdacaf271717b4001c08abc5cce00ce3db4ad1a9fa1360148",
+      "kind": "comment",
+      "label": "support_advice_not_user_opinion",
+      "reason": "Explains cause and proposes workarounds.",
+      "prefix_limited": true
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "75b1bbf71b6d4c07841240c032f70c48a415f65ed90bf86f705f3babb61e1140",
+      "kind": "comment",
+      "label": "useful_experience_or_opinion",
+      "reason": "User preference for retaining a workflow feature.",
+      "prefix_limited": false
+    },
+    {
+      "source": "github",
+      "run_id": "github_20261020T074805840654Z",
+      "record_fingerprint": "2b12817fa24ca1e6619f5da520b9dafe42f44a19919505166b749ccec8c81f62",
+      "kind": "comment",
+      "label": "technical_resolution_not_user_opinion",
+      "reason": "Resolution notice; robot marker does not prove a Bot account.",
+      "prefix_limited": false
+    },
+    {
+      "source": "hackernews",
+      "run_id": "hackernews_20261020T074813075094Z",
+      "record_fingerprint": "a64d18ab9c70a266a8df9041e8145fe33fd6bbe923270a85dd8fe32d923aa7f3",
+      "kind": "story",
+      "label": "discussion_question_or_quote",
+      "reason": "Prefix quotes another person; firsthand attribution is uncertain.",
+      "prefix_limited": true
+    },
+    {
+      "source": "hackernews",
+      "run_id": "hackernews_20261020T074813075094Z",
+      "record_fingerprint": "036bbbda15765708e2b9a36fa3651ec02a972cf955042959c629a9635d81ebcd",
+      "kind": "comment",
+      "label": "useful_experience_or_opinion",
+      "reason": "Describes a concrete first-person AI-assisted workflow.",
+      "prefix_limited": true
+    },
+    {
+      "source": "hackernews",
+      "run_id": "hackernews_20261020T074813075094Z",
+      "record_fingerprint": "70eaf73e076b5051e9ace1591e1b04eebe671f7df3fa9fc3f534eab18ba4bb9a",
+      "kind": "comment",
+      "label": "useful_experience_or_opinion",
+      "reason": "Describes difficulty reviewing AI-produced code.",
+      "prefix_limited": false
+    },
+    {
+      "source": "hackernews",
+      "run_id": "hackernews_20261020T074813075094Z",
+      "record_fingerprint": "ced184ef149ae40a5136b66805c971cdb221605bf7e4449140ebf75fdc7fe8d6",
+      "kind": "story",
+      "label": "missing_or_empty",
+      "reason": "Story has no text field content.",
+      "prefix_limited": false
+    },
+    {
+      "source": "hackernews",
+      "run_id": "hackernews_20261020T074813075094Z",
+      "record_fingerprint": "31d68eca83052688f69077e0529e6d61428c097802d00c30d3ff5992b092171c",
+      "kind": "comment",
+      "label": "external_reference_not_product_experience",
+      "reason": "Scientific disagreement/reference outside product-experience scope.",
+      "prefix_limited": false
+    },
+    {
+      "source": "hackernews",
+      "run_id": "hackernews_20261020T074813075094Z",
+      "record_fingerprint": "fd0f864346e21d40b64595c1685af48a08517927dffe367ebc2575b3fbcbd8cd",
+      "kind": "comment",
+      "label": "external_reference_not_product_experience",
+      "reason": "Only an external link, not an experience description.",
+      "prefix_limited": false
+    },
+    {
+      "source": "hackernews",
+      "run_id": "hackernews_20261020T074813075094Z",
+      "record_fingerprint": "ddf663c593fe5fb9dde188f7818db0ea257371c566bd30a58d6d2f758cf053fe",
+      "kind": "story",
+      "label": "useful_experience_or_opinion",
+      "reason": "First-person comparison of AI product workflows.",
+      "prefix_limited": true
+    },
+    {
+      "source": "hackernews",
+      "run_id": "hackernews_20261020T074813075094Z",
+      "record_fingerprint": "d5c1ba86bd8075b2f1444da273969ccd2c2081d2333a4d3f53b4092034a0f90d",
+      "kind": "comment",
+      "label": "advice_or_speculation",
+      "reason": "Suggested workflow is explicitly speculative.",
+      "prefix_limited": true
+    },
+    {
+      "source": "hackernews",
+      "run_id": "hackernews_20261020T074813075094Z",
+      "record_fingerprint": "67360b3f116113d22a33389269a401502a7e138756d8969cb68085e46865e7b4",
+      "kind": "comment",
+      "label": "advice_or_speculation",
+      "reason": "Broad workflow advice, not direct target-product use.",
+      "prefix_limited": true
+    }
+  ]
+}

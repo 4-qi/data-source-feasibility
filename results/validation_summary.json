@@ -1,0 +1,40 @@
+{
+  "validated_at_utc": "2026-10-20T07:56:34.604985+00:00",
+  "unit_tests": {
+    "command": "PYTHONPATH=src python -m pytest -q",
+    "passed": 25,
+    "failed": 0,
+    "network_calls": 0
+  },
+  "package_installation": "Editable installation verified in a temporary isolated venv with system site packages; no global environment modified.",
+  "cli_help_verified": true,
+  "live_experiment": {
+    "runs": 6,
+    "collector_requests": 39,
+    "http_200": 39,
+    "source_text_saved": false,
+    "author_values_saved": false
+  },
+  "consistency_checks": [
+    "Run files match collection_summary.json",
+    "Metrics match record counts and screening labels",
+    "Content review references all 47 first-round distinct records",
+    "Original/copied research checksums match",
+    "Current document links exist"
+  ],
+  "code_sha256": {
+    "src/feasibility/__init__.py": "5cfb76f6c7b058c99bb34e18b6569ad968e5eafa90e2ef985df62251874d49e2",
+    "src/feasibility/cli.py": "4ac8b8248f771d139da43e7c9fb8e9472478d7ea38f930a7b00204f353e58095",
+    "src/feasibility/collectors/__init__.py": "d8d1ac461387302fe2533e939eb6ca4ef80a2fb36d565e527e3095d7dc972c95",
+    "src/feasibility/collectors/github_issues.py": "0dcc8d3565fa20d40f7be5c81cab33a56eddac0eed6c77cb3a55afd241210f66",
+    "src/feasibility/collectors/hackernews.py": "8dcdafee43602fac061c2e87725fef9faff732f984a5f42fa4ccecb316b80e9f",
+    "src/feasibility/collectors/steam.py": "91daaf3eb3cd521a307f69646fb8d6b2ec9672fdc048e607e22c3dd0a70bb019",
+    "src/feasibility/http.py": "d14e2b630cb79799fc7f37a545e39a803cc5156fa3be342e63d6e7702b3fb67d",
+    "src/feasibility/model.py": "d3c1391425f057e0db48d0c5dc2c4ecba4d4f337cf00736e98c9caab1b29f08f",
+    "src/feasibility/quality.py": "9627689c9114540fea140fb5d9909b61f6042b4a380d883c80b0c5a77ffe73d1",
+    "src/feasibility/reporting.py": "8a7e9e995575e7e8632cc51bf52a1cdff806b1c97401ca8e4b20c40cd1e55c56",
+    "tests/test_collectors.py": "6bc921e739df95be2cd5058e8f3ed7c2e004e41fd76940aff73110132026ff80",
+    "tests/test_http.py": "87414d16343af7072a940600f3914eb8748773c8198dfc4def6e9d11dbb9fcf6",
+    "pyproject.toml": "9332264ec68c0b611691a5a8138752d2decac507fd01deca8455eff9ea098956"
+  }
+}

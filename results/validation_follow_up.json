@@ -1,0 +1,18 @@
+{
+  "validated_at_utc": "2026-10-20T08:06:19.118539+00:00",
+  "active_unit_tests": {
+    "passed": 25,
+    "failed": 0,
+    "network_requests": 0
+  },
+  "amazon_review_requests": 0,
+  "amazon_scraper_or_parser_in_active_package": false,
+  "amazon_robots_metadata_requests": 1,
+  "api_follow_up_requests": 7,
+  "api_follow_up_statuses": {
+    "200": 6,
+    "403": 1
+  },
+  "initial_experiment_preserved": true,
+  "notes": "47 tests passed during an earlier synthetic-parser trial; after the user prohibited Amazon scraping the parser/tests were moved outside the active tree. Final active package has25 tests, all passing."
+}

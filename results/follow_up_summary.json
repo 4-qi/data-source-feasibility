@@ -1,0 +1,36 @@
+{
+  "checked_at_utc": "2026-10-20T08:06:19.084083+00:00",
+  "steam": {
+    "source": "steam",
+    "first_run": "steam_20261020T074802516051Z",
+    "second_run": "steam_20261020T080407647013Z",
+    "overlapping_unique_ids": 27,
+    "first_only": 0,
+    "second_only": 0,
+    "field_names_equal": true,
+    "first_http": {
+      "200": 6
+    },
+    "second_http": {
+      "200": 6
+    },
+    "seconds_between_starts": 965.102787,
+    "interpretation": "Follow-up began 965 seconds after first run, beyond the documented up-to-10-minute cache window. Same IDs and schema; no edit event or independent freshness verification."
+  },
+  "github": {
+    "run_id": "github_20261020T080408173316Z",
+    "status": 403,
+    "rate_limit_remaining": 0,
+    "reset_utc": "2026-10-20T08:39:54+00:00",
+    "reset_pdt": "2026-10-20T01:39:54-07:00",
+    "overlap_comparison": null,
+    "reason": "Request denied; no content was retrieved. Not evidence that previous issue records disappeared.",
+    "action": "Stopped after one request; no retry, authentication or exit change."
+  },
+  "amazon": {
+    "review_requests": 0,
+    "active_scraper_implemented": false,
+    "user_direction": "No verified authorization; do not implement or execute automated Amazon review scraping.",
+    "preflight_metadata": "amazon_preflight_20261020T080149Z.json"
+  }
+}

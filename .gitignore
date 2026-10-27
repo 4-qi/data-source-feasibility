@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+.env
+.env.*
+!.env.example
+.local/
+raw/
+*.local.json
+*.local.md
+*.pdf
+*.docx
+*.png
+*.sqlite*
+research/previous_evidence/
+research/Project_Kickoff/
+
+# Local private keys
+*.pem
+*.key

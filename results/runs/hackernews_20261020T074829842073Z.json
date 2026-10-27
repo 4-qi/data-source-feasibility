@@ -1,0 +1,427 @@
+{
+  "source": "hackernews",
+  "started_at_utc": "2026-10-20T07:48:21.585476+00:00",
+  "finished_at_utc": "2026-10-20T07:48:29.842041+00:00",
+  "evidence": "CURRENT_LIVE",
+  "config": {
+    "max_records": 9,
+    "max_requests": 10,
+    "min_request_interval_seconds": 1.0,
+    "anonymous": true,
+    "story_ids": [
+      50151036,
+      50131997,
+      50161627
+    ]
+  },
+  "endpoint_family": "hacker-news.firebaseio.com",
+  "requested_record_limit": 9,
+  "http_requests": 9,
+  "response_status_summary": {
+    "200": 9
+  },
+  "successful_http_responses": 9,
+  "records_returned": 9,
+  "unique_records_with_id": 9,
+  "records_without_id": 0,
+  "duplicate_records": 0,
+  "text_screen_counts": {
+    "eligible_for_manual_review": 8,
+    "missing_or_empty": 1
+  },
+  "usable_text_count": 8,
+  "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+  "human_validated_opinion_count": null,
+  "missing_required_field_counts": {
+    "key": 0,
+    "created": 0
+  },
+  "empty_body_count": 1,
+  "available_fields": {
+    "id": 9,
+    "kids": 3,
+    "parent": 6,
+    "text": 8,
+    "time": 9,
+    "title": 3
+  },
+  "excluded": {
+    "deleted_or_dead_or_null": 0
+  },
+  "observations": [
+    {
+      "story_id": 50151036,
+      "declared_comments": 543,
+      "children_inspected_at_most": 2,
+      "nested_replies_not_traversed": true
+    },
+    {
+      "story_id": 50131997,
+      "declared_comments": 3,
+      "children_inspected_at_most": 2,
+      "nested_replies_not_traversed": true
+    },
+    {
+      "story_id": 50161627,
+      "declared_comments": 11,
+      "children_inspected_at_most": 2,
+      "nested_replies_not_traversed": true
+    }
+  ],
+  "errors": [],
+  "source_stopped": false,
+  "requests": [
+    {
+      "at_utc": "2026-10-20T07:48:21.585519+00:00",
+      "url": "https://hacker-news.firebaseio.com/v0/item/50151036.json",
+      "params": {},
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "duration_ms": 322
+    },
+    {
+      "at_utc": "2026-10-20T07:48:22.588999+00:00",
+      "url": "https://hacker-news.firebaseio.com/v0/item/50157475.json",
+      "params": {},
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "duration_ms": 105
+    },
+    {
+      "at_utc": "2026-10-20T07:48:23.595833+00:00",
+      "url": "https://hacker-news.firebaseio.com/v0/item/50162648.json",
+      "params": {},
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "duration_ms": 93
+    },
+    {
+      "at_utc": "2026-10-20T07:48:24.597016+00:00",
+      "url": "https://hacker-news.firebaseio.com/v0/item/50131997.json",
+      "params": {},
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "duration_ms": 110
+    },
+    {
+      "at_utc": "2026-10-20T07:48:25.606806+00:00",
+      "url": "https://hacker-news.firebaseio.com/v0/item/50162478.json",
+      "params": {},
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "duration_ms": 103
+    },
+    {
+      "at_utc": "2026-10-20T07:48:26.611609+00:00",
+      "url": "https://hacker-news.firebaseio.com/v0/item/50132292.json",
+      "params": {},
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "duration_ms": 85
+    },
+    {
+      "at_utc": "2026-10-20T07:48:27.613174+00:00",
+      "url": "https://hacker-news.firebaseio.com/v0/item/50161627.json",
+      "params": {},
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "duration_ms": 125
+    },
+    {
+      "at_utc": "2026-10-20T07:48:28.670217+00:00",
+      "url": "https://hacker-news.firebaseio.com/v0/item/50162082.json",
+      "params": {},
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "duration_ms": 158
+    },
+    {
+      "at_utc": "2026-10-20T07:48:29.670786+00:00",
+      "url": "https://hacker-news.firebaseio.com/v0/item/50161886.json",
+      "params": {},
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "duration_ms": 170
+    }
+  ],
+  "record_metrics": [
+    {
+      "record_fingerprint": "a64d18ab9c70a266a8df9041e8145fe33fd6bbe923270a85dd8fe32d923aa7f3",
+      "kind": "story",
+      "parent_fingerprint": null,
+      "created": 1792409074,
+      "updated": null,
+      "field_presence": {
+        "id": true,
+        "text": true,
+        "time": true,
+        "title": true,
+        "kids": true
+      },
+      "metadata": {
+        "type": "story",
+        "parent_matches": null,
+        "comment_count": 543
+      },
+      "text_length": 900,
+      "word_count": 174,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": true,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": true,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "036bbbda15765708e2b9a36fa3651ec02a972cf955042959c629a9635d81ebcd",
+      "kind": "comment",
+      "parent_fingerprint": "a64d18ab9c70a266a8df9041e8145fe33fd6bbe923270a85dd8fe32d923aa7f3",
+      "created": 1792440873,
+      "updated": null,
+      "field_presence": {
+        "id": true,
+        "text": true,
+        "time": true,
+        "parent": true
+      },
+      "metadata": {
+        "type": "comment",
+        "parent_matches": true,
+        "comment_count": null
+      },
+      "text_length": 1435,
+      "word_count": 277,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": true,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": false,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "70eaf73e076b5051e9ace1591e1b04eebe671f7df3fa9fc3f534eab18ba4bb9a",
+      "kind": "comment",
+      "parent_fingerprint": "a64d18ab9c70a266a8df9041e8145fe33fd6bbe923270a85dd8fe32d923aa7f3",
+      "created": 1792482428,
+      "updated": null,
+      "field_presence": {
+        "id": true,
+        "text": true,
+        "time": true,
+        "parent": true
+      },
+      "metadata": {
+        "type": "comment",
+        "parent_matches": true,
+        "comment_count": null
+      },
+      "text_length": 338,
+      "word_count": 63,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": true,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": true,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "ced184ef149ae40a5136b66805c971cdb221605bf7e4449140ebf75fdc7fe8d6",
+      "kind": "story",
+      "parent_fingerprint": null,
+      "created": 1792251192,
+      "updated": null,
+      "field_presence": {
+        "id": true,
+        "text": false,
+        "time": true,
+        "title": true,
+        "kids": true
+      },
+      "metadata": {
+        "type": "story",
+        "parent_matches": null,
+        "comment_count": 3
+      },
+      "text_length": 0,
+      "word_count": 0,
+      "screen": "missing_or_empty",
+      "first_person_marker": false,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": false,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "31d68eca83052688f69077e0529e6d61428c097802d00c30d3ff5992b092171c",
+      "kind": "comment",
+      "parent_fingerprint": "ced184ef149ae40a5136b66805c971cdb221605bf7e4449140ebf75fdc7fe8d6",
+      "created": 1792480918,
+      "updated": null,
+      "field_presence": {
+        "id": true,
+        "text": true,
+        "time": true,
+        "parent": true
+      },
+      "metadata": {
+        "type": "comment",
+        "parent_matches": true,
+        "comment_count": null
+      },
+      "text_length": 237,
+      "word_count": 43,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": false,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": false,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "fd0f864346e21d40b64595c1685af48a08517927dffe367ebc2575b3fbcbd8cd",
+      "kind": "comment",
+      "parent_fingerprint": "ced184ef149ae40a5136b66805c971cdb221605bf7e4449140ebf75fdc7fe8d6",
+      "created": 1792253155,
+      "updated": null,
+      "field_presence": {
+        "id": true,
+        "text": true,
+        "time": true,
+        "parent": true
+      },
+      "metadata": {
+        "type": "comment",
+        "parent_matches": true,
+        "comment_count": null
+      },
+      "text_length": 63,
+      "word_count": 9,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": false,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": false,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "ddf663c593fe5fb9dde188f7818db0ea257371c566bd30a58d6d2f758cf053fe",
+      "kind": "story",
+      "parent_fingerprint": null,
+      "created": 1792473368,
+      "updated": null,
+      "field_presence": {
+        "id": true,
+        "text": true,
+        "time": true,
+        "title": true,
+        "kids": true
+      },
+      "metadata": {
+        "type": "story",
+        "parent_matches": null,
+        "comment_count": 11
+      },
+      "text_length": 554,
+      "word_count": 100,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": true,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": false,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "d5c1ba86bd8075b2f1444da273969ccd2c2081d2333a4d3f53b4092034a0f90d",
+      "kind": "comment",
+      "parent_fingerprint": "ddf663c593fe5fb9dde188f7818db0ea257371c566bd30a58d6d2f758cf053fe",
+      "created": 1792477506,
+      "updated": null,
+      "field_presence": {
+        "id": true,
+        "text": true,
+        "time": true,
+        "parent": true
+      },
+      "metadata": {
+        "type": "comment",
+        "parent_matches": true,
+        "comment_count": null
+      },
+      "text_length": 1004,
+      "word_count": 187,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": true,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": false,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "67360b3f116113d22a33389269a401502a7e138756d8969cb68085e46865e7b4",
+      "kind": "comment",
+      "parent_fingerprint": "ddf663c593fe5fb9dde188f7818db0ea257371c566bd30a58d6d2f758cf053fe",
+      "created": 1792475714,
+      "updated": null,
+      "field_presence": {
+        "id": true,
+        "text": true,
+        "time": true,
+        "parent": true
+      },
+      "metadata": {
+        "type": "comment",
+        "parent_matches": true,
+        "comment_count": null
+      },
+      "text_length": 523,
+      "word_count": 96,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": true,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": false,
+      "language_triage_flag": false
+    }
+  ],
+  "repeat_config": {
+    "story_ids": [
+      50151036,
+      50131997,
+      50161627
+    ]
+  },
+  "limitations": [
+    "Small selection-biased sample; no population estimate or long-term stability claim.",
+    "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+    "No delete replay or production-use approval tested."
+  ],
+  "run_id": "hackernews_20261020T074829842073Z",
+  "round": 2
+}

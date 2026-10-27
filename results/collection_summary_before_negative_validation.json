@@ -1,0 +1,5949 @@
+{
+  "created_at_utc": "2026-10-20T08:06:19.088413+00:00",
+  "experiment": "initial_two_round_experiment_plus_limited_follow_up",
+  "runs": [
+    {
+      "source": "steam",
+      "started_at_utc": "2026-10-20T07:47:57.058972+00:00",
+      "finished_at_utc": "2026-10-20T07:48:02.516008+00:00",
+      "evidence": "CURRENT_LIVE",
+      "config": {
+        "max_records": 32,
+        "max_requests": 6,
+        "min_request_interval_seconds": 1.0,
+        "anonymous": true
+      },
+      "endpoint_family": "api.steampowered.com",
+      "requested_record_limit": 32,
+      "http_requests": 6,
+      "response_status_summary": {
+        "200": 6
+      },
+      "successful_http_responses": 6,
+      "records_returned": 32,
+      "unique_records_with_id": 27,
+      "records_without_id": 0,
+      "duplicate_records": 5,
+      "text_screen_counts": {
+        "eligible_for_manual_review": 16,
+        "short_or_low_information": 11
+      },
+      "usable_text_count": 16,
+      "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+      "human_validated_opinion_count": null,
+      "missing_required_field_counts": {
+        "key": 0,
+        "created": 0
+      },
+      "empty_body_count": 0,
+      "available_fields": {
+        "language": 27,
+        "received_for_free": 27,
+        "recommendationid": 27,
+        "refunded": 27,
+        "review": 27,
+        "steam_purchase": 27,
+        "timestamp_created": 27,
+        "timestamp_updated": 27,
+        "voted_up": 27,
+        "votes_funny": 27,
+        "votes_up": 27
+      },
+      "excluded": {},
+      "observations": [
+        {
+          "appid": 620,
+          "order": "Recent",
+          "page": 1,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 212314,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 620,
+          "order": "Recent",
+          "page": 2,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 212314,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 620,
+          "order": "Updated",
+          "page": 1,
+          "records": 4,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 212314,
+          "created_before_updated_count": 3
+        },
+        {
+          "appid": 413150,
+          "order": "Recent",
+          "page": 1,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 468500,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 413150,
+          "order": "Recent",
+          "page": 2,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 468500,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 413150,
+          "order": "Updated",
+          "page": 1,
+          "records": 4,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 468500,
+          "created_before_updated_count": 0
+        }
+      ],
+      "errors": [],
+      "source_stopped": false,
+      "requests": [
+        {
+          "at_utc": "2026-10-20T07:47:57.059055+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 620,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 436
+        },
+        {
+          "at_utc": "2026-10-20T07:47:58.064781+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 620,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "sha256:9e3258dd68b6b58eda993e5947e91e41452578014cb3b34e6d8ab3bd9da74620"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 237
+        },
+        {
+          "at_utc": "2026-10-20T07:47:59.069280+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 620,
+              "filter": 2,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 4,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 283
+        },
+        {
+          "at_utc": "2026-10-20T07:48:00.070317+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 413150,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 370
+        },
+        {
+          "at_utc": "2026-10-20T07:48:01.120490+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 413150,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "sha256:99cf9bf11445ed7f674890d6245eda35349074123e0ead55cda822c577f3880a"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 262
+        },
+        {
+          "at_utc": "2026-10-20T07:48:02.137469+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 413150,
+              "filter": 2,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 4,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 376
+        }
+      ],
+      "record_metrics": [
+        {
+          "record_fingerprint": "e4fb148877fe433d61f3b7d2121ea93a375f93094aec5dd216211af109e25323",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792463890,
+          "updated": 1792463890,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 443,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 58,
+          "word_count": 11,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "0d19e9039df9ee70e2a7e0735c79a1d536786fdbd39a847b0f40cded22a4531e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792454027,
+          "updated": 1792454027,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 183,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 15,
+          "word_count": 4,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "8b3f2582c5f8ed33d30a669cf2aa465d7d075e7a20e3b986997f8cbca005015d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792453591,
+          "updated": 1792453591,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 3284,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 15,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "c6ab3f45b167b0b51b2b4bd1fc9272c583af7ab716122d93406fc7dfe9958c8d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792449988,
+          "updated": 1792449988,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 1560,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 5,
+          "word_count": 2,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "f7b1792869075face80711723725f8a0c7cedd5110afaecfd7d143d79dd2a005",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792447525,
+          "updated": 1792447525,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 273,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 38,
+          "word_count": 8,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "bb746d046b80032389b6ee0956212a45a1ba3612bd6ceddc97cb241faf978b97",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792445698,
+          "updated": 1792445698,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 1,
+            "playtime_at_review": 14028,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 30,
+          "word_count": 7,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "bddeb2900bbf09b9c29dbeae2314fb1f0ffe52dad126a5d86c03ea1fcacf4cc4",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792445603,
+          "updated": 1792445603,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 2517,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 13,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "b37504795a790058e87ed477f33d35f22c1b0674ee41cd1e861f3101ef4e5874",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792445098,
+          "updated": 1792445098,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 594,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 104,
+          "word_count": 22,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "e63e4921b9e4b9aca5e15e6d06132ea87313aeb1eccfe9041cb203bad5d72808",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792442676,
+          "updated": 1792442676,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 5305,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 21,
+          "word_count": 4,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "dca7c4561d536fddc54ebc5e74f67ae2149ca2156471671a8989c7053cccd474",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792441898,
+          "updated": 1792441898,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 325,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 27,
+          "word_count": 7,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "c1e7df1331d49ab62743c8b731d51a6863ca2a1dc69473b882b8dc48af77139b",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792439397,
+          "updated": 1792439397,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 145,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 3,
+          "word_count": 1,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "50c42c2895bacf8a71d9433eeb5ea2a38f8d0b985ec8a9a0ef8c8ae7daefc81d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792438255,
+          "updated": 1792438255,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 1221,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 3,
+          "word_count": 1,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "8b96f624ed4f2b37c9bfa92d4e04988093256cf2c37dd9b28534edac85362ed5",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1479931998,
+          "updated": 1792476984,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 566,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 547,
+          "word_count": 105,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "0bbd797be5b0b26f3d9339885076edf1e357a0e5d3e2c9f1a985dd160ac14f63",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792232232,
+          "updated": 1792473406,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 879,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 416,
+          "word_count": 86,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "93885ee8f575b98a0d0664ee8cb9f0d0bf2c004301f0b6f5273c5bb7857412a4",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1754612625,
+          "updated": 1792460176,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 528,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 170,
+          "word_count": 26,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "157fc4399bb03055914cb3a49f5d82f55b02b7b8aa0e3daf3210a891840e529b",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792481010,
+          "updated": 1792481010,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 14,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 87,
+          "word_count": 18,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "e51801dabf80423cb6e165bebdc00b2c7868f0cda90280af6c96d78c4229444e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792480578,
+          "updated": 1792480578,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 4599,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 14,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "acc3ce36ff3ae80af02ea8d779ac83c24efb994d08c985475eb055b7a3c09061",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792477665,
+          "updated": 1792477665,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 4130,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 9,
+          "word_count": 2,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "3e55bbe734db8263e1986107ddff035598d1d95fa4a4a3003f222fd82f32ee37",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792475304,
+          "updated": 1792475304,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 937,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 303,
+          "word_count": 65,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "744a731e76969c203f019e8cac5729d8792ed0e8d04f2db42c73f9102a3c503d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792473173,
+          "updated": 1792473173,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 184,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 80,
+          "word_count": 16,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "18e02afbb2c0ac4157a46548bbe937f5e4a6da1fa863b13215f9f73eb60d7c6e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792471888,
+          "updated": 1792471888,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 819,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 14,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "9b87253dd6b9745a40fdd70c4a1ba3b45fc14fafb8a7ee4adb868db21322b70f",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792468840,
+          "updated": 1792468840,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 22549,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 65,
+          "word_count": 13,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "64c2a57854d0eaac4edd774cdaabaea4e9096127df8522f429f742911615360e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792468270,
+          "updated": 1792468270,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 15429,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 38,
+          "word_count": 5,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "04f2f8d76be3014b3822fa1824262ce850ee7e0f0df87862f8b0025dbb7a48e9",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792467934,
+          "updated": 1792467934,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 25999,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 181,
+          "word_count": 32,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "7638cbec6510df0b6407f784498c0a337fcdfe27628dc74747f87218c5251c84",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792464812,
+          "updated": 1792464812,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 2662,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 9,
+          "word_count": 2,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "bc2a28ecb52088398036b4e6c098dc86a2e72caeaa3f0acb9a9cd70e05aff4a4",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792463143,
+          "updated": 1792463143,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 15951,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 19,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "9b0d7824f4d8784d7d1755fcf317abcb0b3884dcf82962690ddb0296acbefb7d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792462312,
+          "updated": 1792462312,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 1731,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 586,
+          "word_count": 114,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        }
+      ],
+      "repeat_config": {},
+      "limitations": [
+        "Small selection-biased sample; no population estimate or long-term stability claim.",
+        "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+        "No delete replay or production-use approval tested."
+      ],
+      "run_id": "steam_20261020T074802516051Z",
+      "round": 1
+    },
+    {
+      "source": "github",
+      "started_at_utc": "2026-10-20T07:48:02.524154+00:00",
+      "finished_at_utc": "2026-10-20T07:48:05.840623+00:00",
+      "evidence": "CURRENT_LIVE",
+      "config": {
+        "max_records": 24,
+        "max_requests": 4,
+        "min_request_interval_seconds": 1.0,
+        "anonymous": true
+      },
+      "endpoint_family": "api.github.com",
+      "requested_record_limit": 24,
+      "http_requests": 4,
+      "response_status_summary": {
+        "200": 4
+      },
+      "successful_http_responses": 4,
+      "records_returned": 11,
+      "unique_records_with_id": 11,
+      "records_without_id": 0,
+      "duplicate_records": 0,
+      "text_screen_counts": {
+        "eligible_for_manual_review": 11
+      },
+      "usable_text_count": 11,
+      "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+      "human_validated_opinion_count": null,
+      "missing_required_field_counts": {
+        "key": 0,
+        "created": 0
+      },
+      "empty_body_count": 0,
+      "available_fields": {
+        "body": 11,
+        "created_at": 11,
+        "id": 11,
+        "labels": 8,
+        "number": 8,
+        "state": 8,
+        "title": 8,
+        "updated_at": 11
+      },
+      "excluded": {
+        "pull_requests": 12,
+        "records_beyond_cap": 0
+      },
+      "observations": [
+        {
+          "kind": "issue_list",
+          "page": 1,
+          "raw_records": 10,
+          "overlap_with_previous_pages": 0
+        },
+        {
+          "kind": "issue_list",
+          "page": 2,
+          "raw_records": 10,
+          "overlap_with_previous_pages": 0
+        },
+        {
+          "kind": "comment_list",
+          "parent_issue_number": 342803,
+          "records": 2
+        },
+        {
+          "kind": "comment_list",
+          "parent_issue_number": 307755,
+          "records": 1
+        }
+      ],
+      "errors": [],
+      "source_stopped": false,
+      "requests": [
+        {
+          "at_utc": "2026-10-20T07:48:02.524271+00:00",
+          "url": "https://api.github.com/repos/microsoft/vscode/issues",
+          "params": {
+            "state": "all",
+            "sort": "updated",
+            "direction": "desc",
+            "per_page": 10,
+            "page": 1
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "etag": "W/\"dd6f90000c4e06591035c88c9fd003dc709c1df302f0f84d7be504d1cc35fe9e\"",
+            "x-ratelimit-limit": "60",
+            "x-ratelimit-remaining": "51",
+            "x-ratelimit-reset": "1792485520"
+          },
+          "duration_ms": 785
+        },
+        {
+          "at_utc": "2026-10-20T07:48:03.539168+00:00",
+          "url": "https://api.github.com/repos/microsoft/vscode/issues",
+          "params": {
+            "state": "all",
+            "sort": "updated",
+            "direction": "desc",
+            "per_page": 10,
+            "page": 2
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "etag": "W/\"b8e04bd7be9a0a7e7bd14b3a91d78fc204404fa070e828f2992dfb235f0c66d2\"",
+            "x-ratelimit-limit": "60",
+            "x-ratelimit-remaining": "50",
+            "x-ratelimit-reset": "1792485520"
+          },
+          "duration_ms": 471
+        },
+        {
+          "at_utc": "2026-10-20T07:48:04.578270+00:00",
+          "url": "https://api.github.com/repos/microsoft/vscode/issues/342803/comments",
+          "params": {
+            "per_page": 2
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "etag": "W/\"422d8531c738f25423c6cf48605795d3b1fe698dd8689cce0e15c1f68cbe33ad\"",
+            "x-ratelimit-limit": "60",
+            "x-ratelimit-remaining": "49",
+            "x-ratelimit-reset": "1792485520"
+          },
+          "duration_ms": 308
+        },
+        {
+          "at_utc": "2026-10-20T07:48:05.580533+00:00",
+          "url": "https://api.github.com/repos/microsoft/vscode/issues/307755/comments",
+          "params": {
+            "per_page": 2
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "etag": "W/\"31cdb2d9dd43d2f822e4c9622b3b17e86e477b9d6d190fa51bab9a0dfcbe4422\"",
+            "x-ratelimit-limit": "60",
+            "x-ratelimit-remaining": "48",
+            "x-ratelimit-reset": "1792485520"
+          },
+          "duration_ms": 257
+        }
+      ],
+      "record_metrics": [
+        {
+          "record_fingerprint": "183e919f8d067eeca397db5567bf8128856ee2d5d3aa087c2b2dca9488e574de",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-20T06:32:52Z",
+          "updated": "2026-10-20T07:44:31Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "open",
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 624,
+          "word_count": 111,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "9f409cc23f2ffd1e34b22bddc11b4aa63fc02197c1ff7446affa2bf9f9d68136",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-04-03T23:44:59Z",
+          "updated": "2026-10-20T07:42:24Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "closed",
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 1705,
+          "word_count": 264,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": true,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "6185f06f196050fb81d1792fed0cc41853d7ee0effd97ff3b21fc7b92624a6a4",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-02T18:59:09Z",
+          "updated": "2026-10-20T07:33:33Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "open",
+            "author_type": "User",
+            "author_association": "COLLABORATOR",
+            "body_present": true,
+            "labels_count": 3
+          },
+          "text_length": 1952,
+          "word_count": 304,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": true,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "fa4c744451f1854e879387ba8463a19ca9c96866f342fd496eefdca6d5d75b34",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-19T17:04:49Z",
+          "updated": "2026-10-20T07:32:50Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "closed",
+            "author_type": "User",
+            "author_association": "COLLABORATOR",
+            "body_present": true,
+            "labels_count": 1
+          },
+          "text_length": 276,
+          "word_count": 52,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "83f17900ebebce7b2e4c86e535ac9a07b408d62c2fd3d7b4af16723322cc7901",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-09-03T15:41:56Z",
+          "updated": "2026-10-20T07:32:04Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "open",
+            "author_type": "User",
+            "author_association": "CONTRIBUTOR",
+            "body_present": true,
+            "labels_count": 1
+          },
+          "text_length": 3991,
+          "word_count": 596,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": true,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "06538f7520d80e861f25709f7711253fa2376b99961a46562b1eced9552638e6",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-20T06:12:24Z",
+          "updated": "2026-10-20T07:25:09Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "open",
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 1
+          },
+          "text_length": 6066,
+          "word_count": 928,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": true,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "cc94f12b0684ca8c70d559d092a1e536c3ab5b9dadd947928ba42086ba09a5a8",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-20T06:16:58Z",
+          "updated": "2026-10-20T07:25:06Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "open",
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 1
+          },
+          "text_length": 1868,
+          "word_count": 285,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": true,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "26d403cf183c9ec6431590819a9e745ed693c712bc845aa6ddf22606e8818365",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-14T16:19:43Z",
+          "updated": "2026-10-20T07:17:39Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "closed",
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 340,
+          "word_count": 61,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "2a3e4a93dfae136bdacaf271717b4001c08abc5cce00ce3db4ad1a9fa1360148",
+          "kind": "comment",
+          "parent_fingerprint": "183e919f8d067eeca397db5567bf8128856ee2d5d3aa087c2b2dca9488e574de",
+          "created": "2026-10-20T07:40:50Z",
+          "updated": "2026-10-20T07:40:50Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": null,
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 681,
+          "word_count": 124,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": true,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "75b1bbf71b6d4c07841240c032f70c48a415f65ed90bf86f705f3babb61e1140",
+          "kind": "comment",
+          "parent_fingerprint": "183e919f8d067eeca397db5567bf8128856ee2d5d3aa087c2b2dca9488e574de",
+          "created": "2026-10-20T07:44:31Z",
+          "updated": "2026-10-20T07:44:31Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": null,
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 156,
+          "word_count": 32,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "2b12817fa24ca1e6619f5da520b9dafe42f44a19919505166b749ccec8c81f62",
+          "kind": "comment",
+          "parent_fingerprint": "9f409cc23f2ffd1e34b22bddc11b4aa63fc02197c1ff7446affa2bf9f9d68136",
+          "created": "2026-10-20T07:42:23Z",
+          "updated": "2026-10-20T07:42:23Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": null,
+            "author_type": "User",
+            "author_association": "MEMBER",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 360,
+          "word_count": 55,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": true,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        }
+      ],
+      "repeat_config": {},
+      "limitations": [
+        "Small selection-biased sample; no population estimate or long-term stability claim.",
+        "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+        "No delete replay or production-use approval tested."
+      ],
+      "run_id": "github_20261020T074805840654Z",
+      "round": 1
+    },
+    {
+      "source": "hackernews",
+      "started_at_utc": "2026-10-20T07:48:05.848786+00:00",
+      "finished_at_utc": "2026-10-20T07:48:13.075062+00:00",
+      "evidence": "CURRENT_LIVE",
+      "config": {
+        "max_records": 9,
+        "max_requests": 10,
+        "min_request_interval_seconds": 1.0,
+        "anonymous": true
+      },
+      "endpoint_family": "hacker-news.firebaseio.com",
+      "requested_record_limit": 9,
+      "http_requests": 10,
+      "response_status_summary": {
+        "200": 10
+      },
+      "successful_http_responses": 10,
+      "records_returned": 9,
+      "unique_records_with_id": 9,
+      "records_without_id": 0,
+      "duplicate_records": 0,
+      "text_screen_counts": {
+        "eligible_for_manual_review": 8,
+        "missing_or_empty": 1
+      },
+      "usable_text_count": 8,
+      "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+      "human_validated_opinion_count": null,
+      "missing_required_field_counts": {
+        "key": 0,
+        "created": 0
+      },
+      "empty_body_count": 1,
+      "available_fields": {
+        "id": 9,
+        "kids": 3,
+        "parent": 6,
+        "text": 8,
+        "time": 9,
+        "title": 3
+      },
+      "excluded": {
+        "deleted_or_dead_or_null": 0
+      },
+      "observations": [
+        {
+          "story_id": 50151036,
+          "declared_comments": 543,
+          "children_inspected_at_most": 2,
+          "nested_replies_not_traversed": true
+        },
+        {
+          "story_id": 50131997,
+          "declared_comments": 3,
+          "children_inspected_at_most": 2,
+          "nested_replies_not_traversed": true
+        },
+        {
+          "story_id": 50161627,
+          "declared_comments": 11,
+          "children_inspected_at_most": 2,
+          "nested_replies_not_traversed": true
+        }
+      ],
+      "errors": [],
+      "source_stopped": false,
+      "requests": [
+        {
+          "at_utc": "2026-10-20T07:48:05.848826+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/askstories.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 277
+        },
+        {
+          "at_utc": "2026-10-20T07:48:06.899011+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50151036.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 69
+        },
+        {
+          "at_utc": "2026-10-20T07:48:07.917981+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50157475.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 88
+        },
+        {
+          "at_utc": "2026-10-20T07:48:08.973796+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50162648.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 95
+        },
+        {
+          "at_utc": "2026-10-20T07:48:10.029552+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50131997.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 131
+        },
+        {
+          "at_utc": "2026-10-20T07:48:08.888550+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50162478.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 133
+        },
+        {
+          "at_utc": "2026-10-20T07:48:09.889749+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50132292.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 85
+        },
+        {
+          "at_utc": "2026-10-20T07:48:10.900949+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50161627.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 97
+        },
+        {
+          "at_utc": "2026-10-20T07:48:11.928091+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50162082.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 96
+        },
+        {
+          "at_utc": "2026-10-20T07:48:12.965811+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50161886.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 108
+        }
+      ],
+      "record_metrics": [
+        {
+          "record_fingerprint": "a64d18ab9c70a266a8df9041e8145fe33fd6bbe923270a85dd8fe32d923aa7f3",
+          "kind": "story",
+          "parent_fingerprint": null,
+          "created": 1792409074,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "title": true,
+            "kids": true
+          },
+          "metadata": {
+            "type": "story",
+            "parent_matches": null,
+            "comment_count": 543
+          },
+          "text_length": 900,
+          "word_count": 174,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": true,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "036bbbda15765708e2b9a36fa3651ec02a972cf955042959c629a9635d81ebcd",
+          "kind": "comment",
+          "parent_fingerprint": "a64d18ab9c70a266a8df9041e8145fe33fd6bbe923270a85dd8fe32d923aa7f3",
+          "created": 1792440873,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 1435,
+          "word_count": 277,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "70eaf73e076b5051e9ace1591e1b04eebe671f7df3fa9fc3f534eab18ba4bb9a",
+          "kind": "comment",
+          "parent_fingerprint": "a64d18ab9c70a266a8df9041e8145fe33fd6bbe923270a85dd8fe32d923aa7f3",
+          "created": 1792482428,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 338,
+          "word_count": 63,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": true,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "ced184ef149ae40a5136b66805c971cdb221605bf7e4449140ebf75fdc7fe8d6",
+          "kind": "story",
+          "parent_fingerprint": null,
+          "created": 1792251192,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": false,
+            "time": true,
+            "title": true,
+            "kids": true
+          },
+          "metadata": {
+            "type": "story",
+            "parent_matches": null,
+            "comment_count": 3
+          },
+          "text_length": 0,
+          "word_count": 0,
+          "screen": "missing_or_empty",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "31d68eca83052688f69077e0529e6d61428c097802d00c30d3ff5992b092171c",
+          "kind": "comment",
+          "parent_fingerprint": "ced184ef149ae40a5136b66805c971cdb221605bf7e4449140ebf75fdc7fe8d6",
+          "created": 1792480918,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 237,
+          "word_count": 43,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "fd0f864346e21d40b64595c1685af48a08517927dffe367ebc2575b3fbcbd8cd",
+          "kind": "comment",
+          "parent_fingerprint": "ced184ef149ae40a5136b66805c971cdb221605bf7e4449140ebf75fdc7fe8d6",
+          "created": 1792253155,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 63,
+          "word_count": 9,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "ddf663c593fe5fb9dde188f7818db0ea257371c566bd30a58d6d2f758cf053fe",
+          "kind": "story",
+          "parent_fingerprint": null,
+          "created": 1792473368,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "title": true,
+            "kids": true
+          },
+          "metadata": {
+            "type": "story",
+            "parent_matches": null,
+            "comment_count": 11
+          },
+          "text_length": 554,
+          "word_count": 100,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "d5c1ba86bd8075b2f1444da273969ccd2c2081d2333a4d3f53b4092034a0f90d",
+          "kind": "comment",
+          "parent_fingerprint": "ddf663c593fe5fb9dde188f7818db0ea257371c566bd30a58d6d2f758cf053fe",
+          "created": 1792477506,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 1004,
+          "word_count": 187,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "67360b3f116113d22a33389269a401502a7e138756d8969cb68085e46865e7b4",
+          "kind": "comment",
+          "parent_fingerprint": "ddf663c593fe5fb9dde188f7818db0ea257371c566bd30a58d6d2f758cf053fe",
+          "created": 1792475714,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 523,
+          "word_count": 96,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        }
+      ],
+      "repeat_config": {
+        "story_ids": [
+          50151036,
+          50131997,
+          50161627
+        ]
+      },
+      "limitations": [
+        "Small selection-biased sample; no population estimate or long-term stability claim.",
+        "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+        "No delete replay or production-use approval tested."
+      ],
+      "run_id": "hackernews_20261020T074813075094Z",
+      "round": 1
+    },
+    {
+      "source": "steam",
+      "started_at_utc": "2026-10-20T07:48:13.082985+00:00",
+      "finished_at_utc": "2026-10-20T07:48:18.494155+00:00",
+      "evidence": "CURRENT_LIVE",
+      "config": {
+        "max_records": 32,
+        "max_requests": 6,
+        "min_request_interval_seconds": 1.0,
+        "anonymous": true
+      },
+      "endpoint_family": "api.steampowered.com",
+      "requested_record_limit": 32,
+      "http_requests": 6,
+      "response_status_summary": {
+        "200": 6
+      },
+      "successful_http_responses": 6,
+      "records_returned": 32,
+      "unique_records_with_id": 27,
+      "records_without_id": 0,
+      "duplicate_records": 5,
+      "text_screen_counts": {
+        "eligible_for_manual_review": 16,
+        "short_or_low_information": 11
+      },
+      "usable_text_count": 16,
+      "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+      "human_validated_opinion_count": null,
+      "missing_required_field_counts": {
+        "key": 0,
+        "created": 0
+      },
+      "empty_body_count": 0,
+      "available_fields": {
+        "language": 27,
+        "received_for_free": 27,
+        "recommendationid": 27,
+        "refunded": 27,
+        "review": 27,
+        "steam_purchase": 27,
+        "timestamp_created": 27,
+        "timestamp_updated": 27,
+        "voted_up": 27,
+        "votes_funny": 27,
+        "votes_up": 27
+      },
+      "excluded": {},
+      "observations": [
+        {
+          "appid": 620,
+          "order": "Recent",
+          "page": 1,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 212314,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 620,
+          "order": "Recent",
+          "page": 2,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 212314,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 620,
+          "order": "Updated",
+          "page": 1,
+          "records": 4,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 212314,
+          "created_before_updated_count": 3
+        },
+        {
+          "appid": 413150,
+          "order": "Recent",
+          "page": 1,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 468500,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 413150,
+          "order": "Recent",
+          "page": 2,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 468500,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 413150,
+          "order": "Updated",
+          "page": 1,
+          "records": 4,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 468500,
+          "created_before_updated_count": 0
+        }
+      ],
+      "errors": [],
+      "source_stopped": false,
+      "requests": [
+        {
+          "at_utc": "2026-10-20T07:48:13.083051+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 620,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 247
+        },
+        {
+          "at_utc": "2026-10-20T07:48:14.085122+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 620,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "sha256:9e3258dd68b6b58eda993e5947e91e41452578014cb3b34e6d8ab3bd9da74620"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 66
+        },
+        {
+          "at_utc": "2026-10-20T07:48:15.103601+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 620,
+              "filter": 2,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 4,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 84
+        },
+        {
+          "at_utc": "2026-10-20T07:48:16.104776+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 413150,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 71
+        },
+        {
+          "at_utc": "2026-10-20T07:48:17.137175+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 413150,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "sha256:99cf9bf11445ed7f674890d6245eda35349074123e0ead55cda822c577f3880a"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 79
+        },
+        {
+          "at_utc": "2026-10-20T07:48:18.139013+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 413150,
+              "filter": 2,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 4,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 354
+        }
+      ],
+      "record_metrics": [
+        {
+          "record_fingerprint": "e4fb148877fe433d61f3b7d2121ea93a375f93094aec5dd216211af109e25323",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792463890,
+          "updated": 1792463890,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 443,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 58,
+          "word_count": 11,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "0d19e9039df9ee70e2a7e0735c79a1d536786fdbd39a847b0f40cded22a4531e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792454027,
+          "updated": 1792454027,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 183,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 15,
+          "word_count": 4,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "8b3f2582c5f8ed33d30a669cf2aa465d7d075e7a20e3b986997f8cbca005015d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792453591,
+          "updated": 1792453591,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 3284,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 15,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "c6ab3f45b167b0b51b2b4bd1fc9272c583af7ab716122d93406fc7dfe9958c8d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792449988,
+          "updated": 1792449988,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 1560,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 5,
+          "word_count": 2,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "f7b1792869075face80711723725f8a0c7cedd5110afaecfd7d143d79dd2a005",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792447525,
+          "updated": 1792447525,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 273,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 38,
+          "word_count": 8,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "bb746d046b80032389b6ee0956212a45a1ba3612bd6ceddc97cb241faf978b97",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792445698,
+          "updated": 1792445698,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 1,
+            "playtime_at_review": 14028,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 30,
+          "word_count": 7,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "bddeb2900bbf09b9c29dbeae2314fb1f0ffe52dad126a5d86c03ea1fcacf4cc4",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792445603,
+          "updated": 1792445603,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 2517,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 13,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "b37504795a790058e87ed477f33d35f22c1b0674ee41cd1e861f3101ef4e5874",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792445098,
+          "updated": 1792445098,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 594,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 104,
+          "word_count": 22,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "e63e4921b9e4b9aca5e15e6d06132ea87313aeb1eccfe9041cb203bad5d72808",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792442676,
+          "updated": 1792442676,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 5305,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 21,
+          "word_count": 4,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "dca7c4561d536fddc54ebc5e74f67ae2149ca2156471671a8989c7053cccd474",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792441898,
+          "updated": 1792441898,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 325,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 27,
+          "word_count": 7,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "c1e7df1331d49ab62743c8b731d51a6863ca2a1dc69473b882b8dc48af77139b",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792439397,
+          "updated": 1792439397,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 145,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 3,
+          "word_count": 1,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "50c42c2895bacf8a71d9433eeb5ea2a38f8d0b985ec8a9a0ef8c8ae7daefc81d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792438255,
+          "updated": 1792438255,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 1221,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 3,
+          "word_count": 1,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "8b96f624ed4f2b37c9bfa92d4e04988093256cf2c37dd9b28534edac85362ed5",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1479931998,
+          "updated": 1792476984,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 566,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 547,
+          "word_count": 105,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "0bbd797be5b0b26f3d9339885076edf1e357a0e5d3e2c9f1a985dd160ac14f63",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792232232,
+          "updated": 1792473406,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 879,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 416,
+          "word_count": 86,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "93885ee8f575b98a0d0664ee8cb9f0d0bf2c004301f0b6f5273c5bb7857412a4",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1754612625,
+          "updated": 1792460176,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 528,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 170,
+          "word_count": 26,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "157fc4399bb03055914cb3a49f5d82f55b02b7b8aa0e3daf3210a891840e529b",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792481010,
+          "updated": 1792481010,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 14,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 87,
+          "word_count": 18,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "e51801dabf80423cb6e165bebdc00b2c7868f0cda90280af6c96d78c4229444e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792480578,
+          "updated": 1792480578,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 4599,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 14,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "acc3ce36ff3ae80af02ea8d779ac83c24efb994d08c985475eb055b7a3c09061",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792477665,
+          "updated": 1792477665,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 4130,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 9,
+          "word_count": 2,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "3e55bbe734db8263e1986107ddff035598d1d95fa4a4a3003f222fd82f32ee37",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792475304,
+          "updated": 1792475304,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 937,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 303,
+          "word_count": 65,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "744a731e76969c203f019e8cac5729d8792ed0e8d04f2db42c73f9102a3c503d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792473173,
+          "updated": 1792473173,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 184,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 80,
+          "word_count": 16,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "18e02afbb2c0ac4157a46548bbe937f5e4a6da1fa863b13215f9f73eb60d7c6e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792471888,
+          "updated": 1792471888,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 819,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 14,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "9b87253dd6b9745a40fdd70c4a1ba3b45fc14fafb8a7ee4adb868db21322b70f",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792468840,
+          "updated": 1792468840,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 22549,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 65,
+          "word_count": 13,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "64c2a57854d0eaac4edd774cdaabaea4e9096127df8522f429f742911615360e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792468270,
+          "updated": 1792468270,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 15429,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 38,
+          "word_count": 5,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "04f2f8d76be3014b3822fa1824262ce850ee7e0f0df87862f8b0025dbb7a48e9",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792467934,
+          "updated": 1792467934,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 25999,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 181,
+          "word_count": 32,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "7638cbec6510df0b6407f784498c0a337fcdfe27628dc74747f87218c5251c84",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792464812,
+          "updated": 1792464812,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 2662,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 9,
+          "word_count": 2,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "bc2a28ecb52088398036b4e6c098dc86a2e72caeaa3f0acb9a9cd70e05aff4a4",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792463143,
+          "updated": 1792463143,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 15951,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 19,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "9b0d7824f4d8784d7d1755fcf317abcb0b3884dcf82962690ddb0296acbefb7d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792462312,
+          "updated": 1792462312,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 1731,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 586,
+          "word_count": 114,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        }
+      ],
+      "repeat_config": {},
+      "limitations": [
+        "Small selection-biased sample; no population estimate or long-term stability claim.",
+        "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+        "No delete replay or production-use approval tested."
+      ],
+      "run_id": "steam_20261020T074818494189Z",
+      "round": 2
+    },
+    {
+      "source": "github",
+      "started_at_utc": "2026-10-20T07:48:18.501277+00:00",
+      "finished_at_utc": "2026-10-20T07:48:21.578818+00:00",
+      "evidence": "CURRENT_LIVE",
+      "config": {
+        "max_records": 24,
+        "max_requests": 4,
+        "min_request_interval_seconds": 1.0,
+        "anonymous": true
+      },
+      "endpoint_family": "api.github.com",
+      "requested_record_limit": 24,
+      "http_requests": 4,
+      "response_status_summary": {
+        "200": 4
+      },
+      "successful_http_responses": 4,
+      "records_returned": 11,
+      "unique_records_with_id": 11,
+      "records_without_id": 0,
+      "duplicate_records": 0,
+      "text_screen_counts": {
+        "eligible_for_manual_review": 11
+      },
+      "usable_text_count": 11,
+      "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+      "human_validated_opinion_count": null,
+      "missing_required_field_counts": {
+        "key": 0,
+        "created": 0
+      },
+      "empty_body_count": 0,
+      "available_fields": {
+        "body": 11,
+        "created_at": 11,
+        "id": 11,
+        "labels": 8,
+        "number": 8,
+        "state": 8,
+        "title": 8,
+        "updated_at": 11
+      },
+      "excluded": {
+        "pull_requests": 12,
+        "records_beyond_cap": 0
+      },
+      "observations": [
+        {
+          "kind": "issue_list",
+          "page": 1,
+          "raw_records": 10,
+          "overlap_with_previous_pages": 0
+        },
+        {
+          "kind": "issue_list",
+          "page": 2,
+          "raw_records": 10,
+          "overlap_with_previous_pages": 0
+        },
+        {
+          "kind": "comment_list",
+          "parent_issue_number": 342803,
+          "records": 2
+        },
+        {
+          "kind": "comment_list",
+          "parent_issue_number": 307755,
+          "records": 1
+        }
+      ],
+      "errors": [],
+      "source_stopped": false,
+      "requests": [
+        {
+          "at_utc": "2026-10-20T07:48:18.501330+00:00",
+          "url": "https://api.github.com/repos/microsoft/vscode/issues",
+          "params": {
+            "state": "all",
+            "sort": "updated",
+            "direction": "desc",
+            "per_page": 10,
+            "page": 1
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "etag": "W/\"dd6f90000c4e06591035c88c9fd003dc709c1df302f0f84d7be504d1cc35fe9e\"",
+            "x-ratelimit-limit": "60",
+            "x-ratelimit-remaining": "30",
+            "x-ratelimit-reset": "1792483683"
+          },
+          "duration_ms": 331
+        },
+        {
+          "at_utc": "2026-10-20T07:48:19.505989+00:00",
+          "url": "https://api.github.com/repos/microsoft/vscode/issues",
+          "params": {
+            "state": "all",
+            "sort": "updated",
+            "direction": "desc",
+            "per_page": 10,
+            "page": 2
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "etag": "W/\"b8e04bd7be9a0a7e7bd14b3a91d78fc204404fa070e828f2992dfb235f0c66d2\"",
+            "x-ratelimit-limit": "60",
+            "x-ratelimit-remaining": "29",
+            "x-ratelimit-reset": "1792483683"
+          },
+          "duration_ms": 106
+        },
+        {
+          "at_utc": "2026-10-20T07:48:20.507342+00:00",
+          "url": "https://api.github.com/repos/microsoft/vscode/issues/342803/comments",
+          "params": {
+            "per_page": 2
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "etag": "W/\"422d8531c738f25423c6cf48605795d3b1fe698dd8689cce0e15c1f68cbe33ad\"",
+            "x-ratelimit-limit": "60",
+            "x-ratelimit-remaining": "28",
+            "x-ratelimit-reset": "1792483683"
+          },
+          "duration_ms": 67
+        },
+        {
+          "at_utc": "2026-10-20T07:48:21.511635+00:00",
+          "url": "https://api.github.com/repos/microsoft/vscode/issues/307755/comments",
+          "params": {
+            "per_page": 2
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "etag": "W/\"31cdb2d9dd43d2f822e4c9622b3b17e86e477b9d6d190fa51bab9a0dfcbe4422\"",
+            "x-ratelimit-limit": "60",
+            "x-ratelimit-remaining": "27",
+            "x-ratelimit-reset": "1792483683"
+          },
+          "duration_ms": 65
+        }
+      ],
+      "record_metrics": [
+        {
+          "record_fingerprint": "183e919f8d067eeca397db5567bf8128856ee2d5d3aa087c2b2dca9488e574de",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-20T06:32:52Z",
+          "updated": "2026-10-20T07:44:31Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "open",
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 624,
+          "word_count": 111,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "9f409cc23f2ffd1e34b22bddc11b4aa63fc02197c1ff7446affa2bf9f9d68136",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-04-03T23:44:59Z",
+          "updated": "2026-10-20T07:42:24Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "closed",
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 1705,
+          "word_count": 264,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": true,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "6185f06f196050fb81d1792fed0cc41853d7ee0effd97ff3b21fc7b92624a6a4",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-02T18:59:09Z",
+          "updated": "2026-10-20T07:33:33Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "open",
+            "author_type": "User",
+            "author_association": "COLLABORATOR",
+            "body_present": true,
+            "labels_count": 3
+          },
+          "text_length": 1952,
+          "word_count": 304,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": true,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "fa4c744451f1854e879387ba8463a19ca9c96866f342fd496eefdca6d5d75b34",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-19T17:04:49Z",
+          "updated": "2026-10-20T07:32:50Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "closed",
+            "author_type": "User",
+            "author_association": "COLLABORATOR",
+            "body_present": true,
+            "labels_count": 1
+          },
+          "text_length": 276,
+          "word_count": 52,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "83f17900ebebce7b2e4c86e535ac9a07b408d62c2fd3d7b4af16723322cc7901",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-09-03T15:41:56Z",
+          "updated": "2026-10-20T07:32:04Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "open",
+            "author_type": "User",
+            "author_association": "CONTRIBUTOR",
+            "body_present": true,
+            "labels_count": 1
+          },
+          "text_length": 3991,
+          "word_count": 596,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": true,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "06538f7520d80e861f25709f7711253fa2376b99961a46562b1eced9552638e6",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-20T06:12:24Z",
+          "updated": "2026-10-20T07:25:09Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "open",
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 1
+          },
+          "text_length": 6066,
+          "word_count": 928,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": true,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "cc94f12b0684ca8c70d559d092a1e536c3ab5b9dadd947928ba42086ba09a5a8",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-20T06:16:58Z",
+          "updated": "2026-10-20T07:25:06Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "open",
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 1
+          },
+          "text_length": 1868,
+          "word_count": 285,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": true,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "26d403cf183c9ec6431590819a9e745ed693c712bc845aa6ddf22606e8818365",
+          "kind": "issue",
+          "parent_fingerprint": null,
+          "created": "2026-10-14T16:19:43Z",
+          "updated": "2026-10-20T07:17:39Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true,
+            "number": true,
+            "title": true,
+            "state": true,
+            "labels": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": "closed",
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 340,
+          "word_count": 61,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "2a3e4a93dfae136bdacaf271717b4001c08abc5cce00ce3db4ad1a9fa1360148",
+          "kind": "comment",
+          "parent_fingerprint": "183e919f8d067eeca397db5567bf8128856ee2d5d3aa087c2b2dca9488e574de",
+          "created": "2026-10-20T07:40:50Z",
+          "updated": "2026-10-20T07:40:50Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": null,
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 681,
+          "word_count": 124,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": true,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "75b1bbf71b6d4c07841240c032f70c48a415f65ed90bf86f705f3babb61e1140",
+          "kind": "comment",
+          "parent_fingerprint": "183e919f8d067eeca397db5567bf8128856ee2d5d3aa087c2b2dca9488e574de",
+          "created": "2026-10-20T07:44:31Z",
+          "updated": "2026-10-20T07:44:31Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": null,
+            "author_type": "User",
+            "author_association": "NONE",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 156,
+          "word_count": 32,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "2b12817fa24ca1e6619f5da520b9dafe42f44a19919505166b749ccec8c81f62",
+          "kind": "comment",
+          "parent_fingerprint": "9f409cc23f2ffd1e34b22bddc11b4aa63fc02197c1ff7446affa2bf9f9d68136",
+          "created": "2026-10-20T07:42:23Z",
+          "updated": "2026-10-20T07:42:23Z",
+          "field_presence": {
+            "id": true,
+            "body": true,
+            "created_at": true,
+            "updated_at": true
+          },
+          "metadata": {
+            "repository": "microsoft/vscode",
+            "state": null,
+            "author_type": "User",
+            "author_association": "MEMBER",
+            "body_present": true,
+            "labels_count": 0
+          },
+          "text_length": 360,
+          "word_count": 55,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": true,
+          "request_marker": true,
+          "question_marker": false,
+          "language_triage_flag": false
+        }
+      ],
+      "repeat_config": {},
+      "limitations": [
+        "Small selection-biased sample; no population estimate or long-term stability claim.",
+        "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+        "No delete replay or production-use approval tested."
+      ],
+      "run_id": "github_20261020T074821578851Z",
+      "round": 2
+    },
+    {
+      "source": "hackernews",
+      "started_at_utc": "2026-10-20T07:48:21.585476+00:00",
+      "finished_at_utc": "2026-10-20T07:48:29.842041+00:00",
+      "evidence": "CURRENT_LIVE",
+      "config": {
+        "max_records": 9,
+        "max_requests": 10,
+        "min_request_interval_seconds": 1.0,
+        "anonymous": true,
+        "story_ids": [
+          50151036,
+          50131997,
+          50161627
+        ]
+      },
+      "endpoint_family": "hacker-news.firebaseio.com",
+      "requested_record_limit": 9,
+      "http_requests": 9,
+      "response_status_summary": {
+        "200": 9
+      },
+      "successful_http_responses": 9,
+      "records_returned": 9,
+      "unique_records_with_id": 9,
+      "records_without_id": 0,
+      "duplicate_records": 0,
+      "text_screen_counts": {
+        "eligible_for_manual_review": 8,
+        "missing_or_empty": 1
+      },
+      "usable_text_count": 8,
+      "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+      "human_validated_opinion_count": null,
+      "missing_required_field_counts": {
+        "key": 0,
+        "created": 0
+      },
+      "empty_body_count": 1,
+      "available_fields": {
+        "id": 9,
+        "kids": 3,
+        "parent": 6,
+        "text": 8,
+        "time": 9,
+        "title": 3
+      },
+      "excluded": {
+        "deleted_or_dead_or_null": 0
+      },
+      "observations": [
+        {
+          "story_id": 50151036,
+          "declared_comments": 543,
+          "children_inspected_at_most": 2,
+          "nested_replies_not_traversed": true
+        },
+        {
+          "story_id": 50131997,
+          "declared_comments": 3,
+          "children_inspected_at_most": 2,
+          "nested_replies_not_traversed": true
+        },
+        {
+          "story_id": 50161627,
+          "declared_comments": 11,
+          "children_inspected_at_most": 2,
+          "nested_replies_not_traversed": true
+        }
+      ],
+      "errors": [],
+      "source_stopped": false,
+      "requests": [
+        {
+          "at_utc": "2026-10-20T07:48:21.585519+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50151036.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 322
+        },
+        {
+          "at_utc": "2026-10-20T07:48:22.588999+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50157475.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 105
+        },
+        {
+          "at_utc": "2026-10-20T07:48:23.595833+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50162648.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 93
+        },
+        {
+          "at_utc": "2026-10-20T07:48:24.597016+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50131997.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 110
+        },
+        {
+          "at_utc": "2026-10-20T07:48:25.606806+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50162478.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 103
+        },
+        {
+          "at_utc": "2026-10-20T07:48:26.611609+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50132292.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 85
+        },
+        {
+          "at_utc": "2026-10-20T07:48:27.613174+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50161627.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 125
+        },
+        {
+          "at_utc": "2026-10-20T07:48:28.670217+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50162082.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 158
+        },
+        {
+          "at_utc": "2026-10-20T07:48:29.670786+00:00",
+          "url": "https://hacker-news.firebaseio.com/v0/item/50161886.json",
+          "params": {},
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "duration_ms": 170
+        }
+      ],
+      "record_metrics": [
+        {
+          "record_fingerprint": "a64d18ab9c70a266a8df9041e8145fe33fd6bbe923270a85dd8fe32d923aa7f3",
+          "kind": "story",
+          "parent_fingerprint": null,
+          "created": 1792409074,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "title": true,
+            "kids": true
+          },
+          "metadata": {
+            "type": "story",
+            "parent_matches": null,
+            "comment_count": 543
+          },
+          "text_length": 900,
+          "word_count": 174,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": true,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "036bbbda15765708e2b9a36fa3651ec02a972cf955042959c629a9635d81ebcd",
+          "kind": "comment",
+          "parent_fingerprint": "a64d18ab9c70a266a8df9041e8145fe33fd6bbe923270a85dd8fe32d923aa7f3",
+          "created": 1792440873,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 1435,
+          "word_count": 277,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "70eaf73e076b5051e9ace1591e1b04eebe671f7df3fa9fc3f534eab18ba4bb9a",
+          "kind": "comment",
+          "parent_fingerprint": "a64d18ab9c70a266a8df9041e8145fe33fd6bbe923270a85dd8fe32d923aa7f3",
+          "created": 1792482428,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 338,
+          "word_count": 63,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": true,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "ced184ef149ae40a5136b66805c971cdb221605bf7e4449140ebf75fdc7fe8d6",
+          "kind": "story",
+          "parent_fingerprint": null,
+          "created": 1792251192,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": false,
+            "time": true,
+            "title": true,
+            "kids": true
+          },
+          "metadata": {
+            "type": "story",
+            "parent_matches": null,
+            "comment_count": 3
+          },
+          "text_length": 0,
+          "word_count": 0,
+          "screen": "missing_or_empty",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "31d68eca83052688f69077e0529e6d61428c097802d00c30d3ff5992b092171c",
+          "kind": "comment",
+          "parent_fingerprint": "ced184ef149ae40a5136b66805c971cdb221605bf7e4449140ebf75fdc7fe8d6",
+          "created": 1792480918,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 237,
+          "word_count": 43,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "fd0f864346e21d40b64595c1685af48a08517927dffe367ebc2575b3fbcbd8cd",
+          "kind": "comment",
+          "parent_fingerprint": "ced184ef149ae40a5136b66805c971cdb221605bf7e4449140ebf75fdc7fe8d6",
+          "created": 1792253155,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 63,
+          "word_count": 9,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "ddf663c593fe5fb9dde188f7818db0ea257371c566bd30a58d6d2f758cf053fe",
+          "kind": "story",
+          "parent_fingerprint": null,
+          "created": 1792473368,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "title": true,
+            "kids": true
+          },
+          "metadata": {
+            "type": "story",
+            "parent_matches": null,
+            "comment_count": 11
+          },
+          "text_length": 554,
+          "word_count": 100,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "d5c1ba86bd8075b2f1444da273969ccd2c2081d2333a4d3f53b4092034a0f90d",
+          "kind": "comment",
+          "parent_fingerprint": "ddf663c593fe5fb9dde188f7818db0ea257371c566bd30a58d6d2f758cf053fe",
+          "created": 1792477506,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 1004,
+          "word_count": 187,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "67360b3f116113d22a33389269a401502a7e138756d8969cb68085e46865e7b4",
+          "kind": "comment",
+          "parent_fingerprint": "ddf663c593fe5fb9dde188f7818db0ea257371c566bd30a58d6d2f758cf053fe",
+          "created": 1792475714,
+          "updated": null,
+          "field_presence": {
+            "id": true,
+            "text": true,
+            "time": true,
+            "parent": true
+          },
+          "metadata": {
+            "type": "comment",
+            "parent_matches": true,
+            "comment_count": null
+          },
+          "text_length": 523,
+          "word_count": 96,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        }
+      ],
+      "repeat_config": {
+        "story_ids": [
+          50151036,
+          50131997,
+          50161627
+        ]
+      },
+      "limitations": [
+        "Small selection-biased sample; no population estimate or long-term stability claim.",
+        "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+        "No delete replay or production-use approval tested."
+      ],
+      "run_id": "hackernews_20261020T074829842073Z",
+      "round": 2
+    },
+    {
+      "source": "steam",
+      "started_at_utc": "2026-10-20T08:04:02.161759+00:00",
+      "finished_at_utc": "2026-10-20T08:04:07.646977+00:00",
+      "evidence": "CURRENT_LIVE",
+      "config": {
+        "max_records": 32,
+        "max_requests": 6,
+        "min_request_interval_seconds": 1.0,
+        "anonymous": true
+      },
+      "endpoint_family": "api.steampowered.com",
+      "requested_record_limit": 32,
+      "http_requests": 6,
+      "response_status_summary": {
+        "200": 6
+      },
+      "successful_http_responses": 6,
+      "records_returned": 32,
+      "unique_records_with_id": 27,
+      "records_without_id": 0,
+      "duplicate_records": 5,
+      "text_screen_counts": {
+        "eligible_for_manual_review": 16,
+        "short_or_low_information": 11
+      },
+      "usable_text_count": 16,
+      "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+      "human_validated_opinion_count": null,
+      "missing_required_field_counts": {
+        "key": 0,
+        "created": 0
+      },
+      "empty_body_count": 0,
+      "available_fields": {
+        "language": 27,
+        "received_for_free": 27,
+        "recommendationid": 27,
+        "refunded": 27,
+        "review": 27,
+        "steam_purchase": 27,
+        "timestamp_created": 27,
+        "timestamp_updated": 27,
+        "voted_up": 27,
+        "votes_funny": 27,
+        "votes_up": 27
+      },
+      "excluded": {},
+      "observations": [
+        {
+          "appid": 620,
+          "order": "Recent",
+          "page": 1,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 212314,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 620,
+          "order": "Recent",
+          "page": 2,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 212314,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 620,
+          "order": "Updated",
+          "page": 1,
+          "records": 4,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 212314,
+          "created_before_updated_count": 3
+        },
+        {
+          "appid": 413150,
+          "order": "Recent",
+          "page": 1,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 468500,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 413150,
+          "order": "Recent",
+          "page": 2,
+          "records": 6,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 468500,
+          "created_before_updated_count": 0
+        },
+        {
+          "appid": 413150,
+          "order": "Updated",
+          "page": 1,
+          "records": 4,
+          "overlap_with_previous_pages": 0,
+          "descending_timestamps": true,
+          "next_cursor_present": true,
+          "total_matching": 468500,
+          "created_before_updated_count": 0
+        }
+      ],
+      "errors": [],
+      "source_stopped": false,
+      "requests": [
+        {
+          "at_utc": "2026-10-20T08:04:02.161839+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 620,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 417
+        },
+        {
+          "at_utc": "2026-10-20T08:04:03.166487+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 620,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "sha256:9e3258dd68b6b58eda993e5947e91e41452578014cb3b34e6d8ab3bd9da74620"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 210
+        },
+        {
+          "at_utc": "2026-10-20T08:04:04.169102+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 620,
+              "filter": 2,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 4,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 277
+        },
+        {
+          "at_utc": "2026-10-20T08:04:05.183039+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 413150,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 511
+        },
+        {
+          "at_utc": "2026-10-20T08:04:06.186829+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 413150,
+              "filter": 1,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 6,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "sha256:99cf9bf11445ed7f674890d6245eda35349074123e0ead55cda822c577f3880a"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 303
+        },
+        {
+          "at_utc": "2026-10-20T08:04:07.189531+00:00",
+          "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+          "params": {
+            "input_json": {
+              "appid": 413150,
+              "filter": 2,
+              "languages": [
+                "english"
+              ],
+              "num_per_page": 4,
+              "purchase_type": 1,
+              "review_type": 0,
+              "cursor": "*"
+            }
+          },
+          "status": 200,
+          "error": null,
+          "headers": {
+            "content-type": "application/json; charset=UTF-8"
+          },
+          "duration_ms": 455
+        }
+      ],
+      "record_metrics": [
+        {
+          "record_fingerprint": "e4fb148877fe433d61f3b7d2121ea93a375f93094aec5dd216211af109e25323",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792463890,
+          "updated": 1792463890,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 443,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 58,
+          "word_count": 11,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "0d19e9039df9ee70e2a7e0735c79a1d536786fdbd39a847b0f40cded22a4531e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792454027,
+          "updated": 1792454027,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 183,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 15,
+          "word_count": 4,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "8b3f2582c5f8ed33d30a669cf2aa465d7d075e7a20e3b986997f8cbca005015d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792453591,
+          "updated": 1792453591,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 3284,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 15,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "c6ab3f45b167b0b51b2b4bd1fc9272c583af7ab716122d93406fc7dfe9958c8d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792449988,
+          "updated": 1792449988,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 1560,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 5,
+          "word_count": 2,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "f7b1792869075face80711723725f8a0c7cedd5110afaecfd7d143d79dd2a005",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792447525,
+          "updated": 1792447525,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 273,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 38,
+          "word_count": 8,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "bb746d046b80032389b6ee0956212a45a1ba3612bd6ceddc97cb241faf978b97",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792445698,
+          "updated": 1792445698,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 1,
+            "playtime_at_review": 14028,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 30,
+          "word_count": 7,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "bddeb2900bbf09b9c29dbeae2314fb1f0ffe52dad126a5d86c03ea1fcacf4cc4",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792445603,
+          "updated": 1792445603,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 2517,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 13,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "b37504795a790058e87ed477f33d35f22c1b0674ee41cd1e861f3101ef4e5874",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792445098,
+          "updated": 1792445098,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 594,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 104,
+          "word_count": 22,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "e63e4921b9e4b9aca5e15e6d06132ea87313aeb1eccfe9041cb203bad5d72808",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792442676,
+          "updated": 1792442676,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 5305,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 21,
+          "word_count": 4,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "dca7c4561d536fddc54ebc5e74f67ae2149ca2156471671a8989c7053cccd474",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792441898,
+          "updated": 1792441898,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 325,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 27,
+          "word_count": 7,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "c1e7df1331d49ab62743c8b731d51a6863ca2a1dc69473b882b8dc48af77139b",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792439397,
+          "updated": 1792439397,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 145,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 3,
+          "word_count": 1,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "50c42c2895bacf8a71d9433eeb5ea2a38f8d0b985ec8a9a0ef8c8ae7daefc81d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792438255,
+          "updated": 1792438255,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 1221,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 3,
+          "word_count": 1,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "8b96f624ed4f2b37c9bfa92d4e04988093256cf2c37dd9b28534edac85362ed5",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1479931998,
+          "updated": 1792476984,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 566,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 547,
+          "word_count": 105,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "0bbd797be5b0b26f3d9339885076edf1e357a0e5d3e2c9f1a985dd160ac14f63",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792232232,
+          "updated": 1792473406,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 879,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 416,
+          "word_count": 86,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "93885ee8f575b98a0d0664ee8cb9f0d0bf2c004301f0b6f5273c5bb7857412a4",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1754612625,
+          "updated": 1792460176,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 620,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 528,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 170,
+          "word_count": 26,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "157fc4399bb03055914cb3a49f5d82f55b02b7b8aa0e3daf3210a891840e529b",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792481010,
+          "updated": 1792481010,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 14,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 87,
+          "word_count": 18,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "e51801dabf80423cb6e165bebdc00b2c7868f0cda90280af6c96d78c4229444e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792480578,
+          "updated": 1792480578,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 4599,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 14,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "acc3ce36ff3ae80af02ea8d779ac83c24efb994d08c985475eb055b7a3c09061",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792477665,
+          "updated": 1792477665,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 4130,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 9,
+          "word_count": 2,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "3e55bbe734db8263e1986107ddff035598d1d95fa4a4a3003f222fd82f32ee37",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792475304,
+          "updated": 1792475304,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 937,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 303,
+          "word_count": 65,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "744a731e76969c203f019e8cac5729d8792ed0e8d04f2db42c73f9102a3c503d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792473173,
+          "updated": 1792473173,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 184,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 80,
+          "word_count": 16,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "18e02afbb2c0ac4157a46548bbe937f5e4a6da1fa863b13215f9f73eb60d7c6e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792471888,
+          "updated": 1792471888,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 819,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 14,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "9b87253dd6b9745a40fdd70c4a1ba3b45fc14fafb8a7ee4adb868db21322b70f",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792468840,
+          "updated": 1792468840,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 22549,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 65,
+          "word_count": 13,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "64c2a57854d0eaac4edd774cdaabaea4e9096127df8522f429f742911615360e",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792468270,
+          "updated": 1792468270,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 15429,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 38,
+          "word_count": 5,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "04f2f8d76be3014b3822fa1824262ce850ee7e0f0df87862f8b0025dbb7a48e9",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792467934,
+          "updated": 1792467934,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 25999,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 181,
+          "word_count": 32,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "7638cbec6510df0b6407f784498c0a337fcdfe27628dc74747f87218c5251c84",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792464812,
+          "updated": 1792464812,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 2662,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 9,
+          "word_count": 2,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "bc2a28ecb52088398036b4e6c098dc86a2e72caeaa3f0acb9a9cd70e05aff4a4",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792463143,
+          "updated": 1792463143,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 15951,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 19,
+          "word_count": 3,
+          "screen": "short_or_low_information",
+          "first_person_marker": false,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        },
+        {
+          "record_fingerprint": "9b0d7824f4d8784d7d1755fcf317abcb0b3884dcf82962690ddb0296acbefb7d",
+          "kind": "review",
+          "parent_fingerprint": null,
+          "created": 1792462312,
+          "updated": 1792462312,
+          "field_presence": {
+            "recommendationid": true,
+            "review": true,
+            "language": true,
+            "timestamp_created": true,
+            "timestamp_updated": true,
+            "voted_up": true,
+            "votes_up": true,
+            "votes_funny": true,
+            "refunded": true,
+            "steam_purchase": true,
+            "received_for_free": true
+          },
+          "metadata": {
+            "appid": 413150,
+            "language": "english",
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "playtime_at_review": 1731,
+            "received_for_free": false,
+            "refunded": false
+          },
+          "text_length": 586,
+          "word_count": 114,
+          "screen": "eligible_for_manual_review",
+          "first_person_marker": true,
+          "problem_marker": false,
+          "request_marker": false,
+          "question_marker": false,
+          "language_triage_flag": false
+        }
+      ],
+      "repeat_config": {},
+      "limitations": [
+        "Small selection-biased sample; no population estimate or long-term stability claim.",
+        "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+        "No delete replay or production-use approval tested."
+      ],
+      "run_id": "steam_20261020T080407647013Z"
+    },
+    {
+      "source": "github",
+      "started_at_utc": "2026-10-20T08:04:07.964589+00:00",
+      "finished_at_utc": "2026-10-20T08:04:08.173180+00:00",
+      "evidence": "CURRENT_LIVE",
+      "config": {
+        "max_records": 24,
+        "max_requests": 4,
+        "min_request_interval_seconds": 1.0,
+        "anonymous": true
+      },
+      "endpoint_family": "api.github.com",
+      "requested_record_limit": 24,
+      "http_requests": 1,
+      "response_status_summary": {
+        "403": 1
+      },
+      "successful_http_responses": 0,
+      "records_returned": 0,
+      "unique_records_with_id": 0,
+      "records_without_id": 0,
+      "duplicate_records": 0,
+      "text_screen_counts": {},
+      "usable_text_count": 0,
+      "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+      "human_validated_opinion_count": null,
+      "missing_required_field_counts": {
+        "key": 0,
+        "created": 0
+      },
+      "empty_body_count": 0,
+      "available_fields": {},
+      "excluded": {
+        "pull_requests": 0,
+        "records_beyond_cap": 0
+      },
+      "observations": [],
+      "errors": [
+        "access_or_rate_denial"
+      ],
+      "source_stopped": true,
+      "requests": [
+        {
+          "at_utc": "2026-10-20T08:04:07.964711+00:00",
+          "url": "https://api.github.com/repos/microsoft/vscode/issues",
+          "params": {
+            "state": "all",
+            "sort": "updated",
+            "direction": "desc",
+            "per_page": 10,
+            "page": 1
+          },
+          "status": 403,
+          "error": "access_or_rate_denial",
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "x-ratelimit-limit": "60",
+            "x-ratelimit-remaining": "0",
+            "x-ratelimit-reset": "1792485594"
+          },
+          "duration_ms": 208
+        }
+      ],
+      "record_metrics": [],
+      "repeat_config": {},
+      "limitations": [
+        "Small selection-biased sample; no population estimate or long-term stability claim.",
+        "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+        "No delete replay or production-use approval tested."
+      ],
+      "run_id": "github_20261020T080408173316Z"
+    }
+  ],
+  "repeatability": [
+    {
+      "source": "steam",
+      "first_run": "steam_20261020T074802516051Z",
+      "second_run": "steam_20261020T074818494189Z",
+      "overlapping_unique_ids": 27,
+      "first_only": 0,
+      "second_only": 0,
+      "field_names_equal": true,
+      "first_http": {
+        "200": 6
+      },
+      "second_http": {
+        "200": 6
+      },
+      "seconds_between_starts": 16.024013,
+      "interpretation": "Two bounded executions only. Steam anonymous responses may be cached up to 10 minutes; overlap does not prove live freshness."
+    },
+    {
+      "source": "github",
+      "first_run": "github_20261020T074805840654Z",
+      "second_run": "github_20261020T074821578851Z",
+      "overlapping_unique_ids": 11,
+      "first_only": 0,
+      "second_only": 0,
+      "field_names_equal": true,
+      "first_http": {
+        "200": 4
+      },
+      "second_http": {
+        "200": 4
+      },
+      "seconds_between_starts": 15.977123,
+      "interpretation": "Two bounded executions only. Steam anonymous responses may be cached up to 10 minutes; overlap does not prove live freshness."
+    },
+    {
+      "source": "hackernews",
+      "first_run": "hackernews_20261020T074813075094Z",
+      "second_run": "hackernews_20261020T074829842073Z",
+      "overlapping_unique_ids": 9,
+      "first_only": 0,
+      "second_only": 0,
+      "field_names_equal": true,
+      "first_http": {
+        "200": 10
+      },
+      "second_http": {
+        "200": 9
+      },
+      "seconds_between_starts": 15.73669,
+      "interpretation": "Two bounded executions only. Steam anonymous responses may be cached up to 10 minutes; overlap does not prove live freshness."
+    }
+  ],
+  "sources_not_repeated_due_to_failure_or_quota": [],
+  "amazon": {
+    "evidence": "NOT_TESTED",
+    "review_requests": 0,
+    "reason": "User explicitly confirmed no verified permission and instructed no automated Amazon review scraping. Official access assessment only; one robots metadata check is recorded separately."
+  },
+  "initial_experiment_snapshot": "experiment_20261020T074829Z.json",
+  "follow_up": {
+    "checked_at_utc": "2026-10-20T08:06:19.084083+00:00",
+    "steam": {
+      "source": "steam",
+      "first_run": "steam_20261020T074802516051Z",
+      "second_run": "steam_20261020T080407647013Z",
+      "overlapping_unique_ids": 27,
+      "first_only": 0,
+      "second_only": 0,
+      "field_names_equal": true,
+      "first_http": {
+        "200": 6
+      },
+      "second_http": {
+        "200": 6
+      },
+      "seconds_between_starts": 965.102787,
+      "interpretation": "Follow-up began 965 seconds after first run, beyond the documented up-to-10-minute cache window. Same IDs and schema; no edit event or independent freshness verification."
+    },
+    "github": {
+      "run_id": "github_20261020T080408173316Z",
+      "status": 403,
+      "rate_limit_remaining": 0,
+      "reset_utc": "2026-10-20T08:39:54+00:00",
+      "reset_pdt": "2026-10-20T01:39:54-07:00",
+      "overlap_comparison": null,
+      "reason": "Request denied; no content was retrieved. Not evidence that previous issue records disappeared.",
+      "action": "Stopped after one request; no retry, authentication or exit change."
+    },
+    "amazon": {
+      "review_requests": 0,
+      "active_scraper_implemented": false,
+      "user_direction": "No verified authorization; do not implement or execute automated Amazon review scraping.",
+      "preflight_metadata": "amazon_preflight_20261020T080149Z.json"
+    }
+  },
+  "api_request_totals": {
+    "requests": 46,
+    "http_200": 45,
+    "http_403": 1
+  }
+}

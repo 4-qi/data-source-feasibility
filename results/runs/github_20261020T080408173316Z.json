@@ -1,0 +1,72 @@
+{
+  "source": "github",
+  "started_at_utc": "2026-10-20T08:04:07.964589+00:00",
+  "finished_at_utc": "2026-10-20T08:04:08.173180+00:00",
+  "evidence": "CURRENT_LIVE",
+  "config": {
+    "max_records": 24,
+    "max_requests": 4,
+    "min_request_interval_seconds": 1.0,
+    "anonymous": true
+  },
+  "endpoint_family": "api.github.com",
+  "requested_record_limit": 24,
+  "http_requests": 1,
+  "response_status_summary": {
+    "403": 1
+  },
+  "successful_http_responses": 0,
+  "records_returned": 0,
+  "unique_records_with_id": 0,
+  "records_without_id": 0,
+  "duplicate_records": 0,
+  "text_screen_counts": {},
+  "usable_text_count": 0,
+  "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+  "human_validated_opinion_count": null,
+  "missing_required_field_counts": {
+    "key": 0,
+    "created": 0
+  },
+  "empty_body_count": 0,
+  "available_fields": {},
+  "excluded": {
+    "pull_requests": 0,
+    "records_beyond_cap": 0
+  },
+  "observations": [],
+  "errors": [
+    "access_or_rate_denial"
+  ],
+  "source_stopped": true,
+  "requests": [
+    {
+      "at_utc": "2026-10-20T08:04:07.964711+00:00",
+      "url": "https://api.github.com/repos/microsoft/vscode/issues",
+      "params": {
+        "state": "all",
+        "sort": "updated",
+        "direction": "desc",
+        "per_page": 10,
+        "page": 1
+      },
+      "status": 403,
+      "error": "access_or_rate_denial",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "x-ratelimit-limit": "60",
+        "x-ratelimit-remaining": "0",
+        "x-ratelimit-reset": "1792485594"
+      },
+      "duration_ms": 208
+    }
+  ],
+  "record_metrics": [],
+  "repeat_config": {},
+  "limitations": [
+    "Small selection-biased sample; no population estimate or long-term stability claim.",
+    "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+    "No delete replay or production-use approval tested."
+  ],
+  "run_id": "github_20261020T080408173316Z"
+}

@@ -1,0 +1,292 @@
+{
+  "source": "steam",
+  "started_at_utc": "2026-10-20T08:21:23.718966+00:00",
+  "finished_at_utc": "2026-10-20T08:21:24.904852+00:00",
+  "evidence": "CURRENT_LIVE",
+  "config": {
+    "max_records": 4,
+    "max_requests": 2,
+    "min_request_interval_seconds": 1.0,
+    "anonymous": true,
+    "review_type": 2,
+    "filter": 1,
+    "appids": [
+      620,
+      413150
+    ],
+    "page_size": 2,
+    "pages_per_game": 1
+  },
+  "endpoint_family": "api.steampowered.com",
+  "requested_record_limit": 4,
+  "http_requests": 2,
+  "response_status_summary": {
+    "200": 2
+  },
+  "successful_http_responses": 2,
+  "records_returned": 4,
+  "unique_records_with_id": 4,
+  "records_without_id": 0,
+  "duplicate_records": 0,
+  "text_screen_counts": {
+    "eligible_for_manual_review": 4
+  },
+  "usable_text_count": 4,
+  "usable_text_definition": "Heuristic eligibility only: normalized text >=20 characters and >=4 words, excluding Bot. NOT a validated count of meaningful opinions.",
+  "human_validated_opinion_count": null,
+  "missing_required_field_counts": {
+    "key": 0,
+    "created": 0
+  },
+  "empty_body_count": 0,
+  "available_fields": {
+    "language": 4,
+    "received_for_free": 4,
+    "recommendationid": 4,
+    "refunded": 4,
+    "review": 4,
+    "steam_purchase": 4,
+    "timestamp_created": 4,
+    "timestamp_updated": 4,
+    "voted_up": 4,
+    "votes_funny": 4,
+    "votes_up": 4
+  },
+  "excluded": {},
+  "observations": [
+    {
+      "appid": 620,
+      "order": "Recent",
+      "review_type": 2,
+      "records": 2,
+      "false_recommendation_flags": 2
+    },
+    {
+      "appid": 413150,
+      "order": "Recent",
+      "review_type": 2,
+      "records": 2,
+      "false_recommendation_flags": 2
+    }
+  ],
+  "errors": [],
+  "source_stopped": false,
+  "requests": [
+    {
+      "at_utc": "2026-10-20T08:21:23.719047+00:00",
+      "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+      "params": {
+        "input_json": {
+          "appid": 620,
+          "filter": 1,
+          "languages": [
+            "english"
+          ],
+          "num_per_page": 2,
+          "purchase_type": 1,
+          "review_type": 2,
+          "cursor": "*"
+        }
+      },
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=UTF-8"
+      },
+      "duration_ms": 274
+    },
+    {
+      "at_utc": "2026-10-20T08:21:24.720245+00:00",
+      "url": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+      "params": {
+        "input_json": {
+          "appid": 413150,
+          "filter": 1,
+          "languages": [
+            "english"
+          ],
+          "num_per_page": 2,
+          "purchase_type": 1,
+          "review_type": 2,
+          "cursor": "*"
+        }
+      },
+      "status": 200,
+      "error": null,
+      "headers": {
+        "content-type": "application/json; charset=UTF-8"
+      },
+      "duration_ms": 183
+    }
+  ],
+  "record_metrics": [
+    {
+      "record_fingerprint": "b00ddaa7221dec6f431e5358c7852ff1ee7d8d934d07ca8503950e559e4e7f67",
+      "kind": "review",
+      "parent_fingerprint": null,
+      "created": 1792276789,
+      "updated": 1792276789,
+      "field_presence": {
+        "recommendationid": true,
+        "review": true,
+        "language": true,
+        "timestamp_created": true,
+        "timestamp_updated": true,
+        "voted_up": true,
+        "votes_up": true,
+        "votes_funny": true,
+        "refunded": true,
+        "steam_purchase": true,
+        "received_for_free": true
+      },
+      "metadata": {
+        "appid": 620,
+        "language": "english",
+        "voted_up": false,
+        "votes_up": 1,
+        "votes_funny": 1,
+        "playtime_at_review": 1907,
+        "received_for_free": false,
+        "refunded": false
+      },
+      "text_length": 423,
+      "word_count": 78,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": true,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": false,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "417b06a6ca93e0dcddd5f517e515624e94785b2c6a332b2af5f5ac9e7c7737c9",
+      "kind": "review",
+      "parent_fingerprint": null,
+      "created": 1792226873,
+      "updated": 1792226996,
+      "field_presence": {
+        "recommendationid": true,
+        "review": true,
+        "language": true,
+        "timestamp_created": true,
+        "timestamp_updated": true,
+        "voted_up": true,
+        "votes_up": true,
+        "votes_funny": true,
+        "refunded": true,
+        "steam_purchase": true,
+        "received_for_free": true
+      },
+      "metadata": {
+        "appid": 620,
+        "language": "english",
+        "voted_up": false,
+        "votes_up": 0,
+        "votes_funny": 0,
+        "playtime_at_review": 658,
+        "received_for_free": false,
+        "refunded": false
+      },
+      "text_length": 274,
+      "word_count": 56,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": true,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": false,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "a2bc348d06f73eb6c735a0246c443ad93e107cddb2951ca2d5e9db54bfed32da",
+      "kind": "review",
+      "parent_fingerprint": null,
+      "created": 1792460230,
+      "updated": 1792460230,
+      "field_presence": {
+        "recommendationid": true,
+        "review": true,
+        "language": true,
+        "timestamp_created": true,
+        "timestamp_updated": true,
+        "voted_up": true,
+        "votes_up": true,
+        "votes_funny": true,
+        "refunded": true,
+        "steam_purchase": true,
+        "received_for_free": true
+      },
+      "metadata": {
+        "appid": 413150,
+        "language": "english",
+        "voted_up": false,
+        "votes_up": 0,
+        "votes_funny": 1,
+        "playtime_at_review": 540,
+        "received_for_free": false,
+        "refunded": false
+      },
+      "text_length": 96,
+      "word_count": 22,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": true,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": false,
+      "language_triage_flag": false
+    },
+    {
+      "record_fingerprint": "ba1cc8b9b271f8df1e7a87434a0e6e5131f10cae1fb20c3e99b2c279908c5fa3",
+      "kind": "review",
+      "parent_fingerprint": null,
+      "created": 1792458557,
+      "updated": 1792458557,
+      "field_presence": {
+        "recommendationid": true,
+        "review": true,
+        "language": true,
+        "timestamp_created": true,
+        "timestamp_updated": true,
+        "voted_up": true,
+        "votes_up": true,
+        "votes_funny": true,
+        "refunded": true,
+        "steam_purchase": true,
+        "received_for_free": true
+      },
+      "metadata": {
+        "appid": 413150,
+        "language": "english",
+        "voted_up": false,
+        "votes_up": 0,
+        "votes_funny": 0,
+        "playtime_at_review": 480,
+        "received_for_free": false,
+        "refunded": false
+      },
+      "text_length": 1685,
+      "word_count": 304,
+      "screen": "eligible_for_manual_review",
+      "first_person_marker": false,
+      "problem_marker": false,
+      "request_marker": false,
+      "question_marker": true,
+      "language_triage_flag": false
+    }
+  ],
+  "repeat_config": {},
+  "limitations": [
+    "Small selection-biased sample; no population estimate or long-term stability claim.",
+    "Raw text, usernames and account IDs are not saved. Fingerprints identify records, not authors.",
+    "No delete replay or production-use approval tested."
+  ],
+  "run_id": "steam_negative_20261020T082124904884Z",
+  "experiment_phase": "supplemental_negative_filter_validation",
+  "recommendation_flag_counts": {
+    "true": 0,
+    "false": 4,
+    "missing": 0,
+    "non_boolean": 0
+  },
+  "label_validation_passed": true,
+  "sampling_note": "Deliberately selected review_type=2 (Negative). Verifies retrieval and label preservation; not a natural sentiment distribution, balanced training set, or sentence-level sentiment evaluation."
+}
