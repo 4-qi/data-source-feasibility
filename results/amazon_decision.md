@@ -6,7 +6,7 @@
 
 **Do not implement broad Amazon raw-review ingestion under current access conditions.** Amazon retains strategic value for consumer-retail applications, but no currently verified route establishes the required multi-consumer review coverage and permitted use. This is a conclusion about the assessed routes and available evidence, not a claim that future access is impossible.
 
-The project recommends Steam for the initial technical pilot and GitHub Issues as the quota-dependent backup. The [Source Recommendation](source_recommendation.md) explains that selection; the [Amazon Acquisition Options](amazon_acquisition_options.md) provides the detailed route evidence.
+Steam served as the original technical baseline, with GitHub Issues as the quota-dependent software-feedback backup. The [Source Recommendation](source_recommendation.md) records the current selection following the mobile comparison; the [Amazon Acquisition Options](amazon_acquisition_options.md) provides the detailed retail-route evidence.
 
 ## Feasibility constraints
 

@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-27",
+  "purpose": "Bounded field validation of XML reviews where JSON lacked entries",
+  "request_budget": 2,
+  "http_requests": 2,
+  "max_records_parsed_per_response": 5,
+  "requests": [
+    {
+      "at_utc": "2026-10-28T01:21:40.371458+00:00",
+      "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1212616790/sortby=mostrecent/xml",
+      "status": 200,
+      "error": null,
+      "redirects_allowed": false,
+      "credentials_supplied": false
+    },
+    {
+      "at_utc": "2026-10-28T01:21:42.690028+00:00",
+      "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=368677368/sortby=mostrecent/xml",
+      "status": 200,
+      "error": null,
+      "redirects_allowed": false,
+      "credentials_supplied": false
+    }
+  ],
+  "runs": [
+    {
+      "app_store_id": "1212616790",
+      "stratum": "productivity",
+      "entries_returned": 50,
+      "records": [
+        {
+          "fingerprint": "bd0805d8241b520ef0f833c8fc76454c94d74f5086fbeeb8ce0e3178756f2938",
+          "has_id": true,
+          "has_text": true,
+          "characters": 357,
+          "words": 72,
+          "rating": 3,
+          "has_title": true,
+          "has_updated": true,
+          "has_version": true,
+          "text_sha256": "f964d0fbda674fe034e2800ed46d34a9523a88638e486f8d50ed688cf80b4bee"
+        },
+        {
+          "fingerprint": "8da3960ed18b837983fc8ca051adfdb86164e060b7e3048b97ba499f4f56d84a",
+          "has_id": true,
+          "has_text": true,
+          "characters": 358,
+          "words": 59,
+          "rating": 3,
+          "has_title": true,
+          "has_updated": true,
+          "has_version": true,
+          "text_sha256": "18d3b0a00021e67a47c282a0b0d2436b42a49c843c33c5e7aaa7c48db7509e89"
+        },
+        {
+          "fingerprint": "cf43daf8a0882cc75f8bdc486d0e306f8a2297821b70fc6d642f9fac7689ad18",
+          "has_id": true,
+          "has_text": true,
+          "characters": 44,
+          "words": 8,
+          "rating": 5,
+          "has_title": true,
+          "has_updated": true,
+          "has_version": true,
+          "text_sha256": "5c19f7df419014b9c0217bb87d483c4184a79c03657df498c472d10069a87d6a"
+        },
+        {
+          "fingerprint": "70bbe66140ed91c103a8188beb7f1ac73a77f67d7cd7625ca6ec04f981e2a5e2",
+          "has_id": true,
+          "has_text": true,
+          "characters": 199,
+          "words": 40,
+          "rating": 3,
+          "has_title": true,
+          "has_updated": true,
+          "has_version": true,
+          "text_sha256": "17f72e707f226223f4984e41d48527b314bc429ce1b39aa2aa6fc18d936f7ba7"
+        },
+        {
+          "fingerprint": "3e3410853a527fd127e5cbc82a04c2d9a871099fbaeef90dcaf70f544db53830",
+          "has_id": true,
+          "has_text": true,
+          "characters": 222,
+          "words": 44,
+          "rating": 2,
+          "has_title": true,
+          "has_updated": true,
+          "has_version": true,
+          "text_sha256": "974e8d36f97771f53e25050b977709c4139dae26662c3b2f11e38a2f006f6cec"
+        }
+      ]
+    },
+    {
+      "app_store_id": "368677368",
+      "stratum": "transportation",
+      "entries_returned": 50,
+      "records": [
+        {
+          "fingerprint": "52f4a476ab356ffd2bd3eb3045bfcc93a1ee7566dbdd9484a3f17c04fddc80f4",
+          "has_id": true,
+          "has_text": true,
+          "characters": 126,
+          "words": 27,
+          "rating": 2,
+          "has_title": true,
+          "has_updated": true,
+          "has_version": true,
+          "text_sha256": "42c39ebdc5e1eb65ef93156cd493139df2510d040f422f3ff049aede954d7cc6"
+        },
+        {
+          "fingerprint": "269f1737249962e1a69a24fbd7bacfaf8f53046b3dba7246ba3fb6de2bfcdda9",
+          "has_id": true,
+          "has_text": true,
+          "characters": 11,
+          "words": 2,
+          "rating": 1,
+          "has_title": true,
+          "has_updated": true,
+          "has_version": true,
+          "text_sha256": "90c47a9bebe10e9f23405b8197cb178a5ab1a8ac56c96e9d16fa880c7a86a0f6"
+        },
+        {
+          "fingerprint": "ac810411473b74e22dff9a960ac243fdf6d49d891bb569a8d3f2dc3c50c7907d",
+          "has_id": true,
+          "has_text": true,
+          "characters": 157,
+          "words": 30,
+          "rating": 1,
+          "has_title": true,
+          "has_updated": true,
+          "has_version": true,
+          "text_sha256": "28859fd6e86e054373b29d92976ceb5f32bb29cffbef14541ad6fbf0c82ff09d"
+        },
+        {
+          "fingerprint": "48c4e1e08eba66deb3fc56817d59966d948f61cb0c0f29d0c9a1268bcf8fa64b",
+          "has_id": true,
+          "has_text": true,
+          "characters": 757,
+          "words": 129,
+          "rating": 1,
+          "has_title": true,
+          "has_updated": true,
+          "has_version": true,
+          "text_sha256": "872690ab5aafca3a28cf3736e11dafedf20a848c1853aa397054b0f9b37a6c88"
+        },
+        {
+          "fingerprint": "9decb4bfba8c767fb2c9a0e160f1fbc2ebabae1c8fb25c012f1199b22abe4106",
+          "has_id": true,
+          "has_text": true,
+          "characters": 26,
+          "words": 3,
+          "rating": 5,
+          "has_title": true,
+          "has_updated": true,
+          "has_version": true,
+          "text_sha256": "b66e2d24a69bbc1ffa2447ec6231bfd3dad292f56589e27c8d38aa512da73bd9"
+        }
+      ]
+    }
+  ],
+  "raw_review_text_saved": false,
+  "author_values_saved": false,
+  "sentiment_analysis": "NOT_PERFORMED"
+}

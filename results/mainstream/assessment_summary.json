@@ -1,0 +1,72 @@
+{
+  "assessment_date": "2026-10-27",
+  "timezone": "America/Los_Angeles",
+  "scope": "focused_mainstream_source_extension",
+  "previous_head": "080215e5f95987e325c3c690a6d0488965c5a3cb",
+  "screened_sources": [
+    "apple_app_store",
+    "google_play",
+    "cfpb"
+  ],
+  "live_test_sources": [
+    "cfpb"
+  ],
+  "apple": {
+    "review_requests": 0,
+    "state": "NOT_TESTED",
+    "gate": "No verified applicable approval/exception for the proposed automated RSS review-analysis use under current service conditions",
+    "cross_category_sample_obtained": false,
+    "sample_counts": null,
+    "pagination": null,
+    "repeatability": null,
+    "content_quality": null
+  },
+  "google_play": {
+    "review_requests": 0,
+    "state": "NOT_TESTED",
+    "gate": "Application-owner authorization or suitable third-party supply route not established",
+    "content_quality": null
+  },
+  "cfpb": {
+    "artifact": "cfpb_access_20261028T003324477168Z.json",
+    "http_requests": 1,
+    "http_200": 0,
+    "http_403": 1,
+    "response_error": "access_or_rate_denial",
+    "retrieved_record_count": null,
+    "content_quality": null,
+    "pagination": null,
+    "repeatability": null,
+    "403_cause": "UNVERIFIED",
+    "continuity_notice_date": "2026-08-14",
+    "continuity_gate": "Official notice ceases ongoing narrative publication; historical archive is not a continuing raw-text stream"
+  },
+  "new_live_request_totals": {
+    "requests": 1,
+    "http_200": 0,
+    "http_403": 1
+  },
+  "previous_results_unchanged": {
+    "api_requests": 48,
+    "http_200": 47,
+    "http_403": 1,
+    "steam_baseline_unique": 27,
+    "steam_targeted_negative_unique": 4,
+    "github_unique": 11,
+    "hackernews_unique": 9,
+    "content_review_unique": 47,
+    "useful_counts": {
+      "steam": 10,
+      "github": 7,
+      "hackernews": 3
+    }
+  },
+  "decision": {
+    "technical_baseline": "steam",
+    "technical_backup": "github",
+    "main_project_source": null,
+    "blocking_requirement": "Suitable and continuing broader-domain original-text acquisition",
+    "production_implementation_started": false,
+    "public_repository_updated": false
+  }
+}

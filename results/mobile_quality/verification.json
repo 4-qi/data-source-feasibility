@@ -1,0 +1,61 @@
+{
+  "verified_at_utc": "2026-10-28T02:12:16.227061+00:00",
+  "baseline_head": "080215e5f95987e325c3c690a6d0488965c5a3cb",
+  "preexisting_files_hash_preserved": 65,
+  "maintained_document_updates": [
+    "README.md",
+    "research/current_evidence.md",
+    "results/README.md",
+    "results/feasibility_comparison.md",
+    "results/mainstream_review_assessment.md",
+    "results/source_recommendation.md",
+    "results/source_route_reassessment.md"
+  ],
+  "all_preexisting_json_preserved": true,
+  "all_preexisting_collector_and_test_code_preserved": true,
+  "offline_tests": {
+    "passed": 57,
+    "failed": 0,
+    "new_comparison_checks": 9,
+    "network_disabled": true,
+    "clean_proposed_file_copy_without_ignored_files": true
+  },
+  "relative_markdown_links": {
+    "checked": 141,
+    "broken": 0,
+    "scope": "Existing tracked files plus proposed unstaged additions"
+  },
+  "maintained_markdown_english_check": true,
+  "metrics_recomputed_and_consistent": true,
+  "qualitative_annotations": {
+    "distinct_records_actually_inspected": 85,
+    "apple_primary": 40,
+    "google_primary": 40,
+    "additional_apple_legacy_page2": 5,
+    "apple_legacy_recovered": 40,
+    "apple_legacy_full_body_hash_matches": 40,
+    "primary_useful": {
+      "apple": 28,
+      "google": 17
+    },
+    "rating_hidden_display": true,
+    "not_human_ground_truth": true
+  },
+  "new_http_requests": {
+    "apple": 16,
+    "google": 16,
+    "successful": 32,
+    "total": 32
+  },
+  "observed_new_visible_ids_in_repeat": 0,
+  "observed_same_id_text_changes": 0,
+  "sustained_online_update_acceptance": "NOT_TESTED",
+  "temporary_inspection_text_removed": true,
+  "source_text_and_author_values_in_delivery": false,
+  "credential_pattern_scan_passed": true,
+  "cli_help_without_network_passed": true,
+  "hardened_cli_rerun_live": false,
+  "git_diff_check_passed": true,
+  "index_unchanged_and_empty": true,
+  "commit_or_push_performed": false
+}

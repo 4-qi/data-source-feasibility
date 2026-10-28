@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-27",
+  "request_budget": 3,
+  "http_requests": 3,
+  "review_collection": "NOT_EXECUTED",
+  "response_bodies_saved": false,
+  "requests": [
+    {
+      "checked_at_utc": "2026-10-28T01:13:31.267784+00:00",
+      "endpoint": "https://api.appfollow.io/api/v2/reviews",
+      "parameters": {
+        "ext_id": "570060128",
+        "country": "us",
+        "from": "2026-10-26",
+        "to": "2026-10-27",
+        "page": 1
+      },
+      "credentials_supplied": false,
+      "redirects_allowed": false,
+      "retry_count": 0,
+      "status": 401,
+      "error": null,
+      "content_type": "application/json",
+      "response_bytes": 64,
+      "vendor": "appfollow",
+      "purpose": "One unauthenticated access-gate check; not a review experiment",
+      "raw_body_saved": false,
+      "review_parsing_performed": false
+    },
+    {
+      "checked_at_utc": "2026-10-28T01:13:34.168748+00:00",
+      "endpoint": "https://public-api.apptweak.com/api/public/store/apps/reviews/search.json",
+      "parameters": {
+        "apps": "570060128",
+        "country": "us",
+        "language": "us",
+        "device": "iphone",
+        "limit": 1,
+        "offset": 0,
+        "start_date": "2026-10-26",
+        "end_date": "2026-10-27"
+      },
+      "credentials_supplied": false,
+      "redirects_allowed": false,
+      "retry_count": 0,
+      "status": 401,
+      "error": null,
+      "content_type": "application/json",
+      "response_bytes": 291,
+      "vendor": "apptweak",
+      "purpose": "One unauthenticated access-gate check; not a review experiment",
+      "raw_body_saved": false,
+      "review_parsing_performed": false
+    },
+    {
+      "checked_at_utc": "2026-10-28T01:13:37.111536+00:00",
+      "endpoint": "https://data.42matters.com/api/v5.0/ios/apps/reviews.json",
+      "parameters": {
+        "id": "570060128",
+        "days": 1,
+        "limit": 1,
+        "page": 1
+      },
+      "credentials_supplied": false,
+      "redirects_allowed": false,
+      "retry_count": 0,
+      "status": 400,
+      "error": null,
+      "content_type": "application/json",
+      "response_bytes": 191,
+      "vendor": "42matters",
+      "purpose": "One unauthenticated access-gate check; not a review experiment",
+      "raw_body_saved": false,
+      "review_parsing_performed": false
+    }
+  ]
+}

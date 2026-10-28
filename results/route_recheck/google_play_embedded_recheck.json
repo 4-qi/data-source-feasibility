@@ -1,0 +1,35 @@
+{
+  "at_utc": "2026-10-28T01:40:12.682910+00:00",
+  "url": "https://play.google.com/store/apps/details",
+  "parameters": {
+    "id": "com.spotify.music",
+    "hl": "en_US"
+  },
+  "maximum_requests": 1,
+  "status": 200,
+  "error": null,
+  "raw_body_saved": false,
+  "author_values_saved": false,
+  "javascript_executed": false,
+  "private_rpc_requests": 0,
+  "schema_source": "https://github.com/JoMingyu/google-play-scraper/blob/master/google_play_scraper/constants/element.py",
+  "schema_basis": "Third-party implementation: Detail.comments ds:8[0], Review fields ID[0], text[4], score[2], date[5][0]; not a Google API contract",
+  "dataset_keys": [
+    "ds:0",
+    "ds:1",
+    "ds:10",
+    "ds:11",
+    "ds:12",
+    "ds:2",
+    "ds:3",
+    "ds:4",
+    "ds:5",
+    "ds:6",
+    "ds:7",
+    "ds:8",
+    "ds:9"
+  ],
+  "initial_review_rows": 0,
+  "records": [],
+  "pagination": "NOT_TESTED"
+}

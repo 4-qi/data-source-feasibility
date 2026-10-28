@@ -1,0 +1,129 @@
+{
+  "assessment_date": "2026-10-27",
+  "requirement": "Continuing online acquisition of individual cross-category review text, cleaning, historical storage and downstream sentiment analysis",
+  "scope": [
+    "Apple RSS",
+    "Google Play developer API",
+    "AppFollow",
+    "Appbot",
+    "42matters",
+    "AppTweak",
+    "CFPB"
+  ],
+  "api_capability_evidence": "DOCUMENTED except the separately recorded live Apple RSS probe",
+  "production_route_selected": null,
+  "apple_rss_technical_result": {
+    "requests": 10,
+    "http_200": 10,
+    "apps_queried": 8,
+    "apps_with_text": 5,
+    "distinct_parsed_records": 30,
+    "ongoing_freshness": "NOT_TESTED",
+    "use_rights": "NOT_ESTABLISHED"
+  },
+  "vendors": [
+    {
+      "vendor": "appfollow",
+      "endpoint": "https://api.appfollow.io/api/v2/reviews",
+      "authentication": "X-AppFollow-API-Token header",
+      "observed_unauthenticated_http_status": 401,
+      "limits_documented": "12 credits/request; 1000 requests/hour/token and 10000/hour/account",
+      "trial_and_price_documented": "10-day product trial; API entitlement and credits not confirmed; current numeric API price not obtained",
+      "fields_and_updates_documented": "Explicit text search, review-ID and last-modified filters; page-based retrieval",
+      "project_fit_constraint": "Terms 4.2 restrict external machine-learning use; 4.4 requires written consent for commercial collection in the customer own name",
+      "concrete_unlock": "Request API-specific trial plus written scope for storage, commercial analysis and ML; trial alone does not cure restrictions",
+      "sources": [
+        "https://docs.api.appfollow.io/reference/reviews_api_v2_reviews_get-1",
+        "https://support.appfollow.io/hc/en-us/articles/360020833017-API-Overview",
+        "https://appfollow.io/terms",
+        "https://appfollow.io/pricing"
+      ],
+      "authenticated_review_collection": "NOT_TESTED",
+      "long_term_reliability": "NOT_TESTED"
+    },
+    {
+      "vendor": "appbot",
+      "endpoint": "Not established from current unauthenticated API reference",
+      "authentication": "Public v2 migration guide documents HTTP Basic API credential pair",
+      "observed_unauthenticated_http_status": null,
+      "limits_documented": "Current endpoint pagination and quota require authenticated documentation",
+      "trial_and_price_documented": "14-day no-card product trial; API is separately priced Large/Premium add-on; Large shown from USD 166/month annually or USD 219 monthly before API add-on",
+      "fields_and_updates_documented": "Official product documents REST JSON review export, competitor apps and BI integration",
+      "project_fit_constraint": "Terms G.3 internal use only, no commercialising reviews; G.4 public publication needs consent; G.6 no review rights transfer",
+      "concrete_unlock": "For an internal-only analytics pilot, obtain explicit API trial entitlement and retention scope; client-facing reuse or ML needs separate written scope",
+      "sources": [
+        "https://appbot.co/features/api/",
+        "https://appbot.co/faqs/",
+        "https://appbot.co/plans/",
+        "https://appbot.co/terms/",
+        "https://support.appbot.co/help-docs/whats-new-appbot-api-v2/"
+      ],
+      "authenticated_review_collection": "NOT_TESTED",
+      "long_term_reliability": "NOT_TESTED"
+    },
+    {
+      "vendor": "42matters",
+      "endpoint": "https://data.42matters.com/api/v5.0/ios/apps/reviews.json",
+      "authentication": "access_token query parameter",
+      "observed_unauthenticated_http_status": 400,
+      "limits_documented": "3 hits/request, 3 QPS, limit 1-100, page; Small plan or above",
+      "trial_and_price_documented": "Registration offers trial token but restricted endpoint entitlement is not established; current numeric price not obtained",
+      "fields_and_updates_documented": "Content, rating, date, language, version; Android uses package p; stable review ID not documented",
+      "project_fit_constraint": "Terms 3.5 require written agreement for storage beyond 24 hours; 3.8 does not grant underlying publicly available app-data rights",
+      "concrete_unlock": "Obtain Small-level Reviews trial and a retention/use addendum; do not use unstable author_hash as a review identity",
+      "sources": [
+        "https://42matters.com/docs/app-market-data/ios/apps/reviews",
+        "https://42matters.com/docs/app-market-data/android/apps/reviews",
+        "https://42matters.com/docs/overview",
+        "https://42matters.com/tos",
+        "https://42matters.com/pricing"
+      ],
+      "authenticated_review_collection": "NOT_TESTED",
+      "long_term_reliability": "NOT_TESTED"
+    },
+    {
+      "vendor": "apptweak",
+      "endpoint": "https://public-api.apptweak.com/api/public/store/apps/reviews/search.json",
+      "authentication": "X-Apptweak-Key header",
+      "observed_unauthenticated_http_status": 401,
+      "limits_documented": "1 credit/review; limit up to 500; offset; up to 5 apps/query; 60 requests/10 seconds",
+      "trial_and_price_documented": "7-day trial requires billing details and can auto-charge; public API Lite listed USD 166/month on pricing display, not a confirmed month-to-month quote",
+      "fields_and_updates_documented": "Review body and ID documented; track apps first; initial 24-48 hours, daily fetching thereafter",
+      "project_fit_constraint": "Self-serve terms 5.1.4 restrict compiling databases and third-party processing; Enterprise uses separate agreement",
+      "concrete_unlock": "Obtain an Enterprise/API agreement explicitly permitting this ingestion database, then track apps and wait for initial fetch",
+      "sources": [
+        "https://developers.apptweak.com/reference/app-reviews-search",
+        "https://developers.apptweak.com/reference/overview",
+        "https://developers.apptweak.com/reference/tracked-applications-summary",
+        "https://www.apptweak.com/en/pricing",
+        "https://www.apptweak.com/en/legal/terms-of-services"
+      ],
+      "authenticated_review_collection": "NOT_TESTED",
+      "long_term_reliability": "NOT_TESTED"
+    }
+  ],
+  "prior_collection_counts_unchanged": {
+    "requests": 48,
+    "successful": 47
+  },
+  "scope_boundary": "No purchases, account creation, vendor contact, production collector, commits or pushes.",
+  "apple_xml_extension": {
+    "apps_with_text_across_formats": 7,
+    "apps_queried": 8,
+    "distinct_parsed_records_across_formats": 40,
+    "distinct_rating_counts": {
+      "1": 11,
+      "2": 4,
+      "3": 4,
+      "5": 21
+    },
+    "basic_length_screen_eligible": 36,
+    "all_rss_diagnostic_requests": 23,
+    "all_rss_diagnostic_http_200": 23,
+    "parsed_record_occurrences_across_json_and_xml_samples": 45,
+    "raw_text_saved": false,
+    "freshness_evidence": "Returned review updated dates extend to October 26, 2026; this is not observed arrival of new reviews over scheduled runs",
+    "missing_app": "Duolingo feed has no entries in tested US JSON and XML responses",
+    "usefulness_review": "NOT_PERFORMED"
+  }
+}

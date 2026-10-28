@@ -1,0 +1,50 @@
+{
+  "verified_at_utc": "2026-10-28T01:45:44.320716+00:00",
+  "baseline_head": "080215e5f95987e325c3c690a6d0488965c5a3cb",
+  "preexisting_files_hash_preserved": 57,
+  "maintained_document_updates": [
+    "README.md",
+    "research/current_evidence.md",
+    "results/README.md",
+    "results/mainstream_review_assessment.md",
+    "results/source_recommendation.md"
+  ],
+  "all_preexisting_json_preserved": true,
+  "all_existing_collector_and_test_code_preserved": true,
+  "offline_suite": {
+    "passed": 48,
+    "failed": 0,
+    "network_disabled": true,
+    "clean_proposed_file_copy": true,
+    "scope": "Existing maintained suite; not runtime coverage of the three new isolated probe scripts"
+  },
+  "probe_compilation_and_no_network_help_checks": 3,
+  "relative_markdown_links": {
+    "checked": 123,
+    "broken": 0,
+    "scope": "Tracked files plus proposed unstaged additions"
+  },
+  "maintained_markdown_english_check": true,
+  "credential_pattern_scan_passed": true,
+  "new_executed_activity": {
+    "http_get_attempts": 8,
+    "head_redirect_checks": 1,
+    "read_only_google_web_post_requests": 2,
+    "http_attempts_total": 11,
+    "bluesky_websocket_connections": 1,
+    "bluesky_text_events": 3,
+    "google_play_distinct_reviews": 6,
+    "mastodon_distinct_statuses": 6,
+    "amazon_requests": 0,
+    "cfpb_requests": 0
+  },
+  "original_api_totals_unchanged": {
+    "successful": 47,
+    "requests": 48
+  },
+  "earlier_apple_rss_requests_unchanged": 23,
+  "new_semantic_usefulness_score": null,
+  "git_diff_check_passed": true,
+  "index_unchanged_and_empty": true,
+  "commit_or_push_performed": false
+}

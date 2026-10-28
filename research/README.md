@@ -1,16 +1,21 @@
 # Research Guide
 
-The completed study's methodology, source references, and historical provenance are organized below. Current conclusions are available in the [Source Recommendation](../results/source_recommendation.md), [Amazon Acquisition Options](../results/amazon_acquisition_options.md), and [Amazon Engineering Decision](../results/amazon_decision.md).
+The [Source Recommendation](../results/source_recommendation.md) presents the current source selection, while [Mobile App Reviews versus Steam](../results/mobile_review_comparison.md) provides the supporting comparison. The [Evidence Index](../results/README.md) links reports to their execution evidence.
 
-| File | Purpose and Status |
-|---|---|
-| [current_evidence.md](current_evidence.md) | Evidence labels, collection controls, content-review methodology, and provenance |
-| [execution_plan.md](execution_plan.md) | Historical bounded validation plan |
-| [amazon_access.md](amazon_access.md) | Earlier Amazon access assessment, superseded by the complete acquisition matrix |
-| [amazon_direction_update.md](amazon_direction_update.md) | Historical Amazon collection decision and supporting evidence |
+## Methodology and References
 
-## Historical Materials
+| Document | Description |
+| --- | --- |
+| [Evidence and Methodology](current_evidence.md) | Evidence labels, sampling, content review, collection controls, and provenance |
+| [Amazon Acquisition Options](../results/amazon_acquisition_options.md) | Completed assessment of acquisition routes and requirements |
+| [Amazon Engineering Decision](../results/amazon_decision.md) | Retail-source conclusion and future integration criteria |
 
-Original research materials and project documents are preserved separately from the repository. The maintained research files provide the relevant methodology, evidence references, and historical context.
+## Historical Context
 
-Historical research records are preserved for reference, while current conclusions are maintained in the linked assessment documents.
+| Document | Description |
+| --- | --- |
+| [Execution plan](execution_plan.md) | Original bounded baseline experiment design |
+| [Earlier Amazon access assessment](amazon_access.md) | Historical observations, superseded by the completed acquisition matrix |
+| [Amazon direction update](amazon_direction_update.md) | Historical metadata-only check and synthetic-parser provenance |
+
+Original project materials and local research archives are maintained separately from this repository. Historical reports preserve their original findings, while the Source Recommendation reflects the current assessment.

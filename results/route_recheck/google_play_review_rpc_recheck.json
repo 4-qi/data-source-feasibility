@@ -1,0 +1,122 @@
+{
+  "assessment_date": "2026-10-27 PDT",
+  "interface_status": "Undocumented Google Play web transport; not Android Publisher API or a supported public review API contract",
+  "schema_source": "https://github.com/JoMingyu/google-play-scraper/blob/master/google_play_scraper/constants/request.py",
+  "field_source": "https://github.com/JoMingyu/google-play-scraper/blob/master/google_play_scraper/constants/element.py",
+  "maximum_requests": 2,
+  "http_requests": 2,
+  "requests": [
+    {
+      "at_utc": "2026-10-28T01:41:25.055961+00:00",
+      "url": "https://play.google.com/_/PlayStoreUi/data/batchexecute",
+      "method": "POST",
+      "purpose": "Read review data; no posting or account mutation",
+      "query_parameters": {
+        "hl": "en",
+        "gl": "us"
+      },
+      "application": "com.spotify.music",
+      "page": 1,
+      "requested_records": 3,
+      "sort_numeric": 2,
+      "cursor_supplied": false,
+      "status": 200,
+      "error": null,
+      "raw_body_saved": false,
+      "author_values_saved": false,
+      "credentials_supplied": false,
+      "automatic_retries": 0,
+      "tls_verification": true,
+      "records": [
+        {
+          "fingerprint": "00627d794ef82b60d83415d629680c470c164d985ac5ee3fe3faa0ff2447eeed",
+          "identity_basis": "source_review_id",
+          "has_text": true,
+          "characters": 94,
+          "words": 22,
+          "rating": 5,
+          "has_date": true
+        },
+        {
+          "fingerprint": "eb01bbe4a054aaf7ebdb7cb99056b0e46dfd51c526d8a4d9040fa2edf32c4851",
+          "identity_basis": "source_review_id",
+          "has_text": true,
+          "characters": 58,
+          "words": 10,
+          "rating": 1,
+          "has_date": true
+        },
+        {
+          "fingerprint": "75a884f38bb8d00e8d6acc066e912e771bf066bc257ce9a676fc3b3e08b2d64a",
+          "identity_basis": "source_review_id",
+          "has_text": true,
+          "characters": 28,
+          "words": 6,
+          "rating": 3,
+          "has_date": true
+        }
+      ],
+      "review_rows_returned": 3,
+      "continuation_token_present": true
+    },
+    {
+      "at_utc": "2026-10-28T01:41:27.405295+00:00",
+      "url": "https://play.google.com/_/PlayStoreUi/data/batchexecute",
+      "method": "POST",
+      "purpose": "Read review data; no posting or account mutation",
+      "query_parameters": {
+        "hl": "en",
+        "gl": "us"
+      },
+      "application": "com.spotify.music",
+      "page": 2,
+      "requested_records": 3,
+      "sort_numeric": 2,
+      "cursor_supplied": true,
+      "status": 200,
+      "error": null,
+      "raw_body_saved": false,
+      "author_values_saved": false,
+      "credentials_supplied": false,
+      "automatic_retries": 0,
+      "tls_verification": true,
+      "records": [
+        {
+          "fingerprint": "dca3e6690a3b56590bf218eb79dc267a924bebf52f3ff62432c3c6b08c36a90c",
+          "identity_basis": "source_review_id",
+          "has_text": true,
+          "characters": 115,
+          "words": 21,
+          "rating": 5,
+          "has_date": true
+        },
+        {
+          "fingerprint": "e6f45785727a6abfdedb03668451cb327728defd5d30e829ca775f489c64c83c",
+          "identity_basis": "source_review_id",
+          "has_text": true,
+          "characters": 90,
+          "words": 18,
+          "rating": 5,
+          "has_date": true
+        },
+        {
+          "fingerprint": "f6333f8bdff447f229c97dd5bbb39af8c58ddf017566e5147bba9fb568970e4b",
+          "identity_basis": "source_review_id",
+          "has_text": true,
+          "characters": 47,
+          "words": 11,
+          "rating": 5,
+          "has_date": true
+        }
+      ],
+      "review_rows_returned": 3,
+      "continuation_token_present": true
+    }
+  ],
+  "distinct_fingerprints": 6,
+  "pagination_overlap": 0,
+  "ongoing_updates": "NOT_TESTED",
+  "collection_retention_analysis_rights": "NOT_ESTABLISHED",
+  "third_party_library_executed": false,
+  "raw_text_saved": false
+}

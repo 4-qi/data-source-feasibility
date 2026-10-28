@@ -1,0 +1,200 @@
+{
+  "assessment_date": "2026-10-27 PDT",
+  "purpose": "Bounded route recheck; no platform-wide impossibility inference",
+  "maximum_requests": 8,
+  "http_requests": 7,
+  "requests": [
+    {
+      "source": "bluesky",
+      "at_utc": "2026-10-28T01:37:00.241147+00:00",
+      "url": "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts",
+      "parameters": {
+        "q": "Spotify",
+        "sort": "latest",
+        "limit": 3,
+        "lang": "en"
+      },
+      "status": 403,
+      "error": "non_200_stop",
+      "response_bytes": 0,
+      "content_type": "text/html",
+      "challenge_marker_detected": false,
+      "raw_body_saved": false,
+      "credentials_supplied": false,
+      "redirects_allowed": false,
+      "retry_count": 0,
+      "records": []
+    },
+    {
+      "source": "mastodon",
+      "at_utc": "2026-10-28T01:37:02.396802+00:00",
+      "url": "https://mastodon.social/api/v1/timelines/tag/firefox",
+      "parameters": {
+        "limit": 3
+      },
+      "status": 200,
+      "error": null,
+      "response_bytes": 10508,
+      "content_type": "application/json",
+      "challenge_marker_detected": false,
+      "raw_body_saved": false,
+      "credentials_supplied": false,
+      "redirects_allowed": false,
+      "retry_count": 0,
+      "records": [
+        {
+          "fingerprint": "ce22764f51d9cd334527b05862771927b3b76a0634f29dd1b22edc075fe425d1",
+          "identity_basis": "source_id",
+          "has_text": true,
+          "characters": 40,
+          "words": 8,
+          "has_date": true,
+          "rating": null
+        },
+        {
+          "fingerprint": "6db1fd4882bf40a218a97d498aa515922fe26e8261e061064d7d3a6d4ca60a20",
+          "identity_basis": "source_id",
+          "has_text": true,
+          "characters": 198,
+          "words": 14,
+          "has_date": true,
+          "rating": null
+        },
+        {
+          "fingerprint": "26b75b179ef89b3984372486648f271732c3b79d20ffdb072a78864c0f13ecb7",
+          "identity_basis": "source_id",
+          "has_text": true,
+          "characters": 195,
+          "words": 14,
+          "has_date": true,
+          "rating": null
+        }
+      ],
+      "records_returned": 3,
+      "next_id_present": true
+    },
+    {
+      "source": "mastodon",
+      "at_utc": "2026-10-28T01:37:05.040871+00:00",
+      "url": "https://mastodon.social/api/v1/timelines/tag/firefox",
+      "parameters": {
+        "limit": 3,
+        "max_id": "sha256:1507337ab211c692ade2c454edceb5fdb22af8f5a705bea8ea73d97750e33310"
+      },
+      "status": 200,
+      "error": null,
+      "response_bytes": 13588,
+      "content_type": "application/json",
+      "challenge_marker_detected": false,
+      "raw_body_saved": false,
+      "credentials_supplied": false,
+      "redirects_allowed": false,
+      "retry_count": 0,
+      "records": [
+        {
+          "fingerprint": "618bbffcf8fe980aa6eb2bfeff05a0b9eef6e965150372e2ea6e0c36b13a853e",
+          "identity_basis": "source_id",
+          "has_text": true,
+          "characters": 124,
+          "words": 16,
+          "has_date": true,
+          "rating": null
+        },
+        {
+          "fingerprint": "48a7c5945348201bc8863bcebfc97e7bd9eb2da8d32b472198be2888e6c9f155",
+          "identity_basis": "source_id",
+          "has_text": true,
+          "characters": 113,
+          "words": 14,
+          "has_date": true,
+          "rating": null
+        },
+        {
+          "fingerprint": "4488ff08e5c92cd0e1120354efddeeeb8fb5c9178860815e09e9347b792dfaaa",
+          "identity_basis": "source_id",
+          "has_text": true,
+          "characters": 209,
+          "words": 28,
+          "has_date": true,
+          "rating": null
+        }
+      ],
+      "records_returned": 3,
+      "next_id_present": true,
+      "overlap_with_first_page": 0
+    },
+    {
+      "source": "walmart",
+      "at_utc": "2026-10-28T01:37:07.469971+00:00",
+      "url": "https://www.walmart.com/ip/703412326",
+      "parameters": {},
+      "status": 307,
+      "error": "non_200_stop",
+      "response_bytes": 0,
+      "content_type": "text/plain",
+      "challenge_marker_detected": false,
+      "raw_body_saved": false,
+      "credentials_supplied": false,
+      "redirects_allowed": false,
+      "retry_count": 0,
+      "records": []
+    },
+    {
+      "source": "bestbuy",
+      "at_utc": "2026-10-28T01:37:09.852644+00:00",
+      "url": "https://www.bestbuy.com/product/sony-wh-1000xm5-wireless-noise-cancelling-over-the-ear-headphones-black/J7XSRH5CXG/sku/6505727/reviews",
+      "parameters": {},
+      "status": null,
+      "error": "ReadTimeout",
+      "response_bytes": 0,
+      "content_type": null,
+      "challenge_marker_detected": false,
+      "raw_body_saved": false,
+      "credentials_supplied": false,
+      "redirects_allowed": false,
+      "retry_count": 0,
+      "records": []
+    },
+    {
+      "source": "yelp",
+      "at_utc": "2026-10-28T01:37:34.516085+00:00",
+      "url": "https://www.yelp.com/biz/north-india-restaurant-san-francisco",
+      "parameters": {},
+      "status": 403,
+      "error": "non_200_stop",
+      "response_bytes": 0,
+      "content_type": "text/html",
+      "challenge_marker_detected": false,
+      "raw_body_saved": false,
+      "credentials_supplied": false,
+      "redirects_allowed": false,
+      "retry_count": 0,
+      "records": []
+    },
+    {
+      "source": "google_play",
+      "at_utc": "2026-10-28T01:37:36.647388+00:00",
+      "url": "https://play.google.com/store/apps/details",
+      "parameters": {
+        "id": "com.spotify.music",
+        "hl": "en_US"
+      },
+      "status": 200,
+      "error": null,
+      "response_bytes": 1369402,
+      "content_type": "text/html",
+      "challenge_marker_detected": false,
+      "raw_body_saved": false,
+      "credentials_supplied": false,
+      "redirects_allowed": false,
+      "retry_count": 0,
+      "records": [],
+      "public_embedded_json_blocks": 1,
+      "embedded_review_objects": 0
+    }
+  ],
+  "raw_content_saved": false,
+  "amazon_requests": 0,
+  "long_term_reliability": "NOT_TESTED",
+  "use_rights": "NOT_ESTABLISHED_BY_ACCESS_CHECK"
+}

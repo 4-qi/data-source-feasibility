@@ -1,0 +1,54 @@
+{
+  "checked_at_utc": "2026-10-28T01:38:58.322637+00:00",
+  "url": "wss://jetstream.us-east.bsky.network/xrpc/network.bsky.jetstream.subscribeEvents?collections=app.bsky.feed.post&kinds=commit",
+  "connections_attempted": 1,
+  "connection_opened": true,
+  "maximum_seconds": 20,
+  "maximum_frames": 10,
+  "maximum_text_records": 3,
+  "maximum_frame_bytes": 2000000,
+  "dependency": "websocket-client==1.9.2",
+  "credentials_supplied": false,
+  "raw_text_saved": false,
+  "author_values_saved": false,
+  "reconnect_attempts": 0,
+  "error": null,
+  "frames_received": 3,
+  "operations": {
+    "create": 3
+  },
+  "records": [
+    {
+      "fingerprint": "2f6d8b9fd131891336a94b233c5fb54e6e95f3d20e6c42450496038eeed2e7b9",
+      "operation": "create",
+      "has_text": true,
+      "characters": 13,
+      "words": 1,
+      "has_created_at": true,
+      "has_sequence": true,
+      "has_event_time": true
+    },
+    {
+      "fingerprint": "609b7f15e4b976f5854caf2a1532c5f141e4efabbd4c3cfa1e4af5a9751b3747",
+      "operation": "create",
+      "has_text": true,
+      "characters": 64,
+      "words": 13,
+      "has_created_at": true,
+      "has_sequence": true,
+      "has_event_time": true
+    },
+    {
+      "fingerprint": "08430fc7c6bf3c97ba24adaaf7a94f076b6abc6f39e6426a4f8d103e9cf010f9",
+      "operation": "create",
+      "has_text": true,
+      "characters": 155,
+      "words": 21,
+      "has_created_at": true,
+      "has_sequence": true,
+      "has_event_time": true
+    }
+  ],
+  "resume_replay_delete_handling": "NOT_TESTED",
+  "duration_seconds": 0.58
+}

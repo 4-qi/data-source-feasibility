@@ -2,11 +2,13 @@
 
 **Evidence date: October 20, 2026.**
 
-## Current outcome
+> **Historical baseline.** This report preserves the October 20 collection comparison. The [mobile comparison](mobile_review_comparison.md) and [Source Recommendation](source_recommendation.md) contain the subsequent evidence and current source selection.
+
+## Baseline outcome
 
 **47 of 48 API requests succeeded:** Steam 20/20, GitHub 8/9 and Hacker News 19/19. GitHub's one 403 had `Remaining=0` and stopped the source without retries. A separate Amazon robots metadata request is excluded from these totals.
 
-Steam demonstrated repeatable review retrieval, with pagination and deduplication validated across the tested queries. GitHub delivered useful software feedback with an observed quota constraint; HN required more topic selection. These findings support the completed [Source Recommendation](source_recommendation.md).
+Steam demonstrated repeatable review retrieval, with pagination and deduplication validated across the tested queries. GitHub delivered useful software feedback with an observed quota constraint, while Hacker News required more topic selection. These findings established the original technical baseline for the subsequent mobile-review comparison.
 
 ## Baseline and repeatability comparison
 
@@ -63,8 +65,8 @@ See the [separate execution](negative_validation/steam_negative_20261020T0821249
 
 Across the baseline and targeted supplement, Steam produced **31 distinct reviews**: 27 baseline reviews and 4 additional negative-recommendation reviews. The targeted supplement is reported separately from the baseline content-quality assessment and does not represent the platform's natural recommendation distribution.
 
-## Selection and Business Assumptions
+## Original Selection and Business Assumptions
 
-Steam best combines a defined review target, original experience text, recommendation metadata, validated pagination, and update timestamps for the initial technical pilot. This assumes digital-product and game feedback is acceptable for method validation. GitHub's higher reviewed usefulness ratio does not make issue and support workflows interchangeable with product reviews.
+Among the sources evaluated in the October 20 baseline, Steam offered the strongest combination of defined review targets, original experience text, recommendation metadata, validated pagination, and update timestamps for a technical pilot. This assessment assumed that game and digital-product feedback was acceptable for method validation. GitHub's higher reviewed usefulness ratio did not make issue and support workflows interchangeable with product reviews.
 
 Amazon remains strategically relevant for consumer-retail feedback. The [Amazon Acquisition Options](amazon_acquisition_options.md) and [Amazon Engineering Decision](amazon_decision.md) provide the detailed acquisition assessment and technical conclusions. Hacker News remains a comparison source, while Best Buy and other screened candidates were deprioritized.

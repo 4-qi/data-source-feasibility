@@ -1,0 +1,518 @@
+{
+  "assessment_date": "2026-10-27 PDT",
+  "request_counts": {
+    "attempts": 32,
+    "http_200": 32
+  },
+  "quality_method": "Rating-blind AI-assisted review of up to 500 normalized body characters; same useful-experience rubric as historical Steam; non-representative purposive sample, not human ground truth",
+  "sampling": "Same eight named app products, US storefront; five first-page records/app/store; Apple JSON except previously working XML routes for Microsoft To Do/Uber; Google en UI and newest sort value 2; no sentiment filtering",
+  "primary_comparison": {
+    "apple": {
+      "quality_records": 40,
+      "apps": 8,
+      "strata": 4,
+      "useful": 28,
+      "useful_percentage": 70.0,
+      "label_counts": {
+        "useful_experience_or_opinion": 28,
+        "low_information_reaction": 12
+      },
+      "prefix_limited_records": 3,
+      "median_characters": 122.0,
+      "min_characters": 8,
+      "max_characters": 1699,
+      "basic_length_screen_eligible": 36,
+      "rating_counts": {
+        "1": 11,
+        "2": 3,
+        "3": 6,
+        "5": 20
+      },
+      "topic_counts_multi_label": {
+        "functionality_usability": 16,
+        "reliability_performance": 5,
+        "account_payment": 4,
+        "advertising_content_quality": 3,
+        "price_subscription": 4,
+        "product_content_quality": 5,
+        "delivery_fulfillment": 1,
+        "service_support": 6
+      },
+      "per_app": [
+        {
+          "app_store_id": "572688855",
+          "stratum": "productivity",
+          "records": 5,
+          "useful": 4,
+          "median_characters": 265,
+          "newest_returned_timestamp_utc": "2026-10-25T19:39:09+00:00",
+          "age_of_newest_returned_timestamp_hours": 54.25
+        },
+        {
+          "app_store_id": "1212616790",
+          "stratum": "productivity",
+          "records": 5,
+          "useful": 5,
+          "median_characters": 222,
+          "newest_returned_timestamp_utc": "2026-10-26T15:24:35+00:00",
+          "age_of_newest_returned_timestamp_hours": 34.5
+        },
+        {
+          "app_store_id": "570060128",
+          "stratum": "education",
+          "records": 5,
+          "useful": 3,
+          "median_characters": 82,
+          "newest_returned_timestamp_utc": "2026-10-26T23:01:32+00:00",
+          "age_of_newest_returned_timestamp_hours": 26.88
+        },
+        {
+          "app_store_id": "469863705",
+          "stratum": "education",
+          "records": 5,
+          "useful": 3,
+          "median_characters": 122,
+          "newest_returned_timestamp_utc": "2026-10-24T17:02:15+00:00",
+          "age_of_newest_returned_timestamp_hours": 80.87
+        },
+        {
+          "app_store_id": "297606951",
+          "stratum": "shopping",
+          "records": 5,
+          "useful": 5,
+          "median_characters": 229,
+          "newest_returned_timestamp_utc": "2026-10-26T23:02:43+00:00",
+          "age_of_newest_returned_timestamp_hours": 26.86
+        },
+        {
+          "app_store_id": "477128284",
+          "stratum": "shopping",
+          "records": 5,
+          "useful": 2,
+          "median_characters": 76,
+          "newest_returned_timestamp_utc": "2026-10-26T22:43:01+00:00",
+          "age_of_newest_returned_timestamp_hours": 27.19
+        },
+        {
+          "app_store_id": "368677368",
+          "stratum": "transportation",
+          "records": 5,
+          "useful": 3,
+          "median_characters": 126,
+          "newest_returned_timestamp_utc": "2026-10-26T22:50:25+00:00",
+          "age_of_newest_returned_timestamp_hours": 27.07
+        },
+        {
+          "app_store_id": "529379082",
+          "stratum": "transportation",
+          "records": 5,
+          "useful": 3,
+          "median_characters": 60,
+          "newest_returned_timestamp_utc": "2026-10-26T23:01:58+00:00",
+          "age_of_newest_returned_timestamp_hours": 26.88
+        }
+      ],
+      "per_stratum": [
+        {
+          "stratum": "productivity",
+          "records": 10,
+          "useful": 9
+        },
+        {
+          "stratum": "education",
+          "records": 10,
+          "useful": 6
+        },
+        {
+          "stratum": "shopping",
+          "records": 10,
+          "useful": 7
+        },
+        {
+          "stratum": "transportation",
+          "records": 10,
+          "useful": 6
+        }
+      ],
+      "requests": 16,
+      "successful_requests": 16
+    },
+    "google": {
+      "quality_records": 40,
+      "apps": 8,
+      "strata": 4,
+      "useful": 17,
+      "useful_percentage": 42.5,
+      "label_counts": {
+        "low_information_reaction": 20,
+        "useful_experience_or_opinion": 17,
+        "unclear_or_offtopic": 3
+      },
+      "prefix_limited_records": 0,
+      "median_characters": 41.5,
+      "min_characters": 4,
+      "max_characters": 500,
+      "basic_length_screen_eligible": 30,
+      "rating_counts": {
+        "1": 9,
+        "2": 2,
+        "3": 4,
+        "4": 3,
+        "5": 22
+      },
+      "topic_counts_multi_label": {
+        "functionality_usability": 8,
+        "reliability_performance": 3,
+        "product_content_quality": 3,
+        "price_subscription": 2,
+        "delivery_fulfillment": 2,
+        "service_support": 7,
+        "account_payment": 1
+      },
+      "per_app": [
+        {
+          "app_store_id": "572688855",
+          "stratum": "productivity",
+          "records": 5,
+          "useful": 0,
+          "median_characters": 28,
+          "newest_returned_timestamp_utc": "2026-10-26T20:39:42+00:00",
+          "age_of_newest_returned_timestamp_hours": 29.25
+        },
+        {
+          "app_store_id": "1212616790",
+          "stratum": "productivity",
+          "records": 5,
+          "useful": 2,
+          "median_characters": 53,
+          "newest_returned_timestamp_utc": "2026-10-26T23:33:09+00:00",
+          "age_of_newest_returned_timestamp_hours": 26.36
+        },
+        {
+          "app_store_id": "570060128",
+          "stratum": "education",
+          "records": 5,
+          "useful": 3,
+          "median_characters": 139,
+          "newest_returned_timestamp_utc": "2026-10-27T01:54:32+00:00",
+          "age_of_newest_returned_timestamp_hours": 24.0
+        },
+        {
+          "app_store_id": "469863705",
+          "stratum": "education",
+          "records": 5,
+          "useful": 1,
+          "median_characters": 25,
+          "newest_returned_timestamp_utc": "2026-10-25T22:46:25+00:00",
+          "age_of_newest_returned_timestamp_hours": 51.14
+        },
+        {
+          "app_store_id": "297606951",
+          "stratum": "shopping",
+          "records": 5,
+          "useful": 4,
+          "median_characters": 233,
+          "newest_returned_timestamp_utc": "2026-10-27T01:47:09+00:00",
+          "age_of_newest_returned_timestamp_hours": 24.13
+        },
+        {
+          "app_store_id": "477128284",
+          "stratum": "shopping",
+          "records": 5,
+          "useful": 1,
+          "median_characters": 28,
+          "newest_returned_timestamp_utc": "2026-10-27T01:43:26+00:00",
+          "age_of_newest_returned_timestamp_hours": 24.19
+        },
+        {
+          "app_store_id": "368677368",
+          "stratum": "transportation",
+          "records": 5,
+          "useful": 3,
+          "median_characters": 36,
+          "newest_returned_timestamp_utc": "2026-10-27T01:53:52+00:00",
+          "age_of_newest_returned_timestamp_hours": 24.01
+        },
+        {
+          "app_store_id": "529379082",
+          "stratum": "transportation",
+          "records": 5,
+          "useful": 3,
+          "median_characters": 42,
+          "newest_returned_timestamp_utc": "2026-10-27T01:14:33+00:00",
+          "age_of_newest_returned_timestamp_hours": 24.67
+        }
+      ],
+      "per_stratum": [
+        {
+          "stratum": "productivity",
+          "records": 10,
+          "useful": 2
+        },
+        {
+          "stratum": "education",
+          "records": 10,
+          "useful": 4
+        },
+        {
+          "stratum": "shopping",
+          "records": 10,
+          "useful": 5
+        },
+        {
+          "stratum": "transportation",
+          "records": 10,
+          "useful": 6
+        }
+      ],
+      "requests": 16,
+      "successful_requests": 16
+    }
+  },
+  "legacy_apple_reinspection": {
+    "target_records": 40,
+    "recovered": 40,
+    "same_full_normalized_text_hash": 40,
+    "useful": 28,
+    "prefix_limited": 3,
+    "sampling_note": "Includes five extra Todoist page-2 records; overlaps primary Apple sample in 35 records and is not an independent additional dataset"
+  },
+  "repeat_checks": [
+    {
+      "source": "apple",
+      "app_store_id": "572688855",
+      "stratum": "productivity",
+      "initial_records": 5,
+      "later_records": 5,
+      "overlap": 5,
+      "newly_visible_ids": 0,
+      "missing_from_later_window": 0,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 244.829
+    },
+    {
+      "source": "apple",
+      "app_store_id": "469863705",
+      "stratum": "education",
+      "initial_records": 5,
+      "later_records": 5,
+      "overlap": 5,
+      "newly_visible_ids": 0,
+      "missing_from_later_window": 0,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 240.801
+    },
+    {
+      "source": "apple",
+      "app_store_id": "477128284",
+      "stratum": "shopping",
+      "initial_records": 5,
+      "later_records": 5,
+      "overlap": 5,
+      "newly_visible_ids": 0,
+      "missing_from_later_window": 0,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 238.816
+    },
+    {
+      "source": "apple",
+      "app_store_id": "529379082",
+      "stratum": "transportation",
+      "initial_records": 5,
+      "later_records": 5,
+      "overlap": 5,
+      "newly_visible_ids": 0,
+      "missing_from_later_window": 0,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 236.887
+    },
+    {
+      "source": "google",
+      "app_store_id": "572688855",
+      "stratum": "productivity",
+      "initial_records": 5,
+      "later_records": 5,
+      "overlap": 5,
+      "newly_visible_ids": 0,
+      "missing_from_later_window": 0,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 236.926
+    },
+    {
+      "source": "google",
+      "app_store_id": "469863705",
+      "stratum": "education",
+      "initial_records": 5,
+      "later_records": 5,
+      "overlap": 5,
+      "newly_visible_ids": 0,
+      "missing_from_later_window": 0,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 232.971
+    },
+    {
+      "source": "google",
+      "app_store_id": "477128284",
+      "stratum": "shopping",
+      "initial_records": 5,
+      "later_records": 5,
+      "overlap": 5,
+      "newly_visible_ids": 0,
+      "missing_from_later_window": 0,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 230.955
+    },
+    {
+      "source": "google",
+      "app_store_id": "529379082",
+      "stratum": "transportation",
+      "initial_records": 5,
+      "later_records": 5,
+      "overlap": 5,
+      "newly_visible_ids": 0,
+      "missing_from_later_window": 0,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 231.548
+    }
+  ],
+  "pagination_checks": [
+    {
+      "source": "apple",
+      "app_store_id": "572688855",
+      "stratum": "productivity",
+      "initial_records": 5,
+      "later_records": 5,
+      "overlap": 0,
+      "newly_visible_ids": 5,
+      "missing_from_later_window": 5,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 29.951
+    },
+    {
+      "source": "apple",
+      "app_store_id": "469863705",
+      "stratum": "education",
+      "initial_records": 5,
+      "later_records": 2,
+      "overlap": 0,
+      "newly_visible_ids": 2,
+      "missing_from_later_window": 5,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 25.936
+    },
+    {
+      "source": "apple",
+      "app_store_id": "477128284",
+      "stratum": "shopping",
+      "initial_records": 5,
+      "later_records": 2,
+      "overlap": 0,
+      "newly_visible_ids": 2,
+      "missing_from_later_window": 5,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 23.966
+    },
+    {
+      "source": "apple",
+      "app_store_id": "529379082",
+      "stratum": "transportation",
+      "initial_records": 5,
+      "later_records": 2,
+      "overlap": 0,
+      "newly_visible_ids": 2,
+      "missing_from_later_window": 5,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 21.928
+    },
+    {
+      "source": "google",
+      "app_store_id": "572688855",
+      "stratum": "productivity",
+      "initial_records": 5,
+      "later_records": 2,
+      "overlap": 0,
+      "newly_visible_ids": 2,
+      "missing_from_later_window": 5,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 21.962
+    },
+    {
+      "source": "google",
+      "app_store_id": "469863705",
+      "stratum": "education",
+      "initial_records": 5,
+      "later_records": 2,
+      "overlap": 0,
+      "newly_visible_ids": 2,
+      "missing_from_later_window": 5,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 17.887
+    },
+    {
+      "source": "google",
+      "app_store_id": "477128284",
+      "stratum": "shopping",
+      "initial_records": 5,
+      "later_records": 2,
+      "overlap": 0,
+      "newly_visible_ids": 2,
+      "missing_from_later_window": 5,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 15.809
+    },
+    {
+      "source": "google",
+      "app_store_id": "529379082",
+      "stratum": "transportation",
+      "initial_records": 5,
+      "later_records": 2,
+      "overlap": 0,
+      "newly_visible_ids": 2,
+      "missing_from_later_window": 5,
+      "same_id_text_hash_changes": 0,
+      "elapsed_seconds": 16.301
+    }
+  ],
+  "observed_new_ids_in_repeat": 0,
+  "observed_text_edits_in_repeat": 0,
+  "scheduled_long_term_freshness": "NOT_TESTED",
+  "new_record_detection_interpretation": "Window differences do not prove new creation, and zero differences do not prove source staleness; returned dates alone do not prove ingestion freshness",
+  "historical_steam_comparator": {
+    "api_successes": 20,
+    "api_requests": 20,
+    "distinct_reviews": 31,
+    "baseline_quality_records": 27,
+    "baseline_useful": 10,
+    "baseline_useful_percentage": 37.0,
+    "negative_supplement_records": 4,
+    "negative_supplement_semantic_review": "NOT_PERFORMED",
+    "rerun_this_round": false,
+    "median_characters": 30,
+    "basic_length_screen_eligible": 16
+  },
+  "rights_and_production": "Technical research comparison only; no verified authorization for scheduled commercial storage or external model training is claimed",
+  "raw_content_in_deliverables": false,
+  "record_volume": {
+    "apple": {
+      "parsed_occurrences": 71,
+      "distinct_fingerprints": 51,
+      "primary_quality_sample": 40
+    },
+    "google": {
+      "parsed_occurrences": 68,
+      "distinct_fingerprints": 48,
+      "primary_quality_sample": 40
+    }
+  },
+  "matched_previous_apple_seven_app_subset": {
+    "apple_useful": 25,
+    "google_useful": 14,
+    "records_per_store": 35,
+    "interpretation": "Excludes Duolingo from both current primary samples; paired product frame but not paired users or same content"
+  },
+  "protocol_mapping_sources": [
+    "https://github.com/JoMingyu/google-play-scraper/blob/master/google_play_scraper/constants/google_play.py",
+    "https://github.com/JoMingyu/google-play-scraper/blob/master/google_play_scraper/constants/request.py",
+    "https://github.com/JoMingyu/google-play-scraper/blob/master/google_play_scraper/constants/element.py"
+  ]
+}

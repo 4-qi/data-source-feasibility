@@ -1,40 +1,42 @@
 # Source Recommendation — Phase I
 
-**Assessment date:** October 20, 2026
+**Assessment date: October 27, 2026 PDT.**
 
-## Selection
+## Recommendation
 
-**Use Steam Reviews for the initial technical pilot, with GitHub Issues as the quota-dependent backup.** Retain Amazon's strategic consumer-retail role, but exclude broad raw-review integration under current access conditions. Hacker News remains a comparison source rather than the selected input.
+**Recommend Apple App Store reviews as the primary candidate for the next broad-domain ingestion pilot, Google Play reviews as the backup, and Steam as the technical regression baseline.** The intended scope is consumer experiences across app-enabled products and services.
 
-The assessment and focused collection validation are complete. This recommendation assumes game or digital-product feedback is acceptable for validating the ingestion approach. A physical-retail requirement would require a domain-appropriate source rather than treating Steam as a substitute.
+The focused feasibility comparison is complete. This recommendation identifies the preferred source for the next pilot; production integration still requires an applicable data-use basis and sustained online-update validation.
 
-## Technical rationale
+## Supporting Evidence
 
-| Source | Evidence and practical value | Selection rationale |
-| --- | --- | --- |
-| Steam Reviews | Structured review targets, recommendation flags, pagination and update timestamps; 20/20 successful requests including the negative supplement | Best fit for a repeatable review-ingestion pilot, with short-text filtering and cross-query deduplication |
-| GitHub Issues | Useful software pain points and issue/comment relationships; 8/9 successful requests | Strong backup for software feedback, with PR exclusion, support-content filtering and quota management |
-| Hacker News | Public discussions and comment relationships; 19/19 successful requests | Greater topic/context selection effort than a product-review source |
-| Amazon | Broad consumer-retail relevance; assessed access routes do not establish the required multi-consumer raw-review stream | Strategic retail relevance without a currently suitable ingestion route |
+The [detailed comparison](mobile_review_comparison.md) used the same eight app products on Apple and Google: two each in productivity, education, shopping and transportation. Five first-page reviews per app produced equal 40-record primary samples. All 32 bounded requests succeeded, including four pagination and four short repeat checks per store.
 
-The experiments recorded **47 successful API requests out of 48**. Steam consistently retrieved 27 distinct baseline reviews across three runs, including a follow-up approximately 16 minutes after the initial test. A separate two-request check retrieved four additional reviews with voted_up=false, validating negative-recommendation retrieval and processing.
+| Dimension | Apple App Store | Google Play | Steam baseline |
+| --- | --- | --- | --- |
+| Executed coverage | 8 apps / 4 categories | Same 8 apps / 4 categories | 2 games |
+| Useful experience content | 28/40 (70.0%) | 17/40 (42.5%) | Historical 10/27 (37.0%) |
+| Median body length | 122 characters | 41.5 characters | 30 characters |
+| Pagination | Four app checks, no sampled overlap | Four app checks, no sampled overlap | Historical cursor pagination verified |
+| Repeatability | Same sampled IDs and body hashes after approximately four minutes | Same sampled IDs and body hashes after approximately four minutes | Historical repeated retrieval verified |
+| Main constraint | RSS behavior varies by format and execution | Undocumented web transport and schema | Gaming-specific content |
 
-Content review identified useful feedback in 10 of 27 Steam reviews, 7 of 11 GitHub records, and 3 of 9 Hacker News records. The review methodology and evaluation criteria are documented in the [Feasibility Comparison](feasibility_comparison.md).
+Content review used the established concrete-experience rubric on actual text, with ratings hidden in the new inspection display. Judgments are AI-assisted and limited to complete short bodies or the first 500 normalized characters. These are descriptive sample results. Steam's older, positive-only quality baseline and different query design prevent a controlled platform-wide ranking; its four targeted negative records were outside semantic review.
 
-GitHub's higher useful-content ratio does not make issue/support workflows interchangeable with product reviews. Steam combines an explicit product target and structured recommendation metadata with simpler collection and filtering requirements.
+## Selection Rationale
 
-## Amazon conclusion
+Apple combines demonstrated category breadth, structured ratings and review fields, successful bounded collection, and more detailed experience content in the sampled windows. Its advantage was strongest in productivity feedback; several apps had equal useful counts across stores. The recommendation therefore reflects the combined evidence, rather than the 70.0% figure alone.
 
-The Amazon feasibility assessment is complete. Customer Feedback SP-API supplies aggregate topics, trends and selected excerpts. Data Portability supplies individually authorizing customers' own review data, not arbitrary ASIN-wide coverage. Affiliate catalog access does not establish a suitable full-review stream; supplier claims do not establish project-specific rights and coverage.
+Google remains a credible backup because the same category frame, pagination and repeated reads succeeded. Its sample contained more generic reactions, and reliance on an undocumented web interface increases maintenance risk. The official developer API's application-owner authorization is separate from this tested web route.
 
-No currently verified route supports broad, repeatable raw-review acquisition for this project. Amazon therefore remains a strategic consumer-retail candidate rather than an immediate ingestion source.
+Steam remains valuable for regression and controlled ingestion exercises through its documented interface. Its two-game frame is narrower than the project's intended consumer-experience scope. GitHub Issues retains a quota-dependent role for software-feedback work, distinct from the app-review backup role assigned to Google.
 
-The [Amazon Acquisition Options](amazon_acquisition_options.md) contains the route evidence and references. The [Amazon Engineering Decision](amazon_decision.md) defines the conditions for reconsideration: a verified supply agreement, an accepted aggregate-insights product, or an appropriate consent-based product. Account-based or licensed access would represent a trade-off against the Project Brief's preference for ungated access.
+Both app stores contain feedback about delivery, payments, support and drivers as well as app functionality. Downstream labels should preserve that distinction. Amazon Shopping app reviews do not provide ASIN-level Amazon product-review coverage.
 
-## Implementation Considerations
+## Production Entry Conditions
 
-The Steam pilot provides a foundation for a modular ingestion pipeline built around review retrieval, normalization, quality filtering, and deduplication, with update timestamps supporting future incremental ingestion.
+The short repeats showed no newly visible IDs or body edits. Sustained online ingestion requires day-scale arrival observations, adequate overlap between collection windows, and edit/deletion handling. A static dataset would not meet that requirement.
 
-The next engineering stage can extend the validated collectors with persistent storage, scheduled execution, and monitoring. Review IDs and update timestamps provide a basis for record tracking, while text-quality filtering can reduce low-information content.
+Scheduled collection, historical data retention, and model-related use require appropriate permissions under the applicable data-use terms. The [acquisition assessment](mainstream_review_assessment.md) documents source conditions and commercial alternatives; successful requests or supplier credentials alone do not establish those rights. Apple RSS has no established general-purpose review API support guarantee, while Google's web interface adds schema risk.
 
-Production integration will require confirmation of applicable data-use conditions and additional reliability validation. Supporting execution records and test results are available through the [Evidence Index](README.md).
+Amazon's completed [engineering assessment](amazon_decision.md) remains unchanged. Earlier retail and social-source findings remain available in the [Evidence Index](README.md).

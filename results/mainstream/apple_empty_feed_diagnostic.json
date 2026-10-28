@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-27",
+  "purpose": "Clarify the three HTTP 200 responses without parsed reviews; not a corpus-size or absence finding",
+  "request_budget": 3,
+  "http_requests": 3,
+  "requests": [
+    {
+      "at_utc": "2026-10-28T01:16:55.333373+00:00",
+      "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1212616790/sortby=mostrecent/json",
+      "app_store_id": "1212616790",
+      "status": 200,
+      "error": null,
+      "response_top_level_keys": [
+        "feed"
+      ],
+      "feed_keys": [
+        "author",
+        "icon",
+        "id",
+        "link",
+        "rights",
+        "title",
+        "updated"
+      ],
+      "entry_member_present": false,
+      "raw_body_saved": false
+    },
+    {
+      "at_utc": "2026-10-28T01:16:57.504726+00:00",
+      "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=570060128/sortby=mostrecent/json",
+      "app_store_id": "570060128",
+      "status": 200,
+      "error": null,
+      "response_top_level_keys": [
+        "feed"
+      ],
+      "feed_keys": [
+        "author",
+        "icon",
+        "id",
+        "link",
+        "rights",
+        "title",
+        "updated"
+      ],
+      "entry_member_present": false,
+      "raw_body_saved": false
+    },
+    {
+      "at_utc": "2026-10-28T01:16:59.538492+00:00",
+      "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=368677368/sortby=mostrecent/json",
+      "app_store_id": "368677368",
+      "status": 200,
+      "error": null,
+      "response_top_level_keys": [
+        "feed"
+      ],
+      "feed_keys": [
+        "author",
+        "icon",
+        "id",
+        "link",
+        "rights",
+        "title",
+        "updated"
+      ],
+      "entry_member_present": false,
+      "raw_body_saved": false
+    }
+  ]
+}
