@@ -1,9 +1,16 @@
 # First Live Smoke Test preparation
 
+> Final baseline handoff: the execution-policy correction has been accepted for
+> a separate local follow-up commit to `cadc16c`. Implementation bytes match the
+> 668-test regression record; only handoff/status documentation is updated now.
+> The operator procedure below is fixed. This handoff does not enable a target,
+> perform a real request, confirm data-use rights or activate Phase F.
+
 Prepared November 3, 2026. **Preparation only: no Apple request, target
 enablement, Phase F activation, commit or push.** The user accepted Phase E and
-the persistent deployment, and authorized simplifying routine execution policy.
-This does not confirm the outstanding data-use/long-term-retention arrangements.
+the persistent deployment, and requested technical-only runtime configuration.
+Data-use and long-term-retention questions remain documented for discussion;
+they are not runtime confirmation flags or approval-document prerequisites.
 No update to John is drafted or sent by this task.
 
 ## Selected target and bounded plan
@@ -34,7 +41,7 @@ import or rerun the old feasibility probes to execute this smoke test.
 | HTTP limits | Connect/read 10/25 seconds; 2,000,000 decoded bytes per response |
 | Target deadline | 900 seconds, further bounded by the project's remaining validity |
 | Reference | Latest eligible LIVE evidence; insufficient previous overlap does not exclude it; >72h warns only |
-| Current execution state | Policy disabled, access confirmation false, retention arrangement false, all targets disabled |
+| Current execution state | Project execution disabled; all targets disabled; no current operation changes either state |
 
 There is no early-stop guarantee after page 2: if no eligible prior LIVE run
 exists, this first run normally uses the five-page baseline budget. Empty feeds
@@ -45,7 +52,7 @@ proof of complete review coverage. Low observable volume does not lower threshol
 ## Simplified project policy
 
 The new entry is `ProjectExecutionPolicy` / `prepare_project_controller`.
-One confirmed project JSON can be reused for multiple manually initiated or
+One technically configured project JSON can be reused for multiple manually initiated or
 future scheduled runs in its scope/window. It does **not** require fresh
 approval documents, approver fields or one-use credentials for every run.
 No receipt is created or consumed. Legacy single-run APIs remain for historical
@@ -54,8 +61,10 @@ old `single-run-approval.json` to use the new path.
 
 The [smoke template](../deploy/apple_ingestion/project-smoke.example.json) names
 only Todoist and `purpose=smoke`. The [pilot plan template](../deploy/apple_ingestion/project-pilot-plan.example.json)
-names the fixed eight apps and `purpose=pilot`. Both are disabled, unconfirmed,
-with null policy ID, validity and access-basis reference. The private prepared
+names the fixed eight apps and `purpose=pilot`. Both are disabled,
+with null technical policy ID and validity. The policy contains only its tracking
+ID, operator, scope, window, execution switch and request limits; no access
+confirmation, access-basis reference, approver or rights declaration is needed. The private prepared
 copies are `project-policy.smoke.json` and `project-policy.pilot-plan.json` in
 `/home/l2838/.config/data-source-feasibility`.
 
@@ -63,9 +72,11 @@ The policy checks declared scope, validity (at most seven days), unchanged
 per-run configuration and deployment, and reloads a file-backed policy before
 requests. Mid-run changes/revocation stop the run. Every immutable run snapshot
 records the project policy ID and canonical configuration SHA-256 in the existing
-`access_decision_ref`; no snapshot-schema/table change is needed. Keep the
+`access_decision_ref` reference slot; this legacy field name carries a technical
+trace, **not** a rights decision or approval. `retention_policy_ref` may be null.
+No snapshot-schema/table change is needed. Keep the
 corresponding policy revision privately so the digest can be resolved later.
-Archive policy revisions once when changed, not as a fresh daily approval.
+Archive technical policy revisions when changed; no daily approval is involved.
 
 `config.interval_hours=24` declares the plan. It is not a database-enforced
 24-hour embargo: explicit manual follow-up is possible inside a valid scope.
@@ -91,10 +102,16 @@ for this check. Sanitized evidence: `/tmp/apple-smoke-persistent-preflight.json`
 See [persistent operations](APPLE_INGESTION_LOCAL_DEPLOYMENT.md) for actual paths,
 manual PostgreSQL startup, private credentials and tested backup/restore.
 
-Expected current readiness is database-ready **and live-blocked**:
-`LONG_TERM_ARRANGEMENT_UNCONFIRMED`, `RETENTION_DECISION_PENDING`, plus the new
-project's disabled/unconfirmed execution state. A pending configuration is
-preparation, not an authorization record.
+That earlier read-only check reported retention/access-related blockers under
+the former gates. Those administrative gates are now removed from runtime; the
+old result must not be presented as a fresh check of the corrected code. No
+persistent configuration or database was changed/rechecked by this correction.
+Current execution remains disabled at both the technical project switch and
+the targets. A future read-only check must assess actual PostgreSQL/roles,
+scope/window/budgets and diagnostic safety, without asking the code to confirm
+data-use or long-term arrangements. The deployment report's `live_ready` field
+is technical readiness only: it may be true while project execution is disabled,
+and it neither starts HTTP nor confirms administrative arrangements.
 
 ## Exact operator procedure
 
@@ -133,7 +150,7 @@ try:
                 'live_ready': result['live_ready'], 'blockers': result['blockers'],
                 'purpose': project.purpose, 'selected_apps': project.source_application_ids,
                 'execution_enabled': project.execution_enabled,
-                'access_arrangement_confirmed': project.access_arrangement_confirmed,
+                'technical_policy_id': str(project.policy_id) if project.policy_id else None,
                 'targets': [dict(app=row[0], enabled=row[1]) for row in targets]}, indent=2))
 finally:
     runtime.dispose()
@@ -141,30 +158,32 @@ finally:
 PY
 ```
 
-### 2. Resolve actual project prerequisites once
+### 2. Configure the technical scope once — future operator action
 
-Only after the responsible owner confirms the applicable arrangements and the
-user authorizes the bounded real smoke run, an operator can update the private
-files. These are **future required changes**, not values filled by Codex now:
+These are prepared instructions, not actions performed now. The operator fills
+only the technical configuration needed for a later explicitly initiated run:
 
-| Private field | Required actual value/action |
+| Private field | Technical value/action |
 | --- | --- |
 | `project-policy.smoke.json`: `purpose`, apps | Keep `smoke`, exactly `["572688855"]` |
-| `policy_id` | A real UUID identifying this project policy revision, generated once; not per run |
-| `operator` | Existing actual operator `l2838`, matching deployment diagnostics |
-| `access_basis_ref` | Reviewable reference to the actual project-level access/data-use decision; no invented approval |
-| `valid_from`, `valid_until` | Actual UTC-aware window; proposed smoke window one hour, never more than seven days; currently null |
-| `access_arrangement_confirmed` | Set true only when that confirmation actually exists |
-| `execution_enabled` | Set true only for the separately authorized scope/window |
-| `deployment.json`: `retention.arrangement_confirmed` | Set true only after actual long-term arrangements are confirmed; keep `long_term` and null days |
+| `policy_id` | UUID identifying this technical configuration revision, generated once; tracking only, not approval or a per-run receipt |
+| `operator` | Named actual operator, matching deployment diagnostics |
+| `valid_from`, `valid_until` | UTC-aware window; proposed smoke window one hour, never more than seven days; currently null |
+| `execution_enabled` | Explicit operator switch for that scope/window; remains false during this preparation |
 | Other config limits | Keep the prepared defaults; do not edit thresholds to make a small sample pass |
 
-Do not alter credentials or DSNs. Keep old policy revisions and private backups.
-The project-level confirmation can cover the seven-day scope; no daily forms
-are needed. Activating `purpose=pilot` and its broader app list remains a later,
-explicit Phase F decision, not a side effect of this smoke configuration.
+No `access_basis_ref`, access confirmation, retention confirmation, approval file
+or approver identity is required to execute the technical path. Do not invent
+such values to satisfy code. Administrative data-use and long-term-retention
+questions remain in the discussion list below; an unresolved discussion is not
+a code-confirmed permission or a runtime blocker. A nullable retention reference
+is metadata, not an execution decision.
 
-### 3. Enable only the smoke target, after prerequisites
+Do not alter credentials or DSNs. Keep technical revisions and private backups.
+Activating `purpose=pilot` and its broader app list remains a later explicit
+Phase F decision, not a side effect of this smoke configuration.
+
+### 3. Enable only the smoke target after technical configuration
 
 This is a future maintenance operation. Do not run now. First take the private
 backup described in the deployment report. Use the existing owner service;
@@ -189,10 +208,10 @@ SQL
 ```
 
 Require exactly one enabled row, Todoist; stop if any other target is enabled.
-Re-run the read-only check and inspect all blockers. Enabling a row alone never
-authorizes HTTP. Never use a superuser connection for collection.
+Re-run the read-only check and inspect all blockers. A target row alone does not start HTTP: the technical project switch,
+scope/window/limits and PostgreSQL checks must also pass. Never use a superuser connection for collection.
 
-### 4. One bounded real invocation, only after clearance
+### 4. One bounded invocation — future explicit operator action
 
 This command makes **one** existing `Controller.run_target` call. It does not
 schedule, loop over apps, create a receipt or automatically retry. The explicit
@@ -239,7 +258,7 @@ try:
                 raise SystemExit('ONLY_SMOKE_TARGET_MAY_BE_ENABLED')
     snapshot = policy.make_snapshot(application_id=selected[0], source_application_id=selected[1],
         target_id=selected[2], software_revision=revision,
-        retention_policy_ref=config.retention.policy_ref)
+        retention_policy_ref=None)
     batch_id = uuid4()
     with prepare_project_controller(runtime, DiagnosticSpool(environment[config.diagnostics.spool_path_env]),
             policy=policy, deployment_config=config, audit_engine=owner, environ=environment) as collector:
@@ -346,7 +365,7 @@ to the pilot configuration automatically.
 
 ## Seven-day plan, not activated
 
-Let `T0` be the future approved UTC start. No calendar start or valid policy
+Let `T0` be the future operator-selected UTC start. No calendar start or valid policy
 dates have been filled. Use the original fixed eight apps in manifest order:
 Todoist, Microsoft To Do, Duolingo, Khan Academy, Amazon Shopping, Etsy,
 Uber and Lyft. Verify the manifest identities rather than adding
@@ -367,7 +386,7 @@ will occur. Additional manual follow-up is never automatic; account for it
 explicitly rather than claiming it was included in these totals.
 
 No cron/systemd timer, task, daemon or schedule activation is installed. A later
-explicit Phase F start uses the confirmed pilot project configuration and
+explicit Phase F start uses the enabled technical pilot configuration and
 `prepare_project_controller` with the existing `Controller.run_batch`, one batch
 UUID per daily invocation, no daily approval documents/receipts. It retains
 the existing source-denial/infrastructure short-circuit across subsequent apps.
@@ -389,65 +408,96 @@ Daily reporting checklist (not a draft to John):
 
 ## Acceptance and remaining actions
 
-Main-chat full regression completed on the final working tree:
+The earlier main-chat full regression recorded **668 passed**, with no failed,
+error or skipped tests, before this technical-only gate correction. That is a
+historical checkpoint, not a claim that the revised working tree has already
+passed a fresh full suite. The coordinating chat owns the updated full-suite
+acceptance and its actual totals.
+
+The narrow procedure test executes the actual `smoke-execute-command` Python
+body below this document's marker with only its private path replaced by a tmp
+fixture. The same real factory receives an injected clock and requests.Session
+with an in-process Adapter. Its pending retention metadata and absent approval/
+rights-confirmation fields must not block the technical run. All configuration,
+review text and target changes in that test belong only to a disposable test
+database. No actual deployment, target or project switch is activated.
+
+### Full correction acceptance (current)
+
+The main chat ran the complete regression after the runtime correction:
 
 ```sh
-PYTHONNOUSERSITE=1 APPLE_TEST_PYTHON=/home/l2838/miniconda3/envs/data-source-feasibility/bin/python bash scripts/test_apple_ingestion_postgres.sh --full-suite -q --junitxml=/tmp/apple-project-smoke-full-suite.xml
+PYTHONNOUSERSITE=1 APPLE_TEST_PYTHON=/home/l2838/miniconda3/envs/data-source-feasibility/bin/python bash scripts/test_apple_ingestion_postgres.sh --full-suite -q --junitxml=/tmp/apple-operational-controls-full-suite.xml
 ```
 
-**668 passed in 79.56 seconds: 0 failed, 0 errors, 0 skipped; no pytest warnings.**
-All previous 640 cases remain; 27 new project-policy cases cover pending states,
-limits, scope/window, repeated runs, changed/revoked configuration, immutable
-trace, legacy compatibility and retention closure. Two of those cases exercise
-the same project/transport across two eight-app batches with a simulated 24h
-gap (16 fixture runs, 32 injected requests), under both nonadmin ownership layouts.
-One additional integration case executes the actual smoke-command Python body
-with only its private config directory replaced by temporary files, injected
-clock and a genuine requests.Session with an in-process Adapter. It verifies
-one Todoist run, terminal baseline, two committed fixture pages and output/API
-correctness. These are explicitly invented responses/confirmations, not actual
-source observations or a real pilot. The actual prepared smoke configuration
-retains the default five-page cap; the integration fixture deliberately uses
-two pages within the supported 2–5 range.
+**668 passed in 82.80 seconds; 0 failed, 0 errors, 0 skipped, no pytest warnings.**
+Affected tests now verify the corrected boundary rather than demanding the old
+administrative gates. Default disablement, app scope, validity, unchanged
+budgets/spacing/timeouts, denial stops, safe logs, actual restricted logins,
+transactions, integrity, recovery and immutable technical trace remain covered.
+The suite uses invented responses and a separate temporary PostgreSQL cluster;
+no test success is real source evidence.
 
-The exact read-only runbook command was separately executed on persistent WSL:
-database ready, all targets disabled and live blocked. All three embedded Python
-procedures compile. The execute procedure was negatively checked with the actual
-pending private policy: `PROJECT_EXECUTION_DISABLED`, exit 2, before any engine
-or HTTP Session construction. The report-role SQL file was executed read-only
-against the empty persistent database with an intentionally nonexistent UUID;
-it correctly reported `run_exists=false`. That syntax check is not a run or
-a successful post-collection acceptance. No business rows were created.
+The main chat also checked the actual persistent environment in read-only
+transactions. `database_ready=true`, `runtime_login_verified=true` and
+`operational_ready=true`, with no engineering preflight blockers. The legacy
+`live_ready` field means only deployment operational readiness; it is not
+permission or an assertion of data-use rights. Both actual project configurations
+still fail pure policy checks with `PROJECT_EXECUTION_DISABLED`, all eight
+targets are disabled, and run/attempt/review/version/observation counts are zero.
+Four private configuration files retain their exact bytes; their old false
+administrative flags are accepted and ignored, never changed to true.
+Sanitized verification: `/tmp/apple-operational-correction-readiness.json`.
 
-Reporting recognizes `policy_stop` and the enumerated `PROJECT_*` codes; known
-send lower bounds continue to use durable HTTP status, distinct from request
-intent counts. Deployment preflight identifies the reusable project policy as
-the default authorization boundary and labels the legacy API separately; it
-still grants no execution permission itself. No new table, migration, source,
-scheduler or ingestion/reconciliation/reference/parser/hash change was made.
-`git diff --check` and dependency consistency checks pass; no historical evidence
-was modified. Working branch/HEAD remain `main` /
-`474736abcee2a67f186299f09d196125400eb1ab`, with nothing staged.
+The scope of the code change is the live policy, snapshot value-contract
+validation and deployment preflight. No table/migration, parsing, normalization,
+reconciliation, comparison-reference or stopping-algorithm change was made.
+The design document only clarifies this administrative/technical boundary.
+No actual HTTP, target enablement, scheduler, Phase F, John update, commit or push
+was performed. The working HEAD remains the prior baseline `cadc16c`.
 
-The current concrete prerequisites remain: actual
-project-level access/long-term arrangement confirmation; genuine policy scope,
-validity and execution enablement; and a later authorized enablement of the
-single target. No fresh per-run approval mechanism is needed. Current upstream
-format/DNS/TLS is an untested technical condition for that later bounded run,
-not a reason to invent a successful observation now.
+Targeted correction validation:
+
+```sh
+PYTHONNOUSERSITE=1 APPLE_TEST_PYTHON=/home/l2838/miniconda3/envs/data-source-feasibility/bin/python bash scripts/test_apple_ingestion_postgres.sh --full-suite tests/test_apple_ingestion_smoke_procedure.py -q --tb=short
+```
+
+Result: **1 passed in 1.71 seconds, 0 failed, 0 skipped**. No access/approval
+fields appear in the technical project JSON, retention metadata stays pending
+with null references, and the one fixture Todoist run completes two pages.
+`request_intents=2` agrees with `known_sent_lower_bound=2` and the two Adapter
+calls. The actual smoke remains unexecuted. The procedure prints durable `request_intents`, not
+an assumed number of actual sends. Cross-check the known-send lower bound using
+`run_report.requests.known_sent_lower_bound`. Keep the safe `stop_reason` and
+`reason_codes` so a local technical refusal cannot be mistaken for a clean run.
+The actual prepared smoke cap remains five pages; the positive fixture uses two
+pages within the existing 2–5 range. No source evidence or human assessment is
+manufactured by these fixtures.
+
+Current operational steps remain technical: record the tracking ID/operator,
+scope and window; explicitly enable project execution and only the selected
+target during a future requested operation; inspect actual PostgreSQL/diagnostic
+checks; then make one bounded call and review its real result. Current upstream
+format/DNS/TLS remains untested by this preparation. The pending administrative
+questions are documented separately and do not become runtime authorization
+flags, mandatory references or an approval workflow.
 
 Readiness checklist:
 
-- [x] Persistent database, migration, actual roles and private directories checked read-only.
-- [x] Todoist selected from existing evidence; limits, fallback and stop conditions fixed.
-- [x] Reusable policy, exact smoke command and safe post-run checks verified offline.
+- [x] Actual persistent deployment checked read-only; private configs unchanged, all eight targets disabled.
+- [x] Todoist selected from existing evidence; limits, fallback and stop conditions unchanged.
+- [x] Technical-only policy and safe post-run procedure prepared; no fabricated approval fields are needed.
 - [x] Seven-day plan prepared with no scheduling activated.
-- [ ] Responsible owner confirms actual access/long-term arrangements.
-- [ ] Operator records genuine scope/reference/window and explicitly enables project execution.
-- [ ] Later authorized maintenance enables only Todoist; preflight then clears all actual blockers.
-- [ ] Authorized smoke obtains real evidence and passes post-run review; no success is claimed now.
+- [ ] Operator records technical ID/operator/scope/window and explicitly enables project execution for a future run.
+- [ ] Future maintenance enables only Todoist and checks actual database/diagnostic safety; currently all targets stay disabled.
+- [ ] Smoke obtains actual evidence and passes post-run review; no success is claimed now.
 - [ ] Separate Phase F start decision, after smoke review; never automatic.
 
-**Stop after preparation.** The next discussion with John can address the
-outstanding arrangements, but drafting/sending it and executing the smoke or
-Phase F are outside this task.
+Discussion items, **not runtime gates**: applicable source/data-use conditions,
+long-term retention intent and owner, private full-text access, backups/exports,
+and their lifecycle. Successful HTTP or an enabled switch settles none of those
+questions. They remain available for a later discussion with John; this task
+neither drafts nor sends that update and does not mark any arrangement confirmed.
+
+**Stop after preparation.** No real RSS request, persistent target/project
+activation, Phase F execution, commit or push is part of this correction.

@@ -2,8 +2,6 @@
   "policy_id": null,
   "operator": null,
   "execution_enabled": false,
-  "access_arrangement_confirmed": false,
-  "access_basis_ref": null,
   "valid_from": null,
   "valid_until": null,
   "purpose": "smoke",

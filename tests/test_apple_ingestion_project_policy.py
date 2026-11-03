@@ -44,7 +44,8 @@ def test_pending_smoke_and_pilot_templates_are_strict_and_do_not_authorize():
         payload=project_policy_template(purpose=purpose)
         value=ProjectExecutionConfig.from_dict(payload)
         assert value.policy_id is value.valid_from is value.valid_until is None
-        assert not value.execution_enabled and not value.access_arrangement_confirmed
+        assert not value.execution_enabled
+        assert "access_arrangement_confirmed" not in payload and "access_basis_ref" not in payload
         assert len(value.source_application_ids)==count and value.config.interval_hours==24
     assert project_policy_template()["source_application_ids"]==["572688855"]
     policy=ProjectExecutionPolicy(ProjectExecutionConfig.from_dict(project_policy_template()))
@@ -105,7 +106,7 @@ def test_file_policy_is_rechecked_before_each_http_and_fallback(ready,tmp_path,c
     _,engines,_,_,_=ready; clock=Clock()
     def change(number):
         if number==1:
-            replacement=replace(value,execution_enabled=False) if changed=="disable" else replace(value,access_basis_ref="new-fixture-basis")
+            replacement=replace(value,execution_enabled=False) if changed=="disable" else replace(value,valid_until=NOW+timedelta(days=6))
             path.write_text(json.dumps(replacement.to_dict()))
     adapter=OfflineAdapter(engines["runtime"],clock,[(200,b'{"feed":{}}')],change)
     factory,_=factory_for(adapter)
@@ -139,22 +140,56 @@ def test_revocation_during_spacing_is_checked_immediately_before_real_session_ge
     assert_terminal_resolved(engines["runtime"])
 
 
-def test_expired_or_access_unconfirmed_project_refuses_before_session_or_run(ready,tmp_path):
+def test_expired_or_disabled_project_refuses_before_session_or_run(ready,tmp_path):
     value,_,_,_=configured(ready,tmp_path); _,engines,_,_,_=ready; clock=Clock()
-    for record,code in ((replace(value,access_arrangement_confirmed=False),"PROJECT_ACCESS_ARRANGEMENT_PENDING"),
+    for record,code in ((replace(value,execution_enabled=False),"PROJECT_EXECUTION_DISABLED"),
                         (replace(value,valid_from=NOW-timedelta(days=1),valid_until=NOW),"PROJECT_POLICY_OUTSIDE_VALIDITY")):
         with pytest.raises(LivePolicyError,match=code):
             with prepare(ready,ProjectExecutionPolicy(record),clock,lambda:pytest.fail("unconfirmed Session")): pass
     assert rows(engines["runtime"],R)==[]
 
 
-def test_new_project_does_not_bypass_long_term_retention_confirmation(ready,tmp_path):
-    _,policy,_,_=configured(ready,tmp_path)
-    config,engines,env,snapshot,spool=ready
-    pending=replace(config,retention=replace(config.retention,mode="long_term",duration_days=None,arrangement_confirmed=False))
-    with pytest.raises(LivePolicyError,match="LIVE_DEPLOYMENT_NOT_READY"):
-        with prepare((pending,engines,env,snapshot,spool),policy,Clock(),lambda:pytest.fail("pending retention Session")): pass
-    assert rows(engines["runtime"],R)==[]
+def test_project_runs_without_access_or_retention_documents(ready,tmp_path):
+    value,_,_,_=configured(ready,tmp_path)
+    policy=ProjectExecutionPolicy(replace(value,access_arrangement_confirmed=False,access_basis_ref=None))
+    config,engines,env,previous,spool=ready
+    retention=replace(config.retention,state="pending",owner=None,duration_days=None,policy_ref=None,
+        backup_handling_ref=None,export_handling_ref=None,expiry_review_ref=None,mode="long_term",arrangement_confirmed=False)
+    operational=replace(config,retention=retention)
+    snapshot=policy.make_snapshot(application_id=previous.application_id,source_application_id=previous.source_application_id,
+        target_id=previous.target_id,software_revision="offline-technical-policy")
+    assert snapshot.retention_policy_ref is None
+    clock=Clock(); adapter=OfflineAdapter(engines["runtime"],clock,[(200,feed(("one",))),(200,feed(("two",)))])
+    factory,sessions=factory_for(adapter)
+    with prepare((operational,engines,env,snapshot,spool),policy,clock,factory) as controller:
+        result=controller.run_target(snapshot,uuid4())
+    assert result.execution_status=="succeeded" and len(adapter.calls)==2 and len(sessions)==1
+    assert rows(engines["runtime"],R)[0]["config_snapshot"]["retention_policy_ref"] is None
+    assert_terminal_resolved(engines["runtime"])
+
+
+def test_old_administrative_fields_are_readable_but_absent_from_trace_and_serialization(ready,tmp_path):
+    value,_,_,path=configured(ready,tmp_path)
+    old=value.to_dict()
+    old.update(access_arrangement_confirmed=False,access_basis_ref=None)
+    changed={**old,"access_arrangement_confirmed":True,"access_basis_ref":"deprecated-fixture-metadata"}
+    parsed=ProjectExecutionConfig.from_dict(old)
+    assert parsed.to_dict()==ProjectExecutionConfig.from_dict(changed).to_dict()==value.to_dict()
+    assert "access_arrangement_confirmed" not in parsed.to_dict() and "access_basis_ref" not in parsed.to_dict()
+    assert ProjectExecutionPolicy(parsed).access_decision_ref==ProjectExecutionPolicy(ProjectExecutionConfig.from_dict(changed)).access_decision_ref
+    path.write_text(json.dumps(old))
+    policy=ProjectExecutionPolicy(config_path=path)
+    _,engines,_,previous,_=ready
+    snapshot=policy.make_snapshot(application_id=previous.application_id,source_application_id=previous.source_application_id,
+        target_id=previous.target_id,software_revision="offline-deprecated-fields")
+    clock=Clock()
+    def change_metadata(number):
+        if number==1: path.write_text(json.dumps(changed))
+    adapter=OfflineAdapter(engines["runtime"],clock,[(200,feed(("one",))),(200,feed(("two",)))],change_metadata)
+    factory,_=factory_for(adapter)
+    with prepare(ready,policy,clock,factory) as controller: result=controller.run_target(snapshot,uuid4())
+    assert result.execution_status=="succeeded" and len(adapter.calls)==2
+    assert rows(engines["runtime"],R)[0]["config_snapshot"]["access_decision_ref"]==policy.access_decision_ref
 
 
 def test_old_context_and_used_batch_cannot_bypass_current_binding(ready,tmp_path):

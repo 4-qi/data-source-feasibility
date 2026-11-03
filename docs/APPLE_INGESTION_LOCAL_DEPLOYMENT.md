@@ -10,8 +10,8 @@ pilot, Git commit or push occurred. This is a local deployment, not evidence of
 real source compatibility or seven-day operation.
 
 > Subsequent authorized preparation: [the first smoke-test runbook](APPLE_FIRST_LIVE_SMOKE_TEST.md)
-> replaces per-run approvals/receipts with a reusable default-closed project
-> policy. The persistent deployment evidence and 640-test gate below remain
+> now uses a reusable default-closed **technical** project policy. Administrative
+> access/retention confirmation fields are no longer runtime gates. The persistent deployment evidence and 640-test gate below remain
 > historical results; no real collection has started.
 
 ## Actual deployment
@@ -89,53 +89,43 @@ empty and the receipt directory contains no claims.
 ## Long-term retention
 
 The technical project decision is **long-term retention without a preset expiry**,
-not an arbitrary 30/90-day TTL. The private `deployment.json` uses:
+not an arbitrary 30/90-day TTL. The technical configuration is:
 
 ```json
-{
-  "state": "documented",
-  "mode": "long_term",
-  "duration_days": null,
-  "arrangement_confirmed": false
-}
+{"mode": "long_term", "duration_days": null}
 ```
 
-Other required fields name the local technical custodian and reference this
-document's storage, backup and future-change procedures. `state=documented`
-records the technical policy, not approval of source use. `l2838` is the local
-operator/custodian; the responsible project owner's applicability decision
-has not been manufactured from that OS identity.
+Existing private JSON files may still contain `state`, owner/reference metadata
+and `arrangement_confirmed=false`; compatibility readers accept them unchanged.
+The old confirmation field is ignored and omitted from new canonical output.
+No administrator needs to turn it true to invoke the collector. Owner/document
+references can be absent and do not block operational preflight.
 
-The minimal backward-compatible contract adds `mode` and
-`arrangement_confirmed` to `RetentionConfig`. Old inputs without the new fields
-remain valid finite-day configurations (`mode=finite_days`); existing
-positive-day validation/completeness behavior remains compatible. Explicit
-`long_term` requires `duration_days=null`, rejecting an ambiguous mixed policy.
+`technical_complete` / `.complete` describe mode/duration completeness only.
+`long_term` with null days is complete technical intent, without asserting data-
+use rights. Finite-day inputs remain supported. Database preflight now reports
+actual roles, schema, permissions and diagnostics under `operational_ready`;
+`live_ready` is a compatibility alias for **deployment operational readiness**,
+not overall execution enablement or legal approval. A healthy preflight can pass
+while every target and the project execution switch remain disabled.
 
-`technical_complete` checks documentation completeness. For `long_term`,
-`.complete` additionally requires `arrangement_confirmed=true`. Actual preflight
-therefore reports:
+No deletion timer, TTL, purge job or automatic history deletion is added.
+Complete titles/bodies, metadata, observed versions, observations and collection
+history remain stored. A review leaving the RSS window never implies deletion.
+Reconciliation, comparison-reference and pagination/stop rules are unchanged.
 
-- `retention_documented=true`, `retention_technical_ready=true`;
-- `retention_arrangement_confirmed=false`, `retention_ready=false`;
-- `LONG_TERM_ARRANGEMENT_UNCONFIRMED` and `RETENTION_DECISION_PENDING`;
-- `live_ready=false`, `live_authorized=false`.
+The collector still requires explicit project/target enablement, matching
+technical scope/window/budgets and fresh operational checks. It does not require
+access-basis references, approval documents or per-run credentials. A tracking
+policy ID/digest identifies the technical configuration in immutable snapshots;
+it is not an approval. The public [long-term example](../deploy/apple_ingestion/long-term-retention.example.json)
+contains no credentials or confirmation flag. Actual private connection values
+remain outside Git.
 
-This task adds no deletion timer, TTL, purge job or automatic review-history
-deletion. Complete titles/bodies, metadata, observed versions, observations and
-collection history remain stored. A review leaving an RSS window never implies
-deletion. The approved reconciliation/reference/pagination rules are unchanged.
-
-Even a later confirmed arrangement does not itself authorize an HTTP request:
-live execution still needs the confirmed and enabled scoped project policy,
-validity/scope/reference checks, fresh deployment preflight and an explicitly
-enabled target. Current targets and project execution remain disabled/pending.
-The new project workflow does not require per-run approval documents or receipts. A config Boolean is a recorded decision, not independent proof
-of the approver's identity or an unrestricted Apple license.
-
-The public [long-term example](../deploy/apple_ingestion/long-term-retention.example.json)
-contains no credentials and intentionally remains pending. Actual private
-deployment parameters are not copied into repository templates.
+Access/data-use conditions and the suitability of long-term retention remain
+project-management discussion items for John and the responsible owner. Removing
+software confirmation checks neither resolves those issues nor claims rights.
+Future required deletion/change handling remains described below.
 
 ## Private storage
 
@@ -265,7 +255,7 @@ silently switch a runtime URL to a restored database.
 
 Before promoting any recovery, check revision, seven tables, actual logins and
 grants, seed/target states, integrity and backup checksums. Keep targets disabled
-and the approval pending; the dump may contain the historical enablement state
+and project execution disabled; the dump may contain the historical enablement state
 from when it was taken, so verify/reset it through an explicitly authorized
 maintenance transaction **before** considering collection. Restoring old
 policy state must never authorize replay: retain uncertainty, recheck the actual
@@ -337,19 +327,17 @@ copies are `/tmp/apple-persistent-initialization.json` and
 artifacts, not the only durable evidence. Source changes remain uncommitted on
 `main`, HEAD `474736abcee2a67f186299f09d196125400eb1ab`.
 
-## Remaining first-run blockers and stop boundary
+## Current operational boundary and remaining validation
 
-1. Responsible project-owner confirmation of the applicable access/retention
-   arrangements is still absent. `long_term` selects the intended technical
-   policy; it does not establish unrestricted Apple data-use permission.
-2. No separate first bounded-run authorization exists. The approval file is
-   pending, all targets disabled, the receipt directory empty, and actual
-   pending-policy entry returns `LIVE_MODE_DISABLED` without constructing HTTP
-   resources or writing a run.
-3. Actual current Feed structure and external DNS/TLS behavior remain untested.
-   A later separately authorized limited check must address the documented
-   nested XML/XHTML uncertainty; legitimate unsupported content stops collection
-   for correct support, not record skipping.
+1. Actual project execution remains disabled and its technical ID/window have
+   not been populated; all eight targets remain disabled. A later operator action
+   must enable only the intended smoke scope. This task does not perform it.
+2. Actual Feed structure and external DNS/TLS behavior remain untested. The
+   bounded smoke must inspect its actual result; legitimate unsupported nested
+   content stops for correct support, rather than record skipping.
+3. Applicable data-use and long-term-retention considerations remain documented
+   for review with John. They are not software preflight blockers or mandatory
+   approval records, and this correction does not mark them confirmed.
 
 The previously missing local host, database, roles, private operational paths
 and tested local backup/restore now exist. Same-disk backup limitations and

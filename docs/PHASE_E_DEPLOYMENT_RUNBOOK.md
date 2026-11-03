@@ -3,7 +3,8 @@
 > Subsequent authorized local deployment is recorded in
 > [the persistent deployment report](APPLE_INGESTION_LOCAL_DEPLOYMENT.md), including
 > actual paths, startup, tested backup/restore and the current unconfirmed
-> `long_term` policy. The original E preparation boundary below is historical.
+> `long_term` policy. The current operational-only correction is described below;
+> the original E approval workflow is historical and no longer required.
 
 Status: **offline deployment preparation and retention compatibility**. This
 validation session operates no persistent host and sends no real RSS request.
@@ -159,21 +160,25 @@ It never queries or returns review bodies, credentials or a DSN.
 Important JSON-safe result fields:
 
 - `database_ready`, `runtime_login_verified`, `retention_ready`, `diagnostics`;
-- `for_live`, `ready`, `live_ready`, `status` and explicit `blockers`;
+- `for_live`, `operational_ready`, `ready`, compatibility `live_ready`, `status` and technical `blockers`;
 - `scope` with the fixed source, US/mostrecent and eight manifest identities;
 - `retention` with documented owner/duration/policy/backup/export/expiry refs;
 - revision, parser/hash versions and `db_timeout_profile`.
 
-`live_ready` means only that the checked deployment prerequisites are ready.
-The result **always** has `live_authorized=False`, `live_policy_checked=False`
-and `real_http_performed=False`. The default `live.ProjectExecutionPolicy` separately validates
-confirmed/enabled project conditions, matching operator/references, scope/window
-and limits, without per-run approval documents or receipts. The legacy
-`live.LiveExecutionPolicy` API remains compatible but is not required. No second deployment authorization
-class or independent rights decision exists here. A `ready` flag alone is not
-permission to instantiate/send a real request. Current templates fail live
-readiness because retention, operator, host/environment and approval decisions
-remain pending.
+`operational_ready` describes checked engineering prerequisites. The old
+`live_ready` is a compatibility alias (`live_ready_semantics=deployment_operational_alias`),
+not permission or overall project enablement. The result identifies its scope
+as operational-only and says applicability is not assessed by software.
+`live_authorized=False`, `live_policy_checked=False` and `real_http_performed=False`
+remain compatibility diagnostics; preflight does not interpret legal rights.
+
+`ProjectExecutionPolicy` checks explicit enablement, selected apps, operator,
+validity/window and limits. It does not check access/retention confirmation,
+require an access-basis reference or approval document, or create per-run
+credentials. Database readiness still requires correct schema/roles/permissions,
+actual runtime login, UTC, safe logging and diagnostics. Missing DSNs/operator
+or insecure paths are engineering problems; unresolved data-use arrangements
+are project documentation, not runtime blockers.
 
 ### Effective timeout precedence
 
@@ -220,60 +225,31 @@ Recovery uses the existing dedicated application lock and same connection:
 `recover_interrupted(connection, app_id, recovered_at)`. Event fingerprints make
 imports idempotent; committed markers win, unknown HTTP status is not invented,
 orphan runs become interrupted and a later separately approved run starts at
-page one. Keep the spool and single-use approval receipt; neither deletion nor
-automatic retry is a recovery step. No recovery command is executed on a real
+page one. Keep the diagnostic spool and durable run evidence; automatic retry is not a
+recovery step. The current project path does not require approval receipts. No recovery command is executed on a real
 host in Phase E.
 
-## Explicit finite or long-term policy; arrangement confirmation still required
+## Finite or long-term technical retention; administrative review in documents
 
-All supplied deployment examples retain `state='pending'`, null owner/policy
-reference and null backup/export/review references. No duration or confirmation
-is inferred. The minimal compatible fields are:
+The storage intent uses `mode=finite_days` with explicit days, or `mode=long_term`
+with `duration_days=null`. Long-term intent requires no invented expiry and
+introduces no TTL, deletion job or source-disappearance deletion. Full text,
+versions, observations and history remain intact.
 
-| Field | Legacy/default behavior | Explicit long-term behavior |
-| --- | --- | --- |
-| `mode` | Omitted means `finite_days`; existing finite-day inputs remain valid. | Must be the literal `long_term`. |
-| `duration_days` | Documented finite mode requires the existing positive integer. | Must be null; no invented day count or TTL is created. |
-| `arrangement_confirmed` | Omitted defaults to false; legacy finite completeness is unchanged. | Must be explicitly true before retention readiness can pass. |
+Owner, state and policy/backup/export/review references are optional documentary
+metadata. The old `arrangement_confirmed` input is accepted for compatibility,
+ignored and omitted from new canonical output. `.complete` and
+`technical_complete` describe technical mode/day completeness only. A documented
+long-term config without references is valid. Retention metadata is not part of
+the runtime execution gate and does not produce a preflight blocker.
 
-In either mode, documented technical configuration requires the named owner,
-policy, backup/export handling and review references. In long-term mode the
-existing `expiry_review_ref` names the periodic policy/arrangement review
-process; it does not create an expiry date or imply a TTL. Unknown or misspelled
-modes and nonboolean confirmation are rejected.
-
-`technical_complete` reports documented configuration completeness separately
-from `complete`/retention readiness. An unconfirmed documented long-term profile
-can be technically complete, but remains `retention_ready=False`,
-`live_ready=False` with `RETENTION_DECISION_PENDING` and
-`LONG_TERM_ARRANGEMENT_UNCONFIRMED`. Only an independently recorded applicable
-arrangement may justify changing the explicit confirmation; a requested
-technical mode is not evidence that such an arrangement exists.
-
-Even confirmed long-term configuration never grants execution authorization:
-`live_authorized` and `live_policy_checked` remain false in deployment preflight.
-The default reusable `ProjectExecutionPolicy` validates separate project access
-conditions; the legacy single-run API is optional. No human/external approval,
-retention permission or legal finding
-is manufactured by this boolean. Synthetic unit fixtures use explicitly labeled
-test-only finite and long-term records solely to exercise these boundaries.
-
-Before a future live request, the responsible owner must record the applicable
-access/retention basis and conditions for this exact RSS use, selected finite or
-long-term arrangement, scope and
-approver. Supplier/API conditions are not silently substituted for an RSS rule.
-The coordinating chat handles current source-condition review; this runbook
-asserts no external terms interpretation.
-
-Keep complete title/body and all accepted observed versions under the chosen
-policy. Long-term mode adds no automatic expiry, pruning or TTL. A later approved
-policy change or finite expiry process needs a separately reviewed scope,
-FK-safe whole-history removal plan, backup expiry/restore controls and private
-export handling, with an audit record and post-operation integrity check. This
-task implements **configuration and maintenance review only**: no purge API,
-deletion privilege for runtime, new table, automatic timer or hash-only
-replacement is added. Backup/export owners must address copies and restores;
-changing the primary database alone is not a full retention operation.
+The project owner should discuss applicable data-use and long-term arrangements
+with John, including private exports, backups and any future required changes.
+That is project management, not a Boolean that the collector can approve.
+Removing a software check does not settle the question. If future obligations
+require deletion, scope and review an FK-safe maintenance operation covering
+history/copies/backups/restores. Runtime retains its existing no-delete boundary;
+no purge API, new table, timer or hash-only substitute is introduced.
 
 ## Actual offline validation
 
@@ -313,14 +289,19 @@ the deployment test module. It did not change model/migration/controller/
 reconciliation/source/reference/stop behavior or historical evidence, and made
 no Git commit/push.
 
-Actual readiness remains **blocked for live**: no real host/credential decision,
-retention owner/duration/policy/backup/export/expiry decision, diagnostic operator
-or independent single-run access/approval is supplied by these examples. No real
+Example files do not provision a host or supply credentials/diagnostic identity.
+Actual deployment must satisfy those technical checks; project execution and
+targets remain disabled until an explicit operator action. Administrative
+references/confirmation are not operational preflight conditions. No real
 TLS handshake, Windows deployment or service-account filesystem behavior was
 validated. Passing offline tests proves the prepared mechanisms and default
 closure, not actual deployment, Apple permission or live-pilot acceptance.
 
-## Retention compatibility follow-up — November 3, 2026
+## Retention compatibility follow-up — November 3, 2026 (historical)
+
+This records the earlier 33-test long-term extension. Its administrative gate
+was subsequently removed by the focused operational-only correction; the old
+checks below are not instructions for the current collector.
 
 The separately authorized minimal long-term extension changed only deployment
 configuration/validation, its tests, this runbook and the pending long-term
@@ -359,3 +340,14 @@ passed. Model and initial migration hashes still match the earlier baseline;
 there are no schema, pipeline, reconciliation, reference or stop-rule changes,
 TTL/purge operations, real RSS/F execution, Git commits or pushes in this
 follow-up.
+
+## Current operational-only correction
+
+The collector no longer checks arrangement confirmation or documentary
+owner/reference completeness. Legacy inputs remain readable; new canonical
+configuration omits the deprecated confirmation Boolean. `long_term` with null
+days remains valid and creates no TTL/deletion. Deployment readiness is explicitly
+operational-only; scope/window/enablement remain in the technical project policy.
+The deployment-focused correction suite passed **33 tests**. Main-session full
+regression and actual read-only local checks are recorded in the
+[current smoke procedure](APPLE_FIRST_LIVE_SMOKE_TEST.md).

@@ -25,8 +25,7 @@
     "backup_handling_ref": null,
     "export_handling_ref": null,
     "expiry_review_ref": null,
-    "mode": "long_term",
-    "arrangement_confirmed": false
+    "mode": "long_term"
   },
   "diagnostics": {
     "spool_path_env": "APPLE_INGESTION_DIAGNOSTIC_SPOOL",

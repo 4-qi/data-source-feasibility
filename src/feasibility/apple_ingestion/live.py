@@ -1,9 +1,9 @@
 """Default-closed project execution with legacy single-use compatibility.
 
 ProjectExecutionPolicy is the reusable workflow. It validates explicit project
-scope/window/settings and needs no per-run approval or receipt. Enabled and
-access-arrangement-confirmed defaults remain false; retention readiness is
-independently checked through deployment.
+scope/window/settings and needs no approval document or receipt. Execution is
+disabled by default. Deployment checks operational DB/diagnostics readiness;
+access/retention administrative metadata does not authorize or gate collection.
 
 Only the legacy LiveExecutionApproval/prepare_live_controller path requires an
 independent single-run record and private receipt. Its receipt uniqueness is
@@ -116,6 +116,13 @@ def _digest(value):
     return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False,separators=(",",":"),allow_nan=False).encode("utf-8")).hexdigest()
 
 
+def _deployment_binding(config):
+    """Bind operational settings; retention documentation is metadata only."""
+    value=config.to_dict()
+    value.pop("retention",None)
+    return _digest(value)
+
+
 class LiveExecutionPolicy:
     """One explicit approval, one private receipt, one Controller.run_target.
 
@@ -143,7 +150,7 @@ class LiveExecutionPolicy:
         if approval.status!="approved" or not approval.readiness_confirmed or not approval.execution_authorized:
             raise LivePolicyError("LIVE_MODE_DISABLED")
         if (type(approval.approval_id) is not UUID or not approval.source_application_ids
-                or not all(_text(value) for value in (approval.operator,approval.approved_by,approval.access_basis_ref,approval.retention_policy_ref))):
+                or not _text(approval.operator)):
             raise LivePolicyError("LIVE_APPROVAL_INVALID")
         approved_at,valid_from,valid_until=map(_aware,(approval.approved_at,approval.valid_from,approval.valid_until))
         if approved_at>now or valid_from>=valid_until or approved_at>=valid_until:
@@ -154,9 +161,7 @@ class LiveExecutionPolicy:
             raise LivePolicyError("LIVE_SNAPSHOT_REQUIRED")
         if (snapshot.source_application_id not in approval.source_application_ids
                 or snapshot.storefront!=approval.storefront or snapshot.sort_by!=approval.sort_by
-                or snapshot.config.max_http_requests>approval.max_http_requests
-                or snapshot.access_decision_ref!=approval.access_basis_ref
-                or snapshot.retention_policy_ref!=approval.retention_policy_ref):
+                or snapshot.config.max_http_requests>approval.max_http_requests):
             raise LivePolicyError("LIVE_APPROVAL_SCOPE_MISMATCH")
         if batch_id is not None and type(batch_id) is not UUID:
             raise LivePolicyError("LIVE_APPROVAL_SCOPE_MISMATCH")
@@ -168,7 +173,7 @@ class LiveExecutionPolicy:
             raise LivePolicyError("LIVE_APPROVAL_SCOPE_MISMATCH")
         if self._prepared_binding is not None:
             if (runtime_engine is not None and runtime_engine is not self._prepared_binding[2]
-                    or _digest(self._deployment_config.to_dict())!=self._prepared_binding[3]):
+                    or _deployment_binding(self._deployment_config)!=self._prepared_binding[3]):
                 raise LivePolicyError("LIVE_APPROVAL_SCOPE_MISMATCH")
 
     def validate_target(self,snapshot,enabled,at):
@@ -225,7 +230,7 @@ class LiveExecutionPolicy:
             if self._prepared_binding is not None or self._binding is not None:
                 raise LivePolicyError("LIVE_APPROVAL_CONSUMED")
             self._deployment_config=deployment_config
-            self._prepared_binding=_digest(snapshot.to_dict()),batch_id,runtime_engine,_digest(deployment_config.to_dict())
+            self._prepared_binding=_digest(snapshot.to_dict()),batch_id,runtime_engine,_deployment_binding(deployment_config)
             self._readiness_check=readiness_check
 
     def begin_execution(self,snapshot,batch_id,at,*,runtime_engine=None):
@@ -304,14 +309,13 @@ def _deployment_preflight(engine,audit_engine,config,snapshot,policy,spool,envir
     from .deployment import DeploymentConfig,preflight
     if type(config) is not DeploymentConfig or audit_engine is None:
         raise LivePolicyError("LIVE_DEPLOYMENT_NOT_READY")
-    # Validate typed config again, and fail before even the read-only audit for
-    # pending/changed retention or an unbound operational diagnostics path.
+    # Validate operational configuration and the actual diagnostics path.
+    # Access/retention references and confirmations are not runtime gates.
     try:
         config=DeploymentConfig.from_dict(config.to_dict())
         environment=os.environ if environ is None else environ
         configured_spool=environment.get(config.diagnostics.spool_path_env)
-        if (not config.retention.complete or (snapshot is not None and config.retention.policy_ref!=snapshot.retention_policy_ref)
-                or config.diagnostics.operator!=policy.operator
+        if (config.diagnostics.operator!=policy.operator
                 or type(configured_spool) is not str or Path(configured_spool)!=spool.path):
             raise LivePolicyError("LIVE_DEPLOYMENT_NOT_READY")
         for candidate in (engine,audit_engine):
@@ -385,13 +389,14 @@ class ProjectExecutionConfig:
 
     The 24-hour interval is a scheduling plan, not an elapsed-time run embargo.
     Smoke is explicitly one app; pilot is explicitly the existing eight apps.
-    Enabled and arrangement-confirmed defaults never infer user permission.
+    Execution is disabled by default. Deprecated administrative fields are
+    readable metadata and are excluded from technical policy serialization.
     """
     policy_id: UUID | None = None
     operator: str | None = field(default=None,repr=False)
     execution_enabled: bool = False
-    access_arrangement_confirmed: bool = False
-    access_basis_ref: str | None = field(default=None,repr=False)
+    access_arrangement_confirmed: bool = field(default=False,repr=False,compare=False)
+    access_basis_ref: str | None = field(default=None,repr=False,compare=False)
     valid_from: datetime | None = None
     valid_until: datetime | None = None
     purpose: str = "smoke"
@@ -403,7 +408,7 @@ class ProjectExecutionConfig:
 
     def __post_init__(self):
         if (self.schema_version!=PROJECT_POLICY_SCHEMA_VERSION or self.purpose not in {"smoke","pilot"}
-                or type(self.execution_enabled) is not bool or type(self.access_arrangement_confirmed) is not bool
+                or type(self.execution_enabled) is not bool
                 or type(self.source_application_ids) is not tuple
                 or any(type(value) is not str or value not in PILOT_APPLICATION_IDS for value in self.source_application_ids)
                 or len(set(self.source_application_ids))!=len(self.source_application_ids)
@@ -432,6 +437,8 @@ class ProjectExecutionConfig:
 
     def to_dict(self):
         value=asdict(self)
+        value.pop("access_arrangement_confirmed",None)
+        value.pop("access_basis_ref",None)
         value["policy_id"]=str(self.policy_id) if self.policy_id is not None else None
         value["valid_from"]=_stamp(self.valid_from); value["valid_until"]=_stamp(self.valid_until)
         value["source_application_ids"]=list(self.source_application_ids)
@@ -441,8 +448,10 @@ class ProjectExecutionConfig:
     @classmethod
     def from_dict(cls,value):
         try:
-            if type(value) is not dict or set(value)!={item.name for item in fields(cls)}: raise ValueError
-            data=dict(value)
+            deprecated={"access_arrangement_confirmed","access_basis_ref"}
+            required={item.name for item in fields(cls)}-deprecated
+            if type(value) is not dict or not required<=set(value)<=required|deprecated: raise ValueError
+            data={name:value[name] for name in required}
             if data["policy_id"] is not None: data["policy_id"]=UUID(data["policy_id"])
             for name in ("valid_from","valid_until"):
                 if data[name] is not None: data[name]=_aware(datetime.fromisoformat(data[name].replace("Z","+00:00")))
@@ -501,7 +510,7 @@ class ProjectExecutionPolicy:
         if value.policy_id is None: raise LivePolicyError("PROJECT_POLICY_INVALID")
         return f"{PROJECT_POLICY_SCHEMA_VERSION}:{value.policy_id}:sha256:{_digest(value.to_dict())}"
 
-    def make_snapshot(self,*,application_id,source_application_id,target_id,software_revision,retention_policy_ref):
+    def make_snapshot(self,*,application_id,source_application_id,target_id,software_revision,retention_policy_ref=None):
         from .parser import PARSER_VERSION
         value=self.current_config()
         if source_application_id not in value.source_application_ids:
@@ -512,8 +521,7 @@ class ProjectExecutionPolicy:
     def check_configuration(self,at):
         value=self.current_config()
         if not value.execution_enabled: raise LivePolicyError("PROJECT_EXECUTION_DISABLED")
-        if not value.access_arrangement_confirmed: raise LivePolicyError("PROJECT_ACCESS_ARRANGEMENT_PENDING")
-        if value.policy_id is None or not _text(value.operator) or not _text(value.access_basis_ref) or not value.source_application_ids:
+        if value.policy_id is None or not _text(value.operator) or not value.source_application_ids:
             raise LivePolicyError("PROJECT_POLICY_INVALID")
         try: start,end,now=_aware(value.valid_from),_aware(value.valid_until),_aware(at)
         except LivePolicyError: raise LivePolicyError("PROJECT_POLICY_INVALID") from None
@@ -524,7 +532,7 @@ class ProjectExecutionPolicy:
         with self._mutex:
             if not self._closed: raise LivePolicyError("PROJECT_POLICY_NOT_PREPARED")
             self._runtime_engine,self._deployment_config,self._readiness_check,self._transport=engine,deployment_config,readiness_check,transport
-            self._deployment_digest=_digest(deployment_config.to_dict())
+            self._deployment_digest=_deployment_binding(deployment_config)
             self._closed=False
 
     def validate_controller(self,engine,transport):
@@ -534,7 +542,7 @@ class ProjectExecutionPolicy:
     def validate(self,snapshot,batch_id,at,*,runtime_engine=None):
         value=self.check_configuration(at)
         if (self._closed or runtime_engine is not None and runtime_engine is not self._runtime_engine
-                or _digest(self._deployment_config.to_dict())!=self._deployment_digest):
+                or _deployment_binding(self._deployment_config)!=self._deployment_digest):
             raise LivePolicyError("PROJECT_POLICY_NOT_PREPARED")
         if type(snapshot) is not ConfigSnapshot or snapshot.run_mode is not RunMode.LIVE:
             raise LivePolicyError("LIVE_SNAPSHOT_REQUIRED")

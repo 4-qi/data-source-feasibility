@@ -158,7 +158,6 @@ def test_pending_template_and_default_gate_refuse_before_session_or_database(tmp
     ({"valid_until":NOW},"LIVE_APPROVAL_OUTSIDE_VALIDITY"),
     ({"source_application_ids":("570060128",)},"LIVE_APPROVAL_SCOPE_MISMATCH"),
     ({"max_http_requests":1},"LIVE_APPROVAL_SCOPE_MISMATCH"),
-    ({"retention_policy_ref":"different-private-policy"},"LIVE_APPROVAL_SCOPE_MISMATCH"),
 ])
 def test_invalid_authorization_never_constructs_http_session_or_writes_run(ready,tmp_path,change,code):
     config,engines,env,snapshot,_=ready; clock=Clock()
@@ -168,15 +167,13 @@ def test_invalid_authorization_never_constructs_http_session_or_writes_run(ready
     assert rows(engines["runtime"],R)==[] and list(policy.receipt_directory.iterdir())==[]
 
 
-def test_retention_pending_and_disabled_target_block_before_activation(ready,tmp_path):
+def test_disabled_target_blocks_even_with_pending_retention_metadata(ready,tmp_path):
     config,engines,env,snapshot,spool=ready; clock=Clock()
     pending=replace(config,retention=RetentionConfig("pending",None,None,None,None,None,None))
     policy=policy_for(tmp_path,record(snapshot,clock))
-    with pytest.raises(LivePolicyError,match="LIVE_DEPLOYMENT_NOT_READY"):
-        with prepare((pending,engines,env,snapshot,spool),policy,clock,uuid4(),lambda:pytest.fail("pending retention Session")): pass
     with engines["owner"].begin() as c: c.execute(update(T).where(T.c.id==snapshot.target_id).values(enabled=False))
     with pytest.raises(LivePolicyError,match="LIVE_TARGET_DISABLED"):
-        with prepare(ready,policy,clock,uuid4(),lambda:pytest.fail("disabled target Session")): pass
+        with prepare((pending,engines,env,snapshot,spool),policy,clock,uuid4(),lambda:pytest.fail("disabled target Session")): pass
     assert not rows(engines["owner"],T)[0]["enabled"] and rows(engines["runtime"],R)==[]
     assert list(policy.receipt_directory.iterdir())==[]
 
@@ -339,19 +336,14 @@ def test_deployment_is_freshly_rechecked_and_spool_path_is_read_only(ready,tmp_p
     assert sessions==[] and rows(engines["runtime"],R)==[] and list(policy.receipt_directory.iterdir())==[]
 
 
-def test_long_term_unconfirmed_arrangement_refuses_before_session_receipt_or_run(ready,tmp_path):
-    config,engines,env,snapshot,spool=ready
-    retention=replace(config.retention,mode="long_term",duration_days=None,arrangement_confirmed=False)
-    assert retention.technical_complete and not retention.complete
-    unconfirmed=replace(config,retention=retention)
-    clock=Clock(); policy=policy_for(tmp_path,record(snapshot,clock)); batch=uuid4()
-    sessions=[]
-    def forbidden_session():
-        sessions.append(True)
-        pytest.fail("unconfirmed long-term arrangement must refuse before Session creation")
-    assert rows(engines["runtime"],R)==rows(engines["runtime"],F)==[]
-    with pytest.raises(LivePolicyError,match="LIVE_DEPLOYMENT_NOT_READY"):
-        with prepare((unconfirmed,engines,env,snapshot,spool),policy,clock,batch,forbidden_session) as controller:
-            controller.run_target(snapshot,batch)
-    assert sessions==[] and list(policy.receipt_directory.iterdir())==[]
-    assert rows(engines["runtime"],R)==rows(engines["runtime"],F)==[]
+def test_legacy_technical_run_does_not_require_document_references_or_arrangement_confirmation(ready,tmp_path):
+    config,engines,env,old_snapshot,spool=ready
+    retention=replace(config.retention,state="pending",owner=None,duration_days=None,policy_ref=None,
+        backup_handling_ref=None,export_handling_ref=None,expiry_review_ref=None,mode="long_term",arrangement_confirmed=False)
+    operational=replace(config,retention=retention)
+    snapshot=replace(old_snapshot,access_decision_ref=None,retention_policy_ref=None)
+    result,adapter,_,sessions=execute((operational,engines,env,snapshot,spool),tmp_path,
+        [(200,feed(("one",))),(200,feed(("two",)))],approval=replace(record(snapshot,Clock()),approved_by=None))
+    assert result.execution_status=="succeeded" and len(adapter.calls)==2 and len(sessions)==1
+    assert rows(engines["runtime"],R)[0]["config_snapshot"]["retention_policy_ref"] is None
+    assert_terminal_resolved(engines["runtime"])

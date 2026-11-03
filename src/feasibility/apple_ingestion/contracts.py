@@ -1,8 +1,7 @@
 """Validated value contracts; no parsing, hashing, reference selection or I/O.
 
-A snapshot records policy references, never a grant of live access. A future
-controller must resolve and validate those decisions independently before live
-execution. Frozen value objects contain no mutable nested collections.
+A snapshot records technical provenance. Optional historical document
+references are metadata, not a grant of access or an execution prerequisite. Frozen value objects contain no mutable nested collections.
 """
 from __future__ import annotations
 
@@ -271,10 +270,6 @@ class ConfigSnapshot:
             raise ContractError("config must be an IngestionConfig")
         if type(self.run_mode) is not RunMode:
             raise ContractError("run_mode must be a RunMode")
-        if self.run_mode is RunMode.LIVE and (
-                self.access_decision_ref is None or self.retention_policy_ref is None):
-            raise ContractError("live snapshots require access_decision_ref and retention_policy_ref; "
-                                "their presence does not grant permission")
 
     def to_dict(self) -> dict[str, Any]:
         """Return a fresh JSON-safe object; mutations cannot alter this snapshot."""

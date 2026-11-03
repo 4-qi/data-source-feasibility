@@ -26,10 +26,12 @@ def test_templates_pending_no_credentials_no_implicit_authorization():
     for name in ('unix.example.json','tls.example.json','long-term-retention.example.json'):
         path=ROOT/'deploy/apple_ingestion'/name
         cfg=load_config(path)
-        assert not cfg.retention.complete and cfg.retention.duration_days is None
+        assert cfg.retention.duration_days is None
+        assert cfg.retention.complete is (cfg.retention.mode=='long_term')
         assert cfg.retention.owner is cfg.retention.policy_ref is None
         encoded=json.dumps(cfg.to_dict())
         assert 'postgresql://' not in encoded and 'password' not in encoded.lower()
+        assert 'arrangement_confirmed' not in cfg.to_dict()['retention']
         assert DeploymentConfig.from_dict(cfg.to_dict())==cfg
 
 
@@ -48,15 +50,27 @@ def test_explicit_long_term_has_no_duration_or_automatic_authorization(confirmed
     retention=RetentionConfig('documented','synthetic-operator',None,'synthetic-long-term',
         'synthetic-backups','synthetic-exports','synthetic-periodic-review',
         mode='long_term',arrangement_confirmed=confirmed)
-    assert retention.technical_complete and retention.complete is confirmed
+    assert retention.technical_complete and retention.complete
     cfg=replace(template(),retention=retention)
     assert DeploymentConfig.from_dict(cfg.to_dict())==cfg
     assert cfg.to_dict()['retention']['duration_days'] is None
+    assert 'arrangement_confirmed' not in cfg.to_dict()['retention']
+
+
+def test_retention_accepts_mode_only_and_legacy_confirmation_is_semantically_ignored():
+    data=template().to_dict()
+    data['retention']={'mode':'long_term','duration_days':None}
+    minimal=DeploymentConfig.from_dict(data)
+    assert minimal.retention.complete and minimal.retention.owner is None
+    for confirmed in (False,True,None,'legacy-not-an-approval',{'uninterpreted':True},[]):
+        legacy={**data,'retention':{**data['retention'],'arrangement_confirmed':confirmed}}
+        restored=DeploymentConfig.from_dict(legacy)
+        assert restored==minimal
+        assert restored.to_dict()==minimal.to_dict()
 
 
 @pytest.mark.parametrize('change',[
     {'mode':'long_term','duration_days':7}, {'mode':'unknown'},
-    {'mode':'long_term','arrangement_confirmed':'true'},
 ])
 def test_invalid_or_ambiguous_long_term_configuration_is_rejected(change):
     data=template().to_dict()
@@ -189,7 +203,7 @@ def provision(config,engines):
         grant_permissions(c,config,execute=True)
 
 
-def test_nonadmin_owner_migration_seed_grants_and_pending_live_preflight(deployed_roles):
+def test_nonadmin_owner_migration_seed_grants_and_operational_preflight(deployed_roles):
     config,engines,env=deployed_roles
     with engines['owner'].connect() as c:
         with pytest.raises(DeploymentError,match='CALLER_OWNED'):
@@ -212,8 +226,9 @@ def test_nonadmin_owner_migration_seed_grants_and_pending_live_preflight(deploye
             event.remove(engines['owner'],'before_cursor_execute',capture)
         assert statements and all(statement.lstrip().startswith('SELECT') for statement in statements)
         assert result['database_ready'] and result['runtime_login_verified']
-        assert not result['live_ready'] and not result['live_authorized']
-        assert 'RETENTION_DECISION_PENDING' in result['blockers']
+        assert result['live_ready'] and result['operational_ready'] and not result['live_authorized']
+        assert not result['retention_ready'] and not result['retention_runtime_gate']
+        assert result['blockers']==[] and result['status']=='operational_ready'
         assert 'postgresql://' not in json.dumps(result)
         assert not c.closed and c.in_transaction()  # caller still owns transaction
 
@@ -281,21 +296,29 @@ def test_documented_retention_is_not_execution_authorization(deployed_roles):
         assert not blocked['live_ready'] and 'RUNTIME_LOGIN_NOT_VERIFIED' in blocked['blockers']
 
 
-def test_long_term_requires_arrangement_confirmation_but_never_grants_execution(deployed_roles):
+def test_retention_metadata_and_legacy_flag_do_not_gate_operational_readiness(deployed_roles):
     config,engines,env=deployed_roles
     provision(config,engines)
-    unconfirmed=replace(config,retention=RetentionConfig('documented','synthetic-operator',None,
-        'synthetic-long-term','synthetic-backups','synthetic-exports','synthetic-periodic-review',mode='long_term'))
+    profiles=(RetentionConfig(mode='long_term'),
+        RetentionConfig(state='documented',mode='long_term'),
+        RetentionConfig(state='documented',duration_days=7),RetentionConfig())
     with engines['owner'].connect() as owner,engines['runtime'].connect() as runtime:
-        blocked=preflight(owner,unconfirmed,for_live=True,environ=env,runtime_connection=runtime)
-        assert blocked['database_ready'] and blocked['retention_documented']
-        assert blocked['retention_technical_ready'] and not blocked['retention_ready']
-        assert not blocked['live_ready'] and 'LONG_TERM_ARRANGEMENT_UNCONFIRMED' in blocked['blockers']
-        confirmed=replace(unconfirmed,retention=replace(unconfirmed.retention,arrangement_confirmed=True))
-        ready=preflight(owner,confirmed,for_live=True,environ=env,runtime_connection=runtime)
-        assert ready['live_ready'] and ready['retention_ready']
-        assert ready['retention']['mode']=='long_term' and ready['retention']['duration_days'] is None
-        assert not ready['live_authorized'] and not ready['live_policy_checked']
+        for profile in profiles:
+            reports=[]
+            for confirmed in (False,True):
+                candidate=replace(config,retention=replace(profile,arrangement_confirmed=confirmed))
+                ready=preflight(owner,candidate,for_live=True,environ=env,runtime_connection=runtime)
+                assert ready['database_ready'] and ready['live_ready'] and ready['operational_ready']
+                assert ready['status']=='operational_ready' and ready['blockers']==[]
+                assert ready['live_ready_semantics']=='deployment_operational_alias'
+                assert ready['retention_ready'] is profile.technical_complete
+                assert not ready['retention_runtime_gate']
+                assert ready['data_use_and_retention_applicability']=='not_assessed_by_software'
+                assert not ready['live_authorized'] and not ready['live_policy_checked']
+                assert 'arrangement_confirmed' not in ready['retention']
+                assert 'retention_arrangement_confirmed' not in ready
+                reports.append(ready)
+            assert reports[0]==reports[1]
 
 
 def test_preflight_detects_extra_version_column_grant(deployed_roles):
@@ -306,6 +329,7 @@ def test_preflight_detects_extra_version_column_grant(deployed_roles):
     with engines['owner'].connect() as c:
         check=preflight(c,config,environ=env)
         assert not check['database_ready']
+        assert not check['operational_ready'] and check['status']=='operational_blocked'
         assert 'EXACT_RUNTIME_OR_REPORT_UPDATE_GRANTS_REQUIRED' in check['blockers']
 
 

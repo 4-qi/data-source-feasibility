@@ -1,5 +1,12 @@
 # Phase E — Live readiness
 
+> Current operational-boundary correction: access/data-use and retention
+> considerations remain project documentation for review with John, not
+> collector confirmation gates. The historical tests/approval checks below
+> describe the earlier E implementation. Use the
+> [current smoke procedure](APPLE_FIRST_LIVE_SMOKE_TEST.md) for technical-only
+> configuration, default disablement and explicit operator start.
+
 > Subsequent local-deployment authorization: the persistent WSL database and
 > long-term technical retention are now prepared and verified. See
 > [the local deployment report](APPLE_INGESTION_LOCAL_DEPLOYMENT.md) for current

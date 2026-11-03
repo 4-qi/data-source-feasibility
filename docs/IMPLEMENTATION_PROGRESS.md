@@ -13,14 +13,17 @@ execution uses the three independent chats listed in [Phase A delivery](PHASE_A_
 | E — Live readiness | Preparation/offline engineering complete; actual first run blocked | Main chat: 630 passed, zero failures/errors/skips; see [readiness report](PHASE_E_LIVE_READINESS.md). |
 | Local persistent deployment (after E) | Deployed and verified; live remains blocked | Main chat: 640 passed; actual PG16 restart, private backup/isolated restore, eight disabled targets and unconfirmed long-term arrangements. See [deployment report](APPLE_INGESTION_LOCAL_DEPLOYMENT.md). |
 | First smoke preparation / project policy | Complete; actual execution remains blocked | Main chat: 668 passed, zero failures/errors/skips; reusable project scope, exact procedure verified offline, all actual targets disabled. [Procedure and checklist](APPLE_FIRST_LIVE_SMOKE_TEST.md). |
-| Pre-Live Engineering Baseline | Reviewed for one authorized local milestone commit | Clean-export regression: 668 passed; no secrets/runtime data included. See [commit review](PRE_LIVE_ENGINEERING_BASELINE.md). |
+| Pre-Live Engineering Baseline | Committed locally as `cadc16c`; no push | Clean-export regression: 668 passed; no secrets/runtime data included. See [commit review](PRE_LIVE_ENGINEERING_BASELINE.md). |
+| Operational-policy correction | Accepted for local follow-up commit; default execution disabled | Main chat: 668 passed, zero failures/errors/skips. Actual DB operational-ready; no administrative runtime gates; two project configs off and eight targets disabled. See [updated smoke procedure](APPLE_FIRST_LIVE_SMOKE_TEST.md). |
 | F — Seven-day live pilot | Not authorized | Do not execute or schedule. |
 
 Engineering tests use synthetic data and disposable PostgreSQL in the shared
 `data-source-feasibility` Conda environment. Seven core tables, complete observed
 versions, reconciliation rules, comparison-reference rules and stopping predicates
-remain fixed. No Apple RSS requests or pushes are authorized. The user authorized
-one local milestone commit after review. The separately authorized
+remain fixed. The prior local milestone commit is complete. No Apple RSS requests or
+pushes are authorized. The accepted correction now has authorization for one
+separate local follow-up commit; actual smoke execution remains a later explicit
+operator action. The separately authorized
 dedicated local WSL database is deployed; live collection remains closed.
 Phase E may prepare a controlled live-capable path and deployment templates using offline tests.
 Historical feasibility evidence and existing tests are preserved.

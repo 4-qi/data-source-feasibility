@@ -94,9 +94,11 @@ deterministic version reconciliation, bounded request control, comparison
 references independent of coverage sufficiency, and session/diagnostic recovery.
 Phase D adds safe reports, a synthetic seven-day rehearsal and private human
 assessment materials. Actual human assessment remains pending. Live mode remains
-closed unless a confirmed, enabled project policy and fresh deployment
+closed unless an explicitly enabled technical project policy and fresh deployment
 preflight both pass. Routine runs reuse that project policy without per-run
-approval files or one-use receipts. Phase E preparation is complete; real Apple requests and
+approval files or one-use receipts. Data-use/retention considerations remain
+project documentation for review with John, rather than software confirmation
+gates. Phase E preparation is complete; real Apple requests and
 Phase F remain unauthorized.
 
 Run the complete suite with a disposable PostgreSQL cluster:

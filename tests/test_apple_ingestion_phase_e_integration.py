@@ -203,9 +203,9 @@ def test_e_default_pending_decisions_and_disabled_target_block_before_http_resou
     cases = [
         (None, d['config'], 'LIVE_MODE_DISABLED'),
         (LiveExecutionPolicy(LiveExecutionApproval(), d['receipts']), d['config'], 'LIVE_MODE_DISABLED'),
-        (LiveExecutionPolicy(replace(d['approval'], access_basis_ref=None), d['receipts']), d['config'], 'LIVE_APPROVAL_INVALID'),
+        (LiveExecutionPolicy(replace(d['approval'], operator=None), d['receipts']), d['config'], 'LIVE_APPROVAL_INVALID'),
         (LiveExecutionPolicy(d['approval'], d['receipts']), replace(d['config'], retention=replace(
-            d['config'].retention, state='pending', owner=None, duration_days=None, policy_ref=None)), 'LIVE_DEPLOYMENT_NOT_READY'),
+            d['config'].retention, state='pending', owner=None, duration_days=None, policy_ref=None)), 'LIVE_TARGET_DISABLED'),
         (LiveExecutionPolicy(replace(d['approval'], valid_until=NOW-timedelta(microseconds=1)), d['receipts']),
             d['config'], 'LIVE_APPROVAL_OUTSIDE_VALIDITY'),
         (LiveExecutionPolicy(d['approval'], d['receipts']), d['config'], 'LIVE_TARGET_DISABLED'),

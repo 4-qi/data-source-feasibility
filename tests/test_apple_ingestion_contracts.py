@@ -120,10 +120,11 @@ def test_snapshot_rejects_malformed_json_contract(path, value):
         ConfigSnapshot.from_dict(data)
 
 
-def test_live_snapshot_cannot_silently_fill_missing_decisions():
-    for access, retention in ((None, None), ("access-1", None), (None, "retention-1")):
-        with pytest.raises(ContractError, match="live snapshots require"):
-            snapshot(run_mode=RunMode.LIVE, access_decision_ref=access, retention_policy_ref=retention)
+def test_live_snapshot_document_references_are_optional_metadata():
+    for access, retention in ((None, None), ("technical-trace", None), (None, "legacy-retention-metadata")):
+        value=snapshot(run_mode=RunMode.LIVE,access_decision_ref=access,retention_policy_ref=retention)
+        assert value.access_decision_ref==access and value.retention_policy_ref==retention
+        assert ConfigSnapshot.from_dict(value.to_dict())==value
     recorded = snapshot(run_mode=RunMode.LIVE, access_decision_ref="pending-owner-record",
                         retention_policy_ref="policy-record")
     assert not hasattr(recorded, "live_authorized")

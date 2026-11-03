@@ -2,7 +2,8 @@
 
 **Checked:** November 3, 2026, America/Los_Angeles.  
 **Decision state:** explicit long-term technical intent selected; project-specific
-access/retention arrangements remain unconfirmed; no live-run authorization.  
+access/retention arrangements remain open for review with John. They are not
+collector Boolean gates; this preparation task makes no real request.  
 **Scope:** the existing eight third-party applications, US customer-review RSS,
 small bounded requests, retained full-text observed versions and private human
 assessment. No model training, publication of review bodies, alternate source
@@ -11,8 +12,8 @@ search, supplier activation or contact submission is included.
 This memo distinguishes retrieved official statements from their unresolved
 application to this external ingestion project. It is not a declaration that
 all Apple review storage is forbidden, nor a general license inferred from a
-public endpoint. Engineering approval and a local operator authorization record
-cannot themselves create source/data-use rights.
+public endpoint. Engineering success, technical enablement and removing administrative software
+checks cannot themselves establish source/data-use rights.
 
 ## Confirmed current official material
 
@@ -34,7 +35,7 @@ indexed API page and readable Connect help supported the narrow own-app finding.
 No authenticated API or app-account access was performed. Search results from
 third parties were not used as a legal or protocol authority.
 
-## Project applicability and required decisions
+## Project applicability and review with John
 
 **Engineering inference:** the client/internship project should not assume its
 purpose is covered by a personal-use allowance. Likewise, an approved-RSS
@@ -44,36 +45,37 @@ precise purpose and endpoint, recording any conditions or unresolved limits.
 The reviewed materials establish a concrete applicability concern, not a
 finding that every possible permission arrangement is unavailable.
 
-| Decision item | Current project state | Evidence needed before a real bounded run |
+| Review item | Current project state | Project-management follow-up (not collector input) |
 | --- | --- | --- |
 | Access basis | No project-specific decision covering this route/scope was supplied. | A named responsible decision maker and reviewable basis/reference covering the selected app(s), US endpoint, bounded automated access and any applicable conditions. |
 | Full-text/version retention | The intended technical model is explicit `long_term`, without a preset expiry; applicable arrangements remain unconfirmed. | Responsible-owner confirmation and policy references covering complete versions, observations/history, private artifacts, backups, future obligations and any required changes. No invented finite duration is required. |
 | Human analysis | Tooling is prepared; actual human assessment has not occurred. | Confirmation that the intended private assessment and access roles fit the approved data-use basis. |
 | Personal data handling | Removing author fields does not remove personal information embedded in text. | Access controls and a project process for privacy/retention requests and incident handling within the selected scope. |
 | Distribution/downstream use | No review-body publication, external transfer or training is part of this phase. | Separate review before expanding purpose; do not infer rights from technical accessibility. |
-| Execution authorization | The user authorized readiness preparation only. | A separate, explicit authorization for the first bounded request/run, with selected scope and limits; it must not schedule Phase F. |
+| Operational start | This task keeps execution and targets disabled. | An operator explicitly enables the selected technical scope/window for a later run; there is no per-run approval document. Phase F does not start automatically. |
 
-An operator record should identify the decision and its conditions; it must not
-claim Apple permission merely because a checkbox is true. A relevant source
-restriction, missing applicability decision or incompatible retention condition
-blocks live execution while leaving synthetic validation available. Alternative
-contractual or other applicable bases may exist; this memo does not prescribe a
-particular permission-acquisition route or contact any party.
+These questions remain documented for the responsible project owner and John.
+The collector does not decide them, require an approval document, or treat a
+Boolean as evidence of rights. Removing those software gates does not resolve
+these project considerations. This memo does not contact anyone or prescribe a
+particular legal route. Actual source denial/rate limits and engineering failures
+still stop the collector; scope or purpose decisions remain project management.
 
 ## Retention configuration boundary
 
-The project has now explicitly chosen technical `long_term` retention with
-`duration_days=null`, no preset expiry and no automatic history deletion. This
-is not a claim of unrestricted real-world permission. The private local config
-keeps `arrangement_confirmed=false`; preflight distinguishes complete technical
-documentation from unresolved applicable arrangements and blocks live execution.
-See [the actual local deployment](APPLE_INGESTION_LOCAL_DEPLOYMENT.md).
+The intended technical model is `long_term` with `duration_days=null`, no preset
+expiry and no automatic history deletion. `mode`/`duration_days` describe storage
+intent; owner, references and the old `arrangement_confirmed` are documentation
+metadata, not live-preflight conditions. Legacy confirmation fields can be read
+without requiring true and are omitted from canonical new configuration.
+See [the local deployment](APPLE_INGESTION_LOCAL_DEPLOYMENT.md).
 
-There is no guessed 24-hour, 30-day or other universal Apple RSS period. Supplier-
-specific conditions are not transferred to direct RSS. Legacy explicit finite-
-day configurations remain supported, but a finite number is not required for
-`long_term`. Missing applicable arrangements/policy confirmation, rather than
-the intentionally null day count, are the current live blocker.
+No universal 24-hour/30-day RSS limit is invented or transferred from a supplier.
+Finite-day configurations remain compatible, but `long_term` requires no finite
+day count. The operational prerequisites are explicit project/target enablement,
+valid technical scope/window and actual database/diagnostic safety. Unknown data
+use or retention applicability stays in this project-review document; software
+removal is not a confirmation that unrestricted retention is permitted.
 
 The intended policy preserves complete accepted title/body, metadata, observed
 versions, observations and collection history without a preset expiry. A review
@@ -91,14 +93,14 @@ database and isolated backup/restore have now been tested; unresolved arrangemen
 are not resolved by either technical deployment or a policy field in JSON. Full-text storage is not replaced by hashes
 as a workaround for unresolved conditions.
 
-## First bounded technical validation: later authorization required
+## First bounded technical validation: explicit operator start required
 
-A later, separately authorized limited run should state selected target(s), one
+A later explicitly enabled limited run should state selected target(s), one
 execution, unchanged per-target page/request/spacing/size/time limits and a
 specific stop/recovery procedure. It should inspect representation/namespace
 compatibility without retaining raw responses in ordinary diagnostics. New
 nested/XHTML structures, schema failures, access/rate denial, indeterminate
-persistence, missing approvals or unsafe logging require stopping and review;
+persistence, disabled/out-of-scope execution or unsafe logging require stopping and review;
 none authorizes alternate endpoints, relaxed thresholds or a seven-day schedule.
 
 No live source behavior, DNS/TLS route, current feed response, fresh arrival,

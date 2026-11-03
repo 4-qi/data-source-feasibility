@@ -5,7 +5,7 @@ not access authorization: the controller's live-policy layer remains the sole
 authorization contract. Mutations require explicit opt-in and a caller-owned
 maintenance transaction; this phase executes them only in disposable tests.
 """
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from io import StringIO
 import json
 import os
@@ -81,42 +81,39 @@ class DatabaseConfig:
 
 @dataclass(frozen=True)
 class RetentionConfig:
-    state: str
-    owner: str | None
-    duration_days: int | None
-    policy_ref: str | None
-    backup_handling_ref: str | None
-    export_handling_ref: str | None
-    expiry_review_ref: str | None
+    state: str = 'pending'
+    owner: str | None = None
+    duration_days: int | None = None
+    policy_ref: str | None = None
+    backup_handling_ref: str | None = None
+    export_handling_ref: str | None = None
+    expiry_review_ref: str | None = None
     mode: str = 'finite_days'
-    arrangement_confirmed: bool = False
+    arrangement_confirmed: object = field(default=False,compare=False,repr=False)
 
     def __post_init__(self):
         if self.state not in {'pending','documented'}:
             raise DeploymentError('INVALID_RETENTION_STATE')
-        if type(self.mode) is not str or self.mode not in {'finite_days','long_term'} or type(self.arrangement_confirmed) is not bool:
-            raise DeploymentError('INVALID_RETENTION_MODE_OR_CONFIRMATION')
+        if type(self.mode) is not str or self.mode not in {'finite_days','long_term'}:
+            raise DeploymentError('INVALID_RETENTION_MODE')
         for name in ('owner','policy_ref','backup_handling_ref','export_handling_ref','expiry_review_ref'):
             _optional_text(getattr(self,name))
         if self.duration_days is not None and (type(self.duration_days) is not int or self.duration_days<=0):
             raise DeploymentError('FINITE_RETENTION_REQUIRED')
         if self.mode=='long_term' and self.duration_days is not None:
             raise DeploymentError('LONG_TERM_DURATION_MUST_BE_NULL')
-        if self.state=='documented' and not self.technical_complete:
-            raise DeploymentError('INCOMPLETE_RETENTION_CONFIG')
+        if self.mode=='finite_days' and self.state=='documented' and self.duration_days is None:
+            raise DeploymentError('FINITE_RETENTION_REQUIRED')
 
     @property
     def technical_complete(self):
-        return (self.state=='documented'
-            and (self.mode=='long_term' or self.duration_days is not None)
-            and all(getattr(self,name) is not None for name in (
-                'owner','policy_ref','backup_handling_ref','export_handling_ref','expiry_review_ref')))
+        return self.mode=='long_term' or self.duration_days is not None
 
     @property
     def complete(self):
-        # Legacy finite-day completeness stays unchanged. Long-term mode adds
-        # an explicit applicable-arrangement confirmation, not a live approval.
-        return self.technical_complete and (self.mode=='finite_days' or self.arrangement_confirmed)
+        # Compatibility alias for technical mode/duration completeness only.
+        # Applicable data-use/retention arrangements are not decided in code.
+        return self.technical_complete
 
 
 @dataclass(frozen=True)
@@ -150,11 +147,10 @@ class DeploymentConfig:
         for name,kind in [('database',DatabaseConfig),('roles',RoleConfig),('retention',RetentionConfig),('diagnostics',DiagnosticsConfig)]:
             data=value[name]
             if name=='retention':
-                optional={'mode','arrangement_confirmed'}
                 fields=set(kind.__dataclass_fields__)
-                if type(data) is not dict or not fields-optional<=set(data)<=fields:
+                if type(data) is not dict or not set(data)<=fields:
                     raise DeploymentError('INVALID_DEPLOYMENT_CONFIG')
-                data={'mode':'finite_days','arrangement_confirmed':False,**data}
+                data={key:value for key,value in data.items() if key!='arrangement_confirmed'}
             else:
                 _exact(data,kind.__dataclass_fields__)
             try:
@@ -166,7 +162,10 @@ class DeploymentConfig:
         return cls(schema_version=value['schema_version'],**nested)
 
     def to_dict(self):
-        return asdict(self)
+        return {'schema_version':self.schema_version,'database':asdict(self.database),
+            'roles':asdict(self.roles),'diagnostics':asdict(self.diagnostics),
+            'retention':{name:getattr(self.retention,name) for name in self.retention.__dataclass_fields__
+                if name!='arrangement_confirmed'}}
 
 
 def load_config(path):
@@ -456,20 +455,19 @@ def _preflight(connection,config,*,for_live=False,environ=None,runtime_connectio
     if for_live:
         if not runtime_verified:
             blockers.append('RUNTIME_LOGIN_NOT_VERIFIED')
-        if not config.retention.complete:
-            blockers.append('RETENTION_DECISION_PENDING')
-        if config.retention.mode=='long_term' and not config.retention.arrangement_confirmed:
-            blockers.append('LONG_TERM_ARRANGEMENT_UNCONFIRMED')
         blockers.extend(diagnostics['blockers'])
     return {'schema_version':SCHEMA_VERSION,'read_only':True,'for_live':bool(for_live),
         'live_ready':bool(for_live) and not blockers,
-        'status':'blocked' if blockers else 'deployment_ready_policy_unchecked',
+        'live_ready_semantics':'deployment_operational_alias',
+        'status':'operational_blocked' if blockers else 'operational_ready',
+        'operational_ready':not blockers,'readiness_scope':'operational_only',
         'ready':not blockers,'database_ready':database_ready,'retention_ready':config.retention.complete,
         'blockers':sorted(set(blockers)),'revision':revision,'postgresql_major':server[0]//10000,
-        'seeded_eight_applications':seeded,'retention_documented':config.retention.technical_complete,
+        'seeded_eight_applications':seeded,'retention_documented':config.retention.state=='documented',
         'retention_technical_ready':config.retention.technical_complete,
-        'retention_arrangement_confirmed':config.retention.arrangement_confirmed,
-        'retention':asdict(config.retention),
+        'retention_runtime_gate':False,
+        'data_use_and_retention_applicability':'not_assessed_by_software',
+        'retention':config.to_dict()['retention'],
         'diagnostics':diagnostics,'parser_version':PARSER_VERSION,'hash_contract_version':HASH_CONTRACT_VERSION,
         'db_timeout_profile':{'configured_session_lock_ms':config.database.lock_timeout_ms,
             'configured_session_statement_ms':config.database.statement_timeout_ms,
@@ -487,8 +485,9 @@ def _preflight(connection,config,*,for_live=False,environ=None,runtime_connectio
 def preflight(connection,config,*,for_live=False,environ=None,runtime_connection=None):
     """Safe SELECT-only report; pass an actual runtime login for live readiness.
 
-    A ready deployment is not authorized execution. ProjectExecutionPolicy must
-    separately validate confirmed project conditions, scope/window and limits.
+    Readiness describes operational prerequisites, not legal approval.
+    ProjectExecutionPolicy separately validates execution scope/window/limits;
+    applicable data-use and retention arrangements are not assessed here.
     The legacy single-run API remains compatible but is not required.
     Neither connection is committed, rolled back or replaced by this function.
     """

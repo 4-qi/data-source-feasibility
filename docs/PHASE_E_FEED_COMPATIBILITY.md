@@ -78,7 +78,7 @@ If an authorized bounded observation actually contains legitimate nested structu
 
 ## 4. First separately authorized bounded validation
 
-This is a proposed check specification, **not execution authorization**. The project owner must first clear the access/retention/operator prerequisites recorded by the main Phase E checklist. Current synthetic results are not that clearance.
+This is a proposed check specification, **not execution authorization**. The project owner retains the documented access/data-use and retention questions for review with John. These are not collector Boolean gates. Technical scope/operator/window/limits and explicit enablement remain required; current synthetic results are not actual source evidence.
 
 1. Record exact fixed-manifest app, US storefront, page, format, request ceiling, timing, permitted private handling and stop procedure. A minimal initial diagnostic can be page 1 JSON and Atom for **one** manifest app, at most **two physical requests**, spaced at least two seconds. Any expansion to another app/page requires inclusion in that separately recorded authorization and the same configured caps; it is not a seven-day pilot. A paired-format diagnostic does not change the production JSON/fallback policy.
 2. Use the reviewed bounded transport with no credentials/cookies, redirect following or retries; enforce 10/25-second connect/read timeouts, 2,000,000 decoded-byte cap and a fixed deadline. Never follow next links or infer termination from empty entries. Record request intent and outcome through the reviewed diagnostic path appropriate to the explicitly authorized run; do not claim a synthetic run as live.

@@ -1,5 +1,12 @@
 # Phase E — Independent cross-module integration review
 
+> Current operational-boundary correction: access/data-use and retention
+> considerations remain project documentation for review with John, not
+> collector confirmation gates. The historical tests/approval checks below
+> describe the earlier E implementation. Use the
+> [current smoke procedure](APPLE_FIRST_LIVE_SMOKE_TEST.md) for technical-only
+> configuration, default disablement and explicit operator start.
+
 Review date: November 3, 2026 (America/Los_Angeles).
 
 **Result: PASS for the five independent offline integration scenarios below.** This is the independent cross-module portion of E; the coordinating chat owns the complete-suite E gate and final readiness decision. No actual Apple request, persistent deployment, production authorization or Phase F execution was performed.
