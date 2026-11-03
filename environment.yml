@@ -1,0 +1,8 @@
+name: data-source-feasibility
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+variables:
+  PYTHONNOUSERSITE: "1"

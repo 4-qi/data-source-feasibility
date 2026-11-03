@@ -1,0 +1,41 @@
+{
+  "policy_id": null,
+  "operator": null,
+  "execution_enabled": false,
+  "access_arrangement_confirmed": false,
+  "access_basis_ref": null,
+  "valid_from": null,
+  "valid_until": null,
+  "purpose": "smoke",
+  "source_application_ids": [
+    "572688855"
+  ],
+  "storefront": "us",
+  "sort_by": "mostrecent",
+  "config": {
+    "interval_hours": 24,
+    "min_pages": 2,
+    "max_pages": 5,
+    "min_overlap_count": 20,
+    "min_overlap_ratio": 0.2,
+    "max_http_requests": 10,
+    "retry_count": 0,
+    "global_spacing_seconds": 2.0,
+    "connect_timeout_seconds": 10.0,
+    "read_timeout_seconds": 25.0,
+    "max_response_bytes": 2000000,
+    "target_deadline_seconds": 900.0,
+    "reference_max_age_hours": 72,
+    "reference_age_policy": "warn_only",
+    "formats": [
+      "json",
+      "xml"
+    ],
+    "fallback_policy": "json_no_review_entries_then_xml_once",
+    "allowed_host": "itunes.apple.com",
+    "scheme": "https",
+    "allow_redirects": false,
+    "ambient_credentials": false
+  },
+  "schema_version": "apple-project-execution-policy/1"
+}

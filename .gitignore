@@ -20,3 +20,26 @@ research/Project_Kickoff/
 # Local private keys
 *.pem
 *.key
+
+# Local PostgreSQL deployment and private operator state (templates stay public).
+/pgdata/
+/postgresql/
+/backups/
+/spool/
+/receipts/
+*.dump
+*.backup
+*.private-config.tar.gz
+pgpass
+.pgpass
+*.pgpass
+pg_service.conf
+credentials.json
+connection.env.json
+deployment.json
+single-run-approval.json
+project-policy.*.json
+events.jsonl
+postmaster.pid
+postmaster.opts
+PG_VERSION

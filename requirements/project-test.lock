@@ -1,0 +1,20 @@
+# Project dependency constraints validated during Phase A (Python 3.12, PostgreSQL 16).
+# Install with: pip install -c requirements/project-test.lock -e ".[test,apple-ingestion]"
+Mako==1.4.3
+MarkupSafe==3.0.4
+Pygments==2.21.0
+SQLAlchemy==2.0.44
+alembic==1.17.1
+certifi==2026.10.23
+charset-normalizer==3.5.2
+greenlet==3.5.6
+idna==3.20
+iniconfig==2.3.1
+packaging==26.3
+pluggy==1.7.0
+psycopg==3.2.12
+psycopg-binary==3.2.12
+pytest==8.4.2
+requests==2.32.5
+typing_extensions==4.16.0
+urllib3==2.8.0

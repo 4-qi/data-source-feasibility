@@ -1,0 +1,19 @@
+{
+  "approval_id": null,
+  "operator": null,
+  "approved_by": null,
+  "approved_at": null,
+  "valid_from": null,
+  "valid_until": null,
+  "source_application_ids": [],
+  "max_http_requests": 10,
+  "access_basis_ref": null,
+  "retention_policy_ref": null,
+  "status": "pending",
+  "readiness_confirmed": false,
+  "execution_authorized": false,
+  "max_runs": 1,
+  "storefront": "us",
+  "sort_by": "mostrecent",
+  "schema_version": "apple-live-single-run-approval/1"
+}

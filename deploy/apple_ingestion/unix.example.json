@@ -1,0 +1,33 @@
+{
+  "schema_version": "apple-ingestion-deployment/1",
+  "database": {
+    "owner_url_env": "APPLE_INGESTION_OWNER_URL",
+    "runtime_url_env": "APPLE_INGESTION_RUNTIME_URL",
+    "report_url_env": "APPLE_INGESTION_REPORT_URL",
+    "transport": "unix_socket",
+    "tls_root_cert_env": null,
+    "postgresql_major": 16,
+    "connect_timeout_seconds": 10,
+    "lock_timeout_ms": 5000,
+    "statement_timeout_ms": 30000
+  },
+  "roles": {
+    "runtime_role": "apple_ingestion_runtime",
+    "maintenance_role": "apple_ingestion_owner",
+    "report_role": "apple_ingestion_report",
+    "schema": "public"
+  },
+  "retention": {
+    "state": "pending",
+    "owner": null,
+    "duration_days": null,
+    "policy_ref": null,
+    "backup_handling_ref": null,
+    "export_handling_ref": null,
+    "expiry_review_ref": null
+  },
+  "diagnostics": {
+    "spool_path_env": "APPLE_INGESTION_DIAGNOSTIC_SPOOL",
+    "operator": null
+  }
+}

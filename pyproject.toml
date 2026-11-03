@@ -11,6 +11,11 @@ dependencies = ["requests>=2.31,<3"]
 
 [project.optional-dependencies]
 test = ["pytest>=8,<10"]
+apple-ingestion = [
+    "SQLAlchemy==2.0.44",
+    "alembic==1.17.1",
+    "psycopg[binary]==3.2.12",
+]
 
 [project.scripts]
 feasibility = "feasibility.cli:main"
