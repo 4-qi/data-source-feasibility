@@ -224,6 +224,10 @@ def test_nested_xhtml_rejected_through_real_response_stream(ready,tmp_path):
     result,adapter,*_=execute(ready,tmp_path,[(200,b'{"feed":{}}'),(200,nested)])
     assert result.execution_status=="failed" and result.committed_pages==0 and len(adapter.calls)==2
     assert rows(engines["runtime"],F)[1]["error_codes"]==["ENTRY_SCHEMA"] and rows(engines["runtime"],V)==[]
+    assert rows(engines["runtime"],F)[1]["anomalies"] == [{
+        "code": "ENTRY_SCHEMA", "category": "unsupported_xhtml", "field": "content", "entry_index": 1,
+    }]
+    assert "PRIVATE_NESTED" not in json.dumps([dict(row) for row in rows(engines["runtime"],F)],default=str)
 
 
 def test_single_run_reuse_and_live_batch_denied_before_consumption_or_http(ready,tmp_path):

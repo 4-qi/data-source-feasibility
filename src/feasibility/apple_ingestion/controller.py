@@ -270,10 +270,10 @@ class Controller:
                             session.assert_alive()
                             stage = "response_metadata"
                             observed_at = self._time()
-                            code, parsed = self._parse_response(response, format, snapshot.config)
+                            code, parsed, parse_detail = self._parse_response(response, format, snapshot.config)
                             fallback = parsed is not None and format is FeedFormat.JSON and not parsed.records
                             with connection.begin():
-                                self._complete_attempt(connection, attempt_id, response, observed_at, parsed, code, fallback)
+                                self._complete_attempt(connection, attempt_id, response, observed_at, parsed, code, fallback, parse_detail)
                             if code:
                                 reason = ("http_denied" if code in {"HTTP_DENIED", "HTTP_RATE_LIMIT"} else
                                     "parse_error" if code in {"FEED_SCHEMA", "ENTRY_SCHEMA", "INVALID_TIMESTAMP"} else
@@ -343,26 +343,26 @@ class Controller:
 
     def _parse_response(self, response, format, config):
         if not isinstance(response, FetchResponse):
-            return "TRANSPORT_ERROR", None
+            return "TRANSPORT_ERROR", None, None
         if response.status_code in {401, 403}:
-            return "HTTP_DENIED", None
+            return "HTTP_DENIED", None, None
         if response.status_code == 429:
-            return "HTTP_RATE_LIMIT", None
+            return "HTTP_RATE_LIMIT", None, None
         if response.error_code is not None:
             from .live import PROJECT_STOP_CODES
-            return response.error_code if response.error_code in _TRANSPORT_CODES | PROJECT_STOP_CODES else "TRANSPORT_ERROR", None
+            return response.error_code if response.error_code in _TRANSPORT_CODES | PROJECT_STOP_CODES else "TRANSPORT_ERROR", None, None
         if response.status_code != 200:
-            return "HTTP_NON_200", None
+            return "HTTP_NON_200", None, None
         if type(response.body) is not bytes or type(response.response_bytes) is not int or response.response_bytes < 0:
-            return "TRANSPORT_ERROR", None
+            return "TRANSPORT_ERROR", None, None
         if len(response.body) > config.max_response_bytes or response.response_bytes > config.max_response_bytes:
-            return "BODY_LIMIT", None
+            return "BODY_LIMIT", None, None
         try:
-            return None, parse_feed(response.body, format)
+            return None, parse_feed(response.body, format), None
         except FeedParseError as exc:
-            return exc.code.value, None
+            return exc.code.value, None, exc.diagnostic()
 
-    def _complete_attempt(self, connection, attempt_id, response, at, parsed, code, fallback):
+    def _complete_attempt(self, connection, attempt_id, response, at, parsed, code, fallback, parse_detail):
         status = getattr(response, "status_code", None)
         status = status if type(status) is int and 100 <= status <= 599 else None
         size = getattr(response, "response_bytes", None)
@@ -371,7 +371,7 @@ class Controller:
         if fallback:
             diagnostics.append({"code": "JSON_FALLBACK"})
         if code:
-            diagnostics.append({"code": code})
+            diagnostics.append({"code": code, **(parse_detail or {})})
         connection.execute(update(ATTEMPT).where(ATTEMPT.c.id == attempt_id).values(
             finished_at=at, http_status=status, response_bytes=size, entry_count=parsed.entry_count if parsed else None,
             parsing_status="succeeded" if parsed else "failed" if code in {"FEED_SCHEMA", "ENTRY_SCHEMA", "INVALID_TIMESTAMP"} else "not_attempted",

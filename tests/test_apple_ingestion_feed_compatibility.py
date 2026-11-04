@@ -174,3 +174,31 @@ def test_more_than_microsecond_precision_remains_explicitly_unsupported_not_trun
     with pytest.raises(FeedParseError) as caught:
         parse_feed(fixture.body, fixture.format)
     assert caught.value.code is ReasonCode.INVALID_TIMESTAMP
+
+
+@pytest.mark.parametrize(('fields', 'category', 'field'), [
+    ('<im:rating>3</im:rating><content>PRIVATE</content>', 'missing_required_field', 'id'),
+    ('<id>PRIVATE</id><im:rating>9</im:rating><content/>', 'invalid_rating', 'im:rating'),
+    ('<id>PRIVATE</id><im:rating>3</im:rating><content/><content/>', 'duplicate_field', 'content'),
+    ('<content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">PRIVATE</div></content>',
+     'unsupported_xhtml', 'content'),
+    ('<content type="html"><p>PRIVATE</p></content>', 'unsupported_nested_markup', 'content'),
+    ('<content src="https://example.invalid/PRIVATE"/>', 'external_content', 'content'),
+    ('<content type="PRIVATE"/>', 'unsupported_text_type', 'content'),
+])
+def test_atom_schema_diagnostics_preserve_source_position_and_hide_values(fields, category, field):
+    xml = (f'<feed xmlns="{ATOM}" xmlns:im="{IM}">'
+           '<entry><im:name>App</im:name><im:contentType term="Application"/></entry>'
+           f'<entry>{fields}</entry></feed>')
+    with pytest.raises(FeedParseError) as caught:
+        parse_feed(xml.encode(), 'xml')
+    assert caught.value.code is ReasonCode.ENTRY_SCHEMA
+    assert caught.value.diagnostic() == {'category': category, 'field': field, 'entry_index': 2}
+    assert str(caught.value) == 'ENTRY_SCHEMA'
+
+
+def test_json_record_diagnostic_hides_field_value():
+    with pytest.raises(FeedParseError) as caught:
+        parse_feed(json_fixture(**{'im:rating': 'PRIVATE'}).body, 'json')
+    assert caught.value.diagnostic() == {'category': 'invalid_rating', 'field': 'im:rating', 'entry_index': 1}
+    assert str(caught.value) == 'ENTRY_SCHEMA'
