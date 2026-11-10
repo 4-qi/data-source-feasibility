@@ -43,7 +43,7 @@ database; prefer the runner, which creates its own database and sets them itself
 
 ## Actual results — November 3, 2026
 
-The main coordinating chat supplied an isolated, offline-installed dependency
+Validation used an isolated, offline-installed dependency
 directory at `/tmp/phase-a-python`. This session ran:
 
 ```bash
@@ -71,23 +71,23 @@ PYTHONPATH=/tmp/phase-a-python:src python3 -m pytest tests/test_apple_ingestion_
 Result: **33 skipped**, 0.47 seconds. This only verifies the environment guard;
 it is not database acceptance evidence.
 
-### Coordinating chat's reported project conda validation
+### Project Conda validation
 
-The coordinating chat prepared the shared project conda environment at
+The shared project Conda environment was prepared at
 `/home/l2838/miniconda3/envs/data-source-feasibility` (Python 3.12.16), with the
 editable project and dependencies installed. It reported **33 database tests
 passed** in that environment and **165 passed, 1 skipped** for the separate
-offline/contract run. These are results communicated by the coordinating chat,
+offline/contract run. These integration results are recorded
 not reruns performed by this validation session. No elapsed time or skip reason
 was supplied in that handoff, so neither is inferred here.
 
-The coordinating chat subsequently reported that `pip check` passed with
-`PYTHONNOUSERSITE=1`. It persisted that setting in the conda environment and
-recorded it in `environment.yml`; the final combined run will use this isolation.
-This is a coordinating-chat report, not an additional check by this session.
+A subsequent `pip check` passed with
+`PYTHONNOUSERSITE=1`. The setting was persisted in the Conda environment and
+recorded in `environment.yml` for the final combined run.
+This integration result is recorded separately from the checks above.
 
-The coordinating chat owns the final combined run in one disposable database
-and its exact counts in `PHASE_A_DELIVERY.md`. A zero-skip combined result is not
+Combined implementation validation uses one disposable database; exact
+counts are recorded in `PHASE_A_DELIVERY.md`. A zero-skip combined result is not
 claimed here before that run finishes. The schema session owns the
 `path_separator=os` warning fix; the earlier warning record above is retained
 as an accurate description of this session's measured run.
@@ -128,7 +128,7 @@ Phase A synthetic database acceptance only. Parser, normalizer, reconciliation
 ordering, controller lifecycle, concurrency/recovery and real RSS behavior are
 not implemented or accepted here. Version number contiguity and latest-current
 semantics remain later writer responsibilities, not guarantees supplied by
-these FKs. Project conda results reported by the coordinating chat are recorded
+these FKs. The project Conda validation results are recorded
 separately above; whole-repository combined regression acceptance belongs to
 that chat's final integration.
 

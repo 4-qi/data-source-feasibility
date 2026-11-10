@@ -85,10 +85,10 @@ parser, normalizer, reconciliation, recovery and database. They cover:
 
 The separate `PHASE_C_ARCHITECTURE_REVIEW.md` records concrete implementation
 paths, ten findings, owner fixes and regression evidence. Internal review
-passed after those fixes. The coordinating chat owns the final Phase C gate and
-authorization to proceed to D. This session did not implement D.
+passed after those fixes. Phase C was accepted, permitting implementation
+to proceed to Phase D. This session did not implement D.
 
-The coordinating chat separately reported **444 passed in 21.93 seconds**,
+A separate run recorded **444 passed in 21.93 seconds**,
 zero failures/skips/warnings, JUnit `/tmp/apple-phase-c-main.xml`, and unchanged
 design/model/migration hashes. This is its independent gate run, not the
 22.55-second run measured by this session. C-01 through C-10 are all closed in

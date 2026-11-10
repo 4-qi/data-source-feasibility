@@ -1,61 +1,93 @@
-# Data Source Feasibility — Phase I
+# Data Source Feasibility and Apple Review Ingestion
 
-This project evaluates online text sources for a sentiment analysis pipeline through bounded collection experiments, content review and offline tests. The feasibility study and focused source comparison are complete.
+This project evaluates online text sources for consumer-experience analysis and
+implements a bounded Apple App Store review-ingestion pilot. The source study,
+seven-day live pilot and 80-review human usefulness assessment are complete.
 
-**Current recommendation: Apple App Store as the primary source candidate, Google Play as the backup, and Steam as the technical regression baseline.** The intended scope is consumer experiences across app-enabled products and services. Production integration requires suitable data-use conditions and sustained online-update validation.
+The initial source study identified Apple as the primary source candidate, Google Play
+as the backup and Steam as the technical regression baseline. The completed
+Apple pilot provides additional evidence about scheduled collection, storage,
+coverage and content quality. Intended data use and long-term retention remain
+unresolved project-level conditions.
 
-## Findings
+## Final deliverables
 
-| Source | Executed coverage | Useful experience content | Recommended role |
-| --- | --- | --- | --- |
-| Apple App Store | 8 apps across 4 categories | 28/40 (70.0%) | Primary candidate; detailed experience text in this sample |
-| Google Play | Same 8 apps and 4 categories | 17/40 (42.5%) | Backup; undocumented web transport adds maintenance risk |
-| Steam Reviews | Historical sample from 2 games | 10/27 (37.0%) | Documented API baseline with gaming-specific coverage |
+Start with the pilot report, then consult the technical and quality reports.
 
-Apple and Google each completed 16/16 requests, including four pagination and four short repeat checks. Their quality samples used five first-page reviews per app, with ratings hidden during AI-assisted text inspection. Steam's figures come from an earlier sampling design; these percentages are descriptive sample results, not estimates of platform-wide superiority.
-
-Further validation of ongoing review updates, edit/deletion handling, and data-use permissions is required before production integration. Amazon remains a strategic retail candidate with a completed access assessment; broad raw-review ingestion is not recommended under current access conditions.
-
-## Documentation
-
-Start with the recommendation, then use the detailed comparison and evidence index as needed.
-
-| Document | Description |
+| Document | Purpose |
 | --- | --- |
-| [Pre-Live Engineering Baseline](docs/PRE_LIVE_ENGINEERING_BASELINE.md) | Local milestone review, data exclusions, preservation and clean-export validation |
-| [Apple Ingestion Design](docs/APPLE_INGESTION_SYSTEM_DESIGN.md) | Approved pilot architecture, seven-table schema and validation protocols |
-| [Phase A Delivery](docs/PHASE_A_DELIVERY.md) | Contracts/database scope, execution-session ownership and acceptance status |
-| [Implementation through Phase D](docs/APPLE_INGESTION_IMPLEMENTATION_SUMMARY.md) | Phased implementation, measured acceptance, architecture review and limits |
-| [Phase C Architecture Review](docs/PHASE_C_ARCHITECTURE_REVIEW.md) | Concrete consistency findings, fixes and regression evidence |
-| [Source Recommendation](results/source_recommendation.md) | Source selection, technical rationale, and implementation conditions |
-| [Mobile App Reviews versus Steam](results/mobile_review_comparison.md) | Matched app sampling, content quality, coverage, and collection trade-offs |
-| [Evidence Index](results/README.md) | Execution artifacts, metrics, annotations, and validation records |
-| [Research Guide](research/README.md) | Methodology, references, and historical context |
-| [Initial Feasibility Comparison](results/feasibility_comparison.md) | Preserved Steam, GitHub Issues, and Hacker News baseline |
-| [Amazon Acquisition Options](results/amazon_acquisition_options.md) | Acquisition methods, requirements, and limitations |
-| [Amazon Engineering Decision](results/amazon_decision.md) | Completed feasibility conclusions and integration criteria |
+| [Apple ingestion pilot report](docs/APPLE_INGESTION_PILOT_REPORT.md) | Objective, methodology, implementation, results, limitations and conclusion |
+| [Technical validation](docs/APPLE_INGESTION_TECHNICAL_VALIDATION.md) | Seven-day per-app evidence, failures, coverage, database integrity and backup/restore proof |
+| [Review quality assessment](docs/APPLE_REVIEW_QUALITY_ASSESSMENT.md) | Human U0–U3 results, sampling, validation and sample limitations |
+| [Documentation guide](docs/README.md) | Design, implementation, deployment, operations and historical supporting records |
 
-## Project Structure
+## Completed pilot findings
+
+November 3–9, 2026 produced seven actual daily batches and 56 application runs:
+52 successful, one partial and three failed. The pilot recorded 155 requests,
+147 committed pages, 7,350 observations and 4,257 first-in-database reviews.
+No changed versions were observed. Collection targets and Windows tasks were
+disabled after the pilot.
+
+The rating-hidden manual assessment classified **47/80 (58.75%) records as useful**.
+The quality sample contains ten reviews per app. Duolingo had
+four insufficient-overlap windows, and intermittent Atom responses caused
+strict parsing failures. Full coverage and real source-edit behavior remain
+unresolved.
+
+## Earlier source-feasibility evidence
+
+| Source | Historical sample | Useful content | Role in the source study |
+| --- | --- | --- | --- |
+| Apple App Store | 8 apps, 4 categories | 28/40 (70.0%) | Primary candidate |
+| Google Play | Same app/category frame | 17/40 (42.5%) | Backup; undocumented transport |
+| Steam Reviews | 2 games | 10/27 (37.0%) | Documented API baseline |
+
+The initial source study used AI-assisted inspection; the pilot used manual
+U0–U3 assessment. Their percentages are reported separately because the
+samples and assessment methods differ. Source and project
+decisions are documented in the
+[source recommendation](results/source_recommendation.md),
+[mobile comparison](results/mobile_review_comparison.md) and
+[evidence index](results/README.md). The [research guide](research/README.md)
+preserves the study's methodology and historical context. Amazon's separate
+[access assessment](results/amazon_acquisition_options.md) and
+[engineering decision](results/amazon_decision.md) remain available.
+
+## Design and operation
+
+The [system design](docs/APPLE_INGESTION_SYSTEM_DESIGN.md) defines seven core
+tables, complete review versions and the approved reconciliation rules.
+The [implementation summary](docs/APPLE_INGESTION_IMPLEMENTATION_SUMMARY.md)
+preserves engineering delivery and historical test results.
+
+The [deployment documentation](docs/APPLE_INGESTION_DEPLOYMENT.md)
+describes PostgreSQL, private storage, roles and recovery.
+The [operations documentation](docs/APPLE_INGESTION_OPERATIONS.md) describes
+the completed pilot's Windows/WSL execution and disabled state. Final
+retirement evidence is recorded in the
+[technical validation](docs/APPLE_INGESTION_TECHNICAL_VALIDATION.md).
+Access and retention questions remain in the
+[project review memo](docs/archive/PHASE_E_ACCESS_RETENTION.md).
+Historical Phase and daily reports are linked as audit records in the
+[documentation guide](docs/README.md).
+
+## Project structure
 
 ```text
 data-source-feasibility/
-├── src/feasibility/      # Baseline collectors, normalization and reporting
-├── probes/              # Bounded access and mobile-comparison diagnostics
-├── migrations/          # Apple pilot PostgreSQL schema migrations
-├── docs/                # Approved design and phased engineering delivery
-├── tests/               # Offline parsing, privacy and collection-control checks
-├── research/            # Methodology, references and historical context
-└── results/             # Reports and preserved execution evidence
-    ├── mobile_quality/  # Current comparison and abstract content annotations
-    ├── mainstream/      # Earlier mobile access and supplier assessment
-    ├── route_recheck/   # Earlier platform-specific access checks
-    ├── runs/            # Original collection runs
-    └── negative_validation/
+├── src/feasibility/      # Collection, normalization and reporting
+├── probes/              # Bounded feasibility diagnostics
+├── migrations/          # Apple PostgreSQL schema migrations
+├── docs/                # Final reports, design, operations and engineering history
+├── tests/               # Offline and isolated PostgreSQL checks
+├── research/            # Methodology and historical context
+└── results/             # Preserved feasibility evidence and annotations
 ```
 
-## Setup and Offline Tests
+## Setup and offline validation
 
-Python 3.10+ is required; the shared project Conda environment uses Python 3.12.
+Python 3.10+ is required; the project Conda environment uses Python 3.12.
 
 ```sh
 conda env create -f environment.yml
@@ -64,74 +96,38 @@ python -m pip install -c requirements/project-test.lock -e '.[test,apple-ingesti
 python -m pytest -q
 ```
 
-Reuse this project environment across implementation phases. If it already exists, activate it instead of recreating it. A standard Python venv is an alternative for installations without Conda.
-
-The original feasibility suite recorded **57 passing tests**, covering normalization, pagination, deduplication, response parsing, negative recommendation flags, privacy and request budgets. Phase A adds separate contract and PostgreSQL checks. Offline tests and live collection results are separate forms of evidence.
-
-## Apple Pilot — Phase A
-
-Phase A implements data contracts, seven PostgreSQL tables, Alembic migrations and database integrity tests. It adds no RSS collection path. The existing eight US applications seed disabled targets; parser/reconciliation/controller work belongs to later phases.
-
-In the project Conda environment, install/update the database/test dependencies:
-
-```sh
-python -m pip install -c requirements/project-test.lock -e '.[test,apple-ingestion]'
-python -m pytest -q
-```
-
-The constraints file records the tested dependency set. PostgreSQL tests require an explicitly disposable database and are skipped by ordinary offline runs without it. On Linux with PostgreSQL 16 binaries installed, the isolated test runner creates a temporary cluster with TCP disabled and removes it afterward:
-
-```sh
-bash scripts/test_apple_ingestion_postgres.sh -q
-```
-
-Set `APPLE_TEST_PG_BIN` if the PostgreSQL binaries are elsewhere, or `APPLE_TEST_PYTHON` to select the environment's Python. See the [database validation record](docs/PHASE_A_DATABASE_VALIDATION.md) for actual test evidence and migration/permission setup. These checks use synthetic records and do not contact Apple.
-
-## Apple Pilot — Phases B through D
-
-The approved seven-table/full-text design now has strict JSON/Atom parsing,
-deterministic version reconciliation, bounded request control, comparison
-references independent of coverage sufficiency, and session/diagnostic recovery.
-Phase D adds safe reports, a synthetic seven-day rehearsal and private human
-assessment materials. Actual human assessment remains pending. Live mode remains
-closed unless an explicitly enabled technical project policy and fresh deployment
-preflight both pass. Routine runs reuse that project policy without per-run
-approval files or one-use receipts. Data-use/retention considerations remain
-project documentation for review with John, rather than software confirmation
-gates. Phase E preparation is complete; real Apple requests and
-Phase F remain unauthorized.
-
-Run the complete suite with a disposable PostgreSQL cluster:
+Activate an existing project environment instead of recreating it. A Python
+venv is an alternative. Ordinary tests skip database cases without an explicit
+disposable PostgreSQL configuration. The Linux PostgreSQL 16 runner creates
+and removes a temporary cluster with TCP disabled.
 
 ```sh
 conda activate data-source-feasibility
 bash scripts/test_apple_ingestion_postgres.sh --full-suite -q
 ```
 
-The tests inject synthetic responses and block Python TCP connections. Read the
-[implementation summary](docs/APPLE_INGESTION_IMPLEMENTATION_SUMMARY.md) for phase
-results, rehearsal reproduction and A–D architectural limits. See the
-[Phase E live-readiness report](docs/PHASE_E_LIVE_READINESS.md) for the controlled
-live entry, deployment templates, offline integration results and concrete
-blockers. A dedicated persistent WSL PostgreSQL instance has subsequently been deployed
-and verified, including explicit long-term retention, actual account permissions
-and isolated backup/restore. See the [local deployment report](docs/APPLE_INGESTION_LOCAL_DEPLOYMENT.md)
-for operating commands and current blockers. All eight targets remain disabled;
-no real Apple request or Phase F collection has occurred. The
-[first smoke-test runbook](docs/APPLE_FIRST_LIVE_SMOKE_TEST.md) contains the
-selected Todoist target, simplified project policy and unactivated seven-day plan.
+Set APPLE_TEST_PG_BIN or APPLE_TEST_PYTHON to select local binaries.
+The last complete diagnostics regression recorded **676 passing tests** before
+commit 022c70b. This documentation cleanup does not claim a new test run.
+See the [database validation record](docs/archive/PHASE_A_DATABASE_VALIDATION.md) and
+[implementation summary](docs/APPLE_INGESTION_IMPLEMENTATION_SUMMARY.md)
+for earlier checkpoints.
 
-## Collection Tools
+## Historical collection tools
 
-Inspect the CLI without making requests:
+Inspect command help without making requests.
 
 ```sh
 python -m feasibility.cli --help
 python probes/mobile_quality.py --help
 ```
 
-The baseline CLI supports bounded probes for `steam`, `github` and `hackernews`, plus the original two-round experiment. `python -m feasibility.negative_validation` performs the targeted Steam negative-review check. The experiment updates `results/collection_summary.json` and saves a separate timestamped execution snapshot.
+The baseline CLI supports steam, github and hackernews probes and the original
+two-round experiment. The
+[mobile comparison reproduction record](results/mobile_review_comparison.md#reproduction)
+describes its bounded Apple/Google study. Executing collection commands contacts
+external services and writes evidence.
 
-The [mobile comparison report](results/mobile_review_comparison.md#reproduction) documents the two-phase Apple/Google probe. Live collection commands contact external services and write evidence. Use a fresh output directory; temporary inspection text must stay outside the repository.
-
-The repository contains code, tests, technical documentation and sanitized execution results. Internal project documents, credentials, raw third-party content, account identifiers, private local manifests and research archives remain excluded from Git tracking.
+Repository reports contain sanitized execution metadata and aggregate results.
+Private credentials, PostgreSQL contents, raw review text and human response
+files stay outside tracked delivery files.

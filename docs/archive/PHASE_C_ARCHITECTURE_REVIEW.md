@@ -2,7 +2,7 @@
 
 Status: **internal review passed after owner fixes and real-PostgreSQL
 regression**, November 3, 2026. This review is limited to synthetic engineering
-behavior. The coordinating chat controls the Phase C gate; Phase D is not
+behavior. The Phase C acceptance gate applied; Phase D is not
 authorized by this document. The approved design is not changed here.
 
 ## Review method and required evidence
@@ -42,7 +42,7 @@ bc20a7f0056774c26af9ad70e6f992d92e31126476bd2ae1aab7c421661687e4  src/feasibilit
 ## Findings and disposition
 
 The following findings were recorded during review. C-04, C-05 and C-09 came
-from this independent review/test session; the coordinating chat reported the
+from this independent review/test session; the integration record includes the
 other findings. All were fixed by their implementation owners, not by silently
 changing core rules in this validation session:
 
@@ -53,17 +53,17 @@ changing core rules in this validation session:
 | C-03 | Snapshot validation initially compared internal app/target IDs without checking source app identity and actual target storefront/sort. | Validate stored snapshot against application/target rows; a forged snapshot must be excluded, without narrowing legitimate reference eligibility. |
 | C-04 | Independent read found recovery's `ApplicationBusy.code` is `APPLICATION_BUSY`, absent from controller's lock-skip branch. | Owner must align the interfaces; actual lock contention must skip without run, attempt, request or spool failure. |
 | C-05 | Independent read found controller outage stages such as `run_intent`, `response_metadata`, `page_commit`, `after_page_commit` and initial `lock` were absent from spool's allowed stage set. | Owner must ensure each real outage path can record its intended safe diagnostic or return an explicit pre-run error, without treating a valid failure stage as corrupt input. |
-| C-06 | Coordinating chat found first-import `SPOOL_REPLAYED`/`SPOOL_RUN_REPLAYED` group markers caused later safe events for the same group to be ignored. | Recovery owner to use per-event fingerprint/watermark semantics within existing JSON diagnostics; test later append plus repeat replay without overwriting committed markers or fabricating HTTP state. |
-| C-07 | Coordinating chat found controller rejected explicit nondefault min-page/count/ratio and budget settings despite the design's configurable frozen settings. | Owner to retain approved defaults and unchanged AND rule, allow explicit valid target/snapshot-matching settings, and explicitly reject unimplemented retry policy. No automatic threshold relaxation. |
-| C-08 | Coordinating chat found a DB failure before run insertion left `run_id=None`, which spool rejected instead of recording the safe failure. | Preallocate an intended run UUID before lock/intent persistence, send no HTTP if persistence fails, and distinguish intended UUID from a persisted row. |
+| C-06 | First-import `SPOOL_REPLAYED`/`SPOOL_RUN_REPLAYED` group markers caused later safe events for the same group to be ignored. | Recovery owner to use per-event fingerprint/watermark semantics within existing JSON diagnostics; test later append plus repeat replay without overwriting committed markers or fabricating HTTP state. |
+| C-07 | The controller rejected explicit nondefault min-page/count/ratio and budget settings despite the design's configurable frozen settings. | Owner to retain approved defaults and unchanged AND rule, allow explicit valid target/snapshot-matching settings, and explicitly reject unimplemented retry policy. No automatic threshold relaxation. |
+| C-08 | A DB failure before run insertion left `run_id=None`, which spool rejected instead of recording the safe failure. | Preallocate an intended run UUID before lock/intent persistence, send no HTTP if persistence fails, and distinguish intended UUID from a persisted row. |
 | C-09 | Independent backend-termination integration failed after recovery: a request whose response metadata was never committed ended with only `APPLICATION_SESSION_LOST`, not the required `REQUEST_OUTCOME_UNKNOWN`. Spool replay had resolved its pending states, so orphan recovery no longer recognized the unknown request. | Recovery owner must preserve unknown-request semantics while importing safe event diagnostics, leave HTTP status null, and retain idempotence. Regression: `test_session_loss_after_fetch_spools_unknown_then_restarts_page_one`. |
-| C-10 | Coordinating chat identified a shared transaction-boundary root cause: SQLAlchemy commit failure can deactivate its logical transaction while psycopg remains INTRANS. Logical-only rollback followed by a new short transaction could then accidentally commit the old run/page. | Controller, reconciliation and recovery owners must discard/roll back the actual driver transaction before liveness checks, rollback diagnostics or pool reuse. Validate failures before sending COMMIT separately from a successful COMMIT whose acknowledgement is lost. |
+| C-10 | The shared transaction-boundary root cause was: SQLAlchemy commit failure can deactivate its logical transaction while psycopg remains INTRANS. Logical-only rollback followed by a new short transaction could then accidentally commit the old run/page. | Controller, reconciliation and recovery owners must discard/roll back the actual driver transaction before liveness checks, rollback diagnostics or pool reuse. Validate failures before sending COMMIT separately from a successful COMMIT whose acknowledgement is lost. |
 
 These findings do not reopen approved reference or coverage semantics.
 Controller/reference owner fixed C-01 through C-04, C-07 and C-08.
 Transport/recovery owner fixed C-06 and C-09. C-05 combined recovery's stage
 whitelist fix with controller's pre-lock intent-stage mapping. C-10 involved
-both sessions and additionally required the coordinating chat's explicitly authorized
+both sessions and additionally required a separate
 minimal reconciliation defense and its regression tests. This validation
 session did not modify implementation files.
 
@@ -118,12 +118,12 @@ version truncation, reference-age cutoff, automatic threshold relaxation or
 changed first-committed snapshot policy was introduced. No unresolved review
 finding remains in this measured suite.
 
-The coordinating chat then reported its separate final run: **444 passed in
+A separate final integration run recorded: **444 passed in
 21.93 seconds**, zero failures, skips or warnings, with JUnit
 `/tmp/apple-phase-c-main.xml` and matching design/model/migration hashes. That
 is a coordinating-chat report; this review's own measured run remains the
 22.55-second result above. Both prerequisites are now evidenced for the
-coordinating chat's stage-gate decision; this session does not start D itself.
+the phase acceptance decision; this session does not start D itself.
 
 This sign-off establishes synthetic Phase C architecture consistency only.
 The Python socket guard is not an OS firewall; tests inject a fake HTTP session

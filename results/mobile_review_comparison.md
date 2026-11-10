@@ -2,11 +2,11 @@
 
 **Assessment date: October 27, 2026 PDT.**
 
-## Recommendation
+## Source selection conclusion
 
-**Recommend Apple App Store reviews as the primary source candidate for a broad consumer-experience ingestion pilot, with Google Play reviews as the backup. Retain Steam as the technical regression baseline.** This is an evidence-based source preference, not production acceptance or a claim that Apple is statistically superior across its population.
+**The comparison identified Apple App Store reviews as the primary pilot candidate for broad consumer-experience analysis, Google Play reviews as the backup, and Steam as the technical regression baseline.** This is an evidence-based source preference, not production acceptance or a claim that Apple is statistically superior across its population.
 
-Both mobile sources were successfully tested across four app categories. Apple supplied more detailed experience text in the matched eight-product frame. Google provided useful examples across the same domains, with more brief reactions and an undocumented transport. Steam supplies a documented protocol baseline within the narrower gaming domain.
+Both mobile sources were tested across four app categories. Apple supplied more detailed experience text in the matched eight-product frame. Google provided useful examples across the same domains, with more brief reactions and an undocumented transport. Steam supplies a documented protocol baseline within the narrower gaming domain.
 
 **Production conditions remain open for all three:** an applicable collection/retention/analysis basis and sustained online update validation. No source passed a long-term fresh-arrival, edit or deletion acceptance test in this feasibility study. No production scheduler, training corpus or storage pipeline was deployed.
 
@@ -24,15 +24,15 @@ The [existing public app manifest](mainstream/app_sample_manifest.json) defines 
 
 ### Sample Provenance
 
-All 40 earlier Apple fingerprints were recovered from the returned windows, with matching full normalized body hashes. The returned text was then inspected for semantic usefulness. This recovered cohort includes five additional Todoist page-2 reviews and overlaps the new primary Apple sample in 35 records.
+All 40 earlier Apple fingerprints were recovered from the returned windows, with matching full normalized body hashes. The returned text was then assessed for semantic usefulness. This recovered cohort includes five additional Todoist page-2 reviews and overlaps the new primary Apple sample in 35 records.
 
-The recovered historical cohort and the current primary Apple sample each contain **28 useful reviews out of 40**. The two cohorts share 35 records, with five unique to each cohort. The annotation file therefore contains **85 distinct records**: 45 Apple reviews (40 primary and five additional page-2 records) and 40 Google reviews. Other pagination and repeat supplements remain outside the semantic assessment.
+The recovered historical cohort and the primary Apple sample each contain **28 useful reviews out of 40**. The two cohorts share 35 records, with five unique to each cohort. The annotation file therefore contains **85 distinct records**: 45 Apple reviews (40 primary and five additional page-2 records) and 40 Google reviews. Other pagination and repeat supplements remain outside the semantic assessment.
 
 ## Content-Review Method
 
-The preserved [Steam content assessment](content_review.json) defines useful content as a concrete product experience, usability problem, contextual preference or experience-linked feeling. Generic reactions, uncontextualized praise and unrelated opinions are separated. The new review used that definition on actual returned bodies: complete short bodies, or the first 500 normalized characters of longer ones. Three primary Apple records were prefix-limited; none of the returned Google bodies exceeded 500 characters.
+The preserved [Steam content assessment](content_review.json) defines useful content as a concrete product experience, usability problem, contextual preference or experience-linked feeling. Generic reactions, uncontextualized praise and unrelated opinions are separated. The assessment applied that definition to actual returned bodies: complete short bodies, or the first 500 normalized characters of longer ones. Three primary Apple records were prefix-limited; none of the returned Google bodies exceeded 500 characters.
 
-Ratings were hidden in the inspection display. This is an AI-assisted analyst review, not independent human-labelled ground truth or a validated sentiment classifier. Reasons and multi-label topics in the [new annotations](mobile_quality/content_review.json) summarize visible content without quoting source text. A useful complaint is not automatically a negative training label, and a star score is not guaranteed to match textual sentiment.
+The assessment used a rating-hidden inspection display and AI-assisted analyst review, not independent human-labelled ground truth or a validated sentiment classifier. Reasons and multi-label topics in the [new annotations](mobile_quality/content_review.json) summarize visible content without quoting source text. A useful complaint is not automatically a negative training label, and a star score is not guaranteed to match textual sentiment.
 
 Text prefixes were kept temporarily outside the repository for inspection; author fields were not included, and URLs/emails were redacted from the display. Such redaction is not full PII anonymization. Temporary inspection material was excluded from delivery and removed after validation. The repository stores fingerprints, body hashes, lengths, field/timestamp metadata and abstract labels/reasons, not review bodies.
 

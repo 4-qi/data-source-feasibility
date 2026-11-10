@@ -1,7 +1,7 @@
 # Phase E — Independent cross-module integration review
 
 > Current operational-boundary correction: access/data-use and retention
-> considerations remain project documentation for review with John, not
+> considerations remain project documentation for project-level review, not
 > collector confirmation gates. The historical tests/approval checks below
 > describe the earlier E implementation. Use the
 > [current smoke procedure](APPLE_FIRST_LIVE_SMOKE_TEST.md) for technical-only
@@ -9,11 +9,11 @@
 
 Review date: November 3, 2026 (America/Los_Angeles).
 
-**Result: PASS for the five independent offline integration scenarios below.** This is the independent cross-module portion of E; the coordinating chat owns the complete-suite E gate and final readiness decision. No actual Apple request, persistent deployment, production authorization or Phase F execution was performed.
+**Result: PASS for the five independent offline integration scenarios below.** This is the independent cross-module portion of E; complete-suite readiness was assessed separately. No actual Apple request, persistent deployment, production authorization or Phase F execution was performed.
 
 Reviewed entry path: `live.prepare_live_controller` → fresh `deployment.preflight` with an audit connection and an actual runtime login → `Controller.run_target` → lazy real `requests.Session` with an in-process `BaseAdapter` → `BoundedTransport` → parser/normalizer → page reconciliation → PostgreSQL run/attempt/observation/version state. The collector receives only the runtime engine; the maintenance/audit engine is not used for collector writes.
 
-The review added only [`tests/test_apple_ingestion_phase_e_integration.py`](../tests/test_apple_ingestion_phase_e_integration.py) and this document. Issues found in owned implementation files were reported to the coordinator and repaired by their owners. This review did not change core schema, reconciliation, reference selection, stopping predicates, parser/hash policy or historical evidence.
+The review added only [`tests/test_apple_ingestion_phase_e_integration.py`](../../tests/test_apple_ingestion_phase_e_integration.py) and this document. Implementation issues identified during integration were corrected. This review did not change core schema, reconciliation, reference selection, stopping predicates, parser/hash policy or historical evidence.
 
 ## 1. Evidence environment and limits
 
@@ -44,8 +44,8 @@ The table includes sub-assertions of the full-pipeline test; there are **five te
 | --- | --- | --- |
 | E-I01 — Deployment readiness must reach the live factory | A standalone readiness report can be blocked while an unrelated approved-looking policy object exists; a Boolean declaration alone must not substitute for actual role/retention/diagnostic checks | Closed by owner integration of fresh deployment config/audit/runtime preflight before activation; pending retention and disabled target scenarios pass |
 | E-I02 — Prepared snapshot/batch binding must be enforced before claim | Saving `_prepared_binding` without comparing it at execution would allow the preflighted object to differ from the executed object | Reported during static review; owner added prepared-binding comparison; independent swap test passes with zero side effects |
-| E-I03 — Same role/table names are insufficient database identity | A runtime login from another database on the same cluster can have the same role, UTC and table names | Coordinator/deployment owner addressed connected database/endpoint binding; live factory also compares actual libpq endpoint/database identity. The independent fully provisioned second-database test passes |
-| E-I04 — Diagnostic-path interface must agree across modules | The live factory binds the configured diagnostic path to the supplied spool; an unavailable/mismatched accessor can make a valid deployment fail preflight | Owner/coordinator aligned the path contract; actual nonadmin readiness and full pipeline pass. This review did not bypass diagnostics validation |
+| E-I03 — Same role/table names are insufficient database identity | A runtime login from another database on the same cluster can have the same role, UTC and table names | Connected database/endpoint binding was corrected; live factory also compares actual libpq endpoint/database identity. The independent fully provisioned second-database test passes |
+| E-I04 — Diagnostic-path interface must agree across modules | The live factory binds the configured diagnostic path to the supplied spool; an unavailable/mismatched accessor can make a valid deployment fail preflight | The path contract was aligned; actual nonadmin readiness and full pipeline pass. This review did not bypass diagnostics validation |
 
 No finding required a new table/service, a new acquisition loop, broad runtime privileges, a changed reference policy or a changed stopping rule. The live entry delegates acquisition, fallback, parsing, reconciliation and finalization to the existing components.
 

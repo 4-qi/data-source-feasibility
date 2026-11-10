@@ -92,7 +92,7 @@ python probes/bluesky_live.py --help
 
 Running without `--help` makes the bounded network checks and writes evidence to `results/route_recheck/` by default. Use a new `--output` directory to preserve existing evidence. [HTTP route probe](../probes/http_routes.py) uses requests; [Google web probe](../probes/google_play_web.py) performs at most two read-only requests; [Bluesky live probe](../probes/bluesky_live.py) additionally requires `websocket-client==1.9.2`. That optional diagnostic package is not required for the existing collectors or offline suite. These are isolated probes, not integrated production collectors. The main offline suite does not establish coverage of these diagnostic scripts; compilation and no-network help checks are reported separately.
 
-## Recommendation and limits
+## Findings and limitations
 
 At this stage, Apple had the broader executed sampling evidence, while Google Play had demonstrated a working but undocumented single-app review route. These findings informed the subsequent mobile comparison, which expanded both platforms to eight applications across four categories.
 

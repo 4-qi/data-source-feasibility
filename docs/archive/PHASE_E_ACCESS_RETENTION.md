@@ -2,7 +2,7 @@
 
 **Checked:** November 3, 2026, America/Los_Angeles.  
 **Decision state:** explicit long-term technical intent selected; project-specific
-access/retention arrangements remain open for review with John. They are not
+access/retention arrangements remain open for project-level review. They are not
 collector Boolean gates; this preparation task makes no real request.  
 **Scope:** the existing eight third-party applications, US customer-review RSS,
 small bounded requests, retained full-text observed versions and private human
@@ -35,31 +35,28 @@ indexed API page and readable Connect help supported the narrow own-app finding.
 No authenticated API or app-account access was performed. Search results from
 third parties were not used as a legal or protocol authority.
 
-## Project applicability and review with John
+## Project applicability
 
 **Engineering inference:** the client/internship project should not assume its
 purpose is covered by a personal-use allowance. Likewise, an approved-RSS
 reference should not be treated as an unrestricted external collection license.
-The responsible project owner must resolve the actual applicable basis for the
-precise purpose and endpoint, recording any conditions or unresolved limits.
+The applicable basis for the specific purpose and endpoint remains unresolved.
 The reviewed materials establish a concrete applicability concern, not a
 finding that every possible permission arrangement is unavailable.
 
-| Review item | Current project state | Project-management follow-up (not collector input) |
-| --- | --- | --- |
-| Access basis | No project-specific decision covering this route/scope was supplied. | A named responsible decision maker and reviewable basis/reference covering the selected app(s), US endpoint, bounded automated access and any applicable conditions. |
-| Full-text/version retention | The intended technical model is explicit `long_term`, without a preset expiry; applicable arrangements remain unconfirmed. | Responsible-owner confirmation and policy references covering complete versions, observations/history, private artifacts, backups, future obligations and any required changes. No invented finite duration is required. |
-| Human analysis | Tooling is prepared; actual human assessment has not occurred. | Confirmation that the intended private assessment and access roles fit the approved data-use basis. |
-| Personal data handling | Removing author fields does not remove personal information embedded in text. | Access controls and a project process for privacy/retention requests and incident handling within the selected scope. |
-| Distribution/downstream use | No review-body publication, external transfer or training is part of this phase. | Separate review before expanding purpose; do not infer rights from technical accessibility. |
-| Operational start | This task keeps execution and targets disabled. | An operator explicitly enables the selected technical scope/window for a later run; there is no per-run approval document. Phase F does not start automatically. |
+| Review item | Recorded state at the readiness checkpoint |
+| --- | --- |
+| Access basis | No project-specific decision covering the route, application scope and intended use had been recorded. |
+| Full-text/version retention | The technical model was explicit `long_term`, without a preset expiry; applicable retention arrangements remained unconfirmed. |
+| Human analysis | Assessment tooling was prepared; actual human assessment had not occurred at this checkpoint. |
+| Personal data | Omitting author fields does not remove personal information embedded in review text. |
+| Distribution/downstream use | Review-body publication, external transfer and model training were outside the recorded scope. |
+| Operational state | Execution and collection targets were disabled at the readiness checkpoint. |
 
-These questions remain documented for the responsible project owner and John.
-The collector does not decide them, require an approval document, or treat a
-Boolean as evidence of rights. Removing those software gates does not resolve
-these project considerations. This memo does not contact anyone or prescribe a
-particular legal route. Actual source denial/rate limits and engineering failures
-still stop the collector; scope or purpose decisions remain project management.
+Applicable data-use and retention conditions are separate from the collector's
+technical execution controls. The collector validates scope, limits and
+operational state; source denial, rate limits and engineering failures stop
+collection. Technical access does not establish data-use rights.
 
 ## Retention configuration boundary
 

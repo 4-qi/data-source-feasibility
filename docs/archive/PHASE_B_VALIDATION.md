@@ -105,12 +105,12 @@ separate rollback diagnostics, replay, application session-lock preconditions,
 and bounded diagnostics with exact aggregate counters. These are real
 PostgreSQL checks, not SQLite substitutes or skipped environment checks.
 
-The coordinating chat owns the Phase B stage gate. No Phase C or D code or
+The Phase B acceptance review was completed. No Phase C or D code or
 acceptance is included in this record. No test or implementation remains
 failing in this measured Phase B suite. `git diff --check` passed; branch stayed
 `main`, HEAD `474736abcee2a67f186299f09d196125400eb1ab`. No commit or push was made.
 
-The coordinating chat separately reported its own stage-gate run: **336 passed,
+A separate acceptance run recorded: **336 passed,
 0 failed, 0 skipped**, with JUnit `/tmp/apple-phase-b-main.xml`. That report is
 separate from this session's measured 6.87-second run above. The coordinating
 chat accepted Phase B before authorizing Phase C.

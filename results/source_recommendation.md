@@ -2,11 +2,11 @@
 
 **Assessment date: October 27, 2026 PDT.**
 
-## Recommendation
+## Source selection conclusion
 
-**Recommend Apple App Store reviews as the primary candidate for the next broad-domain ingestion pilot, Google Play reviews as the backup, and Steam as the technical regression baseline.** The intended scope is consumer experiences across app-enabled products and services.
+**The feasibility study identified Apple App Store reviews as the primary pilot candidate, Google Play reviews as the backup, and Steam as the technical regression baseline.** The intended scope is consumer experiences across app-enabled products and services.
 
-The focused feasibility comparison is complete. This recommendation identifies the preferred source for the next pilot; production integration still requires an applicable data-use basis and sustained online-update validation.
+The focused feasibility comparison is complete. The source selection reflects the bounded feasibility evidence; production integration still requires an applicable data-use basis and sustained online-update validation.
 
 ## Supporting Evidence
 

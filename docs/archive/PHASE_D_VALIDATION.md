@@ -1,6 +1,6 @@
 # Phase D synthetic rehearsal and offline CLI validation
 
-Status: **assigned Phase D work complete; coordinating chat reported final
+Status: **assigned Phase D work complete; final validation recorded
 whole-suite acceptance**, November 3, 2026. This is synthetic engineering
 evidence only. Phase C was accepted before this work began. The coordinating
 chat owns final whole-project acceptance; this session stops at D.
@@ -154,20 +154,19 @@ envelope use, recognition of real Git markers rather than an empty protected
 `.git` directory, and the assessment owner's explicit synthetic artifact marker.
 No core schema, reference, stop or reconciliation rule was changed by this work.
 
-## Coordinating chat's separately reported execution
+## Separate integration validation
 
-The coordinating chat reported an independent wrapper run at
+A separate wrapper run was recorded at
 `/tmp/apple-ingestion-phase-d-main-20261103`, with the same 56/56 slots,
 53/2/1 execution distribution, 190 simulated requests, 181 committed pages,
 zero integrity issues, 80 selected/zero human-assessed sample, and all 15
-artifact checksums validated. This is its report, separate from this session's
-retained execution and 20-test measurement above.
+artifact checksums validated. This wrapper run is recorded separately from the retained execution and
+20-test measurement above.
 
-The coordinating chat subsequently reported its final whole-suite result:
+The final whole-suite result was:
 **516 passed in 35.86 seconds**, **0 failed, 0 skipped, 0 warnings**, JUnit
-`/tmp/apple-phase-d-main.xml`. This is the coordinating chat's measurement,
-not an additional run by this session. It controls the final D gate and has
-stated that work stops after D.
+`/tmp/apple-phase-d-main.xml`. This separate integration measurement supported final Phase D acceptance;
+implementation stopped at that checkpoint.
 
 Design, models and initial migration SHA-256 values still match the Phase C
 review baseline. `git diff --check` passed. Branch remained `main`, HEAD

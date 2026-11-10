@@ -2,7 +2,7 @@
 
 > Subsequent authorization: A–D passed external document-level review. Phase E
 > preparation and offline validation are recorded separately in
-> [the live-readiness report](PHASE_E_LIVE_READINESS.md). Historical counts and
+> [the live-readiness report](archive/PHASE_E_LIVE_READINESS.md). Historical counts and
 > stop boundaries below describe the A–D delivery. No real RSS request or Phase F
 > execution is authorized by that later preparation task.
 
@@ -13,8 +13,8 @@
 This is an engineering delivery report, not live-source or production acceptance.
 The current authorization covers B, C and D using synthetic data and disposable
 PostgreSQL. E/F, real Apple RSS collection, commits and pushes are outside scope.
-The main coordinating chat owns integration and phase gates; the three independent
-execution chats are identified in [Phase A delivery](PHASE_A_DELIVERY.md).
+Integration and validation were completed for each phase. Workstream details
+are recorded in [Phase A delivery](archive/PHASE_A_DELIVERY.md).
 
 ## Environment and preservation
 
@@ -42,8 +42,8 @@ Final preservation and artifact checks are recorded below.
 
 B main-chat JUnit: `/tmp/apple-phase-b-main.xml`. C main-chat JUnit:
 `/tmp/apple-phase-c-main.xml`. D main-chat JUnit: `/tmp/apple-phase-d-main.xml`. Those temporary files are execution artifacts;
-[Phase B validation](PHASE_B_VALIDATION.md), [Phase C validation](PHASE_C_VALIDATION.md)
-and [C architecture review](PHASE_C_ARCHITECTURE_REVIEW.md) preserve readable
+[Phase B validation](archive/PHASE_B_VALIDATION.md), [Phase C validation](archive/PHASE_C_VALIDATION.md)
+and [C architecture review](archive/PHASE_C_ARCHITECTURE_REVIEW.md) preserve readable
 commands, results, findings and evidence boundaries. Skipped tests without a
 configured database do not count as real-PostgreSQL acceptance.
 
@@ -125,7 +125,7 @@ committed markers and known HTTP metadata remain authoritative.
 
 ## C internal architecture review and fixes
 
-The required [internal review](PHASE_C_ARCHITECTURE_REVIEW.md) closed C-01–C-10
+The required [internal review](archive/PHASE_C_ARCHITECTURE_REVIEW.md) closed C-01–C-10
 before D started. Important corrections included:
 
 - Isolate usable history by run mode; distinguish a new baseline from a
@@ -166,7 +166,7 @@ The default seven simulated local dates are October 29–November 4, 2026 at 09:
 America/Los_Angeles, intentionally crossing the daylight-saving transition.
 Advancing a fake clock is not elapsed observation time or actual source evidence.
 
-The main chat executed:
+The validation command was:
 
 ```sh
 PYTHONNOUSERSITE=1 \
@@ -204,7 +204,7 @@ Artifacts remain outside Git at `/tmp/apple-ingestion-phase-d-main-20261103`:
 - `private-assessment/sample-manifest.json`, complete rating-hidden
   `reading-material.html`, `responses.pending.json` and `rubric.json`.
 
-The main chat verified all 15 checksummed payload files, explicit synthetic
+Validation covered all 15 checksummed payload files, explicit synthetic
 markers on JSON artifacts, 0600 files and absence of text/source-review-ID
 sentinels from routine safe reports. The cluster was removed; exported evidence
 is sufficient for external review without retaining the disposable database.
@@ -272,10 +272,10 @@ skips or pytest warnings. CLI success paths as well as help/rejection boundaries
 were exercised with disposable PostgreSQL. The final real-cluster run used the
 project Conda interpreter, automatic Python TCP guard and synthetic sessions.
 
-The main chat verified the standalone rehearsal separately from pytest. The
+The standalone rehearsal was verified separately from pytest. The
 checksummed artifacts above are from that actual synthetic execution; they do
 not constitute actual source observations or human quality review. See also
-[Phase D validation](PHASE_D_VALIDATION.md) for the execution chat's separate
+[Phase D validation](archive/PHASE_D_VALIDATION.md) for the execution chat's separate
 commands/results.
 
 Before this task, a SHA-256 baseline captured all 79 tracked files as found in

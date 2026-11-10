@@ -2,7 +2,18 @@
 
 The current recommendation is **Apple App Store as the primary candidate, Google Play as the backup, and Steam as the technical regression baseline**. The focused comparison is complete; production use requires appropriate data-use permissions and further validation of ongoing updates.
 
-## Current Reports
+## Completed Apple ingestion pilot
+
+The seven-day pilot and 80-review human assessment followed the source studies
+preserved below. Their canonical reports are the
+[pilot report](../docs/APPLE_INGESTION_PILOT_REPORT.md),
+[technical validation](../docs/APPLE_INGESTION_TECHNICAL_VALIDATION.md) and
+[review quality assessment](../docs/APPLE_REVIEW_QUALITY_ASSESSMENT.md).
+The human result is 47/80 useful (58.75%). Its sampling and annotation method
+differs from the earlier AI-assisted feasibility comparison, so the percentages
+do not measure a quality trend.
+
+## Source-feasibility reports
 
 | Report | Description |
 | --- | --- |

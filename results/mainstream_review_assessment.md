@@ -6,7 +6,7 @@
 
 ## Engineering conclusion
 
-**The initial Apple RSS assessment demonstrated technically feasible cross-category review retrieval in a bounded PoC.** At this stage, Apple was the strongest newly tested candidate, while production suitability remained unresolved. The JSON probe returned text from five of eight sampled apps; XML checks recovered reviews for two more, giving seven of eight apps across four analytical categories. Page-2 and short-interval repeat checks succeeded for one app. Duolingo remained without entries in both tested formats. Sustained freshness, completeness and project-specific use rights remain unresolved.
+**The initial Apple RSS assessment demonstrated technically feasible cross-category review retrieval in a bounded PoC.** At that stage, Apple was the strongest newly tested candidate, while production suitability remained unresolved. The JSON probe returned text from five of eight sampled apps; XML checks recovered reviews for two more, giving seven of eight apps across four analytical categories. Page-2 and short-interval repeat checks succeeded for one app. Duolingo remained without entries in both tested formats. Sustained freshness, completeness and project-specific use rights remain unresolved.
 
 Commercial cross-app review APIs also exist. AppFollow, Appbot, 42matters and AppTweak document review access for Apple and Google Play. Their standard offerings do not, by themselves, establish permission for ongoing review collection, storage, and downstream model use. Specific restrictions and the exact access prerequisites are recorded below rather than treating all suppliers as unavailable.
 

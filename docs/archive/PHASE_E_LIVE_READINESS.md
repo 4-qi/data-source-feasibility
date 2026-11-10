@@ -1,7 +1,7 @@
 # Phase E — Live readiness
 
 > Current operational-boundary correction: access/data-use and retention
-> considerations remain project documentation for review with John, not
+> considerations remain project documentation for project-level review, not
 > collector confirmation gates. The historical tests/approval checks below
 > describe the earlier E implementation. Use the
 > [current smoke procedure](APPLE_FIRST_LIVE_SMOKE_TEST.md) for technical-only
@@ -127,7 +127,7 @@ on the chosen deployment. A checked template is not proof of a deployed system.
   checks, initialization, permissions, diagnostics, recovery and retention limits.
 - [Independent integration review](PHASE_E_INTEGRATION_REVIEW.md): five
   cross-module scenarios and closed interface findings.
-- [A–D implementation summary](APPLE_INGESTION_IMPLEMENTATION_SUMMARY.md) and
+- [A–D implementation summary](../APPLE_INGESTION_IMPLEMENTATION_SUMMARY.md) and
   [C consistency review](PHASE_C_ARCHITECTURE_REVIEW.md) remain historical gate
   records; their old stop boundary was superseded only for E preparation.
 
@@ -135,8 +135,7 @@ on the chosen deployment. A checked template is not proof of a deployed system.
 
 ### Actual validation
 
-The coordinating chat independently ran the complete suite after the owners'
-focused checks, using the shared Conda environment and a fresh temporary
+The complete suite ran independently after focused implementation checks, using the shared Conda environment and a fresh temporary
 PostgreSQL 16 cluster with TCP disabled:
 
 ```sh
@@ -177,9 +176,9 @@ a test guard, not an OS firewall. External DNS/TLS/HTTP was not exercised.
   preflight. It uses the existing Alembic revision, seed and permissions. The
   collector receives only the runtime engine; its audit connection remains
   separate. No extra runtime access to Alembic bookkeeping is granted.
-- Prepared artifacts are [Unix configuration](../deploy/apple_ingestion/unix.example.json),
-  [TLS configuration](../deploy/apple_ingestion/tls.example.json) and
-  [single-run approval](../deploy/apple_ingestion/single-run-approval.example.json).
+- Prepared artifacts are [Unix configuration](../../deploy/apple_ingestion/unix.example.json),
+  [TLS configuration](../../deploy/apple_ingestion/tls.example.json) and
+  [single-run approval](../../deploy/apple_ingestion/single-run-approval.example.json).
   These contain no credentials and intentionally remain pending with null
   decision fields, no selected apps and execution authorization false.
 - Compatibility, current access/retention conditions, deployment operations and

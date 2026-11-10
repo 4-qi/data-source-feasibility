@@ -1,7 +1,7 @@
 # Pre-Live Engineering Baseline — commit review
 
-Review date: November 3, 2026. The user authorized one local engineering
-milestone commit after review, with **no push and no real collection**.
+Review date: November 3, 2026. The local engineering milestone was committed
+after review, with **no push and no real collection**.
 Parent: `474736abcee2a67f186299f09d196125400eb1ab` on `main`.
 This record is included in the milestone; use Git history to resolve its commit
 ID rather than embedding a self-referential hash here.
@@ -33,7 +33,7 @@ part of the milestone.
 
 ## Verification and traceability
 
-The coordinating chat enumerated all tracked/visible candidate paths, checked
+The audit enumerated all tracked/visible candidate paths and checked
 file types, sizes, scope and hashes, and classified every heuristic secret-scan
 finding. Independent read-only checks covered documentation/deployment/test data
 and code/migrations/scripts. No reviewer changed the files or ran collection.
@@ -83,7 +83,7 @@ remain unconfirmed. The reusable project workflow does not require daily
 approval files or receipts, but still checks scope, validity, limits, actual
 deployment and retention readiness.
 
-No Apple RSS request, target enablement, Phase F scheduling/pilot or John update
+No Apple RSS request, target enablement or Phase F scheduling/pilot
 was performed. The first live smoke remains subject to the concrete prerequisites
 in the [smoke runbook](APPLE_FIRST_LIVE_SMOKE_TEST.md). This task commits the
 reviewed source locally and stops without pushing.

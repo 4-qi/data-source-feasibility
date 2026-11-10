@@ -1,5 +1,11 @@
 # Research Guide
 
+For the completed ingestion project, start with the
+[pilot report](../docs/APPLE_INGESTION_PILOT_REPORT.md), supported by the
+[technical validation](../docs/APPLE_INGESTION_TECHNICAL_VALIDATION.md) and
+[review quality assessment](../docs/APPLE_REVIEW_QUALITY_ASSESSMENT.md).
+The research records below retain their original source-study context.
+
 The [Source Recommendation](../results/source_recommendation.md) presents the current source selection, while [Mobile App Reviews versus Steam](../results/mobile_review_comparison.md) provides the supporting comparison. The [Evidence Index](../results/README.md) links reports to their execution evidence.
 
 ## Methodology and References

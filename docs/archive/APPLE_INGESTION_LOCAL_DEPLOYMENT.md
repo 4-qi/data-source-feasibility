@@ -118,12 +118,12 @@ The collector still requires explicit project/target enablement, matching
 technical scope/window/budgets and fresh operational checks. It does not require
 access-basis references, approval documents or per-run credentials. A tracking
 policy ID/digest identifies the technical configuration in immutable snapshots;
-it is not an approval. The public [long-term example](../deploy/apple_ingestion/long-term-retention.example.json)
+it is not an approval. The public [long-term example](../../deploy/apple_ingestion/long-term-retention.example.json)
 contains no credentials or confirmation flag. Actual private connection values
 remain outside Git.
 
 Access/data-use conditions and the suitability of long-term retention remain
-project-management discussion items for John and the responsible owner. Removing
+unresolved project-level conditions. Removing
 software confirmation checks neither resolves those issues nor claims rights.
 Future required deletion/change handling remains described below.
 
@@ -290,7 +290,7 @@ to hashes. No purge tool or destructive retention operation was added here.
 
 ## Tests and evidence
 
-Main-chat full regression, using a **separate temporary test cluster**, not the
+The full regression, using a **separate temporary test cluster**, not the
 persistent deployment:
 
 ```sh
@@ -336,7 +336,7 @@ artifacts, not the only durable evidence. Source changes remain uncommitted on
    bounded smoke must inspect its actual result; legitimate unsupported nested
    content stops for correct support, rather than record skipping.
 3. Applicable data-use and long-term-retention considerations remain documented
-   for review with John. They are not software preflight blockers or mandatory
+   for project-level review. They are not software preflight blockers or mandatory
    approval records, and this correction does not mark them confirmed.
 
 The previously missing local host, database, roles, private operational paths

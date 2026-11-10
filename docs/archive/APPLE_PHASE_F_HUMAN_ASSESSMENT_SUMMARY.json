@@ -1,0 +1,323 @@
+{
+  "summary": {
+    "schema_version": "apple-assessment-summary/1",
+    "manifest_id": "cd52800c5ea5a8d38c109203269864bbd74d0162c735a762bf932c95fbb54d59",
+    "rubric_version": "apple-usefulness/1",
+    "run_mode": "live",
+    "evidence_kind": "live",
+    "assessment_type": "human",
+    "overall": {
+      "eligible": 4507,
+      "selected": 80,
+      "assessed": 80,
+      "unassessed": 0,
+      "shortfall": 0,
+      "label_counts": {
+        "U3": 21,
+        "U2": 26,
+        "U1": 28,
+        "U0": 5
+      },
+      "useful": 47,
+      "usefulness_rate": 0.5875,
+      "human_assessed": 80,
+      "synthetic_test_assessed": 0
+    },
+    "apps": [
+      {
+        "application_id": 1,
+        "source_application_id": "572688855",
+        "analytical_category": "productivity",
+        "exclusion_counts": {},
+        "eligible": 253,
+        "selected": 10,
+        "assessed": 10,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 6,
+          "U2": 2,
+          "U1": 2,
+          "U0": 0
+        },
+        "useful": 8,
+        "usefulness_rate": 0.8,
+        "human_assessed": 10,
+        "synthetic_test_assessed": 0
+      },
+      {
+        "application_id": 2,
+        "source_application_id": "1212616790",
+        "analytical_category": "productivity",
+        "exclusion_counts": {},
+        "eligible": 258,
+        "selected": 10,
+        "assessed": 10,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 3,
+          "U2": 5,
+          "U1": 1,
+          "U0": 1
+        },
+        "useful": 8,
+        "usefulness_rate": 0.8,
+        "human_assessed": 10,
+        "synthetic_test_assessed": 0
+      },
+      {
+        "application_id": 3,
+        "source_application_id": "570060128",
+        "analytical_category": "education",
+        "exclusion_counts": {},
+        "eligible": 1296,
+        "selected": 10,
+        "assessed": 10,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 2,
+          "U2": 4,
+          "U1": 4,
+          "U0": 0
+        },
+        "useful": 6,
+        "usefulness_rate": 0.6,
+        "human_assessed": 10,
+        "synthetic_test_assessed": 0
+      },
+      {
+        "application_id": 4,
+        "source_application_id": "469863705",
+        "analytical_category": "education",
+        "exclusion_counts": {},
+        "eligible": 265,
+        "selected": 10,
+        "assessed": 10,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 2,
+          "U2": 3,
+          "U1": 5,
+          "U0": 0
+        },
+        "useful": 5,
+        "usefulness_rate": 0.5,
+        "human_assessed": 10,
+        "synthetic_test_assessed": 0
+      },
+      {
+        "application_id": 5,
+        "source_application_id": "297606951",
+        "analytical_category": "shopping",
+        "exclusion_counts": {},
+        "eligible": 555,
+        "selected": 10,
+        "assessed": 10,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 2,
+          "U2": 5,
+          "U1": 2,
+          "U0": 1
+        },
+        "useful": 7,
+        "usefulness_rate": 0.7,
+        "human_assessed": 10,
+        "synthetic_test_assessed": 0
+      },
+      {
+        "application_id": 6,
+        "source_application_id": "477128284",
+        "analytical_category": "shopping",
+        "exclusion_counts": {},
+        "eligible": 400,
+        "selected": 10,
+        "assessed": 10,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 3,
+          "U2": 2,
+          "U1": 4,
+          "U0": 1
+        },
+        "useful": 5,
+        "usefulness_rate": 0.5,
+        "human_assessed": 10,
+        "synthetic_test_assessed": 0
+      },
+      {
+        "application_id": 7,
+        "source_application_id": "368677368",
+        "analytical_category": "transportation",
+        "exclusion_counts": {},
+        "eligible": 852,
+        "selected": 10,
+        "assessed": 10,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 0,
+          "U2": 3,
+          "U1": 5,
+          "U0": 2
+        },
+        "useful": 3,
+        "usefulness_rate": 0.3,
+        "human_assessed": 10,
+        "synthetic_test_assessed": 0
+      },
+      {
+        "application_id": 8,
+        "source_application_id": "529379082",
+        "analytical_category": "transportation",
+        "exclusion_counts": {},
+        "eligible": 628,
+        "selected": 10,
+        "assessed": 10,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 3,
+          "U2": 2,
+          "U1": 5,
+          "U0": 0
+        },
+        "useful": 5,
+        "usefulness_rate": 0.5,
+        "human_assessed": 10,
+        "synthetic_test_assessed": 0
+      }
+    ],
+    "categories": {
+      "education": {
+        "eligible": 1561,
+        "selected": 20,
+        "assessed": 20,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 4,
+          "U2": 7,
+          "U1": 9,
+          "U0": 0
+        },
+        "useful": 11,
+        "usefulness_rate": 0.55,
+        "human_assessed": 20,
+        "synthetic_test_assessed": 0
+      },
+      "productivity": {
+        "eligible": 511,
+        "selected": 20,
+        "assessed": 20,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 9,
+          "U2": 7,
+          "U1": 3,
+          "U0": 1
+        },
+        "useful": 16,
+        "usefulness_rate": 0.8,
+        "human_assessed": 20,
+        "synthetic_test_assessed": 0
+      },
+      "shopping": {
+        "eligible": 955,
+        "selected": 20,
+        "assessed": 20,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 5,
+          "U2": 7,
+          "U1": 6,
+          "U0": 2
+        },
+        "useful": 12,
+        "usefulness_rate": 0.6,
+        "human_assessed": 20,
+        "synthetic_test_assessed": 0
+      },
+      "transportation": {
+        "eligible": 1480,
+        "selected": 20,
+        "assessed": 20,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 3,
+          "U2": 5,
+          "U1": 10,
+          "U0": 2
+        },
+        "useful": 8,
+        "usefulness_rate": 0.4,
+        "human_assessed": 20,
+        "synthetic_test_assessed": 0
+      }
+    },
+    "unassessed_reasons": {},
+    "sentiment_assessment": "NOT_PERFORMED",
+    "double_review": {
+      "selected": 16,
+      "human_pairs_assessed": 0,
+      "agreement_rate": null,
+      "status": "second_reviewer_not_supplied"
+    }
+  },
+  "validation": {
+    "source_sha256": "85e605f373ed53b752e52a0311763f7c14097d90aedef830c9c06f0c82c7a63e",
+    "source_manifest_id": "cd52800c5ea5a8d38c109203269864bbd74d0162c735a762bf932c95fbb54d59",
+    "schema_validation": "passed_after_documented_projection",
+    "human_provenance": "confirmed_by_user_in_project_chat; declarations checked, not independently witnessed",
+    "normalization": {
+      "envelope_metadata_removed_from_projection": [
+        "completed_at",
+        "reviewer_id",
+        "sentiment_assessment",
+        "totals"
+      ],
+      "ai_assistance": "80 null values replaced with false following explicit user confirmation of human-only review",
+      "labels_reasons_languages_identities_and_ids_changed": false,
+      "timestamps_changed": false
+    },
+    "timestamp_validation": {
+      "format_and_timezone": "valid",
+      "chronology": "after sample cutoff and before validation",
+      "source_value": "2026-11-10T05:32:13Z",
+      "meaning": "export timestamp",
+      "actual_assessment_times": "unknown; user no longer has the actual completion time",
+      "schema_compatible_assessed_at": "retained export-time proxy only; not actual reading time",
+      "precision_limitation": "neither per-review times nor batch review-completion time are verified"
+    },
+    "counts": {
+      "references_verified": 80,
+      "nonempty_reasons": 80,
+      "full_text_read_declarations": 80,
+      "human_records": 80
+    },
+    "languages": {
+      "en": 77,
+      "ru": 1,
+      "es": 2
+    },
+    "reviewer_count": 1,
+    "reviewer_id": "R1",
+    "independent_second_review": "not_supplied",
+    "validated_at_utc": "2026-11-10T05:40:04.264928+00:00",
+    "completed_directory_mode": "0o755",
+    "completed_file_modes": {
+      "responses.completed.json": "0o644",
+      "assessment-report.csv": "0o644",
+      "assessment-report.md": "0o644"
+    },
+    "private_compatible_copy_mode": "directory 0700; files 0600"
+  }
+}

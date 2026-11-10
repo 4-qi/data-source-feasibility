@@ -1,0 +1,1800 @@
+{
+  "scope": "Phase F seven actual batches; excludes isolated Etsy diagnostic",
+  "apps": {
+    "572688855": {
+      "statuses": {
+        "succeeded": 6,
+        "partial": 1
+      },
+      "requests": 15,
+      "pages": 13,
+      "observations": 650,
+      "new": 3,
+      "changed": 0,
+      "unchanged": 647,
+      "runs": [
+        {
+          "day": 1,
+          "run_id": "5a12a0f1-abf9-4d19-b41b-93f09d29f253",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 100,
+          "ratio": 1.0,
+          "reference": "e9cf632f-9c1a-45de-9b2f-fdf5e995211e",
+          "interval_hours": 3.941060186388889,
+          "eligible": true,
+          "new": 0,
+          "changed": 0,
+          "unchanged": 100
+        },
+        {
+          "day": 2,
+          "run_id": "f986a86e-6018-4d13-a56d-c76c19408c0d",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 99,
+          "ratio": 0.99,
+          "reference": "5a12a0f1-abf9-4d19-b41b-93f09d29f253",
+          "interval_hours": 23.986678395833334,
+          "eligible": true,
+          "new": 1,
+          "changed": 0,
+          "unchanged": 99
+        },
+        {
+          "day": 3,
+          "run_id": "bb22c5b0-8974-414e-a0ff-7d0b26307697",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 100,
+          "ratio": 1.0,
+          "reference": "f986a86e-6018-4d13-a56d-c76c19408c0d",
+          "interval_hours": 24.0003623375,
+          "eligible": true,
+          "new": 0,
+          "changed": 0,
+          "unchanged": 100
+        },
+        {
+          "day": 4,
+          "run_id": "8b206ad4-3383-4b06-b4b8-dc86e490057b",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 100,
+          "ratio": 1.0,
+          "reference": "bb22c5b0-8974-414e-a0ff-7d0b26307697",
+          "interval_hours": 23.9996609575,
+          "eligible": true,
+          "new": 0,
+          "changed": 0,
+          "unchanged": 100
+        },
+        {
+          "day": 5,
+          "run_id": "25db6a4b-c2dd-4fb0-ba8f-cd1cca70d179",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 98,
+          "ratio": 0.98,
+          "reference": "8b206ad4-3383-4b06-b4b8-dc86e490057b",
+          "interval_hours": 24.00022394611111,
+          "eligible": true,
+          "new": 2,
+          "changed": 0,
+          "unchanged": 98
+        },
+        {
+          "day": 6,
+          "run_id": "fdfb327f-dc9f-4900-956f-ce810acafe5c",
+          "status": "partial",
+          "coverage": "indeterminate",
+          "stop": "parse_error",
+          "overlap": 50,
+          "ratio": 1.0,
+          "reference": "25db6a4b-c2dd-4fb0-ba8f-cd1cca70d179",
+          "interval_hours": 23.999967198055554,
+          "eligible": false,
+          "new": 0,
+          "changed": 0,
+          "unchanged": 50
+        },
+        {
+          "day": 7,
+          "run_id": "89967295-4cdc-4a12-ab64-3081910d3acf",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 100,
+          "ratio": 1.0,
+          "reference": "25db6a4b-c2dd-4fb0-ba8f-cd1cca70d179",
+          "interval_hours": 47.9999406125,
+          "eligible": true,
+          "new": 0,
+          "changed": 0,
+          "unchanged": 100
+        }
+      ],
+      "distinct_reviews": 103
+    },
+    "1212616790": {
+      "statuses": {
+        "succeeded": 7
+      },
+      "requests": 17,
+      "pages": 17,
+      "observations": 850,
+      "new": 258,
+      "changed": 0,
+      "unchanged": 592,
+      "runs": [
+        {
+          "day": 1,
+          "run_id": "4d26620b-1141-49d5-91de-af97856f06f5",
+          "status": "succeeded",
+          "coverage": "baseline",
+          "stop": "page_budget",
+          "overlap": null,
+          "ratio": null,
+          "reference": null,
+          "interval_hours": null,
+          "eligible": true,
+          "new": 250,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 2,
+          "run_id": "7218ec9d-8ea4-433e-b092-59d97c927a08",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 99,
+          "ratio": 0.99,
+          "reference": "4d26620b-1141-49d5-91de-af97856f06f5",
+          "interval_hours": 23.98666627777778,
+          "eligible": true,
+          "new": 1,
+          "changed": 0,
+          "unchanged": 99
+        },
+        {
+          "day": 3,
+          "run_id": "521e7833-a27b-4f98-a8d8-45ef8ba24cd1",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 99,
+          "ratio": 0.99,
+          "reference": "7218ec9d-8ea4-433e-b092-59d97c927a08",
+          "interval_hours": 24.0004997525,
+          "eligible": true,
+          "new": 1,
+          "changed": 0,
+          "unchanged": 99
+        },
+        {
+          "day": 4,
+          "run_id": "12e6010a-e5aa-437c-bdd8-50162c6a1e95",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 98,
+          "ratio": 0.98,
+          "reference": "521e7833-a27b-4f98-a8d8-45ef8ba24cd1",
+          "interval_hours": 23.999624879444443,
+          "eligible": true,
+          "new": 2,
+          "changed": 0,
+          "unchanged": 98
+        },
+        {
+          "day": 5,
+          "run_id": "fa87963e-8ced-4495-9b85-e7d45684bd6d",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 99,
+          "ratio": 0.99,
+          "reference": "12e6010a-e5aa-437c-bdd8-50162c6a1e95",
+          "interval_hours": 24.000106240277777,
+          "eligible": true,
+          "new": 1,
+          "changed": 0,
+          "unchanged": 99
+        },
+        {
+          "day": 6,
+          "run_id": "fbb25667-e91b-49b7-9ed6-8721a06023d0",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 98,
+          "ratio": 0.98,
+          "reference": "fa87963e-8ced-4495-9b85-e7d45684bd6d",
+          "interval_hours": 24.000274785833334,
+          "eligible": true,
+          "new": 2,
+          "changed": 0,
+          "unchanged": 98
+        },
+        {
+          "day": 7,
+          "run_id": "6e678f74-c29e-4f96-9f1c-b7758242f768",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 99,
+          "ratio": 0.99,
+          "reference": "fbb25667-e91b-49b7-9ed6-8721a06023d0",
+          "interval_hours": 24.000712132222223,
+          "eligible": true,
+          "new": 1,
+          "changed": 0,
+          "unchanged": 99
+        }
+      ],
+      "distinct_reviews": 258
+    },
+    "570060128": {
+      "statuses": {
+        "succeeded": 6,
+        "failed": 1
+      },
+      "requests": 30,
+      "pages": 28,
+      "observations": 1400,
+      "new": 1296,
+      "changed": 0,
+      "unchanged": 104,
+      "runs": [
+        {
+          "day": 1,
+          "run_id": "988b3813-74e2-44cf-abbb-c63a90d0e7e1",
+          "status": "succeeded",
+          "coverage": "baseline",
+          "stop": "page_budget",
+          "overlap": null,
+          "ratio": null,
+          "reference": null,
+          "interval_hours": null,
+          "eligible": true,
+          "new": 250,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 2,
+          "run_id": "c880e9ec-b32c-4b85-9aa4-7dce547bb2aa",
+          "status": "succeeded",
+          "coverage": "overlap_insufficient",
+          "stop": "page_budget",
+          "overlap": 25,
+          "ratio": 0.1,
+          "reference": "988b3813-74e2-44cf-abbb-c63a90d0e7e1",
+          "interval_hours": 23.984941143333334,
+          "eligible": true,
+          "new": 225,
+          "changed": 0,
+          "unchanged": 25
+        },
+        {
+          "day": 3,
+          "run_id": "3ca8761a-20d9-4db8-a684-0c00fe37d588",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 31,
+          "ratio": 0.20666666666666667,
+          "reference": "c880e9ec-b32c-4b85-9aa4-7dce547bb2aa",
+          "interval_hours": 24.000186374722222,
+          "eligible": true,
+          "new": 119,
+          "changed": 0,
+          "unchanged": 31
+        },
+        {
+          "day": 4,
+          "run_id": "7cf27308-d7fc-40ab-b898-306804254c30",
+          "status": "succeeded",
+          "coverage": "overlap_insufficient",
+          "stop": "page_budget",
+          "overlap": 0,
+          "ratio": 0.0,
+          "reference": "3ca8761a-20d9-4db8-a684-0c00fe37d588",
+          "interval_hours": 23.9998178175,
+          "eligible": true,
+          "new": 250,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 5,
+          "run_id": "f625b9d3-5e0e-4481-aa66-cc5564d15e80",
+          "status": "succeeded",
+          "coverage": "overlap_insufficient",
+          "stop": "page_budget",
+          "overlap": 48,
+          "ratio": 0.192,
+          "reference": "7cf27308-d7fc-40ab-b898-306804254c30",
+          "interval_hours": 24.00028898111111,
+          "eligible": true,
+          "new": 202,
+          "changed": 0,
+          "unchanged": 48
+        },
+        {
+          "day": 6,
+          "run_id": "d12a126b-a294-473d-802c-9a700edac0b2",
+          "status": "failed",
+          "coverage": "indeterminate",
+          "stop": "parse_error",
+          "overlap": 0,
+          "ratio": null,
+          "reference": "f625b9d3-5e0e-4481-aa66-cc5564d15e80",
+          "interval_hours": 24.0002146975,
+          "eligible": false,
+          "new": 0,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 7,
+          "run_id": "acf5a188-02db-4e84-b587-3efe1267acba",
+          "status": "succeeded",
+          "coverage": "overlap_insufficient",
+          "stop": "page_budget",
+          "overlap": 0,
+          "ratio": 0.0,
+          "reference": "f625b9d3-5e0e-4481-aa66-cc5564d15e80",
+          "interval_hours": 48.00054026833333,
+          "eligible": true,
+          "new": 250,
+          "changed": 0,
+          "unchanged": 0
+        }
+      ],
+      "distinct_reviews": 1296
+    },
+    "469863705": {
+      "statuses": {
+        "succeeded": 7
+      },
+      "requests": 17,
+      "pages": 17,
+      "observations": 850,
+      "new": 265,
+      "changed": 0,
+      "unchanged": 585,
+      "runs": [
+        {
+          "day": 1,
+          "run_id": "52fa95d8-f081-4b31-8b4e-5c413c423bfc",
+          "status": "succeeded",
+          "coverage": "baseline",
+          "stop": "page_budget",
+          "overlap": null,
+          "ratio": null,
+          "reference": null,
+          "interval_hours": null,
+          "eligible": true,
+          "new": 250,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 2,
+          "run_id": "6355a41a-37c0-4edd-a060-daa0bd4ef84e",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 99,
+          "ratio": 0.99,
+          "reference": "52fa95d8-f081-4b31-8b4e-5c413c423bfc",
+          "interval_hours": 23.9849667825,
+          "eligible": true,
+          "new": 1,
+          "changed": 0,
+          "unchanged": 99
+        },
+        {
+          "day": 3,
+          "run_id": "3114117a-7d99-472f-b441-791328c63e0d",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 98,
+          "ratio": 0.98,
+          "reference": "6355a41a-37c0-4edd-a060-daa0bd4ef84e",
+          "interval_hours": 23.999034014166668,
+          "eligible": true,
+          "new": 2,
+          "changed": 0,
+          "unchanged": 98
+        },
+        {
+          "day": 4,
+          "run_id": "6b14df25-2cbe-4c7f-b3e4-b0d41c6924b0",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 92,
+          "ratio": 0.92,
+          "reference": "3114117a-7d99-472f-b441-791328c63e0d",
+          "interval_hours": 24.001050331944445,
+          "eligible": true,
+          "new": 8,
+          "changed": 0,
+          "unchanged": 92
+        },
+        {
+          "day": 5,
+          "run_id": "db2faf7d-82a3-43ad-b35e-902d4c72ff79",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 98,
+          "ratio": 0.98,
+          "reference": "6b14df25-2cbe-4c7f-b3e4-b0d41c6924b0",
+          "interval_hours": 24.00017477277778,
+          "eligible": true,
+          "new": 2,
+          "changed": 0,
+          "unchanged": 98
+        },
+        {
+          "day": 6,
+          "run_id": "70172729-8d3b-4412-85cc-3d6de6c0b05c",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 100,
+          "ratio": 1.0,
+          "reference": "db2faf7d-82a3-43ad-b35e-902d4c72ff79",
+          "interval_hours": 23.998543931666667,
+          "eligible": true,
+          "new": 0,
+          "changed": 0,
+          "unchanged": 100
+        },
+        {
+          "day": 7,
+          "run_id": "d519c73f-226e-415a-846c-176cb70d2209",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 98,
+          "ratio": 0.98,
+          "reference": "70172729-8d3b-4412-85cc-3d6de6c0b05c",
+          "interval_hours": 24.002025149444446,
+          "eligible": true,
+          "new": 2,
+          "changed": 0,
+          "unchanged": 98
+        }
+      ],
+      "distinct_reviews": 265
+    },
+    "297606951": {
+      "statuses": {
+        "succeeded": 7
+      },
+      "requests": 18,
+      "pages": 18,
+      "observations": 900,
+      "new": 555,
+      "changed": 0,
+      "unchanged": 345,
+      "runs": [
+        {
+          "day": 1,
+          "run_id": "9dc01631-eda2-4c03-b4c0-958a2ca4ddd9",
+          "status": "succeeded",
+          "coverage": "baseline",
+          "stop": "page_budget",
+          "overlap": null,
+          "ratio": null,
+          "reference": null,
+          "interval_hours": null,
+          "eligible": true,
+          "new": 250,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 2,
+          "run_id": "ccd5e4e0-0a19-4513-b65a-e6e48c3ec39d",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 50,
+          "ratio": 0.5,
+          "reference": "9dc01631-eda2-4c03-b4c0-958a2ca4ddd9",
+          "interval_hours": 23.983381919166668,
+          "eligible": true,
+          "new": 50,
+          "changed": 0,
+          "unchanged": 50
+        },
+        {
+          "day": 3,
+          "run_id": "6c2e9afe-ac7b-45df-9865-d1f0b09f0a3b",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 77,
+          "ratio": 0.77,
+          "reference": "ccd5e4e0-0a19-4513-b65a-e6e48c3ec39d",
+          "interval_hours": 23.999243820833332,
+          "eligible": true,
+          "new": 23,
+          "changed": 0,
+          "unchanged": 77
+        },
+        {
+          "day": 4,
+          "run_id": "d2c0a44b-9cbc-4588-9854-2a0f703f7d82",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 67,
+          "ratio": 0.44666666666666666,
+          "reference": "6c2e9afe-ac7b-45df-9865-d1f0b09f0a3b",
+          "interval_hours": 24.0010048425,
+          "eligible": true,
+          "new": 83,
+          "changed": 0,
+          "unchanged": 67
+        },
+        {
+          "day": 5,
+          "run_id": "851deb6a-0bf2-4057-8a1d-e9b3a0c20ca9",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 57,
+          "ratio": 0.57,
+          "reference": "d2c0a44b-9cbc-4588-9854-2a0f703f7d82",
+          "interval_hours": 24.000169922222224,
+          "eligible": true,
+          "new": 43,
+          "changed": 0,
+          "unchanged": 57
+        },
+        {
+          "day": 6,
+          "run_id": "d39a6b68-9b01-449b-b889-993af9a7631d",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 41,
+          "ratio": 0.41,
+          "reference": "851deb6a-0bf2-4057-8a1d-e9b3a0c20ca9",
+          "interval_hours": 23.99861166722222,
+          "eligible": true,
+          "new": 59,
+          "changed": 0,
+          "unchanged": 41
+        },
+        {
+          "day": 7,
+          "run_id": "73031434-a214-4501-bb5a-374418648ac5",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 53,
+          "ratio": 0.53,
+          "reference": "d39a6b68-9b01-449b-b889-993af9a7631d",
+          "interval_hours": 24.001762969444446,
+          "eligible": true,
+          "new": 47,
+          "changed": 0,
+          "unchanged": 53
+        }
+      ],
+      "distinct_reviews": 555
+    },
+    "477128284": {
+      "statuses": {
+        "succeeded": 5,
+        "failed": 2
+      },
+      "requests": 17,
+      "pages": 13,
+      "observations": 650,
+      "new": 400,
+      "changed": 0,
+      "unchanged": 250,
+      "runs": [
+        {
+          "day": 1,
+          "run_id": "787025a2-f9bc-47df-b667-ea440e2d341a",
+          "status": "succeeded",
+          "coverage": "baseline",
+          "stop": "page_budget",
+          "overlap": null,
+          "ratio": null,
+          "reference": null,
+          "interval_hours": null,
+          "eligible": true,
+          "new": 250,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 2,
+          "run_id": "148dca7b-3047-407b-9bca-b2c77b6df453",
+          "status": "failed",
+          "coverage": "indeterminate",
+          "stop": "parse_error",
+          "overlap": 0,
+          "ratio": null,
+          "reference": "787025a2-f9bc-47df-b667-ea440e2d341a",
+          "interval_hours": 23.98160679861111,
+          "eligible": false,
+          "new": 0,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 3,
+          "run_id": "c212198a-f1e4-47c0-a943-046ee1097528",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 63,
+          "ratio": 0.63,
+          "reference": "787025a2-f9bc-47df-b667-ea440e2d341a",
+          "interval_hours": 47.98082020527778,
+          "eligible": true,
+          "new": 37,
+          "changed": 0,
+          "unchanged": 63
+        },
+        {
+          "day": 4,
+          "run_id": "6a089221-7d41-428f-b5b0-6c869e6bfcdc",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 61,
+          "ratio": 0.61,
+          "reference": "c212198a-f1e4-47c0-a943-046ee1097528",
+          "interval_hours": 24.001645530833333,
+          "eligible": true,
+          "new": 39,
+          "changed": 0,
+          "unchanged": 61
+        },
+        {
+          "day": 5,
+          "run_id": "eaefbefc-487a-422e-b1c3-1d75973fb066",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 81,
+          "ratio": 0.81,
+          "reference": "6a089221-7d41-428f-b5b0-6c869e6bfcdc",
+          "interval_hours": 23.999582678611112,
+          "eligible": true,
+          "new": 19,
+          "changed": 0,
+          "unchanged": 81
+        },
+        {
+          "day": 6,
+          "run_id": "2d94d994-e77a-4b69-bfa5-7d7d6f8b1a54",
+          "status": "failed",
+          "coverage": "indeterminate",
+          "stop": "parse_error",
+          "overlap": 0,
+          "ratio": null,
+          "reference": "eaefbefc-487a-422e-b1c3-1d75973fb066",
+          "interval_hours": 23.998650466111112,
+          "eligible": false,
+          "new": 0,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 7,
+          "run_id": "de7ede30-b109-49b8-a02a-051c1876a680",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 45,
+          "ratio": 0.45,
+          "reference": "eaefbefc-487a-422e-b1c3-1d75973fb066",
+          "interval_hours": 48.00037903583333,
+          "eligible": true,
+          "new": 55,
+          "changed": 0,
+          "unchanged": 45
+        }
+      ],
+      "distinct_reviews": 400
+    },
+    "368677368": {
+      "statuses": {
+        "succeeded": 7
+      },
+      "requests": 23,
+      "pages": 23,
+      "observations": 1150,
+      "new": 852,
+      "changed": 0,
+      "unchanged": 298,
+      "runs": [
+        {
+          "day": 1,
+          "run_id": "c0b60412-33a9-4f34-8475-13b53a181eb7",
+          "status": "succeeded",
+          "coverage": "baseline",
+          "stop": "page_budget",
+          "overlap": null,
+          "ratio": null,
+          "reference": null,
+          "interval_hours": null,
+          "eligible": true,
+          "new": 250,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 2,
+          "run_id": "5fef54ec-d008-4378-a89e-a43e19990b12",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 23,
+          "ratio": 0.23,
+          "reference": "c0b60412-33a9-4f34-8475-13b53a181eb7",
+          "interval_hours": 23.979979884444443,
+          "eligible": true,
+          "new": 77,
+          "changed": 0,
+          "unchanged": 23
+        },
+        {
+          "day": 3,
+          "run_id": "b653b42e-3b0c-4fee-9c8e-cf15af1182a3",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 67,
+          "ratio": 0.67,
+          "reference": "5fef54ec-d008-4378-a89e-a43e19990b12",
+          "interval_hours": 23.999247908055555,
+          "eligible": true,
+          "new": 33,
+          "changed": 0,
+          "unchanged": 67
+        },
+        {
+          "day": 4,
+          "run_id": "71e04323-816c-4a56-a6b3-6aba3482766c",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 56,
+          "ratio": 0.28,
+          "reference": "b653b42e-3b0c-4fee-9c8e-cf15af1182a3",
+          "interval_hours": 24.001362503055557,
+          "eligible": true,
+          "new": 144,
+          "changed": 0,
+          "unchanged": 56
+        },
+        {
+          "day": 5,
+          "run_id": "175fdba7-fc2d-4696-a81e-b965ae786c68",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 58,
+          "ratio": 0.38666666666666666,
+          "reference": "71e04323-816c-4a56-a6b3-6aba3482766c",
+          "interval_hours": 23.999846707222222,
+          "eligible": true,
+          "new": 92,
+          "changed": 0,
+          "unchanged": 58
+        },
+        {
+          "day": 6,
+          "run_id": "2a3f7397-6e94-422a-a63a-a28d7f1fea92",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 55,
+          "ratio": 0.275,
+          "reference": "175fdba7-fc2d-4696-a81e-b965ae786c68",
+          "interval_hours": 23.998662445277777,
+          "eligible": true,
+          "new": 145,
+          "changed": 0,
+          "unchanged": 55
+        },
+        {
+          "day": 7,
+          "run_id": "ae1c6233-af35-4404-a99d-cb56c610dcac",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 39,
+          "ratio": 0.26,
+          "reference": "2a3f7397-6e94-422a-a63a-a28d7f1fea92",
+          "interval_hours": 24.00169958861111,
+          "eligible": true,
+          "new": 111,
+          "changed": 0,
+          "unchanged": 39
+        }
+      ],
+      "distinct_reviews": 852
+    },
+    "529379082": {
+      "statuses": {
+        "succeeded": 7
+      },
+      "requests": 18,
+      "pages": 18,
+      "observations": 900,
+      "new": 628,
+      "changed": 0,
+      "unchanged": 272,
+      "runs": [
+        {
+          "day": 1,
+          "run_id": "c45228a3-af9e-4d1e-a868-193d97d4fb01",
+          "status": "succeeded",
+          "coverage": "baseline",
+          "stop": "page_budget",
+          "overlap": null,
+          "ratio": null,
+          "reference": null,
+          "interval_hours": null,
+          "eligible": true,
+          "new": 250,
+          "changed": 0,
+          "unchanged": 0
+        },
+        {
+          "day": 2,
+          "run_id": "6068ad7d-df15-4a17-8f18-839e54a648f0",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 45,
+          "ratio": 0.45,
+          "reference": "c45228a3-af9e-4d1e-a868-193d97d4fb01",
+          "interval_hours": 23.97843138972222,
+          "eligible": true,
+          "new": 55,
+          "changed": 0,
+          "unchanged": 45
+        },
+        {
+          "day": 3,
+          "run_id": "fe59b310-7bd8-4a11-bdf9-b1e2a04fb5d2",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 57,
+          "ratio": 0.57,
+          "reference": "6068ad7d-df15-4a17-8f18-839e54a648f0",
+          "interval_hours": 23.999270349722224,
+          "eligible": true,
+          "new": 43,
+          "changed": 0,
+          "unchanged": 57
+        },
+        {
+          "day": 4,
+          "run_id": "28ee4795-9d18-4706-9a9e-d0830df8fd55",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 21,
+          "ratio": 0.21,
+          "reference": "fe59b310-7bd8-4a11-bdf9-b1e2a04fb5d2",
+          "interval_hours": 24.002471034722223,
+          "eligible": true,
+          "new": 79,
+          "changed": 0,
+          "unchanged": 21
+        },
+        {
+          "day": 5,
+          "run_id": "a0dc7442-571f-4e74-9778-ed0f30bddb71",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 44,
+          "ratio": 0.44,
+          "reference": "28ee4795-9d18-4706-9a9e-d0830df8fd55",
+          "interval_hours": 23.999244594444445,
+          "eligible": true,
+          "new": 56,
+          "changed": 0,
+          "unchanged": 44
+        },
+        {
+          "day": 6,
+          "run_id": "6857cb58-4206-4294-978e-d50a314510c5",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 59,
+          "ratio": 0.3933333333333333,
+          "reference": "a0dc7442-571f-4e74-9778-ed0f30bddb71",
+          "interval_hours": 23.999225966388888,
+          "eligible": true,
+          "new": 91,
+          "changed": 0,
+          "unchanged": 59
+        },
+        {
+          "day": 7,
+          "run_id": "e373e1fc-2ecb-4afc-821b-099bcf867a5e",
+          "status": "succeeded",
+          "coverage": "overlap_sufficient",
+          "stop": "overlap_met",
+          "overlap": 46,
+          "ratio": 0.46,
+          "reference": "6857cb58-4206-4294-978e-d50a314510c5",
+          "interval_hours": 24.00115841722222,
+          "eligible": true,
+          "new": 54,
+          "changed": 0,
+          "unchanged": 46
+        }
+      ],
+      "distinct_reviews": 628
+    }
+  },
+  "daily": [
+    {
+      "day": 1,
+      "start": "2026-11-03T17:00:50.412440+00:00",
+      "planned": "2026-11-03T17:00:00+00:00",
+      "batch": "83f488fa-b705-4c9d-b51d-7f380b5749e1",
+      "statuses": {
+        "succeeded": 8
+      }
+    },
+    {
+      "day": 2,
+      "start": "2026-11-04T17:00:02.462429+00:00",
+      "planned": "2026-11-04T17:00:00+00:00",
+      "batch": "5c1bce19-cd9c-4d9d-bb1b-46d56618f7a3",
+      "statuses": {
+        "succeeded": 7,
+        "failed": 1
+      }
+    },
+    {
+      "day": 3,
+      "start": "2026-11-05T17:00:03.768119+00:00",
+      "planned": "2026-11-05T17:00:00+00:00",
+      "batch": "75f18eee-3e1f-4cfb-8bf9-ec8051704abd",
+      "statuses": {
+        "succeeded": 8
+      }
+    },
+    {
+      "day": 4,
+      "start": "2026-11-06T17:00:02.537940+00:00",
+      "planned": "2026-11-06T17:00:00+00:00",
+      "batch": "2f47f7e5-8811-402a-9a48-1bae2cb83228",
+      "statuses": {
+        "succeeded": 8
+      }
+    },
+    {
+      "day": 5,
+      "start": "2026-11-07T17:00:03.353966+00:00",
+      "planned": "2026-11-07T17:00:00+00:00",
+      "batch": "64c4f097-8806-43f8-9da6-b7629b795d0e",
+      "statuses": {
+        "succeeded": 8
+      }
+    },
+    {
+      "day": 6,
+      "start": "2026-11-08T17:00:03.234593+00:00",
+      "planned": "2026-11-08T17:00:00+00:00",
+      "batch": "68854fb4-52a5-4950-baa4-cdfeea3d45bf",
+      "statuses": {
+        "partial": 1,
+        "succeeded": 5,
+        "failed": 2
+      }
+    },
+    {
+      "day": 7,
+      "start": "2026-11-09T17:00:03.140676+00:00",
+      "planned": "2026-11-09T17:00:00+00:00",
+      "batch": "9bf60d2d-ab3a-42ff-b4f6-119806ecd2bd",
+      "statuses": {
+        "succeeded": 8
+      }
+    }
+  ],
+  "anomalies": [
+    {
+      "day": 2,
+      "app": "477128284",
+      "run": "148dca7b-3047-407b-9bca-b2c77b6df453",
+      "status": "failed",
+      "attempts": [
+        {
+          "request_number": 1,
+          "page_number": 1,
+          "format": "json",
+          "http_status": 200,
+          "response_bytes": 873,
+          "parsing_status": "succeeded",
+          "persistence_status": "not_applicable",
+          "entry_count": 0,
+          "error_codes": [],
+          "anomalies": [
+            {
+              "code": "JSON_ENTRY_ABSENT"
+            },
+            {
+              "code": "EMPTY_PAGE"
+            },
+            {
+              "code": "JSON_FALLBACK"
+            }
+          ]
+        },
+        {
+          "request_number": 2,
+          "page_number": 1,
+          "format": "xml",
+          "http_status": 200,
+          "response_bytes": 113503,
+          "parsing_status": "failed",
+          "persistence_status": "not_applicable",
+          "entry_count": null,
+          "error_codes": [
+            "ENTRY_SCHEMA"
+          ],
+          "anomalies": [
+            {
+              "code": "ENTRY_SCHEMA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "app": "572688855",
+      "run": "fdfb327f-dc9f-4900-956f-ce810acafe5c",
+      "status": "partial",
+      "attempts": [
+        {
+          "request_number": 1,
+          "page_number": 1,
+          "format": "json",
+          "http_status": 200,
+          "response_bytes": 42334,
+          "parsing_status": "succeeded",
+          "persistence_status": "committed",
+          "entry_count": 50,
+          "error_codes": [],
+          "anomalies": [
+            {
+              "code": "PAGE_SUMMARY",
+              "page": 1,
+              "new_count": 0,
+              "entry_count": 50,
+              "changed_count": 0,
+              "conflict_count": 0,
+              "duplicate_count": 0,
+              "unchanged_count": 50,
+              "distinct_review_count": 50,
+              "same_page_duplicate_count": 0,
+              "cross_page_duplicate_count": 0
+            },
+            {
+              "code": "DIAGNOSTIC_TOTALS",
+              "counts": {},
+              "detail_truncated": false
+            }
+          ]
+        },
+        {
+          "request_number": 2,
+          "page_number": 2,
+          "format": "json",
+          "http_status": 200,
+          "response_bytes": 873,
+          "parsing_status": "succeeded",
+          "persistence_status": "not_applicable",
+          "entry_count": 0,
+          "error_codes": [],
+          "anomalies": [
+            {
+              "code": "JSON_ENTRY_ABSENT"
+            },
+            {
+              "code": "EMPTY_PAGE"
+            },
+            {
+              "code": "JSON_FALLBACK"
+            }
+          ]
+        },
+        {
+          "request_number": 3,
+          "page_number": 2,
+          "format": "xml",
+          "http_status": 200,
+          "response_bytes": 127329,
+          "parsing_status": "failed",
+          "persistence_status": "not_applicable",
+          "entry_count": null,
+          "error_codes": [
+            "ENTRY_SCHEMA"
+          ],
+          "anomalies": [
+            {
+              "code": "ENTRY_SCHEMA",
+              "field": "content",
+              "category": "duplicate_field",
+              "entry_index": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "app": "570060128",
+      "run": "d12a126b-a294-473d-802c-9a700edac0b2",
+      "status": "failed",
+      "attempts": [
+        {
+          "request_number": 1,
+          "page_number": 1,
+          "format": "json",
+          "http_status": 200,
+          "response_bytes": 873,
+          "parsing_status": "succeeded",
+          "persistence_status": "not_applicable",
+          "entry_count": 0,
+          "error_codes": [],
+          "anomalies": [
+            {
+              "code": "JSON_ENTRY_ABSENT"
+            },
+            {
+              "code": "EMPTY_PAGE"
+            },
+            {
+              "code": "JSON_FALLBACK"
+            }
+          ]
+        },
+        {
+          "request_number": 2,
+          "page_number": 1,
+          "format": "xml",
+          "http_status": 200,
+          "response_bytes": 112838,
+          "parsing_status": "failed",
+          "persistence_status": "not_applicable",
+          "entry_count": null,
+          "error_codes": [
+            "ENTRY_SCHEMA"
+          ],
+          "anomalies": [
+            {
+              "code": "ENTRY_SCHEMA",
+              "field": "content",
+              "category": "duplicate_field",
+              "entry_index": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "app": "477128284",
+      "run": "2d94d994-e77a-4b69-bfa5-7d7d6f8b1a54",
+      "status": "failed",
+      "attempts": [
+        {
+          "request_number": 1,
+          "page_number": 1,
+          "format": "json",
+          "http_status": 200,
+          "response_bytes": 873,
+          "parsing_status": "succeeded",
+          "persistence_status": "not_applicable",
+          "entry_count": 0,
+          "error_codes": [],
+          "anomalies": [
+            {
+              "code": "JSON_ENTRY_ABSENT"
+            },
+            {
+              "code": "EMPTY_PAGE"
+            },
+            {
+              "code": "JSON_FALLBACK"
+            }
+          ]
+        },
+        {
+          "request_number": 2,
+          "page_number": 1,
+          "format": "xml",
+          "http_status": 200,
+          "response_bytes": 115627,
+          "parsing_status": "failed",
+          "persistence_status": "not_applicable",
+          "entry_count": null,
+          "error_codes": [
+            "ENTRY_SCHEMA"
+          ],
+          "anomalies": [
+            {
+              "code": "ENTRY_SCHEMA",
+              "field": "content",
+              "category": "duplicate_field",
+              "entry_index": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "integrity": {
+    "report_contract_version": "apple-ingestion-report/1",
+    "read_only": true,
+    "ok": true,
+    "issue_counts": {
+      "CURRENT_VERSION_NOT_LATEST": 0,
+      "VERSION_NUMBER_GAPS": 0,
+      "TERMINAL_PENDING_ATTEMPTS": 0,
+      "TERMINAL_PENDING_COVERAGE": 0,
+      "PAGE_OBSERVATION_COUNT_MISMATCH": 0,
+      "COMMITTED_PAGE_SUMMARY_MISSING": 0
+    },
+    "running_pending_attempt_count": 0,
+    "running_pending_requires_application_lock_check": false,
+    "source_deletion_inferred": false
+  },
+  "versions_checked": 4507,
+  "fingerprint_mismatches": 0,
+  "db_observations": 7600,
+  "day1_preserved": true,
+  "smoke_preserved": true,
+  "backups": [
+    {
+      "day": 1,
+      "kind": "pre_backup",
+      "bytes": 102141,
+      "sha256": "9513686fc503a38ea769ec2e1dbeef50bfa22d4ccfa3aede1eb7388cca5ec97f",
+      "mode": "0o600"
+    },
+    {
+      "day": 1,
+      "kind": "post_backup",
+      "bytes": 459193,
+      "sha256": "75bc4689f43db00afe8111a7c378129ca2f449c6a313311317077b9f2c09e11f",
+      "mode": "0o600"
+    },
+    {
+      "day": 2,
+      "kind": "pre_backup",
+      "bytes": 459193,
+      "sha256": "787fa40b516e8cc1202fad30ba0e0a585ad8193e4f8659c39b1b5e42cf7c3529",
+      "mode": "0o600"
+    },
+    {
+      "day": 2,
+      "kind": "post_backup",
+      "bytes": 549417,
+      "sha256": "a9ba3aa82d4f9b33a974d2ace8ef326aa3b10d909b6f4f8a143d7201136b1e66",
+      "mode": "0o600"
+    },
+    {
+      "day": 3,
+      "kind": "pre_backup",
+      "bytes": 549417,
+      "sha256": "9ef4a3c1a388c2d2847d38bcb4463000f40be2585597e7d28ac393a4becce148",
+      "mode": "0o600"
+    },
+    {
+      "day": 3,
+      "kind": "post_backup",
+      "bytes": 610859,
+      "sha256": "b24a288109f9cb5fdb4bca1bbb52ae307c48bc4c102ae501f2436fcbd53a07fe",
+      "mode": "0o600"
+    },
+    {
+      "day": 4,
+      "kind": "pre_backup",
+      "bytes": 610859,
+      "sha256": "0868789eee49d33f943c4e96217920ba1cc164cbc175e5ac42a64d40a9d03c26",
+      "mode": "0o600"
+    },
+    {
+      "day": 4,
+      "kind": "post_backup",
+      "bytes": 738899,
+      "sha256": "90d2b502455e20d9637cb192ef07a85f1e1af24d3d1c3131b8d213ad9fbe0673",
+      "mode": "0o600"
+    },
+    {
+      "day": 5,
+      "kind": "pre_backup",
+      "bytes": 738899,
+      "sha256": "2fde126d4b7f2e179cd61b582157df2f5f95fb3cc3a871049a19eeb1e95c8dfc",
+      "mode": "0o600"
+    },
+    {
+      "day": 5,
+      "kind": "post_backup",
+      "bytes": 828021,
+      "sha256": "0dbf0aa3663bf2f13180da72872a2a9bd8af53b22c877870022526d674c72561",
+      "mode": "0o600"
+    },
+    {
+      "day": 6,
+      "kind": "pre_backup",
+      "bytes": 828021,
+      "sha256": "ba33c7e44e275f1ec9bd4b5d79dc6a4094c8d4708a8f4bb9dc73f40e0149a30a",
+      "mode": "0o600"
+    },
+    {
+      "day": 6,
+      "kind": "post_backup",
+      "bytes": 893373,
+      "sha256": "f52c69eb9130037e0d9e20bfefad0ec0376b1697cd14b83cb8ca73cab830dbbe",
+      "mode": "0o600"
+    },
+    {
+      "day": 7,
+      "kind": "pre_backup",
+      "bytes": 893373,
+      "sha256": "aea4a2e229cb0644ab5914308f74b9feb1de323d6b2646e4f9ae2ec771460b07",
+      "mode": "0o600"
+    },
+    {
+      "day": 7,
+      "kind": "post_backup",
+      "bytes": 1006765,
+      "sha256": "fabd640fc98ec834eae63fc398dd0de9a080d93c4bc719ebb79b2e89413bd9be",
+      "mode": "0o600"
+    }
+  ],
+  "final_backup_restore": {
+    "restore_verified": true,
+    "integrity_ok": true,
+    "fingerprints_checked": 4507,
+    "counts": {
+      "review": 4507,
+      "review_version": 4507,
+      "review_observation": 7600,
+      "collection_run": 57,
+      "fetch_attempt": 160
+    },
+    "verification_database_removed": true
+  },
+  "assessment": {
+    "manifest_id": "cd52800c5ea5a8d38c109203269864bbd74d0162c735a762bf932c95fbb54d59",
+    "totals": {
+      "assessed": 0,
+      "eligible": 4507,
+      "selected": 80,
+      "shortfall": 0,
+      "unassessed": 80,
+      "usefulness_rate": null
+    },
+    "categories": {
+      "productivity": 20,
+      "education": 20,
+      "shopping": 20,
+      "transportation": 20
+    },
+    "app_counts": {
+      "572688855": 10,
+      "1212616790": 10,
+      "570060128": 10,
+      "469863705": 10,
+      "297606951": 10,
+      "477128284": 10,
+      "368677368": 10,
+      "529379082": 10
+    },
+    "double_review": {
+      "agreement_rate": null,
+      "requested_per_app": 2,
+      "selected": 16,
+      "selected_review_ids": [
+        118,
+        13,
+        290,
+        399,
+        2828,
+        3332,
+        986,
+        802,
+        2268,
+        4263,
+        1458,
+        3042,
+        3146,
+        2345,
+        1866,
+        2406
+      ],
+      "shortfall": 0,
+      "status": "optional_pending_human",
+      "target": 16
+    },
+    "files": {
+      "rubric.json": {
+        "bytes": 371,
+        "mode": "0o600",
+        "sha256": "bfc0fbeb2409f6f744524b3ddc4f5881485503e395f6abf67dfe1000f39185ea"
+      },
+      "responses.pending.json": {
+        "bytes": 33782,
+        "mode": "0o600",
+        "sha256": "bd3bd06f33276ec168897dd52c9ac2740e735bc9dc4953b20af7f415c4ff5e9c"
+      },
+      "sample-manifest.json": {
+        "bytes": 34544,
+        "mode": "0o600",
+        "sha256": "ec791944607f3ebb0f17bd0cd4cdb0a11bb967ac82434a94affe21a31de6f2b3"
+      },
+      "reading-material.html": {
+        "bytes": 20703,
+        "mode": "0o600",
+        "sha256": "c0f8e92e2caf45545b5b9a192018b593a43172172dbf68967c83ab1dc4edcf38"
+      }
+    },
+    "directory_mode": "0o700",
+    "rating_hidden": true,
+    "version_bindings_verified": 80
+  },
+  "tasks_disabled": true,
+  "policy_disabled": true,
+  "human_assessment_completed": {
+    "summary": {
+      "schema_version": "apple-assessment-summary/1",
+      "manifest_id": "cd52800c5ea5a8d38c109203269864bbd74d0162c735a762bf932c95fbb54d59",
+      "rubric_version": "apple-usefulness/1",
+      "run_mode": "live",
+      "evidence_kind": "live",
+      "assessment_type": "human",
+      "overall": {
+        "eligible": 4507,
+        "selected": 80,
+        "assessed": 80,
+        "unassessed": 0,
+        "shortfall": 0,
+        "label_counts": {
+          "U3": 21,
+          "U2": 26,
+          "U1": 28,
+          "U0": 5
+        },
+        "useful": 47,
+        "usefulness_rate": 0.5875,
+        "human_assessed": 80,
+        "synthetic_test_assessed": 0
+      },
+      "apps": [
+        {
+          "application_id": 1,
+          "source_application_id": "572688855",
+          "analytical_category": "productivity",
+          "exclusion_counts": {},
+          "eligible": 253,
+          "selected": 10,
+          "assessed": 10,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 6,
+            "U2": 2,
+            "U1": 2,
+            "U0": 0
+          },
+          "useful": 8,
+          "usefulness_rate": 0.8,
+          "human_assessed": 10,
+          "synthetic_test_assessed": 0
+        },
+        {
+          "application_id": 2,
+          "source_application_id": "1212616790",
+          "analytical_category": "productivity",
+          "exclusion_counts": {},
+          "eligible": 258,
+          "selected": 10,
+          "assessed": 10,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 3,
+            "U2": 5,
+            "U1": 1,
+            "U0": 1
+          },
+          "useful": 8,
+          "usefulness_rate": 0.8,
+          "human_assessed": 10,
+          "synthetic_test_assessed": 0
+        },
+        {
+          "application_id": 3,
+          "source_application_id": "570060128",
+          "analytical_category": "education",
+          "exclusion_counts": {},
+          "eligible": 1296,
+          "selected": 10,
+          "assessed": 10,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 2,
+            "U2": 4,
+            "U1": 4,
+            "U0": 0
+          },
+          "useful": 6,
+          "usefulness_rate": 0.6,
+          "human_assessed": 10,
+          "synthetic_test_assessed": 0
+        },
+        {
+          "application_id": 4,
+          "source_application_id": "469863705",
+          "analytical_category": "education",
+          "exclusion_counts": {},
+          "eligible": 265,
+          "selected": 10,
+          "assessed": 10,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 2,
+            "U2": 3,
+            "U1": 5,
+            "U0": 0
+          },
+          "useful": 5,
+          "usefulness_rate": 0.5,
+          "human_assessed": 10,
+          "synthetic_test_assessed": 0
+        },
+        {
+          "application_id": 5,
+          "source_application_id": "297606951",
+          "analytical_category": "shopping",
+          "exclusion_counts": {},
+          "eligible": 555,
+          "selected": 10,
+          "assessed": 10,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 2,
+            "U2": 5,
+            "U1": 2,
+            "U0": 1
+          },
+          "useful": 7,
+          "usefulness_rate": 0.7,
+          "human_assessed": 10,
+          "synthetic_test_assessed": 0
+        },
+        {
+          "application_id": 6,
+          "source_application_id": "477128284",
+          "analytical_category": "shopping",
+          "exclusion_counts": {},
+          "eligible": 400,
+          "selected": 10,
+          "assessed": 10,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 3,
+            "U2": 2,
+            "U1": 4,
+            "U0": 1
+          },
+          "useful": 5,
+          "usefulness_rate": 0.5,
+          "human_assessed": 10,
+          "synthetic_test_assessed": 0
+        },
+        {
+          "application_id": 7,
+          "source_application_id": "368677368",
+          "analytical_category": "transportation",
+          "exclusion_counts": {},
+          "eligible": 852,
+          "selected": 10,
+          "assessed": 10,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 0,
+            "U2": 3,
+            "U1": 5,
+            "U0": 2
+          },
+          "useful": 3,
+          "usefulness_rate": 0.3,
+          "human_assessed": 10,
+          "synthetic_test_assessed": 0
+        },
+        {
+          "application_id": 8,
+          "source_application_id": "529379082",
+          "analytical_category": "transportation",
+          "exclusion_counts": {},
+          "eligible": 628,
+          "selected": 10,
+          "assessed": 10,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 3,
+            "U2": 2,
+            "U1": 5,
+            "U0": 0
+          },
+          "useful": 5,
+          "usefulness_rate": 0.5,
+          "human_assessed": 10,
+          "synthetic_test_assessed": 0
+        }
+      ],
+      "categories": {
+        "education": {
+          "eligible": 1561,
+          "selected": 20,
+          "assessed": 20,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 4,
+            "U2": 7,
+            "U1": 9,
+            "U0": 0
+          },
+          "useful": 11,
+          "usefulness_rate": 0.55,
+          "human_assessed": 20,
+          "synthetic_test_assessed": 0
+        },
+        "productivity": {
+          "eligible": 511,
+          "selected": 20,
+          "assessed": 20,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 9,
+            "U2": 7,
+            "U1": 3,
+            "U0": 1
+          },
+          "useful": 16,
+          "usefulness_rate": 0.8,
+          "human_assessed": 20,
+          "synthetic_test_assessed": 0
+        },
+        "shopping": {
+          "eligible": 955,
+          "selected": 20,
+          "assessed": 20,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 5,
+            "U2": 7,
+            "U1": 6,
+            "U0": 2
+          },
+          "useful": 12,
+          "usefulness_rate": 0.6,
+          "human_assessed": 20,
+          "synthetic_test_assessed": 0
+        },
+        "transportation": {
+          "eligible": 1480,
+          "selected": 20,
+          "assessed": 20,
+          "unassessed": 0,
+          "shortfall": 0,
+          "label_counts": {
+            "U3": 3,
+            "U2": 5,
+            "U1": 10,
+            "U0": 2
+          },
+          "useful": 8,
+          "usefulness_rate": 0.4,
+          "human_assessed": 20,
+          "synthetic_test_assessed": 0
+        }
+      },
+      "unassessed_reasons": {},
+      "sentiment_assessment": "NOT_PERFORMED",
+      "double_review": {
+        "selected": 16,
+        "human_pairs_assessed": 0,
+        "agreement_rate": null,
+        "status": "second_reviewer_not_supplied"
+      }
+    },
+    "validation": {
+      "source_sha256": "85e605f373ed53b752e52a0311763f7c14097d90aedef830c9c06f0c82c7a63e",
+      "source_manifest_id": "cd52800c5ea5a8d38c109203269864bbd74d0162c735a762bf932c95fbb54d59",
+      "schema_validation": "passed_after_documented_projection",
+      "human_provenance": "confirmed_by_user_in_project_chat; declarations checked, not independently witnessed",
+      "normalization": {
+        "envelope_metadata_removed_from_projection": [
+          "completed_at",
+          "reviewer_id",
+          "sentiment_assessment",
+          "totals"
+        ],
+        "ai_assistance": "80 null values replaced with false following explicit user confirmation of human-only review",
+        "labels_reasons_languages_identities_and_ids_changed": false,
+        "timestamps_changed": false
+      },
+      "timestamp_validation": {
+        "format_and_timezone": "valid",
+        "chronology": "after sample cutoff and before validation",
+        "source_value": "2026-11-10T05:32:13Z",
+        "meaning": "export timestamp",
+        "actual_assessment_times": "unknown; user no longer has the actual completion time",
+        "schema_compatible_assessed_at": "retained export-time proxy only; not actual reading time",
+        "precision_limitation": "neither per-review times nor batch review-completion time are verified"
+      },
+      "counts": {
+        "references_verified": 80,
+        "nonempty_reasons": 80,
+        "full_text_read_declarations": 80,
+        "human_records": 80
+      },
+      "languages": {
+        "en": 77,
+        "ru": 1,
+        "es": 2
+      },
+      "reviewer_count": 1,
+      "reviewer_id": "R1",
+      "independent_second_review": "not_supplied",
+      "validated_at_utc": "2026-11-10T05:40:04.264928+00:00",
+      "completed_directory_mode": "0o755",
+      "completed_file_modes": {
+        "responses.completed.json": "0o644",
+        "assessment-report.csv": "0o644",
+        "assessment-report.md": "0o644"
+      },
+      "private_compatible_copy_mode": "directory 0700; files 0600"
+    },
+    "actual_assessment_timestamps_verified": false
+  }
+}

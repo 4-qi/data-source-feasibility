@@ -22,7 +22,7 @@ from test_apple_ingestion_live_readiness import ready, OfflineAdapter, factory_f
 from test_apple_ingestion_phase_c_integration import Clock, feed, assert_terminal_resolved
 
 ROOT = Path(__file__).resolve().parents[1]
-PROCEDURE = ROOT / 'docs/APPLE_FIRST_LIVE_SMOKE_TEST.md'
+PROCEDURE = ROOT / 'docs/archive/APPLE_FIRST_LIVE_SMOKE_TEST.md'
 
 
 @pytest.mark.parametrize('deployed_roles', ['database_owner'], indirect=True)

@@ -1,13 +1,12 @@
 # Phase A — Contracts and Database delivery
 
 Phase A is the authorized current engineering scope. The approved design is
-[APPLE_INGESTION_SYSTEM_DESIGN.md](APPLE_INGESTION_SYSTEM_DESIGN.md).
+[APPLE_INGESTION_SYSTEM_DESIGN.md](../APPLE_INGESTION_SYSTEM_DESIGN.md).
 No later phase, live Apple request, production database, commit or push is authorized by this delivery.
 
 ## Coordination and ownership
 
-The main project chat owns integration and final acceptance. Three independent
-Codex execution chats share the existing checkout with distinct file ownership:
+Implementation was divided into three workstreams with distinct file ownership:
 
 | Execution chat | Scope | Chat ID |
 | --- | --- | --- |
@@ -15,8 +14,8 @@ Codex execution chats share the existing checkout with distinct file ownership:
 | Contracts and seed | Immutable validated configuration/snapshot, full-text record, status/reason contracts, explicit eight-app seed | `01a1a0ca-0bc7-7af0-be76-7075fbeb57a1` |
 | PostgreSQL validation | Disposable-cluster runner and actual constraint/migration/permission tests | `01a1a0ca-2057-71f3-9cdc-fb6cf70bd41a` |
 
-The main chat follows these execution chats, resolves interface dependencies and
-verifies their combined result before accepting the phase.
+Phase acceptance required resolved interface dependencies and combined
+implementation validation.
 
 ## Project environment
 
@@ -61,7 +60,7 @@ host run only an isolated temporary cluster with TCP disabled.
 ## Acceptance
 
 **Accepted for Phase A synthetic engineering delivery on November 3, 2026:**
-the main coordinating chat ran the combined suite with project Conda Python
+the combined suite ran with project Conda Python
 3.12.16, PostgreSQL 16.15 and the pinned dependencies: **228 passed, zero failures,
 zero skips, no pytest warnings**, in 2.37 seconds of pytest time.
 

@@ -243,8 +243,8 @@ ignored and omitted from new canonical output. `.complete` and
 long-term config without references is valid. Retention metadata is not part of
 the runtime execution gate and does not produce a preflight blocker.
 
-The project owner should discuss applicable data-use and long-term arrangements
-with John, including private exports, backups and any future required changes.
+Applicable data-use and long-term-retention arrangements remain unresolved,
+including conditions for private exports, backups and future required changes.
 That is project management, not a Boolean that the collector can approve.
 Removing a software check does not settle the question. If future obligations
 require deletion, scope and review an FK-safe maintenance operation covering
@@ -305,8 +305,8 @@ checks below are not instructions for the current collector.
 
 The separately authorized minimal long-term extension changed only deployment
 configuration/validation, its tests, this runbook and the pending long-term
-example. The coordinating chat owns actual local persistent setup and its
-configuration; this validation session operated no persistent host.
+example. Local persistent deployment was validated separately; this
+validation used no persistent host.
 
 The old seven-field finite-day JSON and positional `RetentionConfig` calls
 remain accepted. Two optional fields default compatibly to `mode='finite_days'`

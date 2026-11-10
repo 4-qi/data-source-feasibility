@@ -7,21 +7,20 @@
 > perform a real request, confirm data-use rights or activate Phase F.
 
 Prepared November 3, 2026. **Preparation only: no Apple request, target
-enablement, Phase F activation, commit or push.** The user accepted Phase E and
+enablement, Phase F activation, commit or push.** Live-readiness preparation was accepted and
 the persistent deployment, and requested technical-only runtime configuration.
 Data-use and long-term-retention questions remain documented for discussion;
 they are not runtime confirmation flags or approval-document prerequisites.
-No update to John is drafted or sent by this task.
 
 ## Selected target and bounded plan
 
 **Todoist: To Do List & Calendar — `572688855`, US, mostrecent.** This is one of
-the original eight apps. Existing [initial evidence](../results/mainstream/apple_rss_access.json)
+the original eight apps. Existing [initial evidence](../../results/mainstream/apple_rss_access.json)
 records JSON page 1, page 2 and a repeated page 1, each successful/nonempty with
 50 returned reviews and a five-record sanitized projection. The later
-[online-readiness summary](../results/mainstream/apple_online_readiness.json)
+[online-readiness summary](../../results/mainstream/apple_online_readiness.json)
 records JSON success with 50 reviews. The artifact date is October 27; the actual
-request timestamps are October 28 UTC. The [mobile comparison](../results/mobile_quality/collection.json)
+request timestamps are October 28 UTC. The [mobile comparison](../../results/mobile_quality/collection.json)
 provides additional historical page/repeat metadata.
 
 This makes Todoist a practical first chain check without expanding source
@@ -59,8 +58,8 @@ No receipt is created or consumed. Legacy single-run APIs remain for historical
 compatibility/tests; they are not required by this procedure. Do not fill the
 old `single-run-approval.json` to use the new path.
 
-The [smoke template](../deploy/apple_ingestion/project-smoke.example.json) names
-only Todoist and `purpose=smoke`. The [pilot plan template](../deploy/apple_ingestion/project-pilot-plan.example.json)
+The [smoke template](../../deploy/apple_ingestion/project-smoke.example.json) names
+only Todoist and `purpose=smoke`. The [pilot plan template](../../deploy/apple_ingestion/project-pilot-plan.example.json)
 names the fixed eight apps and `purpose=pilot`. Both are disabled,
 with null technical policy ID and validity. The policy contains only its tracking
 ID, operator, scope, window, execution switch and request limits; no access
@@ -284,7 +283,7 @@ attempts, markers and uncertainty; do not delete evidence to obtain a clean resu
 ### 5. Verify the actual run without leaking review text
 
 Set `SMOKE_RUN_ID` to the actual returned UUID, never a fabricated evidence ID.
-The [SQL file](../deploy/apple_ingestion/smoke-postrun.sql) runs entirely inside
+The [SQL file](../../deploy/apple_ingestion/smoke-postrun.sql) runs entirely inside
 a read-only repeatable-read transaction and outputs only metadata/counts/lengths.
 
 ```sh
@@ -392,7 +391,7 @@ UUID per daily invocation, no daily approval documents/receipts. It retains
 the existing source-denial/infrastructure short-circuit across subsequent apps.
 No second controller or source is developed for this plan.
 
-Daily reporting checklist (not a draft to John):
+Daily reporting checklist:
 
 - Expected versus actual target slots, safe run/batch IDs, terminal states and
   honest missing/skipped/unknown slots; distinguish real evidence from fixtures.
@@ -408,11 +407,11 @@ Daily reporting checklist (not a draft to John):
 
 ## Acceptance and remaining actions
 
-The earlier main-chat full regression recorded **668 passed**, with no failed,
+The earlier full regression recorded **668 passed**, with no failed,
 error or skipped tests, before this technical-only gate correction. That is a
 historical checkpoint, not a claim that the revised working tree has already
-passed a fresh full suite. The coordinating chat owns the updated full-suite
-acceptance and its actual totals.
+passed a fresh full suite. Complete-suite acceptance uses the actual
+recorded totals.
 
 The narrow procedure test executes the actual `smoke-execute-command` Python
 body below this document's marker with only its private path replaced by a tmp
@@ -424,7 +423,7 @@ database. No actual deployment, target or project switch is activated.
 
 ### Full correction acceptance (current)
 
-The main chat ran the complete regression after the runtime correction:
+The complete regression after the runtime correction recorded:
 
 ```sh
 PYTHONNOUSERSITE=1 APPLE_TEST_PYTHON=/home/l2838/miniconda3/envs/data-source-feasibility/bin/python bash scripts/test_apple_ingestion_postgres.sh --full-suite -q --junitxml=/tmp/apple-operational-controls-full-suite.xml
@@ -438,7 +437,7 @@ transactions, integrity, recovery and immutable technical trace remain covered.
 The suite uses invented responses and a separate temporary PostgreSQL cluster;
 no test success is real source evidence.
 
-The main chat also checked the actual persistent environment in read-only
+The actual persistent environment was also checked in read-only
 transactions. `database_ready=true`, `runtime_login_verified=true` and
 `operational_ready=true`, with no engineering preflight blockers. The legacy
 `live_ready` field means only deployment operational readiness; it is not
@@ -453,7 +452,7 @@ The scope of the code change is the live policy, snapshot value-contract
 validation and deployment preflight. No table/migration, parsing, normalization,
 reconciliation, comparison-reference or stopping-algorithm change was made.
 The design document only clarifies this administrative/technical boundary.
-No actual HTTP, target enablement, scheduler, Phase F, John update, commit or push
+No actual HTTP, target enablement, scheduler, Phase F, commit or push
 was performed. The working HEAD remains the prior baseline `cadc16c`.
 
 Targeted correction validation:
@@ -496,8 +495,7 @@ Readiness checklist:
 Discussion items, **not runtime gates**: applicable source/data-use conditions,
 long-term retention intent and owner, private full-text access, backups/exports,
 and their lifecycle. Successful HTTP or an enabled switch settles none of those
-questions. They remain available for a later discussion with John; this task
-neither drafts nor sends that update and does not mark any arrangement confirmed.
+questions. Applicable arrangements remain unconfirmed.
 
 **Stop after preparation.** No real RSS request, persistent target/project
 activation, Phase F execution, commit or push is part of this correction.
