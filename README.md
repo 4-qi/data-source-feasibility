@@ -19,6 +19,7 @@ Start with the pilot report, then consult the technical and quality reports.
 | [Apple ingestion pilot report](docs/APPLE_INGESTION_PILOT_REPORT.md) | Objective, methodology, implementation, results, limitations and conclusion |
 | [Technical validation](docs/APPLE_INGESTION_TECHNICAL_VALIDATION.md) | Seven-day per-app evidence, failures, coverage, database integrity and backup/restore proof |
 | [Review quality assessment](docs/APPLE_REVIEW_QUALITY_ASSESSMENT.md) | Human U0–U3 results, sampling, validation and sample limitations |
+| [Duolingo coverage experiment](docs/APPLE_COVERAGE_EXPERIMENT_RESULTS.md) | Completed 72-hour follow-up on depth, frequency, request cost and observed version changes |
 | [Documentation guide](docs/README.md) | Design, implementation, deployment, operations and historical supporting records |
 
 ## Completed pilot findings
@@ -34,6 +35,16 @@ The quality sample contains ten reviews per app. Duolingo had
 four insufficient-overlap windows, and intermittent Atom responses caused
 strict parsing failures. Full coverage and real source-edit behavior remain
 unresolved.
+
+## Duolingo coverage follow-up
+
+The subsequent 72-hour Duolingo experiment completed seven observations and
+committed 70 pages from 70 requests. Five pages every 12 hours passed all six
+overlap comparisons and is preferred for observed continuity at lower cost
+within the study. Ten pages every 24 hours also passed all primary comparisons
+and reached 250 more distinct IDs. Both options have the same nominal daily
+JSON request cost after initialization.
+[Coverage experiment results](docs/APPLE_COVERAGE_EXPERIMENT_RESULTS.md)
 
 ## Earlier source-feasibility evidence
 

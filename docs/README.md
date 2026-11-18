@@ -12,6 +12,21 @@
 | [Technical validation](APPLE_INGESTION_TECHNICAL_VALIDATION.md) | Per-application results, anomalies, coverage, integrity and backup proof |
 | [Review quality assessment](APPLE_REVIEW_QUALITY_ASSESSMENT.md) | Manual assessment method, results and sample limitations |
 
+## Bounded coverage follow-up
+
+- [Duolingo coverage experiment results](APPLE_COVERAGE_EXPERIMENT_RESULTS.md)
+- [High-volume coverage experiment plan](APPLE_HIGH_VOLUME_COVERAGE_EXPERIMENT.md)
+- [Pagination feasibility probe](APPLE_PAGINATION_FEASIBILITY_PROBE.md)
+- [Coverage experiment readiness](APPLE_COVERAGE_EXPERIMENT_READINESS.md)
+- [Runner repair and replacement schedule](APPLE_COVERAGE_EXPERIMENT_REPAIR.md)
+- [Original experiment activation](APPLE_COVERAGE_EXPERIMENT_ACTIVATION.md)
+- [Clock reliability validation](APPLE_CLOCK_RELIABILITY_VALIDATION.md)
+- [Adaptive collection hypotheses](APPLE_ADAPTIVE_COLLECTION_STRATEGY.md)
+
+The follow-up completed seven Duolingo observations from November 13 at 21:00
+through November 16 at 21:00 PST. The results report covers this separate study.
+The original pilot reports retain the seven-day collection findings.
+
 ## Supporting records
 
 The [archive index](archive/README.md) groups historical development records,
