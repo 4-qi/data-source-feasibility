@@ -46,6 +46,13 @@ and reached 250 more distinct IDs. Both options have the same nominal daily
 JSON request cost after initialization.
 [Coverage experiment results](docs/APPLE_COVERAGE_EXPERIMENT_RESULTS.md)
 
+## Downstream review retrieval
+
+The Python retrieval interface reads current reviews and version history from a
+selected PostgreSQL database. The private CSV exporter preserves stored fields
+and provenance in one read-only snapshot.
+[Retrieval contract and examples](docs/APPLE_REVIEW_RETRIEVAL_CONTRACT.md)
+
 ## Earlier source-feasibility evidence
 
 | Source | Historical sample | Useful content | Role in the source study |

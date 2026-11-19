@@ -12,6 +12,10 @@
 | [Technical validation](APPLE_INGESTION_TECHNICAL_VALIDATION.md) | Per-application results, anomalies, coverage, integrity and backup proof |
 | [Review quality assessment](APPLE_REVIEW_QUALITY_ASSESSMENT.md) | Manual assessment method, results and sample limitations |
 
+## Downstream retrieval
+
+[Apple review retrieval contract and examples](APPLE_REVIEW_RETRIEVAL_CONTRACT.md)
+
 ## Bounded coverage follow-up
 
 - [Duolingo coverage experiment results](APPLE_COVERAGE_EXPERIMENT_RESULTS.md)
