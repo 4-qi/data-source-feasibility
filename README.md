@@ -53,6 +53,14 @@ selected PostgreSQL database. The private CSV exporter preserves stored fields
 and provenance in one read-only snapshot.
 [Retrieval contract and examples](docs/APPLE_REVIEW_RETRIEVAL_CONTRACT.md)
 
+## Downstream ABSA preparation
+
+The offline processing CLI transforms a private current-review CSV export
+into a reproducible review-level dataset for aspect-based sentiment analysis.
+It adds normalized analysis text and text eligibility while preserving the
+original fields, exact version reference and collection provenance.
+[Processing contract, CLI examples and Duolingo validation](docs/APPLE_ABSA_PROCESSING_CONTRACT.md)
+
 ## Earlier source-feasibility evidence
 
 | Source | Historical sample | Useful content | Role in the source study |
@@ -125,8 +133,9 @@ bash scripts/test_apple_ingestion_postgres.sh --full-suite -q
 ```
 
 Set APPLE_TEST_PG_BIN or APPLE_TEST_PYTHON to select local binaries.
-The last complete diagnostics regression recorded **676 passing tests** before
-commit 022c70b. This documentation cleanup does not claim a new test run.
+The diagnostics regression before commit 022c70b recorded 676 passing tests.
+The [ABSA validation results](docs/APPLE_ABSA_PROCESSING_CONTRACT.md#validation-results)
+record the complete regression for the processing milestone.
 See the [database validation record](docs/archive/PHASE_A_DATABASE_VALIDATION.md) and
 [implementation summary](docs/APPLE_INGESTION_IMPLEMENTATION_SUMMARY.md)
 for earlier checkpoints.

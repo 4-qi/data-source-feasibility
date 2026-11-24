@@ -12,9 +12,10 @@
 | [Technical validation](APPLE_INGESTION_TECHNICAL_VALIDATION.md) | Per-application results, anomalies, coverage, integrity and backup proof |
 | [Review quality assessment](APPLE_REVIEW_QUALITY_ASSESSMENT.md) | Manual assessment method, results and sample limitations |
 
-## Downstream retrieval
+## Downstream retrieval and ABSA preparation
 
-[Apple review retrieval contract and examples](APPLE_REVIEW_RETRIEVAL_CONTRACT.md)
+- [Apple review retrieval contract and examples](APPLE_REVIEW_RETRIEVAL_CONTRACT.md)
+- [ABSA processing contract, CLI examples and validation](APPLE_ABSA_PROCESSING_CONTRACT.md)
 
 ## Bounded coverage follow-up
 
