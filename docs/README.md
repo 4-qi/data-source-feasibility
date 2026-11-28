@@ -17,6 +17,16 @@
 - [Apple review retrieval contract and examples](APPLE_REVIEW_RETRIEVAL_CONTRACT.md)
 - [ABSA processing contract, CLI examples and validation](APPLE_ABSA_PROCESSING_CONTRACT.md)
 
+## ABSA exploration and annotation framework
+
+- [Final Gold Dataset report and verification](APPLE_ABSA_GOLD_DATASET_REPORT.md)
+- [ABSA exploratory findings](APPLE_ABSA_EXPLORATORY_FINDINGS.md)
+- [ABSA annotation guidelines](APPLE_ABSA_ANNOTATION_GUIDELINES.md)
+- [ABSA annotation schema](APPLE_ABSA_ANNOTATION_SCHEMA.md)
+- [Local ABSA annotation tool](APPLE_ABSA_ANNOTATION_TOOL.md)
+- [First ABSA annotation results and quality audit](APPLE_ABSA_ANNOTATION_RESULTS.md)
+- [Focused ABSA adjudication and Gold freeze](APPLE_ABSA_ADJUDICATION.md)
+
 ## Bounded coverage follow-up
 
 - [Duolingo coverage experiment results](APPLE_COVERAGE_EXPERIMENT_RESULTS.md)

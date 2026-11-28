@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ABSA 人工标注</title>
+<style>
+[hidden]{display:none!important}
+*{box-sizing:border-box}body{margin:0;background:#f5f6f8;color:#20252b;font:16px/1.5 system-ui,sans-serif;letter-spacing:0}header{background:#fff;border-bottom:1px solid #d3d8df;padding:16px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}h1{font-size:20px;margin:0}h2{font-size:18px;margin:0 0 12px}h3{font-size:16px;margin:0}button,input,select,textarea{font:inherit;max-width:100%}button{background:#fff;border:1px solid #a7afb9;border-radius:5px;padding:8px 14px;cursor:pointer}button:disabled{opacity:.45;cursor:default}button.primary{background:#236c51;color:#fff;border-color:#236c51}input,select,textarea{border:1px solid #abb3bd;border-radius:4px;padding:8px;background:#fff;color:inherit;width:100%}input[type=checkbox]{width:auto;margin-right:8px}textarea{min-height:76px;resize:vertical}label{display:block;font-size:14px;margin:12px 0 5px}main{max-width:1500px;margin:auto;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,1fr);gap:32px}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.toolbar select{width:auto;max-width:100%}.review{position:sticky;top:20px;align-self:start;min-width:0}.source{background:#fff;padding:16px;border-left:3px solid #8c99a8;white-space:pre-wrap;overflow-wrap:anywhere;user-select:text;line-height:1.8;max-height:none}.body{margin-top:18px}#metadata{color:#596370;font-size:14px;overflow-wrap:anywhere;margin:10px 0}.annotation{min-width:0}fieldset{border:0;padding:0;margin:0}legend{font-weight:600;margin-top:20px}.aspect{border-top:1px solid #cbd1d9;padding:18px 0;margin-top:12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid label{margin-top:4px}.evidence{margin:10px 0;padding:12px;background:#eaf0f4;white-space:pre-wrap;overflow-wrap:anywhere}.evidence button{font-size:14px;padding:3px 8px;margin-left:10px}#notice{max-width:1500px;margin:0 auto;padding:10px 24px;color:#155940;min-height:44px}#notice.error{color:#a32130;background:#fff0f0}#saveStatus{font-size:14px;color:#596370}.footer{border-top:1px solid #cbd1d9;margin-top:24px;padding:20px 0;display:flex;gap:10px;flex-wrap:wrap}#reviewer{max-width:250px}#selection{font-size:14px;color:#596370;white-space:pre-wrap;overflow-wrap:anywhere}progress{height:9px;width:120px;accent-color:#236c51}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #dfac3b;outline-offset:2px}.muted{color:#596370;font-size:14px}#title[hidden]{display:none}@media(max-width:800px){main{grid-template-columns:1fr;padding:16px;gap:24px}.review{position:static}header{padding:14px 16px;gap:12px}.grid{grid-template-columns:1fr}#notice{padding:10px 16px}header label{margin:0}}
+</style>
+<header>
+<h1>ABSA 人工标注</h1>
+<span id="progressText">正在读取</span><progress id="progress" max="80" value="0"></progress>
+<label for="reviewer">评审人</label><input id="reviewer" autocomplete="off" placeholder="实际评审人标识">
+<button id="export" type="button">校验并导出 JSON</button>
+<span id="saveStatus" role="status"></span>
+</header>
+<div id="notice" role="status" aria-live="polite"></div>
+<main hidden id="workspace">
+<section class="review">
+<div class="toolbar">
+<button id="previous" aria-label="上一条" type="button">上一条</button>
+<select id="jump" aria-label="选择评论"></select>
+<button id="next" aria-label="下一条" type="button">下一条</button>
+<select id="stage" aria-label="阶段筛选"><option value="all">全部 80 条</option><option value="1">首批 20 条</option><option value="2">其余 60 条</option></select>
+<select id="reviewGroup" aria-label="裁决问题分组" hidden></select>
+</div>
+<div id="metadata"></div>
+<h2>原始标题</h2><div id="title" class="source" data-field="title"></div><div id="nullTitle" class="muted" hidden>标题为空值</div>
+<h2 class="body">原始正文</h2><div id="body" class="source" data-field="body"></div>
+<p id="selection">在原始标题或正文中选择证据文字。</p>
+<section id="auditPanel" hidden>
+<h2>待人工裁决的问题</h2><div id="auditQuestions"></div>
+<details><summary>首轮原标注与证据</summary><pre id="originalAnnotation" class="source"></pre></details>
+</section>
+</section>
+<section class="annotation">
+<h2 id="rowStatus"></h2>
+<section id="decisionPanel" hidden>
+<label for="decisionChoice">裁决决定</label>
+<select id="decisionChoice"><option value="">请选择</option><option value="confirm">保留原标注</option><option value="modify">依据冻结 v1 修改</option><option value="requires_guideline_change">需要改变规范，暂停裁决</option></select>
+<label for="decisionReason">裁决理由或规范变更问题</label><textarea id="decisionReason"></textarea>
+</section>
+<div class="grid"><div><label for="language">人工确认语言（BCP 47）</label><input id="language" placeholder="例如 en、en-US、es、ru" autocomplete="off"></div>
+<div><label for="status">评论状态</label><select id="status"></select></div></div>
+<label><input type="checkbox" id="languageVerified">我已阅读原文并人工确认语言</label>
+<label><input type="checkbox" id="outsideCompetence">该非英语语言超出我的评审能力</label>
+<label for="reason">零方面原因</label><textarea id="reason"></textarea>
+<div id="aspects"></div>
+<button id="addAspect" type="button">添加方面</button>
+<label><input type="checkbox" id="evidenceConfirmed">我已核对各方面证据及情感，mixed 条目同时包含正负证据</label>
+<label for="notes">私有工作备注（保留在草稿中）</label><textarea id="notes"></textarea>
+<div class="footer"><button id="save" type="button">保存草稿</button><button id="submit" type="button" class="primary">提交本条标注</button></div>
+</section>
+</main>
+<script>
+"use strict";
+const token=location.hash.slice(1);
+const $=id=>document.getElementById(id);
+let state,index=0,form,decisionForm,selection=null,timer=null,queue=Promise.resolve(),dirty=false,loading=true,blocked=false;
+const emptyForm=()=>({language:"",annotation_status:null,no_aspect_reason:"",aspects:[],
+  language_verified:false,outside_competence:false,evidence_confirmed:false,notes:""});
+function notice(message,error=false){$("notice").textContent=message;$("notice").classList.toggle("error",error)}
+async function api(path,payload){
+ const options={headers:{"X-Annotation-Token":token}};
+ if(payload!==undefined){options.method="POST";options.headers["Content-Type"]="application/json";options.body=JSON.stringify(payload)}
+ const response=await fetch(path,options);const result=await response.json();
+ if(!response.ok){if(response.status===409)blocked=true;throw Error(result.error)}
+ return result;
+}
+function options(select,values,current){
+ select.replaceChildren(new Option("请选择",""));
+ for(const value of values)select.add(new Option(value,value));
+ select.value=current||"";
+}
+function updateProgress(){
+ const complete=state.records.filter(r=>r.workflow_status==="complete").length;
+ $("progressText").textContent=complete+" / "+state.rows.length+(state.adjudication?" 已裁决 · 原样本 80 条":" 已提交");
+ $("progress").max=state.rows.length;$("progress").value=complete;
+ $("rowStatus").textContent=state.records[index].workflow_status==="complete"?"已提交":"待完成";
+ if(state.adjudication){
+  const decision=state.adjudication.decisions[String(index)];
+  $("rowStatus").textContent=decision&&decision.status==="guideline_change_required"?"待讨论规范变更":state.records[index].workflow_status==="complete"?"已裁决":"待人工裁决";
+ }
+}
+function filterIndices(){
+ return state.rows.map((r,i)=>i).filter(i=>{
+  if(state.adjudication)return $("reviewGroup").value==="all"||state.adjudication.reviews[i].groups.includes(Number($("reviewGroup").value));
+  return $("stage").value==="all"||String(state.rows[i].stage)===$("stage").value;
+ });
+}
+function navigation(){
+ const indices=filterIndices();$("jump").replaceChildren();
+ for(const i of indices){const row=state.rows[i];$("jump").add(new Option((i+1)+" · "+row.app_name+" · "+row.sample_rank,i))}
+ $("jump").value=index;
+ $("previous").disabled=indices.indexOf(index)<=0;
+ $("next").disabled=indices.indexOf(index)>=indices.length-1;
+}
+function render(){
+ loading=true;selection=null;$("selection").textContent="在原始标题或正文中选择证据文字。";
+ const row=state.rows[index];form=structuredClone(state.drafts[String(index)]||emptyForm());
+ $("metadata").textContent=row.app_name+" · 阶段 "+row.stage+" · review "+row.review_id+" · version "+row.version_id+" / "+row.version_number;
+ $("title").hidden=row.title===null;$("nullTitle").hidden=row.title!==null;
+ $("title").textContent=row.title===null?"":row.title;$("body").textContent=row.body;
+ $("language").value=form.language;options($("status"),state.enums.annotation_status,form.annotation_status);
+ $("reason").value=form.no_aspect_reason;$("notes").value=form.notes;
+ $("languageVerified").checked=form.language_verified;$("outsideCompetence").checked=form.outside_competence;
+ $("evidenceConfirmed").checked=form.evidence_confirmed;
+ if(state.adjudication){
+  const item=state.adjudication.reviews[index];
+  const decision=state.adjudication.decisions[String(index)]||{choice:"",reason:""};
+  decisionForm={choice:decision.choice,reason:decision.reason};
+  $("decisionChoice").value=decision.choice;$("decisionReason").value=decision.reason;
+  $("originalAnnotation").textContent=JSON.stringify(item.original_annotation,null,2);
+  $("metadata").textContent+=" · 原样本序号 "+item.sample_number;
+  $("auditQuestions").replaceChildren();
+  for(const question of item.questions){
+   const paragraph=document.createElement("p");
+   paragraph.textContent=question.issue+(question.aspect_entry_number===null?"":" · 原方面 "+question.aspect_entry_number)+"。"+question.note;
+   $("auditQuestions").append(paragraph);
+  }
+  for(const control of document.querySelectorAll(".annotation input,.annotation select,.annotation textarea,.annotation button"))control.disabled=state.adjudication.frozen;
+ }
+ renderAspects();navigation();updateProgress();loading=false;
+}
+function changed(){
+ if(loading||blocked)return;dirty=true;$("saveStatus").textContent="尚未保存";
+ clearTimeout(timer);timer=setTimeout(()=>save("draft").catch(showError),600);
+}
+function showError(error){notice(error.message,true);$("saveStatus").textContent="保存未完成"}
+function renderAspects(){
+ $("aspects").replaceChildren();
+ form.aspects.forEach((aspect,position)=>{
+  const section=document.createElement("section");section.className="aspect";
+  const heading=document.createElement("h3");heading.textContent="方面 "+(position+1);section.append(heading);
+  const grid=document.createElement("div");grid.className="grid";section.append(grid);
+  for(const key of ["aspect","target_domain","sentiment"]){
+   const wrapper=document.createElement("div");const label=document.createElement("label");
+   label.textContent=({aspect:"方面",target_domain:"目标域",sentiment:"情感"})[key];
+   const select=document.createElement("select");select.setAttribute("aria-label",label.textContent+" "+(position+1));
+   options(select,state.enums[key],aspect[key]);select.onchange=()=>{aspect[key]=select.value;changed()};
+   label.append(select);wrapper.append(label);grid.append(wrapper);
+  }
+  for(const key of ["target","reason"]){
+   const label=document.createElement("label");label.textContent=key==="target"?"具体目标":"标注理由";
+   const input=document.createElement(key==="target"?"input":"textarea");input.value=aspect[key];
+   input.setAttribute("aria-label",label.textContent+" "+(position+1));
+   input.oninput=()=>{aspect[key]=input.value;changed()};label.append(input);section.append(label);
+  }
+  for(const [spanIndex,span] of aspect.evidence.entries()){
+   const block=document.createElement("div");block.className="evidence";
+   const text=document.createElement("span");text.textContent=span.field+" ["+span.start+", "+span.end+")\n"+span.text;block.append(text);
+   const remove=document.createElement("button");remove.type="button";remove.textContent="移除证据";
+   remove.onclick=()=>{aspect.evidence.splice(spanIndex,1);renderAspects();changed()};block.append(remove);section.append(block);
+  }
+  const actions=document.createElement("div");actions.className="toolbar";
+  const evidence=document.createElement("button");evidence.type="button";evidence.textContent="加入已选原文证据";
+  evidence.onclick=()=>{
+   if(!selection){notice("先在左侧原文中选择一段证据。",true);return}
+   aspect.evidence.push(structuredClone(selection));renderAspects();changed();
+  };
+  const remove=document.createElement("button");remove.type="button";remove.textContent="删除本方面";
+  remove.onclick=()=>{form.aspects.splice(position,1);renderAspects();changed()};
+  actions.append(evidence,remove);section.append(actions);$("aspects").append(section);
+ });
+}
+function save(action){
+ clearTimeout(timer);
+ if(blocked)return Promise.reject(Error("其他页面已保存较新进度。请重新加载本页。"));
+ if(action==="draft"&&!dirty)return queue;
+ const payload={index,form:structuredClone(form),action,reviewer:$("reviewer").value};
+ if(state.adjudication)payload.decision=structuredClone(decisionForm);
+ dirty=false;$("saveStatus").textContent="保存中";
+ const operation=queue.then(async()=>{
+  payload.revision=state.revision;
+  const result=await api("/api/save",payload);
+  state.revision=result.revision;state.drafts[String(payload.index)]=payload.form;
+  state.records[payload.index]=result.record;
+  if(state.adjudication)state.adjudication.decisions[String(payload.index)]=result.decision;
+  $("saveStatus").textContent=dirty?"尚未保存":"已保存";updateProgress();
+  if(action==="submit")notice(result.decision&&result.decision.status==="guideline_change_required"?"已保存规范变更问题；裁决暂停，待讨论。":"本条已通过校验并提交。");
+ });
+ queue=operation.catch(()=>{dirty=true});
+ return operation;
+}
+async function go(next){
+ try{await save("draft");await queue;if(dirty)throw Error("请先完成保存，再切换评论。");index=next;render();notice("")}
+ catch(error){navigation();showError(error)}
+}
+document.addEventListener("selectionchange",()=>{
+ const selected=getSelection();if(!selected||selected.isCollapsed||!selected.rangeCount)return;
+ const range=selected.getRangeAt(0);
+ for(const field of ["title","body"]){
+  const node=$(field);if(!node.contains(range.startContainer)||!node.contains(range.endContainer))continue;
+  const before=document.createRange();before.selectNodeContents(node);before.setEnd(range.startContainer,range.startOffset);
+  const start=Array.from(before.toString()).length;const text=range.toString();const end=start+Array.from(text).length;
+  const exact=Array.from(state.rows[index][field]).slice(start,end).join("");
+  if(exact!==text){notice("所选范围无法精确映射原文，请重新选择。",true);return}
+  selection={field,start,end,text};$("selection").textContent=field+" ["+start+", "+end+") · "+text;
+ }
+});
+for(const [id,key] of [["language","language"],["reason","no_aspect_reason"],["notes","notes"]]){
+ $(id).oninput=()=>{form[key]=$(id).value;changed()};
+}
+$("status").onchange=()=>{form.annotation_status=$("status").value||null;changed()};
+for(const [id,key] of [["languageVerified","language_verified"],["outsideCompetence","outside_competence"],["evidenceConfirmed","evidence_confirmed"]]){
+ $(id).onchange=()=>{form[key]=$(id).checked;changed()};
+}
+$("addAspect").onclick=()=>{form.aspects.push({aspect:"",target_domain:"",sentiment:"",target:"",reason:"",evidence:[]});renderAspects();changed()};
+$("save").onclick=()=>save("draft").then(()=>notice("草稿已保存。")).catch(showError);
+$("submit").onclick=()=>save("submit").catch(showError);
+$("previous").onclick=()=>{const ids=filterIndices();go(ids[ids.indexOf(index)-1])};
+$("next").onclick=()=>{const ids=filterIndices();go(ids[ids.indexOf(index)+1])};
+$("jump").onchange=()=>go(Number($("jump").value));
+$("stage").onchange=()=>{const ids=filterIndices();go(ids.includes(index)?index:ids[0])};
+$("reviewGroup").onchange=()=>{const ids=filterIndices();go(ids.includes(index)?index:ids[0])};
+$("decisionChoice").onchange=()=>{decisionForm.choice=$("decisionChoice").value;changed()};
+$("decisionReason").oninput=()=>{decisionForm.reason=$("decisionReason").value;changed()};
+$("export").onclick=async()=>{
+ try{
+  await save("draft");await queue;if(dirty)throw Error("请先完成保存，再导出。");
+  const result=await api("/api/export",{revision:state.revision});
+  if(state.adjudication){state.adjudication.frozen=true;render()}
+  notice("校验通过。私有样本目录已保存 "+result.filename+"（共 "+result.records.length+" 条）。");
+ }catch(error){showError(error)}
+};
+window.addEventListener("beforeunload",event=>{if(dirty||$("saveStatus").textContent==="保存中"){event.preventDefault();event.returnValue=""}});
+(async()=>{
+ try{
+  if(!token)throw Error("请使用启动命令显示的完整本地链接。");
+  state=await api("/api/state");index=state.cursor;
+  if(state.adjudication){
+   document.title="ABSA 人工裁决";document.querySelector("h1").textContent="ABSA 人工裁决";
+   $("stage").hidden=true;$("reviewGroup").hidden=false;
+   $("reviewGroup").replaceChildren(new Option("全部 19 条","all"));
+   for(const [number,title] of Object.entries(state.adjudication.groups))$("reviewGroup").add(new Option(title,number));
+   $("auditPanel").hidden=false;$("decisionPanel").hidden=false;
+   $("submit").textContent="提交本条裁决";$("export").textContent="校验并冻结 Gold v1";
+  }
+  $("workspace").hidden=false;render();
+  $("saveStatus").textContent="已读取私有进度";
+ }catch(error){showError(error)}
+})();
+</script>
+</html>

@@ -61,6 +61,28 @@ It adds normalized analysis text and text eligibility while preserving the
 original fields, exact version reference and collection provenance.
 [Processing contract, CLI examples and Duolingo validation](docs/APPLE_ABSA_PROCESSING_CONTRACT.md)
 
+## ABSA exploration and annotation framework
+
+The [ABSA exploratory findings](docs/APPLE_ABSA_EXPLORATORY_FINDINGS.md),
+[annotation guidelines](docs/APPLE_ABSA_ANNOTATION_GUIDELINES.md) and
+[annotation schema](docs/APPLE_ABSA_ANNOTATION_SCHEMA.md) document the frozen
+v1 framework used for the completed first annotation round.
+
+The [local annotation tool](docs/APPLE_ABSA_ANNOTATION_TOOL.md) provides
+rating-blind review, private draft saving and validated JSON export.
+
+The [first annotation results](docs/APPLE_ABSA_ANNOTATION_RESULTS.md) report
+80 completed reviews, aspect and sentiment distributions, and an
+evidence-quality audit with single-reviewer limitations.
+
+The [focused adjudication workflow](docs/APPLE_ABSA_ADJUDICATION.md)
+prepares the nineteen flagged reviews for separate human decisions and a
+subsequent provenance-preserving first-round Gold freeze.
+
+The [final Gold Dataset report](docs/APPLE_ABSA_GOLD_DATASET_REPORT.md)
+records the completed nineteen-review adjudication and frozen eighty-review
+reference dataset, including aggregate results, checksums and limitations.
+
 ## Earlier source-feasibility evidence
 
 | Source | Historical sample | Useful content | Role in the source study |
@@ -118,7 +140,7 @@ Python 3.10+ is required; the project Conda environment uses Python 3.12.
 ```sh
 conda env create -f environment.yml
 conda activate data-source-feasibility
-python -m pip install -c requirements/project-test.lock -e '.[test,apple-ingestion]'
+python -m pip install -c requirements/project-test.lock -e '.[test,apple-ingestion,annotation]'
 python -m pytest -q
 ```
 
