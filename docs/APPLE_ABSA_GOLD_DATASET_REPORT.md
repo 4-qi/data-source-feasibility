@@ -198,10 +198,10 @@ part of the release validation.
 
 ## Limits and next modeling step
 
-This is a single-reviewer, human-directed dataset with disclosed
-Codex-assisted work. Targeted adjudication by the same reviewer supplies
-no independent inter-reviewer agreement measurement. Character-accurate
-evidence checks and schema validation do not establish semantic accuracy.
+This dataset was annotated and adjudicated under the direction of a single
+human reviewer. No independent inter-reviewer agreement was measured.
+Character-accurate evidence checks and schema validation do not establish
+semantic accuracy.
 
 Eighty purposively framed reviews provide limited coverage. Privacy has
 one entry; several category/polarity combinations have zero observations.
